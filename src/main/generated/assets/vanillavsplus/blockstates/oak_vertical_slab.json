@@ -1,0 +1,42 @@
+{
+  "variants": {
+    "facing=east,vertical_slab_type=double": {
+      "model": "minecraft:block/oak_planks",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=east,vertical_slab_type=single": {
+      "model": "vanillavsplus:block/oak_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,vertical_slab_type=double": {
+      "model": "minecraft:block/oak_planks",
+      "uvlock": true
+    },
+    "facing=north,vertical_slab_type=single": {
+      "model": "vanillavsplus:block/oak_vertical_slab",
+      "uvlock": true
+    },
+    "facing=south,vertical_slab_type=double": {
+      "model": "minecraft:block/oak_planks",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,vertical_slab_type=single": {
+      "model": "vanillavsplus:block/oak_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,vertical_slab_type=double": {
+      "model": "minecraft:block/oak_planks",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=west,vertical_slab_type=single": {
+      "model": "vanillavsplus:block/oak_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}
