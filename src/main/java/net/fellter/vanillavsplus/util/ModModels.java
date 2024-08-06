@@ -16,8 +16,4 @@ public class ModModels {
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Identifier.of(VanillaVSPlus.MOD_ID, "blockmodels/" + parent)), Optional.empty(), requiredTextureKeys);
     }
-
-    private static Model block(String parent, String variant, TextureKey ... requiredTextureKeys) {
-        return new Model(Optional.of(Identifier.of(VanillaVSPlus.MOD_ID, "blockmodels/" + parent)), Optional.of(variant), requiredTextureKeys);
-    }
 }

@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
 
-    public static final Block OAK_VERTICAL_SLAB = registerBlock("oak_vertical_slab",
+    public static final Block VERTICAL_OAK_SLAB = registerBlock("vertical_oak_slab",
             new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
 
 
