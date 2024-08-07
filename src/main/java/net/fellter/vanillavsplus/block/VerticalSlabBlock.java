@@ -84,7 +84,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         BlockState state = ctx.getWorld().getBlockState(pos);
         BlockState state2 = Objects.requireNonNull(super.getPlacementState(ctx)).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
         if (state.isOf(this) && state.get(FACING) == ctx.getSide().getOpposite()) {
-            return state2.isOf(this) ? state2.with(SINGLE, false).with(WATERLOGGED, false) : super.getPlacementState(ctx);
+            return state.isOf(this) ? state2.with(SINGLE, false).with(WATERLOGGED, false) : super.getPlacementState(ctx);
         }
 
         if (direction == Direction.NORTH && ctx.getHitPos().z - pos.getZ() > 0.5) {

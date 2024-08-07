@@ -1,6 +1,7 @@
-// 1.21	2024-08-06T19:17:29.962283	vanillavsplus/Model Definitions
-78104785e3bed0cafa232c6772cfd08c4e5529f9 assets\vanillavsplus\models\item\vertical_oak_slab.json
-f280f4e0332168d6ebca290dc9ed66bc20a0e077 assets\vanillavsplus\blockstates\vertical_oak_slab.json
-ba201bdeeb1f8bc610f9ac6f8e03a8f944116105 assets\vanillavsplus\models\block\vertical_oak_slab.json
+// 1.21	2024-08-07T08:37:33.0838525	vanillavsplus/Model Definitions
+b422d62984d162bbd9b2a22edc910d348b3cb8f9 assets\vanillavsplus\models\block\vertical_oak_slab_right.json
+fa7769e8fa50798f9f2666a8b108e5a1aa423423 assets\vanillavsplus\models\item\vertical_oak_slab.json
+7cf81d859acc5972e791221239c897950db39237 assets\vanillavsplus\models\block\vertical_oak_slab_left.json
+beb14086c2d4ea53fc8f6051e89465984217f83e assets\vanillavsplus\blockstates\vertical_oak_slab.json
 7818d9f6e0255b0750e1867cc590e81a35ce3db2 assets\minecraft\models\block\oak_planks.json
 71dbf6e83d48426051afb8912ac830519594ad10 assets\vanillavsplus\models\item\vvsp_title.json

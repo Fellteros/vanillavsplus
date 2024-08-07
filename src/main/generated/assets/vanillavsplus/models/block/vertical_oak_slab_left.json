@@ -1,5 +1,5 @@
 {
-  "parent": "vanillavsplus:blockmodels/vertical_slab",
+  "parent": "vanillavsplus:blockmodels/vertical_slab_left",
   "textures": {
     "bottom": "minecraft:block/oak_planks",
     "side": "minecraft:block/oak_planks",

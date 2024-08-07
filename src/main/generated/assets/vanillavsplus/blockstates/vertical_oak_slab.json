@@ -6,7 +6,7 @@
       "y": 90
     },
     "facing=east,single=true": {
-      "model": "vanillavsplus:block/vertical_oak_slab",
+      "model": "vanillavsplus:block/vertical_oak_slab_left",
       "uvlock": true,
       "y": 90
     },
@@ -15,7 +15,7 @@
       "uvlock": true
     },
     "facing=north,single=true": {
-      "model": "vanillavsplus:block/vertical_oak_slab",
+      "model": "vanillavsplus:block/vertical_oak_slab_left",
       "uvlock": true
     },
     "facing=south,single=false": {
@@ -24,9 +24,8 @@
       "y": 180
     },
     "facing=south,single=true": {
-      "model": "vanillavsplus:block/vertical_oak_slab",
-      "uvlock": true,
-      "y": 180
+      "model": "vanillavsplus:block/vertical_oak_slab_right",
+      "uvlock": true
     },
     "facing=west,single=false": {
       "model": "minecraft:block/oak_planks",
@@ -34,9 +33,9 @@
       "y": 270
     },
     "facing=west,single=true": {
-      "model": "vanillavsplus:block/vertical_oak_slab",
+      "model": "vanillavsplus:block/vertical_oak_slab_right",
       "uvlock": true,
-      "y": 270
+      "y": 90
     }
   }
 }
