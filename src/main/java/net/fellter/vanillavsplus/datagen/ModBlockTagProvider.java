@@ -18,6 +18,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.VERTICAL_OAK_SLAB)
+                .add(ModBlocks.VERTICAL_OAK_LOG_SLAB)
+                .add(ModBlocks.VERTICAL_OAK_WOOD_SLAB)
+                .add(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB)
+                .add(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB)
         ;
 
     }

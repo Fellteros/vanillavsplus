@@ -24,6 +24,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.VERTICAL_OAK_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OAK_SLAB));
+        addDrop(ModBlocks.VERTICAL_OAK_LOG_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OAK_LOG_SLAB));
+        addDrop(ModBlocks.VERTICAL_OAK_WOOD_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OAK_WOOD_SLAB));
+        addDrop(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB, vertSlabDrops(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB));
+        addDrop(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB, vertSlabDrops(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB));
 
     }
 

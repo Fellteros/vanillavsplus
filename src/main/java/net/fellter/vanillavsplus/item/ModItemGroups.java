@@ -16,7 +16,12 @@ public class ModItemGroups {
             Identifier.of(VanillaVSPlus.MOD_ID, "vvsp"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vanillavsplus"))
                     .icon(() -> new ItemStack(ModItems.VVSP_TITLE)).entries(((displayContext, entries) -> {
+
                         entries.add(ModBlocks.VERTICAL_OAK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB);
 
 
 

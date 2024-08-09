@@ -1,5 +1,9 @@
 {
   "values": [
-    "vanillavsplus:vertical_oak_slab"
+    "vanillavsplus:vertical_oak_slab",
+    "vanillavsplus:vertical_oak_log_slab",
+    "vanillavsplus:vertical_oak_wood_slab",
+    "vanillavsplus:vertical_str_oak_log_slab",
+    "vanillavsplus:vertical_str_oak_wood_slab"
   ]
 }

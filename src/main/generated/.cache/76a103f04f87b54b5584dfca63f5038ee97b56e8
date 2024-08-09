@@ -1,2 +1,6 @@
-// 1.21	2024-08-07T08:37:33.0848509	vanillavsplus/Block Loot Tables
+// 1.21	2024-08-07T09:14:52.9303912	vanillavsplus/Block Loot Tables
+24cd1534e1ac6bf174557fe91c1dd132c32d0e8a data\vanillavsplus\loot_table\blocks\vertical_oak_wood_slab.json
+cb11a7f27aae672ba6b94e96c646a10af0c0ff13 data\vanillavsplus\loot_table\blocks\vertical_str_oak_log_slab.json
+da1936198e7e8c4c3fc832341e43598ab3f0da0f data\vanillavsplus\loot_table\blocks\vertical_oak_log_slab.json
 9465d220291f19f6ee3fcc06795855475ebe7eb4 data\vanillavsplus\loot_table\blocks\vertical_oak_slab.json
+55d724465a1f36e00ba1d9fe0fb3ba2c6ee2a4cd data\vanillavsplus\loot_table\blocks\vertical_str_oak_wood_slab.json

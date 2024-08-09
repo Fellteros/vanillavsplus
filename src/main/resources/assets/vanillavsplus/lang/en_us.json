@@ -1,5 +1,9 @@
 {
   "block.vanillavsplus.vertical_oak_slab": "Vertical Oak Slab",
+  "block.vanillavsplus.vertical_oak_log_slab": "Vertical Oak Log Slab",
+  "block.vanillavsplus.vertical_oak_wood_slab": "Vertical Oak Wood Slab",
+  "block.vanillavsplus.vertical_str_oak_log_slab": "Vertical Stripped Oak Log Slab",
+  "block.vanillavsplus.vertical_str_oak_wood_slab": "Vertical Stripped Oak Wood Slab",
 
   "itemgroup.vanillavsplus": "Vanilla+ Vertical Slabs"
 }

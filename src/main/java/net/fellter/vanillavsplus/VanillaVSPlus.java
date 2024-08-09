@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItemGroups;
 import net.fellter.vanillavsplus.item.ModItems;
+import net.fellter.vanillavsplus.registry.VVSPStrippableRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,5 +19,6 @@ public class VanillaVSPlus implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
+		VVSPStrippableRegistry.registerStrippableBlocks();
 	}
 }
