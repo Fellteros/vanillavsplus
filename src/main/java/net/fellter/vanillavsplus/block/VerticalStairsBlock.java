@@ -21,6 +21,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class VerticalStairsBlock extends Block implements Waterloggable {
@@ -181,7 +182,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 
 
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    protected BlockState getStateForNeighborUpdate(@NotNull BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
@@ -191,7 +192,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
                 : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    private static VerticalStairShape getVerticalStairShape(BlockState state, BlockView world, BlockPos pos) {
+    private static VerticalStairShape getVerticalStairShape(@NotNull BlockState state, @NotNull BlockView world, @NotNull BlockPos pos) {
         Direction direction = state.get(FACING);
         //vepredu od schodu
         BlockState blockState1 = world.getBlockState(pos.offset(direction.getOpposite()));
@@ -271,7 +272,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     }
 
 
-    public static boolean isStairs(BlockState state) {
+    public static boolean isStairs(@NotNull BlockState state) {
         return state.getBlock() instanceof StairsBlock;
     }
 
@@ -281,7 +282,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     }
 
     @Override
-    public ItemStack tryDrainFluid(@Nullable PlayerEntity player, WorldAccess world, BlockPos pos, BlockState state) {
+    public ItemStack tryDrainFluid(@Nullable PlayerEntity player, WorldAccess world, BlockPos pos, @NotNull BlockState state) {
         if (state.get(WATERLOGGED)) {
             world.setBlockState(pos, state.with(WATERLOGGED, false), 3);
             if (!state.canPlaceAt(world, pos)) {
@@ -294,12 +295,12 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void appendProperties(StateManager.@NotNull Builder<Block, BlockState> builder) {
         builder.add(FACING, SIDE, SHAPE, WATERLOGGED);
     }
 
     @Override
-    protected FluidState getFluidState(BlockState state) {
+    protected FluidState getFluidState(@NotNull BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 

@@ -24,6 +24,8 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_STR_OAK_LOG_SLAB, Blocks.STRIPPED_OAK_LOG, blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG), blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG));
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB, Blocks.STRIPPED_OAK_WOOD, TextureMap.all(Blocks.STRIPPED_OAK_LOG), TextureMap.all(Blocks.STRIPPED_OAK_LOG));
 
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_OAK_STAIRS, TextureMap.all(Blocks.OAK_PLANKS));
+
     }
 
     @Override
@@ -36,5 +38,12 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
                 .put(TextureKey.SIDE, TextureMap.getId(block))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_top"));
+    }
+
+    public static TextureMap blockSTB(Block block) {
+        return new TextureMap()
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"));
     }
 }
