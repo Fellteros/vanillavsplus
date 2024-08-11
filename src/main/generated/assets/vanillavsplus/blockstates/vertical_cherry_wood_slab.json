@@ -1,0 +1,41 @@
+{
+  "variants": {
+    "facing=east,single=false": {
+      "model": "minecraft:block/cherry_wood",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=east,single=true": {
+      "model": "vanillavsplus:block/vertical_cherry_wood_slab_left",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,single=false": {
+      "model": "minecraft:block/cherry_wood",
+      "uvlock": true
+    },
+    "facing=north,single=true": {
+      "model": "vanillavsplus:block/vertical_cherry_wood_slab_left",
+      "uvlock": true
+    },
+    "facing=south,single=false": {
+      "model": "minecraft:block/cherry_wood",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,single=true": {
+      "model": "vanillavsplus:block/vertical_cherry_wood_slab_right",
+      "uvlock": true
+    },
+    "facing=west,single=false": {
+      "model": "minecraft:block/cherry_wood",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=west,single=true": {
+      "model": "vanillavsplus:block/vertical_cherry_wood_slab_right",
+      "uvlock": true,
+      "y": 90
+    }
+  }
+}

@@ -1,9 +1,175 @@
 {
   "block.vanillavsplus.vertical_oak_slab": "Vertical Oak Slab",
-  "block.vanillavsplus.vertical_oak_log_slab": "Vertical Oak Log Slab",
-  "block.vanillavsplus.vertical_oak_wood_slab": "Vertical Oak Wood Slab",
-  "block.vanillavsplus.vertical_str_oak_log_slab": "Vertical Stripped Oak Log Slab",
-  "block.vanillavsplus.vertical_str_oak_wood_slab": "Vertical Stripped Oak Wood Slab",
+  "block.vanillavsplus.vertical_oak_stairs": "Vertical Oak Stairs",
 
-  "itemgroup.vanillavsplus": "Vanilla+ Vertical Slabs"
+  "block.vanillavsplus.vertical_oak_log_slab": "Vertical Oak Log Slab",
+  "block.vanillavsplus.vertical_oak_log_stairs": "Vertical Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_oak_wood_slab": "Vertical Oak Wood Slab",
+  "block.vanillavsplus.vertical_oak_wood_stairs": "Vertical Oak Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_oak_log_slab": "Vertical Stripped Oak Log Slab",
+  "block.vanillavsplus.vertical_str_oak_log_stairs": "Vertical Stripped Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_str_oak_wood_slab": "Vertical Stripped Oak Wood Slab",
+  "block.vanillavsplus.vertical_str_oak_wood_stairs": "Vertical Stripped Oak Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_spruce_slab": "Vertical Spruce Slab",
+  "block.vanillavsplus.vertical_spruce_stairs": "Vertical Spruce Stairs",
+
+  "block.vanillavsplus.vertical_spruce_log_slab": "Vertical Spruce Log Slab",
+  "block.vanillavsplus.vertical_spruce_log_stairs": "Vertical Spruce Log Stairs",
+
+  "block.vanillavsplus.vertical_spruce_wood_slab": "Vertical Spruce Wood Slab",
+  "block.vanillavsplus.vertical_spruce_wood_stairs": "Vertical Spruce Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_spruce_log_slab": "Vertical Stripped Spruce Log Slab",
+  "block.vanillavsplus.vertical_str_spruce_log_stairs": "Vertical Stripped Spruce Log Stairs",
+
+  "block.vanillavsplus.vertical_str_spruce_wood_slab": "Vertical Stripped Spruce Wood Slab",
+  "block.vanillavsplus.vertical_str_spruce_wood_stairs": "Vertical Stripped Spruce Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_birch_slab": "Vertical Birch Slab",
+  "block.vanillavsplus.vertical_birch_stairs": "Vertical Birch Stairs",
+
+  "block.vanillavsplus.vertical_birch_log_slab": "Vertical Birch Log Slab",
+  "block.vanillavsplus.vertical_birch_log_stairs": "Vertical Birch Log Stairs",
+
+  "block.vanillavsplus.vertical_birch_wood_slab": "Vertical Birch Wood Slab",
+  "block.vanillavsplus.vertical_birch_wood_stairs": "Vertical Birch Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_birch_log_slab": "Vertical Stripped Birch Log Slab",
+  "block.vanillavsplus.vertical_str_birch_log_stairs": "Vertical Stripped Birch Log Stairs",
+
+  "block.vanillavsplus.vertical_str_birch_wood_slab": "Vertical Stripped Birch Wood Slab",
+  "block.vanillavsplus.vertical_str_birch_wood_stairs": "Vertical Stripped Birch Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_jungle_slab": "Vertical Jungle Slab",
+  "block.vanillavsplus.vertical_jungle_stairs": "Vertical Jungle Stairs",
+
+  "block.vanillavsplus.vertical_jungle_log_slab": "Vertical Jungle Log Slab",
+  "block.vanillavsplus.vertical_jungle_log_stairs": "Vertical Jungle Log Stairs",
+
+  "block.vanillavsplus.vertical_jungle_wood_slab": "Vertical Jungle Wood Slab",
+  "block.vanillavsplus.vertical_jungle_wood_stairs": "Vertical Jungle Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_jungle_log_slab": "Vertical Stripped Jungle Log Slab",
+  "block.vanillavsplus.vertical_str_jungle_log_stairs": "Vertical Stripped Jungle Log Stairs",
+
+  "block.vanillavsplus.vertical_str_jungle_wood_slab": "Vertical Stripped Jungle Wood Slab",
+  "block.vanillavsplus.vertical_str_jungle_wood_stairs": "Vertical Stripped Jungle Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_acacia_slab": "Vertical Acacia Slab",
+  "block.vanillavsplus.vertical_acacia_stairs": "Vertical Acacia Stairs",
+
+  "block.vanillavsplus.vertical_acacia_log_slab": "Vertical Acacia Log Slab",
+  "block.vanillavsplus.vertical_acacia_log_stairs": "Vertical Acacia Log Stairs",
+
+  "block.vanillavsplus.vertical_acacia_wood_slab": "Vertical Acacia Wood Slab",
+  "block.vanillavsplus.vertical_acacia_wood_stairs": "Vertical Acacia Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_acacia_log_slab": "Vertical Stripped Acacia Log Slab",
+  "block.vanillavsplus.vertical_str_acacia_log_stairs": "Vertical Stripped Acacia Log Stairs",
+
+  "block.vanillavsplus.vertical_str_acacia_wood_slab": "Vertical Stripped Acacia Wood Slab",
+  "block.vanillavsplus.vertical_str_acacia_wood_stairs": "Vertical Stripped Acacia Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_dark_oak_slab": "Vertical Dark Oak Slab",
+  "block.vanillavsplus.vertical_dark_oak_stairs": "Vertical Dark Oak Stairs",
+
+  "block.vanillavsplus.vertical_dark_oak_log_slab": "Vertical Dark Oak Log Slab",
+  "block.vanillavsplus.vertical_dark_oak_log_stairs": "Vertical Dark Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_dark_oak_wood_slab": "Vertical Dark Oak Wood Slab",
+  "block.vanillavsplus.vertical_dark_oak_wood_stairs": "Vertical Dark Oak Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_dark_oak_log_slab": "Vertical Stripped Dark Oak Log Slab",
+  "block.vanillavsplus.vertical_str_dark_oak_log_stairs": "Vertical Stripped Dark Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_str_dark_oak_wood_slab": "Vertical Stripped Dark Oak Wood Slab",
+  "block.vanillavsplus.vertical_str_dark_oak_wood_stairs": "Vertical Stripped Dark Oak Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_mangrove_slab": "Vertical Mangrove Slab",
+  "block.vanillavsplus.vertical_mangrove_stairs": "Vertical Mangrove Stairs",
+
+  "block.vanillavsplus.vertical_mangrove_log_slab": "Vertical Mangrove Log Slab",
+  "block.vanillavsplus.vertical_mangrove_log_stairs": "Vertical Mangrove Log Stairs",
+
+  "block.vanillavsplus.vertical_mangrove_wood_slab": "Vertical Mangrove Wood Slab",
+  "block.vanillavsplus.vertical_mangrove_wood_stairs": "Vertical Mangrove Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_mangrove_log_slab": "Vertical Stripped Mangrove Log Slab",
+  "block.vanillavsplus.vertical_str_mangrove_log_stairs": "Vertical Stripped Mangrove Log Stairs",
+
+  "block.vanillavsplus.vertical_str_mangrove_wood_slab": "Vertical Stripped Mangrove Wood Slab",
+  "block.vanillavsplus.vertical_str_mangrove_wood_stairs": "Vertical Stripped Mangrove Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_cherry_slab": "Vertical Cherry Slab",
+  "block.vanillavsplus.vertical_cherry_stairs": "Vertical Cherry Stairs",
+
+  "block.vanillavsplus.vertical_cherry_log_slab": "Vertical Cherry Log Slab",
+  "block.vanillavsplus.vertical_cherry_log_stairs": "Vertical Cherry Log Stairs",
+
+  "block.vanillavsplus.vertical_cherry_wood_slab": "Vertical Cherry Wood Slab",
+  "block.vanillavsplus.vertical_cherry_wood_stairs": "Vertical Cherry Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_cherry_log_slab": "Vertical Stripped Cherry Log Slab",
+  "block.vanillavsplus.vertical_str_cherry_log_stairs": "Vertical Stripped Cherry Log Stairs",
+
+  "block.vanillavsplus.vertical_str_cherry_wood_slab": "Vertical Stripped Cherry Wood Slab",
+  "block.vanillavsplus.vertical_str_cherry_wood_stairs": "Vertical Stripped Cherry Wood Stairs",
+
+
+  "block.vanillavsplus.vertical_bamboo_slab": "Vertical Bamboo Slab",
+  "block.vanillavsplus.vertical_bamboo_stairs": "Vertical Bamboo Stairs",
+
+  "block.vanillavsplus.vertical_bamboo_mosaic_slab": "Vertical Bamboo Mosaic Slab",
+  "block.vanillavsplus.vertical_bamboo_mosaic_stairs": "Vertical Bamboo Mosaic Stairs",
+
+  "block.vanillavsplus.vertical_bamboo_block_slab": "Vertical Bamboo Block Slab",
+  "block.vanillavsplus.vertical_bamboo_block_stairs": "Vertical Bamboo Block Stairs",
+
+  "block.vanillavsplus.vertical_str_bamboo_block_slab": "Vertical Stripped Bamboo Block Slab",
+  "block.vanillavsplus.vertical_str_bamboo_block_stairs": "Vertical Stripped Bamboo Block Stairs",
+
+
+  "block.vanillavsplus.vertical_crimson_slab": "Vertical Crimson Slab",
+  "block.vanillavsplus.vertical_crimson_stairs": "Vertical Crimson Stairs",
+
+  "block.vanillavsplus.vertical_crimson_stem_slab": "Vertical Crimson Stem Slab",
+  "block.vanillavsplus.vertical_crimson_stem_stairs": "Vertical Crimson Stem Stairs",
+
+  "block.vanillavsplus.vertical_crimson_hyphae_slab": "Vertical Crimson Hyphae Slab",
+  "block.vanillavsplus.vertical_crimson_hyphae_stairs": "Vertical Crimson Hyphae Stairs",
+
+  "block.vanillavsplus.vertical_str_crimson_stem_slab": "Vertical Stripped Crimson Stem Slab",
+  "block.vanillavsplus.vertical_str_crimson_stem_stairs": "Vertical Stripped Crimson Stem Stairs",
+
+  "block.vanillavsplus.vertical_str_crimson_hyphae_slab": "Vertical Stripped Crimson Hyphae Slab",
+  "block.vanillavsplus.vertical_str_crimson_hyphae_stairs": "Vertical Stripped Crimson Hyphae Stairs",
+
+
+  "block.vanillavsplus.vertical_warped_slab": "Vertical Warped Slab",
+  "block.vanillavsplus.vertical_warped_stairs": "Vertical Warped Stairs",
+
+  "block.vanillavsplus.vertical_warped_stem_slab": "Vertical Warped Stem Slab",
+  "block.vanillavsplus.vertical_warped_stem_stairs": "Vertical Warped Stem Stairs",
+
+  "block.vanillavsplus.vertical_warped_hyphae_slab": "Vertical Warped Hyphae Slab",
+  "block.vanillavsplus.vertical_warped_hyphae_stairs": "Vertical Warped Hyphae Stairs",
+
+  "block.vanillavsplus.vertical_str_warped_stem_slab": "Vertical Stripped Warped Stem Slab",
+  "block.vanillavsplus.vertical_str_warped_stem_stairs": "Vertical Stripped Warped Stem Stairs",
+
+  "block.vanillavsplus.vertical_str_warped_hyphae_slab": "Vertical Stripped Warped Hyphae Slab",
+  "block.vanillavsplus.vertical_str_warped_hyphae_stairs": "Vertical Stripped Warped Hyphae Stairs",
+
+  "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }
