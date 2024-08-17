@@ -186,10 +186,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-
-        return direction.getAxis().isHorizontal()
-                ? state.with(SHAPE, getVerticalStairShape(state, world, pos))
-                : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        return state.with(SHAPE, getVerticalStairShape(state, world, pos));
     }
 
     private static VerticalStairShape getVerticalStairShape(@NotNull BlockState state, @NotNull BlockView world, @NotNull BlockPos pos) {
