@@ -24,6 +24,9 @@ import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+import java.util.function.Predicate;
+
 public class VerticalStairsBlock extends Block implements Waterloggable {
     public static final EnumProperty<VerticalStairShape> SHAPE = EnumProperty.of("vertical_stair_shape", VerticalStairShape.class);
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -178,6 +181,27 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
         } else {
             return blockState.with(SIDE, BlockSide.RIGHT).with(SHAPE, getVerticalStairShape(blockState.with(SIDE, BlockSide.RIGHT), ctx.getWorld(), blockPos));
         }
+    }
+
+
+    public static boolean isStraightShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.STRAIGHT_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    public static boolean isTopShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.TOP_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    public static boolean isBottomShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.BOTTOM_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    public static boolean isOuterShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.OUTER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    public static boolean isInnerShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.INNER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
 

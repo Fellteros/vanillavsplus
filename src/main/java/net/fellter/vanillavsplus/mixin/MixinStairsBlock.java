@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.mixin;
 
 import net.fellter.vanillavsplus.block.BlockSide;
+import net.fellter.vanillavsplus.block.VerticalStairShape;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -24,6 +25,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.List;
 
 @Mixin(StairsBlock.class)
 public abstract class MixinStairsBlock extends Block {
@@ -76,6 +79,8 @@ public abstract class MixinStairsBlock extends Block {
     }
 
 
+
+
     @Unique
     private static StairShape fellter$getStairShape(BlockState state, BlockView world, BlockPos pos) {
         Direction direction = state.get(FACING);
@@ -83,53 +88,63 @@ public abstract class MixinStairsBlock extends Block {
         BlockState downState = world.getBlockState(pos.down());
 
         if ((state.get(SHAPE) == StairShape.STRAIGHT) || state.get(SHAPE) == StairShape.INNER_LEFT || state.get(SHAPE) == StairShape.INNER_RIGHT) {
-            if (isVerticalStairs(upState) && upState.get(FACING) == direction && state.get(HALF) == BlockHalf.BOTTOM) {
-                if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
-                    return StairShape.INNER_LEFT;
-                }
-                return StairShape.INNER_RIGHT;
-            }
 
-            if (isVerticalStairs(upState) && upState.get(FACING) == direction.rotateYClockwise() && state.get(HALF) == BlockHalf.BOTTOM) {
-                if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+
+            if (isVerticalStairs(upState) && !VerticalStairsBlock.isOuterShape(upState)) {
+                if (isVerticalStairs(upState) && upState.get(FACING) == direction && state.get(HALF) == BlockHalf.BOTTOM) {
+                    if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+                        return StairShape.INNER_LEFT;
+                    }
                     return StairShape.INNER_RIGHT;
                 }
-                return StairShape.STRAIGHT;
-            }
 
-            if (isVerticalStairs(upState) && upState.get(FACING) == direction.rotateYCounterclockwise() && state.get(HALF) == BlockHalf.BOTTOM) {
-                if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.RIGHT) {
-                    return StairShape.INNER_LEFT;
+                if (isVerticalStairs(upState) && upState.get(FACING) == direction.rotateYClockwise() && state.get(HALF) == BlockHalf.BOTTOM) {
+                    if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+                        return StairShape.INNER_RIGHT;
+                    }
+                    return StairShape.STRAIGHT;
                 }
-                return StairShape.STRAIGHT;
-            }
 
-            if (isVerticalStairs(downState) && downState.get(FACING) == direction && state.get(HALF) == BlockHalf.TOP) {
-                if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
-                    return StairShape.INNER_LEFT;
+                if (isVerticalStairs(upState) && upState.get(FACING) == direction.rotateYCounterclockwise() && state.get(HALF) == BlockHalf.BOTTOM) {
+                    if (upState.get(VerticalStairsBlock.SIDE) == BlockSide.RIGHT) {
+                        return StairShape.INNER_LEFT;
+                    }
+                    return StairShape.STRAIGHT;
                 }
-                return StairShape.INNER_RIGHT;
             }
 
-            if (isVerticalStairs(downState) && downState.get(FACING) == direction.rotateYClockwise() && state.get(HALF) == BlockHalf.TOP) {
-                if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+
+            if (isVerticalStairs(downState) && !VerticalStairsBlock.isOuterShape(downState)) {
+                if (isVerticalStairs(downState) && downState.get(FACING) == direction && state.get(HALF) == BlockHalf.TOP) {
+                    if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+                        return StairShape.INNER_LEFT;
+                    }
                     return StairShape.INNER_RIGHT;
                 }
-                return StairShape.STRAIGHT;
-            }
 
-            if (isVerticalStairs(downState) && downState.get(FACING) == direction.rotateYCounterclockwise() && state.get(HALF) == BlockHalf.TOP) {
-                if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.RIGHT) {
-                    return StairShape.INNER_LEFT;
+                if (isVerticalStairs(downState) && downState.get(FACING) == direction.rotateYClockwise() && state.get(HALF) == BlockHalf.TOP) {
+                    if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.LEFT) {
+                        return StairShape.INNER_RIGHT;
+                    }
+                    return StairShape.STRAIGHT;
                 }
-                return StairShape.STRAIGHT;
+
+                if (isVerticalStairs(downState) && downState.get(FACING) == direction.rotateYCounterclockwise() && state.get(HALF) == BlockHalf.TOP) {
+                    if (downState.get(VerticalStairsBlock.SIDE) == BlockSide.RIGHT) {
+                        return StairShape.INNER_LEFT;
+                    }
+                    return StairShape.STRAIGHT;
+                }
             }
         }
+
+
+
         return StairShape.STRAIGHT;
     }
 
 
-    @Inject(method = "getStairShape", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getStairShape", at = @At("HEAD"), cancellable = true)
     private static void getStairShape(BlockState state, BlockView world, BlockPos pos, CallbackInfoReturnable<StairShape> cir) {
         BlockState upState = world.getBlockState(pos.up());
         BlockState downState = world.getBlockState(pos.down());

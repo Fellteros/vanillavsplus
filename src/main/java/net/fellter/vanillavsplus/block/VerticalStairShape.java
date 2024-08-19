@@ -2,6 +2,9 @@ package net.fellter.vanillavsplus.block;
 
 import net.minecraft.util.StringIdentifiable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum VerticalStairShape implements StringIdentifiable {
     STRAIGHT_LEFT("straight_left"),
     STRAIGHT_RIGHT("straight_right"),
@@ -24,6 +27,12 @@ public enum VerticalStairShape implements StringIdentifiable {
     VerticalStairShape(String name) {
         this.name = name;
     }
+
+    public static final VerticalStairShape[] TOP_SHAPES = new VerticalStairShape[]{INNER_TOP_LEFT, INNER_TOP_RIGHT, OUTER_TOP_LEFT, OUTER_TOP_RIGHT, OUTER_TOP_LEFT_R90, OUTER_TOP_RIGHT_R90};
+    public static final VerticalStairShape[] BOTTOM_SHAPES = new VerticalStairShape[]{INNER_BOTTOM_LEFT, INNER_BOTTOM_RIGHT, OUTER_BOTTOM_LEFT, OUTER_BOTTOM_RIGHT, OUTER_BOTTOM_LEFT_R90, OUTER_BOTTOM_RIGHT_R90};
+    public static final VerticalStairShape[] INNER_SHAPES = new VerticalStairShape[]{INNER_TOP_LEFT, INNER_TOP_RIGHT, INNER_BOTTOM_LEFT, INNER_BOTTOM_RIGHT};
+    public static final VerticalStairShape[] OUTER_SHAPES = new VerticalStairShape[]{OUTER_TOP_LEFT, OUTER_TOP_RIGHT, OUTER_BOTTOM_LEFT, OUTER_BOTTOM_RIGHT};
+    public static final VerticalStairShape[] STRAIGHT_SHAPES = new VerticalStairShape[]{STRAIGHT_LEFT, STRAIGHT_RIGHT};
 
     @Override
     public String asString() {
