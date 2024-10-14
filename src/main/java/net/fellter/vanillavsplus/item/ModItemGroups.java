@@ -135,6 +135,58 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_STR_WARPED_STEM_STAIRS);
                         entries.add(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_SLAB);
                         entries.add(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_STONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_COBBLESTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COBBLESTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MOSSY_COBBLESTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MOSSY_COBBLESTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_STONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_STONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_STONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_STONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_STONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_STONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MOSSY_STONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MOSSY_STONE_BRICKS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_GRANITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRANITE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_GRANITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_GRANITE_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_DIORITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DIORITE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_DIORITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_DIORITE_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_ANDESITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ANDESITE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_ANDESITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_ANDESITE_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_COBBLED_DEEPSLATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COBBLED_DEEPSLATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_DEEPSLATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_DEEPSLATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_DEEPSLATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_DEEPSLATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_TILES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_TILES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_TUFF_SLAB);
+                        entries.add(ModBlocks.VERTICAL_TUFF_STAIRS);
 
 
 

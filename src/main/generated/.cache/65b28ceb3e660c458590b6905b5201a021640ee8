@@ -1,4 +1,5 @@
-// 1.21	2024-08-10T15:47:55.465019	vanillavsplus/Tags for minecraft:block
+// 1.21.1	2024-10-14T16:07:14.8029583	vanillavsplus/Tags for minecraft:block
 b5d4e5bc4e431ad0901670f7fdaa61ae071a6a55 data\minecraft\tags\block\mineable\axe.json
-1835fd09f69eb13f0219f59fae625865f82cf802 data\vanillavsplus\tags\block\vertical_slabs.json
-468887f3ed856b1d47c427f2a7274dbc46036589 data\vanillavsplus\tags\block\vertical_stairs.json
+0a92f90e7384072f6b67d1b8f6dad61734c60630 data\vanillavsplus\tags\block\vertical_slabs.json
+ceccbf526afd7bfb986f3723d88194e2fd2010c9 data\vanillavsplus\tags\block\vertical_stairs.json
+434f0b822b7bb638116ab526e7b71725cb5a8b96 data\minecraft\tags\block\mineable\pickaxe.json

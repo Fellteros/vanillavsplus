@@ -49,20 +49,13 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     protected static final VoxelShape BOTTOM_3 = Block.createCuboidShape(8.0, 0.0, 8.0, 16.0, 8.0, 16.0);
     protected static final VoxelShape TOP_2 = Block.createCuboidShape(8.0, 8.0, 0.0, 16.0, 16.0, 8.0);
     protected static final VoxelShape TOP_3 = Block.createCuboidShape(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
-    private final Block baseBlock;
 
-    public VerticalStairsBlock(Settings settings, BlockState baseBlockState) {
+    public VerticalStairsBlock(Settings settings) {
         super(settings);
-        this.baseBlock = baseBlockState.getBlock();
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(SIDE, BlockSide.LEFT).with(SHAPE, VerticalStairShape.STRAIGHT_LEFT));
     }
 
 
-
-    @Override
-    public float getBlastResistance() {
-        return this.baseBlock.getBlastResistance();
-    }
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -184,24 +177,39 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     }
 
 
+    @SuppressWarnings("unused")
     public static boolean isStraightShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.STRAIGHT_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
+    @SuppressWarnings("unused")
     public static boolean isTopShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.TOP_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
+    @SuppressWarnings("unused")
     public static boolean isBottomShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.BOTTOM_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
+    @SuppressWarnings("unused")
     public static boolean isOuterShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.OUTER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
+    @SuppressWarnings("unused")
     public static boolean isInnerShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.INNER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    @SuppressWarnings("unused")
+    public static boolean isLeftShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.LEFT_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
+    }
+
+    @SuppressWarnings("unused")
+    public static boolean IsRightShape(BlockState state) {
+        return Arrays.stream(VerticalStairShape.RIGHT_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
 
@@ -215,13 +223,9 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 
     private static VerticalStairShape getVerticalStairShape(@NotNull BlockState state, @NotNull BlockView world, @NotNull BlockPos pos) {
         Direction direction = state.get(FACING);
-        //vepredu od schodu
         BlockState blockState1 = world.getBlockState(pos.offset(direction.getOpposite()));
-        //vzadu od schodu
         BlockState blockState2 = world.getBlockState(pos.offset(direction));
-        //vpravo od schodu
         BlockState blockState3 = world.getBlockState(pos.offset(direction.rotateYClockwise()));
-        //vlevo od schodu
         BlockState blockState4 = world.getBlockState(pos.offset(direction.rotateYCounterclockwise()));
 
 

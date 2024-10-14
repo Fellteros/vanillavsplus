@@ -192,6 +192,81 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         verticalSlabRecipe(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_SLAB, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
         verticalStairsRecipe(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_STAIRS, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
+        
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_STONE_SLAB, Blocks.STONE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_STONE_STAIRS, Blocks.STONE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_COBBLESTONE_SLAB, Blocks.COBBLESTONE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_COBBLESTONE_STAIRS, Blocks.COBBLESTONE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_MOSSY_COBBLESTONE_SLAB, Blocks.MOSSY_COBBLESTONE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_MOSSY_COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_SMOOTH_STONE_SLAB, Blocks.SMOOTH_STONE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_STONE_BRICKS_SLAB, Blocks.STONE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_STONE_BRICKS_STAIRS, Blocks.STONE_BRICKS).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_CRACKED_STONE_BRICKS_SLAB, Blocks.CRACKED_STONE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_CRACKED_STONE_BRICKS_STAIRS, Blocks.CRACKED_STONE_BRICKS).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_CHISELED_STONE_BRICKS_SLAB, Blocks.CHISELED_STONE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_CHISELED_STONE_BRICKS_STAIRS, Blocks.CHISELED_STONE_BRICKS).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_MOSSY_STONE_BRICKS_SLAB, Blocks.MOSSY_STONE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_MOSSY_STONE_BRICKS_STAIRS, Blocks.MOSSY_STONE_BRICKS).offerTo(exporter);
+        
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_GRANITE_SLAB, Blocks.GRANITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_GRANITE_STAIRS, Blocks.GRANITE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_POLISHED_GRANITE_SLAB, Blocks.POLISHED_GRANITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_POLISHED_GRANITE_STAIRS, Blocks.POLISHED_GRANITE).offerTo(exporter);
+        
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_DIORITE_SLAB, Blocks.DIORITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_DIORITE_STAIRS, Blocks.DIORITE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_POLISHED_DIORITE_SLAB, Blocks.POLISHED_DIORITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_POLISHED_DIORITE_STAIRS, Blocks.POLISHED_DIORITE).offerTo(exporter);
+        
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_ANDESITE_SLAB, Blocks.ANDESITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_ANDESITE_STAIRS, Blocks.ANDESITE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_POLISHED_ANDESITE_SLAB, Blocks.POLISHED_ANDESITE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_POLISHED_ANDESITE_STAIRS, Blocks.POLISHED_ANDESITE).offerTo(exporter);
+
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_SLAB, Blocks.DEEPSLATE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_STAIRS, Blocks.DEEPSLATE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_COBBLED_DEEPSLATE_SLAB, Blocks.COBBLED_DEEPSLATE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_COBBLED_DEEPSLATE_STAIRS, Blocks.COBBLED_DEEPSLATE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_CHISELED_DEEPSLATE_SLAB, Blocks.CHISELED_DEEPSLATE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_CHISELED_DEEPSLATE_STAIRS, Blocks.CHISELED_DEEPSLATE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_POLISHED_DEEPSLATE_SLAB, Blocks.POLISHED_DEEPSLATE).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_POLISHED_DEEPSLATE_STAIRS, Blocks.POLISHED_DEEPSLATE).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_BRICKS_SLAB, Blocks.DEEPSLATE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_BRICKS_STAIRS, Blocks.DEEPSLATE_BRICKS).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_BRICKS_SLAB, Blocks.CRACKED_DEEPSLATE_BRICKS).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_BRICKS_STAIRS, Blocks.CRACKED_DEEPSLATE_BRICKS).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_TILES_SLAB, Blocks.DEEPSLATE_TILES).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_TILES_STAIRS, Blocks.DEEPSLATE_TILES).offerTo(exporter);
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_SLAB, Blocks.CRACKED_DEEPSLATE_TILES).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_STAIRS, Blocks.CRACKED_DEEPSLATE_TILES).offerTo(exporter);
+
+
+        verticalSlabRecipe(ModBlocks.VERTICAL_TUFF_SLAB, Blocks.TUFF).offerTo(exporter);
+        verticalStairsRecipe(ModBlocks.VERTICAL_TUFF_STAIRS, Blocks.TUFF).offerTo(exporter);
     }
 
     public static CraftingRecipeJsonBuilder verticalSlabRecipe(ItemConvertible output, ItemConvertible input) {

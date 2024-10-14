@@ -15,18 +15,10 @@ public class ModBlockStateModelGenerator {
     public static void registerVerticalSlab(BlockStateModelGenerator bsmg, Block vertSlabBlock, Block fullBlock, TextureMap slabTextureMap) {
         Identifier identifier = ModModels.VERTICAL_SLAB_LEFT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
         Identifier identifier2 = ModModels.VERTICAL_SLAB_RIGHT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
-        Identifier identifier3 = Models.CUBE_BOTTOM_TOP.upload(fullBlock, TextureMap.all(fullBlock), bsmg.modelCollector);
-        bsmg.blockStateCollector.accept(createVerticalSlabBlockState(vertSlabBlock, identifier, identifier2, identifier3));
-        bsmg.registerParentedItemModel(vertSlabBlock, identifier);
+        bsmg.blockStateCollector.accept(createVerticalSlabBlockState(vertSlabBlock, identifier, identifier2, TextureMap.getId(fullBlock)));
+        bsmg.registerParentedItemModel(vertSlabBlock, identifier2);
     }
 
-    public static void registerVerticalSlab(BlockStateModelGenerator bsmg, Block vertSlabBlock, Block fullBlock, TextureMap slabTextureMap, TextureMap fullBlockMap) {
-        Identifier identifier = ModModels.VERTICAL_SLAB_LEFT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
-        Identifier identifier2 = ModModels.VERTICAL_SLAB_RIGHT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
-        Identifier identifier3 = Models.CUBE_BOTTOM_TOP.upload(fullBlock, fullBlockMap, bsmg.modelCollector);
-        bsmg.blockStateCollector.accept(createVerticalSlabBlockState(vertSlabBlock, identifier, identifier2, identifier3));
-        bsmg.registerParentedItemModel(vertSlabBlock, identifier);
-    }
 
     public static void registerVerticalStairs(BlockStateModelGenerator bsmg, Block vertStairsBlock, TextureMap textureMap) {
         Identifier identifier = ModModels.STRAIGHT.upload(vertStairsBlock, textureMap, bsmg.modelCollector);

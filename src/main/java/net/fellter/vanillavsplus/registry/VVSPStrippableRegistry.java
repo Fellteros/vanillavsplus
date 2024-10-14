@@ -18,7 +18,7 @@ public class VVSPStrippableRegistry {
             LOGGER.debug("Replaced old stripping mapping from {} to {} with {}", input, old, stripped);
         }
     }
-    @SuppressWarnings("unstable")
+
     private static Map<Block, Block> getRegistry() {
         return ImmutableCollectionUtils.getAsMutableMap(AxeItemAccessor::getStrippedBlocks, AxeItemAccessor::setStrippedBlocks);
     }

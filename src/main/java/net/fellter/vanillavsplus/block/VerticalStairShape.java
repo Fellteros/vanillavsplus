@@ -33,6 +33,8 @@ public enum VerticalStairShape implements StringIdentifiable {
     public static final VerticalStairShape[] INNER_SHAPES = new VerticalStairShape[]{INNER_TOP_LEFT, INNER_TOP_RIGHT, INNER_BOTTOM_LEFT, INNER_BOTTOM_RIGHT};
     public static final VerticalStairShape[] OUTER_SHAPES = new VerticalStairShape[]{OUTER_TOP_LEFT, OUTER_TOP_RIGHT, OUTER_BOTTOM_LEFT, OUTER_BOTTOM_RIGHT};
     public static final VerticalStairShape[] STRAIGHT_SHAPES = new VerticalStairShape[]{STRAIGHT_LEFT, STRAIGHT_RIGHT};
+    public static final VerticalStairShape[] LEFT_SHAPES = new VerticalStairShape[]{STRAIGHT_LEFT, INNER_TOP_LEFT, INNER_BOTTOM_LEFT, OUTER_TOP_LEFT, OUTER_BOTTOM_LEFT, OUTER_TOP_LEFT_R90, OUTER_BOTTOM_LEFT_R90};
+    public static final VerticalStairShape[] RIGHT_SHAPES = new VerticalStairShape[]{STRAIGHT_RIGHT, INNER_TOP_RIGHT, INNER_BOTTOM_RIGHT, OUTER_TOP_RIGHT, OUTER_BOTTOM_RIGHT, OUTER_TOP_RIGHT_R90, OUTER_BOTTOM_RIGHT_R90};
 
     @Override
     public String asString() {

@@ -1,7 +1,6 @@
 package net.fellter.vanillavsplus.mixin;
 
 import net.fellter.vanillavsplus.block.BlockSide;
-import net.fellter.vanillavsplus.block.VerticalStairShape;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -26,8 +25,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.List;
-
 @Mixin(StairsBlock.class)
 public abstract class MixinStairsBlock extends Block {
 
@@ -39,43 +36,54 @@ public abstract class MixinStairsBlock extends Block {
 
     @Shadow @Final public static BooleanProperty WATERLOGGED;
 
-
     public MixinStairsBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(HALF, BlockHalf.BOTTOM).with(SHAPE, StairShape.STRAIGHT).with(WATERLOGGED, false));
     }
+
+
 
     @Inject(method = "getPlacementState", at = @At("TAIL"), cancellable = true)
     public void getPlacementState(ItemPlacementContext ctx, CallbackInfoReturnable<BlockState> cir) {
         BlockPos blockPos = ctx.getBlockPos();
         BlockState upState = ctx.getWorld().getBlockState(blockPos.up());
         BlockState downState = ctx.getWorld().getBlockState(blockPos.down());
-        Direction direction = ctx.getSide();
-        FluidState fluidState = ctx.getWorld().getFluidState(blockPos);
-        BlockState blockState = this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing())
-                .with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(ctx.getHitPos().y - (double)blockPos.getY() > 0.5)) ? BlockHalf.BOTTOM : BlockHalf.TOP).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
-
-
+        BlockState blockState = super.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing()).with(FACING, ctx.getHorizontalPlayerFacing())
+                .with(HALF, ctx.getSide() != Direction.DOWN && (ctx.getSide() == Direction.UP || !(ctx.getHitPos().y - (double)blockPos.getY() > 0.5)) ? BlockHalf.BOTTOM : BlockHalf.TOP)
+                .with(WATERLOGGED, ctx.getWorld().getFluidState(blockPos).getFluid() == Fluids.WATER);
 
         if (isVerticalStairs(upState) || isVerticalStairs(downState)) {
             cir.setReturnValue(blockState.with(SHAPE, fellter$getStairShape(blockState, ctx.getWorld(), blockPos)));
         }
+
     }
 
-    @Inject(method = "getStateForNeighborUpdate", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getStateForNeighborUpdate", at = @At("HEAD"), cancellable = true)
     private void getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos, CallbackInfoReturnable<BlockState> cir){
         BlockState upState = world.getBlockState(pos.up());
         BlockState downState = world.getBlockState(pos.down());
 
-        if (isVerticalStairs(upState) || isVerticalStairs(downState)) {
-            cir.setReturnValue(state.with(SHAPE, fellter$getStairShape(state, world, pos)));
+        if (direction.getAxis().isVertical()) {
+            if (isVerticalStairs(upState) || isVerticalStairs(downState)) {
+                cir.setReturnValue(state.with(SHAPE, fellter$getStairShape(state, world, pos)));
+            }
+
+            if (!isVerticalStairs(upState) || !isVerticalStairs(downState)) {
+                cir.setReturnValue(state.with(SHAPE, fellter$getStairShape(state, world, pos)));
+            }
         }
 
-        if (!isVerticalStairs(upState) || !isVerticalStairs(downState)) {
-            cir.setReturnValue(state.with(SHAPE, fellter$getStairShape(state, world, pos)));
-        }
+    }
 
+    @Unique
+    private static boolean isDifferentOrientation(BlockState state, BlockView world, BlockPos pos, Direction dir) {
+        BlockState blockState = world.getBlockState(pos.offset(dir));
+        return !isStairs(blockState) || blockState.get(FACING) != state.get(FACING) || blockState.get(HALF) != state.get(HALF);
+    }
 
+    @Unique
+    private static boolean isStairs(BlockState state) {
+        return state.getBlock() instanceof StairsBlock;
     }
 
 
@@ -83,6 +91,7 @@ public abstract class MixinStairsBlock extends Block {
 
     @Unique
     private static StairShape fellter$getStairShape(BlockState state, BlockView world, BlockPos pos) {
+
         Direction direction = state.get(FACING);
         BlockState upState = world.getBlockState(pos.up());
         BlockState downState = world.getBlockState(pos.down());
@@ -139,6 +148,30 @@ public abstract class MixinStairsBlock extends Block {
         }
 
 
+        Direction direction1 = state.get(FACING);
+        BlockState blockState = world.getBlockState(pos.offset(direction1));
+        if (isStairs(blockState) && state.get(HALF) == blockState.get(HALF)) {
+            Direction direction2 = blockState.get(FACING);
+            if (direction2.getAxis() != state.get(FACING).getAxis() && isDifferentOrientation(state, world, pos, direction2.getOpposite())) {
+                if (direction2 == direction1.rotateYCounterclockwise()) {
+                    return StairShape.OUTER_LEFT;
+                }
+
+                return StairShape.OUTER_RIGHT;
+            }
+        }
+
+        BlockState blockState2 = world.getBlockState(pos.offset(direction1.getOpposite()));
+        if (isStairs(blockState2) && state.get(HALF) == blockState2.get(HALF)) {
+            Direction direction3 = blockState2.get(FACING);
+            if (direction3.getAxis() != state.get(FACING).getAxis() && isDifferentOrientation(state, world, pos, direction3)) {
+                if (direction3 == direction1.rotateYCounterclockwise()) {
+                    return StairShape.INNER_LEFT;
+                }
+
+                return StairShape.INNER_RIGHT;
+            }
+        }
 
         return StairShape.STRAIGHT;
     }
@@ -151,14 +184,8 @@ public abstract class MixinStairsBlock extends Block {
 
         if (isVerticalStairs(upState) || isVerticalStairs(downState)) {
             cir.setReturnValue(fellter$getStairShape(state, world, pos));
-        } else if (!isVerticalStairs(upState) || !isVerticalStairs(downState)) {
-            cir.setReturnValue(fellter$getStairShape(state, world, pos));
         }
     }
-
-
-
-
 
     @Unique
     private static boolean isVerticalStairs(BlockState state) {

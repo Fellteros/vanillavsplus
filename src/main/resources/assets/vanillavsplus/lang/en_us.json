@@ -170,6 +170,81 @@
 
   "block.vanillavsplus.vertical_str_warped_hyphae_slab": "Vertical Stripped Warped Hyphae Slab",
   "block.vanillavsplus.vertical_str_warped_hyphae_stairs": "Vertical Stripped Warped Hyphae Stairs",
+  
+
+  "block.vanillavsplus.vertical_stone_slab": "Vertical Stone Slab",
+  "block.vanillavsplus.vertical_stone_stairs": "Vertical Stone Stairs",
+
+  "block.vanillavsplus.vertical_cobblestone_slab": "Vertical Cobblestone Slab",
+  "block.vanillavsplus.vertical_cobblestone_stairs": "Vertical Cobblestone Stairs",
+
+  "block.vanillavsplus.vertical_mossy_cobblestone_slab": "Vertical Mossy Cobblestone Slab",
+  "block.vanillavsplus.vertical_mossy_cobblestone_stairs": "Vertical Mossy Cobblestone Stairs",
+
+  "block.vanillavsplus.vertical_smooth_stone_slab": "Vertical Smooth Stone Slab",
+  "block.vanillavsplus.vertical_smooth_stone_stairs": "Vertical Smooth Stone Stairs",
+
+  "block.vanillavsplus.vertical_stone_bricks_slab": "Vertical Stone Brick Slab",
+  "block.vanillavsplus.vertical_stone_bricks_stairs": "Vertical Stone Brick Stairs",
+
+  "block.vanillavsplus.vertical_cracked_stone_bricks_slab": "Vertical Cracked Stone Brick Slab",
+  "block.vanillavsplus.vertical_cracked_stone_bricks_stairs": "Vertical Cracked Stone Brick Stairs",
+
+  "block.vanillavsplus.vertical_chiseled_stone_bricks_slab": "Vertical Chiseled Stone Brick Slab",
+  "block.vanillavsplus.vertical_chiseled_stone_bricks_stairs": "Vertical Chiseled Stone Brick Stairs",
+
+  "block.vanillavsplus.vertical_mossy_stone_bricks_slab": "Vertical Mossy Stone Brick Slab",
+  "block.vanillavsplus.vertical_mossy_stone_bricks_stairs": "Vertical Mossy Stone Brick Stairs",
+
+
+  "block.vanillavsplus.vertical_granite_slab": "Vertical Granite Slab",
+  "block.vanillavsplus.vertical_granite_stairs": "Vertical Granite Stairs",
+
+  "block.vanillavsplus.vertical_polished_granite_slab": "Vertical Polished Granite Slab",
+  "block.vanillavsplus.vertical_polished_granite_stairs": "Vertical Polished Granite Stairs",
+
+
+  "block.vanillavsplus.vertical_diorite_slab": "Vertical Diorite Slab",
+  "block.vanillavsplus.vertical_diorite_stairs": "Vertical Diorite Stairs",
+
+  "block.vanillavsplus.vertical_polished_diorite_slab": "Vertical Polished Diorite Slab",
+  "block.vanillavsplus.vertical_polished_diorite_stairs": "Vertical Polished Diorite Stairs",
+
+
+  "block.vanillavsplus.vertical_andesite_slab": "Vertical Andesite Slab",
+  "block.vanillavsplus.vertical_andesite_stairs": "Vertical Andesite Stairs",
+
+  "block.vanillavsplus.vertical_polished_andesite_slab": "Vertical Polished Andesite Slab",
+  "block.vanillavsplus.vertical_polished_andesite_stairs": "Vertical Polished Andesite Stairs",
+
+
+  "block.vanillavsplus.vertical_deepslate_slab": "Vertical Deepslate Slab",
+  "block.vanillavsplus.vertical_deepslate_stairs": "Vertical Deepslate Stairs",
+
+  "block.vanillavsplus.vertical_cobbled_deepslate_slab": "Vertical Cobbled Deepslate Slab",
+  "block.vanillavsplus.vertical_cobbled_deepslate_stairs": "Vertical Cobbled Deepslate Stairs",
+
+  "block.vanillavsplus.vertical_chiseled_deepslate_slab": "Vertical Chiseled Deepslate Slab",
+  "block.vanillavsplus.vertical_chiseled_deepslate_stairs": "Vertical Chiseled Deepslate Stairs",
+
+  "block.vanillavsplus.vertical_polished_deepslate_slab": "Vertical Polished Deepslate Slab",
+  "block.vanillavsplus.vertical_polished_deepslate_stairs": "Vertical Polished Deepslate Stairs",
+
+  "block.vanillavsplus.vertical_deepslate_bricks_slab": "Vertical Deepslate Brick Slab",
+  "block.vanillavsplus.vertical_deepslate_bricks_stairs": "Vertical Deepslate Brick Stairs",
+
+  "block.vanillavsplus.vertical_cracked_deepslate_bricks_slab": "Vertical Cracked Deepslate Brick Slab",
+  "block.vanillavsplus.vertical_cracked_deepslate_bricks_stairs": "Vertical Cracked Deepslate Brick Stairs",
+
+  "block.vanillavsplus.vertical_deepslate_tiles_slab": "Vertical Deepslate Tile Slab",
+  "block.vanillavsplus.vertical_deepslate_tiles_stairs": "Vertical Deepslate Tile Stairs",
+
+  "block.vanillavsplus.vertical_cracked_deepslate_tiles_slab": "Vertical Cracked Deepslate Tile Slab",
+  "block.vanillavsplus.vertical_cracked_deepslate_tiles_stairs": "Vertical Cracked Deepslate Tile Stairs",
+
+
+  "block.vanillavsplus.vertical_tuff_slab": "Vertical Tuff Slab",
+  "block.vanillavsplus.vertical_tuff_stairs": "Vertical Tuff Stairs",
 
   "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }
