@@ -4,10 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.util.ModTags;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -256,6 +254,102 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.VERTICAL_TUFF_STAIRS)
                 .add(ModBlocks.VERTICAL_TUFF_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_SLAB)
+
+                .add(ModBlocks.VERTICAL_POLISHED_TUFF_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_TUFF_SLAB)
+
+                .add(ModBlocks.VERTICAL_TUFF_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_TUFF_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_PACKED_MUD_STAIRS)
+                .add(ModBlocks.VERTICAL_PACKED_MUD_SLAB)
+
+                .add(ModBlocks.VERTICAL_MUD_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_MUD_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CUT_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_RED_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_SEA_LANTERN_STAIRS)
+                .add(ModBlocks.VERTICAL_SEA_LANTERN_SLAB)
+
+                .add(ModBlocks.VERTICAL_PRISMARINE_STAIRS)
+                .add(ModBlocks.VERTICAL_PRISMARINE_SLAB)
+
+                .add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_DARK_PRISMARINE_STAIRS)
+                .add(ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB)
+
+                .add(ModBlocks.VERTICAL_NETHERRACK_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHERRACK_SLAB)
+
+                .add(ModBlocks.VERTICAL_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHER_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_BASALT_SLAB)
+
+                .add(ModBlocks.VERTICAL_SMOOTH_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB)
+
+                .add(ModBlocks.VERTICAL_POLISHED_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BASALT_SLAB)
+
+                .add(ModBlocks.VERTICAL_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_BLACKSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB)
         
         ;
 
@@ -337,6 +431,38 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_DEEPSLATE_TILES_STAIRS)
                 .add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_STAIRS)
                 .add(ModBlocks.VERTICAL_TUFF_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_TUFF_STAIRS)
+                .add(ModBlocks.VERTICAL_TUFF_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_PACKED_MUD_STAIRS)
+                .add(ModBlocks.VERTICAL_MUD_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CUT_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_SEA_LANTERN_STAIRS)
+                .add(ModBlocks.VERTICAL_PRISMARINE_STAIRS)
+                .add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_DARK_PRISMARINE_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHERRACK_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BASALT_STAIRS)
+                .add(ModBlocks.VERTICAL_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS)
         ;
 
         getOrCreateTagBuilder(ModTags.VERTICAL_SLABS)
@@ -417,6 +543,38 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_DEEPSLATE_TILES_SLAB)
                 .add(ModBlocks.VERTICAL_CRACKED_DEEPSLATE_TILES_SLAB)
                 .add(ModBlocks.VERTICAL_TUFF_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_SLAB)
+                .add(ModBlocks.VERTICAL_POLISHED_TUFF_SLAB)
+                .add(ModBlocks.VERTICAL_TUFF_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_PACKED_MUD_SLAB)
+                .add(ModBlocks.VERTICAL_MUD_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_RED_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_SEA_LANTERN_SLAB)
+                .add(ModBlocks.VERTICAL_PRISMARINE_SLAB)
+                .add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB)
+                .add(ModBlocks.VERTICAL_NETHERRACK_SLAB)
+                .add(ModBlocks.VERTICAL_NETHER_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_BASALT_SLAB)
+                .add(ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB)
+                .add(ModBlocks.VERTICAL_POLISHED_BASALT_SLAB)
+                .add(ModBlocks.VERTICAL_BLACKSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB)
         ;
     }
 }

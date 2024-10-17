@@ -187,6 +187,77 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.VERTICAL_TUFF_SLAB);
                         entries.add(ModBlocks.VERTICAL_TUFF_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_TUFF_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_TUFF_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_TUFF_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_TUFF_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PACKED_MUD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PACKED_MUD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MUD_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MUD_BRICKS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CUT_SANDSTONE_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_RED_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_SEA_LANTERN_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SEA_LANTERN_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PRISMARINE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PRISMARINE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PRISMARINE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DARK_PRISMARINE_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_NETHERRACK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHERRACK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_NETHER_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHER_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_NETHER_BRICKS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_BASALT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BASALT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_BASALT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BASALT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BASALT_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_BLACKSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLACKSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GILDED_BLACKSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS);
 
 
 

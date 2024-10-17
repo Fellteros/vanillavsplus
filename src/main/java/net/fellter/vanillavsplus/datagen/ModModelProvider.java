@@ -262,6 +262,108 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_TUFF_SLAB, Blocks.TUFF, TextureMap.all(Blocks.TUFF));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_TUFF_STAIRS, TextureMap.all(Blocks.TUFF));
 
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_TUFF_SLAB, Blocks.CHISELED_TUFF, blockAndTopForEnds(Blocks.CHISELED_TUFF));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_TUFF_STAIRS, blockAndTopForEnds(Blocks.CHISELED_TUFF));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_POLISHED_TUFF_SLAB, Blocks.POLISHED_TUFF, TextureMap.all(Blocks.POLISHED_TUFF));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_POLISHED_TUFF_STAIRS, TextureMap.all(Blocks.POLISHED_TUFF));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_TUFF_BRICKS_SLAB, Blocks.TUFF_BRICKS, TextureMap.all(Blocks.TUFF_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_TUFF_BRICKS_STAIRS, TextureMap.all(Blocks.TUFF_BRICKS));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB, Blocks.CHISELED_TUFF_BRICKS, blockAndTopForEnds(Blocks.CHISELED_TUFF_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_STAIRS, blockAndTopForEnds(Blocks.CHISELED_TUFF_BRICKS));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BRICKS_SLAB, Blocks.BRICKS, TextureMap.all(Blocks.BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BRICKS_STAIRS, TextureMap.all(Blocks.BRICKS));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PACKED_MUD_SLAB, Blocks.PACKED_MUD, TextureMap.all(Blocks.PACKED_MUD));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PACKED_MUD_STAIRS, TextureMap.all(Blocks.PACKED_MUD));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MUD_BRICKS_SLAB, Blocks.MUD_BRICKS, TextureMap.all(Blocks.MUD_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MUD_BRICKS_STAIRS, TextureMap.all(Blocks.MUD_BRICKS));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SANDSTONE_SLAB, Blocks.SANDSTONE, blockTB(Blocks.SANDSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SANDSTONE_STAIRS, blockTB(Blocks.SANDSTONE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB, Blocks.CHISELED_SANDSTONE, custom(Blocks.CHISELED_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, "", "_top", "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_SANDSTONE_STAIRS, custom(Blocks.CHISELED_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, "", "_top", "_top"));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB, Blocks.SMOOTH_SANDSTONE, allWithSuffix(Blocks.SANDSTONE, "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SMOOTH_SANDSTONE_STAIRS, allWithSuffix(Blocks.SANDSTONE, "_top"));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB, Blocks.CUT_SANDSTONE, custom(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, "", "_top", "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CUT_SANDSTONE_STAIRS, custom(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE, "", "_top", "_top"));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_SANDSTONE_SLAB, Blocks.RED_SANDSTONE, blockTB(Blocks.RED_SANDSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_SANDSTONE_STAIRS, blockTB(Blocks.RED_SANDSTONE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB, Blocks.CHISELED_RED_SANDSTONE, custom(Blocks.CHISELED_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE, "", "_top", "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_STAIRS, custom(Blocks.CHISELED_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE, "", "_top", "_top"));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB, Blocks.SMOOTH_RED_SANDSTONE, allWithSuffix(Blocks.RED_SANDSTONE, "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS, allWithSuffix(Blocks.RED_SANDSTONE, "_top"));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB, Blocks.CUT_RED_SANDSTONE, custom(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE, "", "_top", "_top"));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CUT_RED_SANDSTONE_STAIRS, custom(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE, "", "_top", "_top"));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SEA_LANTERN_SLAB, Blocks.SEA_LANTERN, TextureMap.all(Blocks.SEA_LANTERN));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SEA_LANTERN_STAIRS, TextureMap.all(Blocks.SEA_LANTERN));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PRISMARINE_SLAB, Blocks.PRISMARINE, TextureMap.all(Blocks.PRISMARINE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PRISMARINE_STAIRS, TextureMap.all(Blocks.PRISMARINE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB, Blocks.PRISMARINE_BRICKS, TextureMap.all(Blocks.PRISMARINE_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PRISMARINE_BRICKS_STAIRS, TextureMap.all(Blocks.PRISMARINE_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB, Blocks.DARK_PRISMARINE, TextureMap.all(Blocks.DARK_PRISMARINE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_DARK_PRISMARINE_STAIRS, TextureMap.all(Blocks.DARK_PRISMARINE));
+        
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_NETHERRACK_SLAB, Blocks.NETHERRACK, TextureMap.all(Blocks.NETHERRACK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_NETHERRACK_STAIRS, TextureMap.all(Blocks.NETHERRACK));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_NETHER_BRICKS_SLAB, Blocks.NETHER_BRICKS, TextureMap.all(Blocks.NETHER_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_NETHER_BRICKS_STAIRS, TextureMap.all(Blocks.NETHER_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB, Blocks.CRACKED_NETHER_BRICKS, TextureMap.all(Blocks.CRACKED_NETHER_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_STAIRS, TextureMap.all(Blocks.CRACKED_NETHER_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB, Blocks.CHISELED_NETHER_BRICKS, TextureMap.all(Blocks.CHISELED_NETHER_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_STAIRS, TextureMap.all(Blocks.CHISELED_NETHER_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB, Blocks.RED_NETHER_BRICKS, TextureMap.all(Blocks.RED_NETHER_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_NETHER_BRICKS_STAIRS, TextureMap.all(Blocks.RED_NETHER_BRICKS));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BASALT_SLAB, Blocks.BASALT, sideAndTopForEnds(Blocks.BASALT));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BASALT_STAIRS, sideAndTopForEnds(Blocks.BASALT));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB, Blocks.SMOOTH_BASALT, TextureMap.all(Blocks.SMOOTH_BASALT));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SMOOTH_BASALT_STAIRS, TextureMap.all(Blocks.SMOOTH_BASALT));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_POLISHED_BASALT_SLAB, Blocks.POLISHED_BASALT, sideAndTopForEnds(Blocks.POLISHED_BASALT));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_POLISHED_BASALT_STAIRS, sideAndTopForEnds(Blocks.POLISHED_BASALT));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLACKSTONE_SLAB, Blocks.BLACKSTONE, TextureMap.all(Blocks.BLACKSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLACKSTONE_STAIRS, TextureMap.all(Blocks.BLACKSTONE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB, Blocks.GILDED_BLACKSTONE, TextureMap.all(Blocks.GILDED_BLACKSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GILDED_BLACKSTONE_STAIRS, TextureMap.all(Blocks.GILDED_BLACKSTONE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB, Blocks.CHISELED_POLISHED_BLACKSTONE, TextureMap.all(Blocks.CHISELED_POLISHED_BLACKSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS, TextureMap.all(Blocks.CHISELED_POLISHED_BLACKSTONE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB, Blocks.POLISHED_BLACKSTONE, TextureMap.all(Blocks.POLISHED_BLACKSTONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS, TextureMap.all(Blocks.POLISHED_BLACKSTONE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB, Blocks.POLISHED_BLACKSTONE_BRICKS, TextureMap.all(Blocks.POLISHED_BLACKSTONE_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS, TextureMap.all(Blocks.POLISHED_BLACKSTONE_BRICKS));
 
     }
 
@@ -277,10 +379,37 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_top"));
     }
 
+
+    public static TextureMap sideAndTopForEnds(Block block) {
+        return new TextureMap()
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_top"));
+    }
+
     public static TextureMap blockSTB(Block block) {
         return new TextureMap()
                 .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
                 .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"));
+    }
+
+    public static TextureMap allWithSuffix(Block block, String suffix) {
+        return new TextureMap()
+                .put(TextureKey.ALL, TextureMap.getSubId(block, suffix));
+    }
+
+    public static TextureMap blockTB(Block block) {
+        return new TextureMap()
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
+                .put(TextureKey.SIDE, TextureMap.getId(block))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"));
+    }
+
+    public static TextureMap custom(Block sideBlock, Block topBlock, Block bottomBlock, String sideSuffix, String topSuffix, String bottomSuffix) {
+        return new TextureMap()
+                .put(TextureKey.SIDE, TextureMap.getSubId(sideBlock, sideSuffix))
+                .put(TextureKey.TOP, TextureMap.getSubId(topBlock, topSuffix))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(bottomBlock, bottomSuffix));
     }
 }

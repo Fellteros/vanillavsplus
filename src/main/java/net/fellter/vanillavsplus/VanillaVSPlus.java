@@ -2,6 +2,7 @@ package net.fellter.vanillavsplus;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItemGroups;
 import net.fellter.vanillavsplus.item.ModItems;
@@ -20,5 +21,6 @@ public class VanillaVSPlus implements ModInitializer {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
 		VVSPStrippableRegistry.registerStrippableBlocks();
+
 	}
 }

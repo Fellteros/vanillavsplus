@@ -243,6 +243,77 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.VERTICAL_TUFF_SLAB, vertSlabDrops(ModBlocks.VERTICAL_TUFF_SLAB));
         addDrop(ModBlocks.VERTICAL_TUFF_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_TUFF_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_TUFF_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_TUFF_STAIRS);
+        addDrop(ModBlocks.VERTICAL_POLISHED_TUFF_SLAB, vertSlabDrops(ModBlocks.VERTICAL_POLISHED_TUFF_SLAB));
+        addDrop(ModBlocks.VERTICAL_POLISHED_TUFF_STAIRS);
+        addDrop(ModBlocks.VERTICAL_TUFF_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_TUFF_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_TUFF_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_TUFF_BRICKS_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_PACKED_MUD_SLAB, vertSlabDrops(ModBlocks.VERTICAL_PACKED_MUD_SLAB));
+        addDrop(ModBlocks.VERTICAL_PACKED_MUD_STAIRS);
+        addDrop(ModBlocks.VERTICAL_MUD_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_MUD_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_MUD_BRICKS_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_SMOOTH_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CUT_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_CUT_SANDSTONE_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_RED_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_RED_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_RED_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_RED_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_CUT_RED_SANDSTONE_STAIRS);
+        
+        addDrop(ModBlocks.VERTICAL_SEA_LANTERN_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SEA_LANTERN_SLAB));
+        addDrop(ModBlocks.VERTICAL_SEA_LANTERN_STAIRS);
+        addDrop(ModBlocks.VERTICAL_PRISMARINE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_PRISMARINE_SLAB));
+        addDrop(ModBlocks.VERTICAL_PRISMARINE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_PRISMARINE_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_PRISMARINE_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_DARK_PRISMARINE_SLAB));
+        addDrop(ModBlocks.VERTICAL_DARK_PRISMARINE_STAIRS);
+        
+        addDrop(ModBlocks.VERTICAL_NETHERRACK_SLAB, vertSlabDrops(ModBlocks.VERTICAL_NETHERRACK_SLAB));
+        addDrop(ModBlocks.VERTICAL_NETHERRACK_STAIRS);
+        addDrop(ModBlocks.VERTICAL_NETHER_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_NETHER_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_NETHER_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_CRACKED_NETHER_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_NETHER_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_RED_NETHER_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_RED_NETHER_BRICKS_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_BASALT_SLAB, vertSlabDrops(ModBlocks.VERTICAL_BASALT_SLAB));
+        addDrop(ModBlocks.VERTICAL_BASALT_STAIRS);
+        addDrop(ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SMOOTH_BASALT_SLAB));
+        addDrop(ModBlocks.VERTICAL_SMOOTH_BASALT_STAIRS);
+        addDrop(ModBlocks.VERTICAL_POLISHED_BASALT_SLAB, vertSlabDrops(ModBlocks.VERTICAL_POLISHED_BASALT_SLAB));
+        addDrop(ModBlocks.VERTICAL_POLISHED_BASALT_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_BLACKSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_BLACKSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_BLACKSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_GILDED_BLACKSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_GILDED_BLACKSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS);
 
     }
 

@@ -3,9 +3,9 @@
 	"id": "vanillavsplus",
 	"version": "${version}",
 	"name": "vanillavsplus",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Mod adding vertical slabs and stairs to Minecraft",
 	"authors": [
-		"Me!"
+		"Fellter"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
           "net.fellter.vanillavsplus.VanillaVSPlus"
+		],
+		"client": [
+			"net.fellter.vanillablocksplus.VanillaBlocksPlusClient"
 		],
 		"fabric-datagen": [
 			"net.fellter.vanillavsplus.VanillaVSPlusDataGenerator"

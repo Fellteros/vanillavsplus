@@ -11,8 +11,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.annotation.FieldsAreNonnullByDefault;
-import net.minecraft.util.annotation.FieldsAreNonnullByDefault2;
 
 public class ModBlocks {
 
@@ -349,11 +347,145 @@ public class ModBlocks {
             new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.TUFF)));
     public static final Block VERTICAL_TUFF_STAIRS = registerBlock("vertical_tuff_stairs",
             new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.TUFF)));
+    public static final Block VERTICAL_CHISELED_TUFF_SLAB = registerBlock("vertical_chiseled_tuff_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_TUFF)));
+    public static final Block VERTICAL_CHISELED_TUFF_STAIRS = registerBlock("vertical_chiseled_tuff_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_TUFF)));
+    public static final Block VERTICAL_POLISHED_TUFF_SLAB = registerBlock("vertical_polished_tuff_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_TUFF)));
+    public static final Block VERTICAL_POLISHED_TUFF_STAIRS = registerBlock("vertical_polished_tuff_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_TUFF)));
+    public static final Block VERTICAL_TUFF_BRICKS_SLAB = registerBlock("vertical_tuff_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.TUFF_BRICKS)));
+    public static final Block VERTICAL_TUFF_BRICKS_STAIRS = registerBlock("vertical_tuff_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.TUFF_BRICKS)));
+    public static final Block VERTICAL_CHISELED_TUFF_BRICKS_SLAB = registerBlock("vertical_chiseled_tuff_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_TUFF_BRICKS)));
+    public static final Block VERTICAL_CHISELED_TUFF_BRICKS_STAIRS = registerBlock("vertical_chiseled_tuff_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_TUFF_BRICKS)));
+    
+    public static final Block VERTICAL_BRICKS_SLAB = registerBlock("vertical_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.BRICKS)));
+    public static final Block VERTICAL_BRICKS_STAIRS = registerBlock("vertical_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.BRICKS)));
+    public static final Block VERTICAL_PACKED_MUD_SLAB = registerBlock("vertical_packed_mud_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+    public static final Block VERTICAL_PACKED_MUD_STAIRS = registerBlock("vertical_packed_mud_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+    public static final Block VERTICAL_MUD_BRICKS_SLAB = registerBlock("vertical_mud_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block VERTICAL_MUD_BRICKS_STAIRS = registerBlock("vertical_mud_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
+    public static final Block VERTICAL_SANDSTONE_SLAB = registerBlock("vertical_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SANDSTONE)));
+    public static final Block VERTICAL_SANDSTONE_STAIRS = registerBlock("vertical_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.SANDSTONE)));
+    public static final Block VERTICAL_CHISELED_SANDSTONE_SLAB = registerBlock("vertical_chiseled_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_SANDSTONE)));
+    public static final Block VERTICAL_CHISELED_SANDSTONE_STAIRS = registerBlock("vertical_chiseled_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_SANDSTONE)));
+    public static final Block VERTICAL_SMOOTH_SANDSTONE_SLAB = registerBlock("vertical_smooth_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_SANDSTONE)));
+    public static final Block VERTICAL_SMOOTH_SANDSTONE_STAIRS = registerBlock("vertical_smooth_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_SANDSTONE)));
+    public static final Block VERTICAL_CUT_SANDSTONE_SLAB = registerBlock("vertical_cut_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CUT_SANDSTONE)));
+    public static final Block VERTICAL_CUT_SANDSTONE_STAIRS = registerBlock("vertical_cut_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CUT_SANDSTONE)));
 
+    public static final Block VERTICAL_RED_SANDSTONE_SLAB = registerBlock("vertical_red_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.RED_SANDSTONE)));
+    public static final Block VERTICAL_RED_SANDSTONE_STAIRS = registerBlock("vertical_red_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.RED_SANDSTONE)));
+    public static final Block VERTICAL_CHISELED_RED_SANDSTONE_SLAB = registerBlock("vertical_chiseled_red_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_RED_SANDSTONE)));
+    public static final Block VERTICAL_CHISELED_RED_SANDSTONE_STAIRS = registerBlock("vertical_chiseled_red_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_RED_SANDSTONE)));
+    public static final Block VERTICAL_SMOOTH_RED_SANDSTONE_SLAB = registerBlock("vertical_smooth_red_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_RED_SANDSTONE)));
+    public static final Block VERTICAL_SMOOTH_RED_SANDSTONE_STAIRS = registerBlock("vertical_smooth_red_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_RED_SANDSTONE)));
+    public static final Block VERTICAL_CUT_RED_SANDSTONE_SLAB = registerBlock("vertical_cut_red_sandstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CUT_RED_SANDSTONE)));
+    public static final Block VERTICAL_CUT_RED_SANDSTONE_STAIRS = registerBlock("vertical_cut_red_sandstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CUT_RED_SANDSTONE)));
 
+    public static final Block VERTICAL_SEA_LANTERN_SLAB = registerBlock("vertical_sea_lantern_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SEA_LANTERN)));
+    public static final Block VERTICAL_SEA_LANTERN_STAIRS = registerBlock("vertical_sea_lantern_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.SEA_LANTERN)));
+    public static final Block VERTICAL_PRISMARINE_SLAB = registerBlock("vertical_prismarine_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.PRISMARINE)));
+    public static final Block VERTICAL_PRISMARINE_STAIRS = registerBlock("vertical_prismarine_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.PRISMARINE)));
+    public static final Block VERTICAL_PRISMARINE_BRICKS_SLAB = registerBlock("vertical_prismarine_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.PRISMARINE_BRICKS)));
+    public static final Block VERTICAL_PRISMARINE_BRICKS_STAIRS = registerBlock("vertical_prismarine_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.PRISMARINE_BRICKS)));
+    public static final Block VERTICAL_DARK_PRISMARINE_SLAB = registerBlock("vertical_dark_prismarine_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.DARK_PRISMARINE)));
+    public static final Block VERTICAL_DARK_PRISMARINE_STAIRS = registerBlock("vertical_dark_prismarine_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.DARK_PRISMARINE)));
+    
+    public static final Block VERTICAL_NETHERRACK_SLAB = registerBlock("vertical_netherrack_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
+    public static final Block VERTICAL_NETHERRACK_STAIRS = registerBlock("vertical_netherrack_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
+    public static final Block VERTICAL_NETHER_BRICKS_SLAB = registerBlock("vertical_nether_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.NETHER_BRICKS)));
+    public static final Block VERTICAL_NETHER_BRICKS_STAIRS = registerBlock("vertical_nether_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.NETHER_BRICKS)));
+    public static final Block VERTICAL_CRACKED_NETHER_BRICKS_SLAB = registerBlock("vertical_cracked_nether_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_NETHER_BRICKS)));
+    public static final Block VERTICAL_CRACKED_NETHER_BRICKS_STAIRS = registerBlock("vertical_cracked_nether_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_NETHER_BRICKS)));
+    public static final Block VERTICAL_CHISELED_NETHER_BRICKS_SLAB = registerBlock("vertical_chiseled_nether_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_NETHER_BRICKS)));
+    public static final Block VERTICAL_CHISELED_NETHER_BRICKS_STAIRS = registerBlock("vertical_chiseled_nether_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_NETHER_BRICKS)));
+    public static final Block VERTICAL_RED_NETHER_BRICKS_SLAB = registerBlock("vertical_red_nether_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.RED_NETHER_BRICKS)));
+    public static final Block VERTICAL_RED_NETHER_BRICKS_STAIRS = registerBlock("vertical_red_nether_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.RED_NETHER_BRICKS)));
 
+    public static final Block VERTICAL_BASALT_SLAB = registerBlock("vertical_basalt_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.BASALT)));
+    public static final Block VERTICAL_BASALT_STAIRS = registerBlock("vertical_basalt_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.BASALT)));
+    public static final Block VERTICAL_SMOOTH_BASALT_SLAB = registerBlock("vertical_smooth_basalt_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_BASALT)));
+    public static final Block VERTICAL_SMOOTH_BASALT_STAIRS = registerBlock("vertical_smooth_basalt_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_BASALT)));
+    public static final Block VERTICAL_POLISHED_BASALT_SLAB = registerBlock("vertical_polished_basalt_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BASALT)));
+    public static final Block VERTICAL_POLISHED_BASALT_STAIRS = registerBlock("vertical_polished_basalt_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BASALT)));
+    
+    public static final Block VERTICAL_BLACKSTONE_SLAB = registerBlock("vertical_blackstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.BLACKSTONE)));
+    public static final Block VERTICAL_BLACKSTONE_STAIRS = registerBlock("vertical_blackstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.BLACKSTONE)));
+    public static final Block VERTICAL_GILDED_BLACKSTONE_SLAB = registerBlock("vertical_gilded_blackstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.GILDED_BLACKSTONE)));
+    public static final Block VERTICAL_GILDED_BLACKSTONE_STAIRS = registerBlock("vertical_gilded_blackstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.GILDED_BLACKSTONE)));
+    public static final Block VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB = registerBlock("vertical_chiseled_polished_blackstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE)));
+    public static final Block VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS = registerBlock("vertical_chiseled_polished_blackstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE)));
+    public static final Block VERTICAL_POLISHED_BLACKSTONE_SLAB = registerBlock("vertical_polished_blackstone_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE)));
+    public static final Block VERTICAL_POLISHED_BLACKSTONE_STAIRS = registerBlock("vertical_polished_blackstone_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE)));
+    public static final Block VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB = registerBlock("vertical_polished_blackstone_bricks_slab",
+            new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE_BRICKS)));
+    public static final Block VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS = registerBlock("vertical_polished_blackstone_bricks_stairs",
+            new VerticalStairsBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE_BRICKS)));
 
+    //FabricLoader.getInstance()
+
+    
 
 
     private static Block registerBlock(String name, Block block) {
