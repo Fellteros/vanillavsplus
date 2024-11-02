@@ -364,6 +364,19 @@ public class ModModelProvider extends FabricModelProvider {
         
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB, Blocks.POLISHED_BLACKSTONE_BRICKS, TextureMap.all(Blocks.POLISHED_BLACKSTONE_BRICKS));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS, TextureMap.all(Blocks.POLISHED_BLACKSTONE_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_SLAB, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, TextureMap.all(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_STAIRS, TextureMap.all(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS));
+        
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_END_STONE_SLAB, Blocks.END_STONE, TextureMap.all(Blocks.END_STONE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_END_STONE_STAIRS, TextureMap.all(Blocks.END_STONE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_END_STONE_BRICKS_SLAB, Blocks.END_STONE_BRICKS, TextureMap.all(Blocks.END_STONE_BRICKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS, TextureMap.all(Blocks.END_STONE_BRICKS));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PURPUR_SLAB, Blocks.PURPUR_BLOCK, TextureMap.all(Blocks.PURPUR_BLOCK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PURPUR_STAIRS, TextureMap.all(Blocks.PURPUR_BLOCK));
 
     }
 
@@ -385,13 +398,6 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
                 .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_top"));
-    }
-
-    public static TextureMap blockSTB(Block block) {
-        return new TextureMap()
-                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
-                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
-                .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"));
     }
 
     public static TextureMap allWithSuffix(Block block, String suffix) {

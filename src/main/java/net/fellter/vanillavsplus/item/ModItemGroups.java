@@ -258,6 +258,15 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS);
                         entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB);
                         entries.add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_END_STONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_END_STONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_END_STONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PURPUR_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PURPUR_STAIRS);
 
 
 

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "minecraft:cracked_stone_bricks"
-    }
+    "#": "minecraft:cracked_stone_bricks"
   },
   "pattern": [
     "###",

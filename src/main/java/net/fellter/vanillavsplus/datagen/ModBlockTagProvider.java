@@ -350,6 +350,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS)
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_END_STONE_STAIRS)
+                .add(ModBlocks.VERTICAL_END_STONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_END_STONE_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_PURPUR_STAIRS)
+                .add(ModBlocks.VERTICAL_PURPUR_SLAB)
         
         ;
 
@@ -463,6 +475,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_STAIRS)
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_STAIRS)
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_END_STONE_STAIRS)
+                .add(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_PURPUR_STAIRS)
         ;
 
         getOrCreateTagBuilder(ModTags.VERTICAL_SLABS)
@@ -575,6 +591,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_CHISELED_POLISHED_BLACKSTONE_SLAB)
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_SLAB)
                 .add(ModBlocks.VERTICAL_POLISHED_BLACKSTONE_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_CRACKED_POLISHED_BLACKSTONE_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_END_STONE_SLAB)
+                .add(ModBlocks.VERTICAL_END_STONE_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_PURPUR_SLAB)
         ;
     }
 }

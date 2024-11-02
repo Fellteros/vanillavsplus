@@ -106,6 +106,12 @@
     "vanillavsplus:vertical_polished_basalt_stairs",
     "vanillavsplus:vertical_blackstone_stairs",
     "vanillavsplus:vertical_gilded_blackstone_stairs",
-    "vanillavsplus:vertical_chiseled_polished_blackstone_stairs"
+    "vanillavsplus:vertical_chiseled_polished_blackstone_stairs",
+    "vanillavsplus:vertical_polished_blackstone_stairs",
+    "vanillavsplus:vertical_polished_blackstone_bricks_stairs",
+    "vanillavsplus:vertical_cracked_polished_blackstone_bricks_stairs",
+    "vanillavsplus:vertical_end_stone_stairs",
+    "vanillavsplus:vertical_end_stone_bricks_stairs",
+    "vanillavsplus:vertical_purpur_stairs"
   ]
 }

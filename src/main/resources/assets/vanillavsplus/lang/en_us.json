@@ -346,8 +346,21 @@
   "block.vanillavsplus.vertical_polished_blackstone_slab": "Vertical Polished Blackstone Slab",
   "block.vanillavsplus.vertical_polished_blackstone_stairs": "Vertical Polished Blackstone Stairs",
   
-  "block.vanillavsplus.vertical_polished_blackstone_bricks_slab": "Vertical Polished Blackstone_Bricks Slab",
-  "block.vanillavsplus.vertical_polished_blackstone_bricks_stairs": "Vertical Polished Blackstone_Bricks Stairs",
+  "block.vanillavsplus.vertical_polished_blackstone_bricks_slab": "Vertical Polished Blackstone Bricks Slab",
+  "block.vanillavsplus.vertical_polished_blackstone_bricks_stairs": "Vertical Polished Blackstone Bricks Stairs",
+  
+  "block.vanillavsplus.vertical_cracked_polished_blackstone_bricks_slab": "Vertical Cracked Polished Blackstone Bricks Slab",
+  "block.vanillavsplus.vertical_cracked_polished_blackstone_bricks_stairs": "Vertical Cracked Polished Blackstone Bricks Stairs",
+  
+  
+  "block.vanillavsplus.vertical_end_stone_slab": "Vertical End Stone Slab",
+  "block.vanillavsplus.vertical_end_stone_stairs": "Vertical End Stone Stairs",
+  
+  "block.vanillavsplus.vertical_end_stone_bricks_slab": "Vertical End Stone Brick Slab",
+  "block.vanillavsplus.vertical_end_stone_bricks_stairs": "Vertical End Stone Brick Stairs",
+  
+  "block.vanillavsplus.vertical_purpur_slab": "Vertical Purpur Slab",
+  "block.vanillavsplus.vertical_purpur_stairs": "Vertical Purpur Stairs",
 
   "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }
