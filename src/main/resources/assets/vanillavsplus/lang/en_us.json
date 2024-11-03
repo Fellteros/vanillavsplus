@@ -361,6 +361,106 @@
   
   "block.vanillavsplus.vertical_purpur_slab": "Vertical Purpur Slab",
   "block.vanillavsplus.vertical_purpur_stairs": "Vertical Purpur Stairs",
+  
+  "block.vanillavsplus.vertical_purpur_pillar_slab": "Vertical Purpur Pillar Slab",
+  "block.vanillavsplus.vertical_purpur_pillar_stairs": "Vertical Purpur Pillar Stairs",
+  
+  
+  "block.vanillavsplus.vertical_coal_slab": "Vertical Coal Slab",
+  "block.vanillavsplus.vertical_coal_stairs": "Vertical Coal Stairs",
+  
+  "block.vanillavsplus.vertical_iron_slab": "Vertical Iron Slab",
+  "block.vanillavsplus.vertical_iron_stairs": "Vertical Iron Stairs",
+  
+  "block.vanillavsplus.vertical_gold_slab": "Vertical Gold Slab",
+  "block.vanillavsplus.vertical_gold_stairs": "Vertical Gold Stairs",
+  
+  "block.vanillavsplus.vertical_redstone_slab": "Vertical Redstone Slab",
+  "block.vanillavsplus.vertical_redstone_stairs": "Vertical Redstone Stairs",
+  
+  "block.vanillavsplus.vertical_emerald_slab": "Vertical Emerald Slab",
+  "block.vanillavsplus.vertical_emerald_stairs": "Vertical Emerald Stairs",
+  
+  "block.vanillavsplus.vertical_lapis_slab": "Vertical Lapis Slab",
+  "block.vanillavsplus.vertical_lapis_stairs": "Vertical Lapis Stairs",
+  
+  "block.vanillavsplus.vertical_diamond_slab": "Vertical Diamond Slab",
+  "block.vanillavsplus.vertical_diamond_stairs": "Vertical Diamond Stairs",
+  
+  "block.vanillavsplus.vertical_netherite_slab": "Vertical Netherite Slab",
+  "block.vanillavsplus.vertical_netherite_stairs": "Vertical Netherite Stairs",
+
+  
+  "block.vanillavsplus.vertical_quartz_slab": "Vertical Quartz Slab",
+  "block.vanillavsplus.vertical_quartz_stairs": "Vertical Quartz Stairs",
+  
+  "block.vanillavsplus.vertical_chiseled_quartz_slab": "Vertical Chiseled Quartz Slab",
+  "block.vanillavsplus.vertical_chiseled_quartz_stairs": "Vertical Chiseled Quartz Stairs",
+  
+  "block.vanillavsplus.vertical_quartz_bricks_slab": "Vertical Quartz Brick Slab",
+  "block.vanillavsplus.vertical_quartz_bricks_stairs": "Vertical Quartz Brick Stairs",
+  
+  "block.vanillavsplus.vertical_quartz_pillar_slab": "Vertical Quartz Pillar Slab",
+  "block.vanillavsplus.vertical_quartz_pillar_stairs": "Vertical Quartz Pillar Stairs",
+  
+  "block.vanillavsplus.vertical_smooth_quartz_slab": "Vertical Smooth Quartz Slab",
+  "block.vanillavsplus.vertical_smooth_quartz_stairs": "Vertical Smooth Quartz Stairs",
+
+  
+  "block.vanillavsplus.vertical_amethyst_slab": "Vertical Amethyst Slab",
+  "block.vanillavsplus.vertical_amethyst_stairs": "Vertical Amethyst Stairs",
+
+  
+  "block.vanillavsplus.vertical_copper_slab": "Vertical Copper Slab",
+  "block.vanillavsplus.vertical_copper_stairs": "Vertical Copper Stairs",
+  
+  "block.vanillavsplus.vertical_chiseled_copper_slab": "Vertical Chiseled Copper Slab",
+  "block.vanillavsplus.vertical_chiseled_copper_stairs": "Vertical Chiseled Copper Stairs",
+  
+  "block.vanillavsplus.vertical_copper_grate_slab": "Vertical Copper Grate Slab",
+  "block.vanillavsplus.vertical_copper_grate_stairs": "Vertical Copper Grate Stairs",
+  
+  "block.vanillavsplus.vertical_cut_copper_slab": "Vertical Cut Copper Slab",
+  "block.vanillavsplus.vertical_cut_copper_stairs": "Vertical Cut Copper Stairs",
+
+  
+  "block.vanillavsplus.vertical_exposed_copper_slab": "Vertical Exposed Copper Slab",
+  "block.vanillavsplus.vertical_exposed_copper_stairs": "Vertical Exposed Copper Stairs",
+  
+  "block.vanillavsplus.vertical_exposed_chiseled_copper_slab": "Vertical Exposed Chiseled Copper Slab",
+  "block.vanillavsplus.vertical_exposed_chiseled_copper_stairs": "Vertical Exposed Chiseled Copper Stairs",
+  
+  "block.vanillavsplus.vertical_exposed_copper_grate_slab": "Vertical Exposed Copper Grate Slab",
+  "block.vanillavsplus.vertical_exposed_copper_grate_stairs": "Vertical Exposed Copper Grate Stairs",
+  
+  "block.vanillavsplus.vertical_exposed_cut_copper_slab": "Vertical Exposed Cut Copper Slab",
+  "block.vanillavsplus.vertical_exposed_cut_copper_stairs": "Vertical Exposed Cut Copper Stairs",
+
+  
+  "block.vanillavsplus.vertical_weathered_copper_slab": "Vertical Weathered Copper Slab",
+  "block.vanillavsplus.vertical_weathered_copper_stairs": "Vertical Weathered Copper Stairs",
+  
+  "block.vanillavsplus.vertical_weathered_chiseled_copper_slab": "Vertical Weathered Chiseled Copper Slab",
+  "block.vanillavsplus.vertical_weathered_chiseled_copper_stairs": "Vertical Weathered Chiseled Copper Stairs",
+  
+  "block.vanillavsplus.vertical_weathered_copper_grate_slab": "Vertical Weathered Copper Grate Slab",
+  "block.vanillavsplus.vertical_weathered_copper_grate_stairs": "Vertical Weathered Copper Grate Stairs",
+  
+  "block.vanillavsplus.vertical_weathered_cut_copper_slab": "Vertical Weathered Cut Copper Slab",
+  "block.vanillavsplus.vertical_weathered_cut_copper_stairs": "Vertical Weathered Cut Copper Stairs",
+
+  
+  "block.vanillavsplus.vertical_oxidized_copper_slab": "Vertical Oxidized Copper Slab",
+  "block.vanillavsplus.vertical_oxidized_copper_stairs": "Vertical Oxidized Copper Stairs",
+  
+  "block.vanillavsplus.vertical_oxidized_chiseled_copper_slab": "Vertical Oxidized Chiseled Copper Slab",
+  "block.vanillavsplus.vertical_oxidized_chiseled_copper_stairs": "Vertical Oxidized Chiseled Copper Stairs",
+  
+  "block.vanillavsplus.vertical_oxidized_copper_grate_slab": "Vertical Oxidized Copper Grate Slab",
+  "block.vanillavsplus.vertical_oxidized_copper_grate_stairs": "Vertical Oxidized Copper Grate Stairs",
+  
+  "block.vanillavsplus.vertical_oxidized_cut_copper_slab": "Vertical Oxidized Cut Copper Slab",
+  "block.vanillavsplus.vertical_oxidized_cut_copper_stairs": "Vertical Oxidized Cut Copper Stairs",
 
   "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }

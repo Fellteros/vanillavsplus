@@ -415,6 +415,106 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_PURPUR_SLAB, Blocks.PURPUR_BLOCK).offerTo(exporter);
                 verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_PURPUR_STAIRS, Blocks.PURPUR_BLOCK).offerTo(exporter);
 
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB, Blocks.PURPUR_PILLAR).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_PURPUR_PILLAR_STAIRS, Blocks.PURPUR_PILLAR).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_COAL_SLAB, Blocks.COAL_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_COAL_STAIRS, Blocks.COAL_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_IRON_SLAB, Blocks.IRON_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_IRON_STAIRS, Blocks.IRON_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_GOLD_SLAB, Blocks.GOLD_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_GOLD_STAIRS, Blocks.GOLD_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_REDSTONE_SLAB, Blocks.REDSTONE_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_REDSTONE_STAIRS, Blocks.REDSTONE_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_EMERALD_SLAB, Blocks.EMERALD_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_EMERALD_STAIRS, Blocks.EMERALD_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_LAPIS_SLAB, Blocks.LAPIS_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_LAPIS_STAIRS, Blocks.LAPIS_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_DIAMOND_SLAB, Blocks.DIAMOND_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_DIAMOND_STAIRS, Blocks.DIAMOND_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_NETHERITE_SLAB, Blocks.NETHERITE_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_SLAB, Blocks.QUARTZ_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_STAIRS, Blocks.QUARTZ_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB, Blocks.CHISELED_QUARTZ_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_CHISELED_QUARTZ_STAIRS, Blocks.CHISELED_QUARTZ_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB, Blocks.QUARTZ_BRICKS).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_BRICKS_STAIRS, Blocks.QUARTZ_BRICKS).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB, Blocks.QUARTZ_PILLAR).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_QUARTZ_PILLAR_STAIRS, Blocks.QUARTZ_PILLAR).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB, Blocks.SMOOTH_QUARTZ).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_SMOOTH_QUARTZ_STAIRS, Blocks.SMOOTH_QUARTZ).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_AMETHYST_SLAB, Blocks.AMETHYST_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_AMETHYST_STAIRS, Blocks.AMETHYST_BLOCK).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_COPPER_SLAB, Blocks.COPPER_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_COPPER_STAIRS, Blocks.COPPER_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB, Blocks.EXPOSED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS, Blocks.EXPOSED_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB, Blocks.WEATHERED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS, Blocks.WEATHERED_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB, Blocks.OXIDIZED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS, Blocks.OXIDIZED_COPPER).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_CHISELED_COPPER_SLAB, Blocks.CHISELED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS, Blocks.CHISELED_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB, Blocks.EXPOSED_CHISELED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS, Blocks.EXPOSED_CHISELED_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB, Blocks.WEATHERED_CHISELED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS, Blocks.WEATHERED_CHISELED_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB, Blocks.OXIDIZED_CHISELED_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS, Blocks.OXIDIZED_CHISELED_COPPER).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_COPPER_GRATE_SLAB, Blocks.COPPER_GRATE).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_COPPER_GRATE_STAIRS, Blocks.COPPER_GRATE).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB, Blocks.EXPOSED_COPPER_GRATE).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS, Blocks.EXPOSED_COPPER_GRATE).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB, Blocks.WEATHERED_COPPER_GRATE).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS, Blocks.WEATHERED_COPPER_GRATE).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB, Blocks.OXIDIZED_COPPER_GRATE).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS, Blocks.OXIDIZED_COPPER_GRATE).offerTo(exporter);
+
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_CUT_COPPER_SLAB, Blocks.CUT_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_CUT_COPPER_STAIRS, Blocks.CUT_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB, Blocks.EXPOSED_CUT_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS, Blocks.EXPOSED_CUT_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB, Blocks.WEATHERED_CUT_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS, Blocks.WEATHERED_CUT_COPPER).offerTo(exporter);
+
+                verticalSlabRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB, Blocks.OXIDIZED_CUT_COPPER).offerTo(exporter);
+                verticalStairsRecipe(itemLookup, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER).offerTo(exporter);
+
             }
         };
     }

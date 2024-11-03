@@ -2,13 +2,12 @@ package net.fellter.vanillavsplus;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItemGroups;
 import net.fellter.vanillavsplus.item.ModItems;
 import net.fellter.vanillavsplus.registry.FlammableBlocksRegistry;
 import net.fellter.vanillavsplus.registry.FuelRegistry;
-import net.fellter.vanillavsplus.registry.OxidizableBlocksRegistry;
+import net.fellter.vanillavsplus.registry.OxidizableBlockRegistry;
 import net.fellter.vanillavsplus.registry.VVSPStrippableRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +24,7 @@ public class VanillaVSPlus implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 
 		FuelRegistry.registerFuel();
-		OxidizableBlocksRegistry.registerOxidizables();
+		OxidizableBlockRegistry.registerOxidizables();
 		FlammableBlocksRegistry.registerFlammables();
 		VVSPStrippableRegistry.registerStrippableBlocks();
 

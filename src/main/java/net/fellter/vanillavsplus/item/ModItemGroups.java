@@ -267,6 +267,75 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS);
                         entries.add(ModBlocks.VERTICAL_PURPUR_SLAB);
                         entries.add(ModBlocks.VERTICAL_PURPUR_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PURPUR_PILLAR_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_COAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_IRON_SLAB);
+                        entries.add(ModBlocks.VERTICAL_IRON_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GOLD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GOLD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_REDSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_REDSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_EMERALD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EMERALD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LAPIS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LAPIS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DIAMOND_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DIAMOND_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_NETHERITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHERITE_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_SLAB);
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_QUARTZ_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_BRICKS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB);
+                        entries.add(ModBlocks.VERTICAL_QUARTZ_PILLAR_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_AMETHYST_SLAB);
+                        entries.add(ModBlocks.VERTICAL_AMETHYST_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_COPPER_GRATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CUT_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CUT_COPPER_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS);
 
 
 

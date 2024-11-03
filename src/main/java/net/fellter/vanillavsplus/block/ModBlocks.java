@@ -1,9 +1,15 @@
 package net.fellter.vanillavsplus.block;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.fellter.vanillavsplus.VanillaVSPlus;
+import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneStairsBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Oxidizable;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -274,8 +280,76 @@ public class ModBlocks {
     public static final Block VERTICAL_END_STONE_BRICKS_STAIRS = registerBlock("vertical_end_stone_bricks_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.END_STONE_BRICKS));
     public static final Block VERTICAL_PURPUR_SLAB = registerBlock("vertical_purpur_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPUR_BLOCK));
     public static final Block VERTICAL_PURPUR_STAIRS = registerBlock("vertical_purpur_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPUR_BLOCK));
+    public static final Block VERTICAL_PURPUR_PILLAR_SLAB = registerBlock("vertical_purpur_pillar_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPUR_PILLAR));
+    public static final Block VERTICAL_PURPUR_PILLAR_STAIRS = registerBlock("vertical_purpur_pillar_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPUR_PILLAR));
+    
+    public static final Block VERTICAL_COAL_SLAB = registerBlock("vertical_coal_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.COAL_BLOCK));
+    public static final Block VERTICAL_COAL_STAIRS = registerBlock("vertical_coal_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.COAL_BLOCK));
+    public static final Block VERTICAL_IRON_SLAB = registerBlock("vertical_iron_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+    public static final Block VERTICAL_IRON_STAIRS = registerBlock("vertical_iron_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+    public static final Block VERTICAL_GOLD_SLAB = registerBlock("vertical_gold_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
+    public static final Block VERTICAL_GOLD_STAIRS = registerBlock("vertical_gold_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
+    public static final Block VERTICAL_REDSTONE_SLAB = registerBlock("vertical_redstone_slab", VerticalRedstoneSlabBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_BLOCK));
+    public static final Block VERTICAL_REDSTONE_STAIRS = registerBlock("vertical_redstone_stairs", VerticalRedstoneStairsBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_BLOCK));
+    public static final Block VERTICAL_EMERALD_SLAB = registerBlock("vertical_emerald_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK));
+    public static final Block VERTICAL_EMERALD_STAIRS = registerBlock("vertical_emerald_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK));
+    public static final Block VERTICAL_LAPIS_SLAB = registerBlock("vertical_lapis_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK));
+    public static final Block VERTICAL_LAPIS_STAIRS = registerBlock("vertical_lapis_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK));
+    public static final Block VERTICAL_DIAMOND_SLAB = registerBlock("vertical_diamond_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
+    public static final Block VERTICAL_DIAMOND_STAIRS = registerBlock("vertical_diamond_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
+    public static final Block VERTICAL_NETHERITE_SLAB = registerBlock("vertical_netherite_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
+    public static final Block VERTICAL_NETHERITE_STAIRS = registerBlock("vertical_netherite_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
 
-    //FabricLoader.getInstance()
+    public static final Block VERTICAL_QUARTZ_SLAB = registerBlock("vertical_quartz_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BLOCK));
+    public static final Block VERTICAL_QUARTZ_STAIRS = registerBlock("vertical_quartz_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BLOCK));
+    public static final Block VERTICAL_CHISELED_QUARTZ_SLAB = registerBlock("vertical_chiseled_quartz_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CHISELED_QUARTZ_BLOCK));
+    public static final Block VERTICAL_CHISELED_QUARTZ_STAIRS = registerBlock("vertical_chiseled_quartz_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CHISELED_QUARTZ_BLOCK));
+    public static final Block VERTICAL_QUARTZ_BRICKS_SLAB = registerBlock("vertical_quartz_bricks_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BRICKS));
+    public static final Block VERTICAL_QUARTZ_BRICKS_STAIRS = registerBlock("vertical_quartz_bricks_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BRICKS));
+    public static final Block VERTICAL_QUARTZ_PILLAR_SLAB = registerBlock("vertical_quartz_pillar_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_PILLAR));
+    public static final Block VERTICAL_QUARTZ_PILLAR_STAIRS = registerBlock("vertical_quartz_pillar_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_PILLAR));
+    public static final Block VERTICAL_SMOOTH_QUARTZ_SLAB = registerBlock("vertical_smooth_quartz_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_QUARTZ));
+    public static final Block VERTICAL_SMOOTH_QUARTZ_STAIRS = registerBlock("vertical_smooth_quartz_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_QUARTZ));
+
+    public static final Block VERTICAL_AMETHYST_SLAB = registerBlock("vertical_amethyst_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK));
+    public static final Block VERTICAL_AMETHYST_STAIRS = registerBlock("vertical_amethyst_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK));
+
+    public static final Block VERTICAL_COPPER_SLAB = registerBlock("vertical_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK));
+    public static final Block VERTICAL_COPPER_STAIRS = registerBlock("vertical_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK));
+    public static final Block VERTICAL_EXPOSED_COPPER_SLAB = registerBlock("vertical_exposed_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER));
+    public static final Block VERTICAL_EXPOSED_COPPER_STAIRS = registerBlock("vertical_exposed_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER));
+    public static final Block VERTICAL_WEATHERED_COPPER_SLAB = registerBlock("vertical_weathered_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER));
+    public static final Block VERTICAL_WEATHERED_COPPER_STAIRS = registerBlock("vertical_weathered_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER));
+    public static final Block VERTICAL_OXIDIZED_COPPER_SLAB = registerBlock("vertical_oxidized_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER));
+    public static final Block VERTICAL_OXIDIZED_COPPER_STAIRS = registerBlock("vertical_oxidized_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER));
+
+    public static final Block VERTICAL_CHISELED_COPPER_SLAB = registerBlock("vertical_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CHISELED_COPPER));
+    public static final Block VERTICAL_CHISELED_COPPER_STAIRS = registerBlock("vertical_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CHISELED_COPPER));
+    public static final Block VERTICAL_EXPOSED_CHISELED_COPPER_SLAB = registerBlock("vertical_exposed_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CHISELED_COPPER));
+    public static final Block VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS = registerBlock("vertical_exposed_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CHISELED_COPPER));
+    public static final Block VERTICAL_WEATHERED_CHISELED_COPPER_SLAB = registerBlock("vertical_weathered_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CHISELED_COPPER));
+    public static final Block VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS = registerBlock("vertical_weathered_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CHISELED_COPPER));
+    public static final Block VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB = registerBlock("vertical_oxidized_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CHISELED_COPPER));
+    public static final Block VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS = registerBlock("vertical_oxidized_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CHISELED_COPPER));
+
+    public static final Block VERTICAL_COPPER_GRATE_SLAB = registerBlock("vertical_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_GRATE));
+    public static final Block VERTICAL_COPPER_GRATE_STAIRS = registerBlock("vertical_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_GRATE));
+    public static final Block VERTICAL_EXPOSED_COPPER_GRATE_SLAB = registerBlock("vertical_exposed_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER_GRATE));
+    public static final Block VERTICAL_EXPOSED_COPPER_GRATE_STAIRS = registerBlock("vertical_exposed_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER_GRATE));
+    public static final Block VERTICAL_WEATHERED_COPPER_GRATE_SLAB = registerBlock("vertical_weathered_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER_GRATE));
+    public static final Block VERTICAL_WEATHERED_COPPER_GRATE_STAIRS = registerBlock("vertical_weathered_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER_GRATE));
+    public static final Block VERTICAL_OXIDIZED_COPPER_GRATE_SLAB = registerBlock("vertical_oxidized_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER_GRATE));
+    public static final Block VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS = registerBlock("vertical_oxidized_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER_GRATE));
+
+    public static final Block VERTICAL_CUT_COPPER_SLAB = registerBlock("vertical_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CUT_COPPER));
+    public static final Block VERTICAL_CUT_COPPER_STAIRS = registerBlock("vertical_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CUT_COPPER));
+    public static final Block VERTICAL_EXPOSED_CUT_COPPER_SLAB = registerBlock("vertical_exposed_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CUT_COPPER));
+    public static final Block VERTICAL_EXPOSED_CUT_COPPER_STAIRS = registerBlock("vertical_exposed_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CUT_COPPER));
+    public static final Block VERTICAL_WEATHERED_CUT_COPPER_SLAB = registerBlock("vertical_weathered_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CUT_COPPER));
+    public static final Block VERTICAL_WEATHERED_CUT_COPPER_STAIRS = registerBlock("vertical_weathered_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CUT_COPPER));
+    public static final Block VERTICAL_OXIDIZED_CUT_COPPER_SLAB = registerBlock("vertical_oxidized_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CUT_COPPER));
+    public static final Block VERTICAL_OXIDIZED_CUT_COPPER_STAIRS = registerBlock("vertical_oxidized_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CUT_COPPER));
+
 
     
 

@@ -1,0 +1,5 @@
+// 1.21.3	2024-11-03T19:59:58.7110108	Vanilla+ Verticals/Tags for minecraft:block
+b5d4e5bc4e431ad0901670f7fdaa61ae071a6a55 data\minecraft\tags\block\mineable\axe.json
+b43f9d1362903c10165c970e698bc34ef3c9216a data\vanillavsplus\tags\block\vertical_slabs.json
+bafce111f1c9555fd6413e3ded6da5200ed53f33 data\vanillavsplus\tags\block\vertical_stairs.json
+cd1ee68fb06fc27773b50635d362e21cc95ced78 data\minecraft\tags\block\mineable\pickaxe.json

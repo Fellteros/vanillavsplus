@@ -12,7 +12,6 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.state.property.Properties;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -323,6 +322,75 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS);
         addDrop(ModBlocks.VERTICAL_PURPUR_SLAB, vertSlabDrops(ModBlocks.VERTICAL_PURPUR_SLAB));
         addDrop(ModBlocks.VERTICAL_PURPUR_STAIRS);
+        addDrop(ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB, vertSlabDrops(ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB));
+        addDrop(ModBlocks.VERTICAL_PURPUR_PILLAR_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_COAL_SLAB, vertSlabDrops(ModBlocks.VERTICAL_COAL_SLAB));
+        addDrop(ModBlocks.VERTICAL_COAL_STAIRS);
+        addDrop(ModBlocks.VERTICAL_IRON_SLAB, vertSlabDrops(ModBlocks.VERTICAL_IRON_SLAB));
+        addDrop(ModBlocks.VERTICAL_IRON_STAIRS);
+        addDrop(ModBlocks.VERTICAL_GOLD_SLAB, vertSlabDrops(ModBlocks.VERTICAL_GOLD_SLAB));
+        addDrop(ModBlocks.VERTICAL_GOLD_STAIRS);
+        addDrop(ModBlocks.VERTICAL_REDSTONE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_REDSTONE_SLAB));
+        addDrop(ModBlocks.VERTICAL_REDSTONE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_EMERALD_SLAB, vertSlabDrops(ModBlocks.VERTICAL_EMERALD_SLAB));
+        addDrop(ModBlocks.VERTICAL_EMERALD_STAIRS);
+        addDrop(ModBlocks.VERTICAL_LAPIS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_LAPIS_SLAB));
+        addDrop(ModBlocks.VERTICAL_LAPIS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_DIAMOND_SLAB, vertSlabDrops(ModBlocks.VERTICAL_DIAMOND_SLAB));
+        addDrop(ModBlocks.VERTICAL_DIAMOND_STAIRS);
+        addDrop(ModBlocks.VERTICAL_NETHERITE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_NETHERITE_SLAB));
+        addDrop(ModBlocks.VERTICAL_NETHERITE_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_QUARTZ_SLAB, vertSlabDrops(ModBlocks.VERTICAL_QUARTZ_SLAB));
+        addDrop(ModBlocks.VERTICAL_QUARTZ_STAIRS);
+        addDrop(ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_QUARTZ_STAIRS);
+        addDrop(ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB, vertSlabDrops(ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB));
+        addDrop(ModBlocks.VERTICAL_QUARTZ_BRICKS_STAIRS);
+        addDrop(ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB, vertSlabDrops(ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB));
+        addDrop(ModBlocks.VERTICAL_QUARTZ_PILLAR_STAIRS);
+        addDrop(ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB, vertSlabDrops(ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB));
+        addDrop(ModBlocks.VERTICAL_SMOOTH_QUARTZ_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_AMETHYST_SLAB, vertSlabDrops(ModBlocks.VERTICAL_AMETHYST_SLAB));
+        addDrop(ModBlocks.VERTICAL_AMETHYST_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_COPPER_GRATE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_COPPER_GRATE_SLAB));
+        addDrop(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB));
+        addDrop(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB));
+        addDrop(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS);
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB));
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS);
+
+        addDrop(ModBlocks.VERTICAL_CUT_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_CUT_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_CUT_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS);
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB, vertSlabDrops(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB));
+        addDrop(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS);
 
     }
 

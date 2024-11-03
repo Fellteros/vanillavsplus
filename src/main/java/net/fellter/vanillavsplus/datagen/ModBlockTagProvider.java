@@ -362,6 +362,103 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.VERTICAL_PURPUR_STAIRS)
                 .add(ModBlocks.VERTICAL_PURPUR_SLAB)
+
+                .add(ModBlocks.VERTICAL_PURPUR_PILLAR_STAIRS)
+                .add(ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB)
+
+                .add(ModBlocks.VERTICAL_COAL_STAIRS)
+                .add(ModBlocks.VERTICAL_COAL_SLAB)
+
+                .add(ModBlocks.VERTICAL_IRON_STAIRS)
+                .add(ModBlocks.VERTICAL_IRON_SLAB)
+
+                .add(ModBlocks.VERTICAL_GOLD_STAIRS)
+                .add(ModBlocks.VERTICAL_GOLD_SLAB)
+
+                .add(ModBlocks.VERTICAL_REDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_REDSTONE_SLAB)
+
+                .add(ModBlocks.VERTICAL_EMERALD_STAIRS)
+                .add(ModBlocks.VERTICAL_EMERALD_SLAB)
+
+                .add(ModBlocks.VERTICAL_LAPIS_STAIRS)
+                .add(ModBlocks.VERTICAL_LAPIS_SLAB)
+
+                .add(ModBlocks.VERTICAL_DIAMOND_STAIRS)
+                .add(ModBlocks.VERTICAL_DIAMOND_SLAB)
+
+                .add(ModBlocks.VERTICAL_NETHERITE_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHERITE_SLAB)
+
+                .add(ModBlocks.VERTICAL_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB)
+
+                .add(ModBlocks.VERTICAL_QUARTZ_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB)
+
+                .add(ModBlocks.VERTICAL_QUARTZ_PILLAR_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB)
+
+                .add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB)
+
+                .add(ModBlocks.VERTICAL_AMETHYST_STAIRS)
+                .add(ModBlocks.VERTICAL_AMETHYST_SLAB)
+                
+
+                .add(ModBlocks.VERTICAL_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB)
+                
+
+                .add(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB)
+                
+
+                .add(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_COPPER_GRATE_SLAB)
+
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB)
+
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB)
+
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB)
+                
+
+                .add(ModBlocks.VERTICAL_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_CUT_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB)
         
         ;
 
@@ -479,6 +576,41 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_END_STONE_STAIRS)
                 .add(ModBlocks.VERTICAL_END_STONE_BRICKS_STAIRS)
                 .add(ModBlocks.VERTICAL_PURPUR_STAIRS)
+                .add(ModBlocks.VERTICAL_PURPUR_PILLAR_STAIRS)
+                .add(ModBlocks.VERTICAL_COAL_STAIRS)
+                .add(ModBlocks.VERTICAL_IRON_STAIRS)
+                .add(ModBlocks.VERTICAL_GOLD_STAIRS)
+                .add(ModBlocks.VERTICAL_REDSTONE_STAIRS)
+                .add(ModBlocks.VERTICAL_EMERALD_STAIRS)
+                .add(ModBlocks.VERTICAL_LAPIS_STAIRS)
+                .add(ModBlocks.VERTICAL_DIAMOND_STAIRS)
+                .add(ModBlocks.VERTICAL_NETHERITE_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_CHISELED_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_BRICKS_STAIRS)
+                .add(ModBlocks.VERTICAL_QUARTZ_PILLAR_STAIRS)
+                .add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_STAIRS)
+                .add(ModBlocks.VERTICAL_AMETHYST_STAIRS)
+                
+                .add(ModBlocks.VERTICAL_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS)
+                
+                .add(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS)
+                
+                .add(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS)
+                
+                .add(ModBlocks.VERTICAL_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS)
         ;
 
         getOrCreateTagBuilder(ModTags.VERTICAL_SLABS)
@@ -595,6 +727,41 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERTICAL_END_STONE_SLAB)
                 .add(ModBlocks.VERTICAL_END_STONE_BRICKS_SLAB)
                 .add(ModBlocks.VERTICAL_PURPUR_SLAB)
+                .add(ModBlocks.VERTICAL_PURPUR_PILLAR_SLAB)
+                .add(ModBlocks.VERTICAL_COAL_SLAB)
+                .add(ModBlocks.VERTICAL_IRON_SLAB)
+                .add(ModBlocks.VERTICAL_GOLD_SLAB)
+                .add(ModBlocks.VERTICAL_REDSTONE_SLAB)
+                .add(ModBlocks.VERTICAL_EMERALD_SLAB)
+                .add(ModBlocks.VERTICAL_LAPIS_SLAB)
+                .add(ModBlocks.VERTICAL_DIAMOND_SLAB)
+                .add(ModBlocks.VERTICAL_NETHERITE_SLAB)
+                .add(ModBlocks.VERTICAL_QUARTZ_SLAB)
+                .add(ModBlocks.VERTICAL_CHISELED_QUARTZ_SLAB)
+                .add(ModBlocks.VERTICAL_QUARTZ_BRICKS_SLAB)
+                .add(ModBlocks.VERTICAL_QUARTZ_PILLAR_SLAB)
+                .add(ModBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB)
+                .add(ModBlocks.VERTICAL_AMETHYST_SLAB)
+
+                .add(ModBlocks.VERTICAL_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB)
+
+                .add(ModBlocks.VERTICAL_COPPER_GRATE_SLAB)
+                .add(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB)
+                .add(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB)
+                .add(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB)
+
+                .add(ModBlocks.VERTICAL_CUT_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB)
+                .add(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB)
         ;
     }
 }
