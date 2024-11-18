@@ -478,6 +478,205 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB, Blocks.OXIDIZED_CUT_COPPER, TextureMap.all(Blocks.OXIDIZED_CUT_COPPER));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS, TextureMap.all(Blocks.OXIDIZED_CUT_COPPER));
 
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_COPPER_SLAB, Blocks.COPPER_BLOCK, TextureMap.all(Blocks.COPPER_BLOCK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_COPPER_STAIRS, TextureMap.all(Blocks.COPPER_BLOCK));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_SLAB, Blocks.EXPOSED_COPPER, TextureMap.all(Blocks.EXPOSED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_STAIRS, TextureMap.all(Blocks.EXPOSED_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_SLAB, Blocks.WEATHERED_COPPER, TextureMap.all(Blocks.WEATHERED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_STAIRS, TextureMap.all(Blocks.WEATHERED_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_SLAB, Blocks.OXIDIZED_COPPER, TextureMap.all(Blocks.OXIDIZED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_STAIRS, TextureMap.all(Blocks.OXIDIZED_COPPER));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_CHISELED_COPPER_SLAB, Blocks.CHISELED_COPPER, TextureMap.all(Blocks.CHISELED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_CHISELED_COPPER_STAIRS, TextureMap.all(Blocks.CHISELED_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_SLAB, Blocks.EXPOSED_CHISELED_COPPER, TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_STAIRS, TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_SLAB, Blocks.WEATHERED_CHISELED_COPPER, TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_STAIRS, TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_SLAB, Blocks.OXIDIZED_CHISELED_COPPER, TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_STAIRS, TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_COPPER_GRATE_SLAB, Blocks.COPPER_GRATE, TextureMap.all(Blocks.COPPER_GRATE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_COPPER_GRATE_STAIRS, TextureMap.all(Blocks.COPPER_GRATE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB, Blocks.EXPOSED_COPPER_GRATE, TextureMap.all(Blocks.EXPOSED_COPPER_GRATE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS, TextureMap.all(Blocks.EXPOSED_COPPER_GRATE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB, Blocks.WEATHERED_COPPER_GRATE, TextureMap.all(Blocks.WEATHERED_COPPER_GRATE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS, TextureMap.all(Blocks.WEATHERED_COPPER_GRATE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB, Blocks.OXIDIZED_COPPER_GRATE, TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS, TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_CUT_COPPER_SLAB, Blocks.CUT_COPPER, TextureMap.all(Blocks.CUT_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_CUT_COPPER_STAIRS, TextureMap.all(Blocks.CUT_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB, Blocks.EXPOSED_CUT_COPPER, TextureMap.all(Blocks.EXPOSED_CUT_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_EXPOSED_CUT_COPPER_STAIRS, TextureMap.all(Blocks.EXPOSED_CUT_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB, Blocks.WEATHERED_CUT_COPPER, TextureMap.all(Blocks.WEATHERED_CUT_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_WEATHERED_CUT_COPPER_STAIRS, TextureMap.all(Blocks.WEATHERED_CUT_COPPER));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB, Blocks.OXIDIZED_CUT_COPPER, TextureMap.all(Blocks.OXIDIZED_CUT_COPPER));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WAXED_OXIDIZED_CUT_COPPER_STAIRS, TextureMap.all(Blocks.OXIDIZED_CUT_COPPER));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WHITE_WOOL_SLAB, Blocks.WHITE_WOOL, TextureMap.all(Blocks.WHITE_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WHITE_WOOL_STAIRS, TextureMap.all(Blocks.WHITE_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_WOOL_SLAB, Blocks.LIGHT_GRAY_WOOL, TextureMap.all(Blocks.LIGHT_GRAY_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_WOOL_STAIRS, TextureMap.all(Blocks.LIGHT_GRAY_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GRAY_WOOL_SLAB, Blocks.GRAY_WOOL, TextureMap.all(Blocks.GRAY_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GRAY_WOOL_STAIRS, TextureMap.all(Blocks.GRAY_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLACK_WOOL_SLAB, Blocks.BLACK_WOOL, TextureMap.all(Blocks.BLACK_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLACK_WOOL_STAIRS, TextureMap.all(Blocks.BLACK_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BROWN_WOOL_SLAB, Blocks.BROWN_WOOL, TextureMap.all(Blocks.BROWN_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BROWN_WOOL_STAIRS, TextureMap.all(Blocks.BROWN_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_WOOL_SLAB, Blocks.RED_WOOL, TextureMap.all(Blocks.RED_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_WOOL_STAIRS, TextureMap.all(Blocks.RED_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_ORANGE_WOOL_SLAB, Blocks.ORANGE_WOOL, TextureMap.all(Blocks.ORANGE_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_ORANGE_WOOL_STAIRS, TextureMap.all(Blocks.ORANGE_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_YELLOW_WOOL_SLAB, Blocks.YELLOW_WOOL, TextureMap.all(Blocks.YELLOW_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_YELLOW_WOOL_STAIRS, TextureMap.all(Blocks.YELLOW_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIME_WOOL_SLAB, Blocks.LIME_WOOL, TextureMap.all(Blocks.LIME_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIME_WOOL_STAIRS, TextureMap.all(Blocks.LIME_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GREEN_WOOL_SLAB, Blocks.GREEN_WOOL, TextureMap.all(Blocks.GREEN_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GREEN_WOOL_STAIRS, TextureMap.all(Blocks.GREEN_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CYAN_WOOL_SLAB, Blocks.CYAN_WOOL, TextureMap.all(Blocks.CYAN_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CYAN_WOOL_STAIRS, TextureMap.all(Blocks.CYAN_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_WOOL_SLAB, Blocks.LIGHT_BLUE_WOOL, TextureMap.all(Blocks.LIGHT_BLUE_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_WOOL_STAIRS, TextureMap.all(Blocks.LIGHT_BLUE_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLUE_WOOL_SLAB, Blocks.BLUE_WOOL, TextureMap.all(Blocks.BLUE_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLUE_WOOL_STAIRS, TextureMap.all(Blocks.BLUE_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PURPLE_WOOL_SLAB, Blocks.PURPLE_WOOL, TextureMap.all(Blocks.PURPLE_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PURPLE_WOOL_STAIRS, TextureMap.all(Blocks.PURPLE_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MAGENTA_WOOL_SLAB, Blocks.MAGENTA_WOOL, TextureMap.all(Blocks.MAGENTA_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MAGENTA_WOOL_STAIRS, TextureMap.all(Blocks.MAGENTA_WOOL));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PINK_WOOL_SLAB, Blocks.PINK_WOOL, TextureMap.all(Blocks.PINK_WOOL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_WOOL_STAIRS, TextureMap.all(Blocks.PINK_WOOL));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_TERRACOTTA_SLAB, Blocks.TERRACOTTA, TextureMap.all(Blocks.TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_TERRACOTTA_STAIRS, TextureMap.all(Blocks.TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WHITE_TERRACOTTA_SLAB, Blocks.WHITE_TERRACOTTA, TextureMap.all(Blocks.WHITE_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WHITE_TERRACOTTA_STAIRS, TextureMap.all(Blocks.WHITE_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_TERRACOTTA_SLAB, Blocks.LIGHT_GRAY_TERRACOTTA, TextureMap.all(Blocks.LIGHT_GRAY_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_TERRACOTTA_STAIRS, TextureMap.all(Blocks.LIGHT_GRAY_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GRAY_TERRACOTTA_SLAB, Blocks.GRAY_TERRACOTTA, TextureMap.all(Blocks.GRAY_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GRAY_TERRACOTTA_STAIRS, TextureMap.all(Blocks.GRAY_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLACK_TERRACOTTA_SLAB, Blocks.BLACK_TERRACOTTA, TextureMap.all(Blocks.BLACK_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLACK_TERRACOTTA_STAIRS, TextureMap.all(Blocks.BLACK_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BROWN_TERRACOTTA_SLAB, Blocks.BROWN_TERRACOTTA, TextureMap.all(Blocks.BROWN_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BROWN_TERRACOTTA_STAIRS, TextureMap.all(Blocks.BROWN_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_TERRACOTTA_SLAB, Blocks.RED_TERRACOTTA, TextureMap.all(Blocks.RED_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_TERRACOTTA_STAIRS, TextureMap.all(Blocks.RED_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_ORANGE_TERRACOTTA_SLAB, Blocks.ORANGE_TERRACOTTA, TextureMap.all(Blocks.ORANGE_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_ORANGE_TERRACOTTA_STAIRS, TextureMap.all(Blocks.ORANGE_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_YELLOW_TERRACOTTA_SLAB, Blocks.YELLOW_TERRACOTTA, TextureMap.all(Blocks.YELLOW_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_YELLOW_TERRACOTTA_STAIRS, TextureMap.all(Blocks.YELLOW_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIME_TERRACOTTA_SLAB, Blocks.LIME_TERRACOTTA, TextureMap.all(Blocks.LIME_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIME_TERRACOTTA_STAIRS, TextureMap.all(Blocks.LIME_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GREEN_TERRACOTTA_SLAB, Blocks.GREEN_TERRACOTTA, TextureMap.all(Blocks.GREEN_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GREEN_TERRACOTTA_STAIRS, TextureMap.all(Blocks.GREEN_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CYAN_TERRACOTTA_SLAB, Blocks.CYAN_TERRACOTTA, TextureMap.all(Blocks.CYAN_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CYAN_TERRACOTTA_STAIRS, TextureMap.all(Blocks.CYAN_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_TERRACOTTA_SLAB, Blocks.LIGHT_BLUE_TERRACOTTA, TextureMap.all(Blocks.LIGHT_BLUE_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_TERRACOTTA_STAIRS, TextureMap.all(Blocks.LIGHT_BLUE_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLUE_TERRACOTTA_SLAB, Blocks.BLUE_TERRACOTTA, TextureMap.all(Blocks.BLUE_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLUE_TERRACOTTA_STAIRS, TextureMap.all(Blocks.BLUE_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PURPLE_TERRACOTTA_SLAB, Blocks.PURPLE_TERRACOTTA, TextureMap.all(Blocks.PURPLE_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PURPLE_TERRACOTTA_STAIRS, TextureMap.all(Blocks.PURPLE_TERRACOTTA));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MAGENTA_TERRACOTTA_SLAB, Blocks.MAGENTA_TERRACOTTA, TextureMap.all(Blocks.MAGENTA_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MAGENTA_TERRACOTTA_STAIRS, TextureMap.all(Blocks.MAGENTA_TERRACOTTA));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_WHITE_CONCRETE_SLAB, Blocks.WHITE_CONCRETE, TextureMap.all(Blocks.WHITE_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_WHITE_CONCRETE_STAIRS, TextureMap.all(Blocks.WHITE_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_SLAB, Blocks.LIGHT_GRAY_CONCRETE, TextureMap.all(Blocks.LIGHT_GRAY_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_STAIRS, TextureMap.all(Blocks.LIGHT_GRAY_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GRAY_CONCRETE_SLAB, Blocks.GRAY_CONCRETE, TextureMap.all(Blocks.GRAY_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GRAY_CONCRETE_STAIRS, TextureMap.all(Blocks.GRAY_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLACK_CONCRETE_SLAB, Blocks.BLACK_CONCRETE, TextureMap.all(Blocks.BLACK_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLACK_CONCRETE_STAIRS, TextureMap.all(Blocks.BLACK_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BROWN_CONCRETE_SLAB, Blocks.BROWN_CONCRETE, TextureMap.all(Blocks.BROWN_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BROWN_CONCRETE_STAIRS, TextureMap.all(Blocks.BROWN_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_CONCRETE_SLAB, Blocks.RED_CONCRETE, TextureMap.all(Blocks.RED_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_CONCRETE_STAIRS, TextureMap.all(Blocks.RED_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_ORANGE_CONCRETE_SLAB, Blocks.ORANGE_CONCRETE, TextureMap.all(Blocks.ORANGE_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_ORANGE_CONCRETE_STAIRS, TextureMap.all(Blocks.ORANGE_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_YELLOW_CONCRETE_SLAB, Blocks.YELLOW_CONCRETE, TextureMap.all(Blocks.YELLOW_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_YELLOW_CONCRETE_STAIRS, TextureMap.all(Blocks.YELLOW_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIME_CONCRETE_SLAB, Blocks.LIME_CONCRETE, TextureMap.all(Blocks.LIME_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIME_CONCRETE_STAIRS, TextureMap.all(Blocks.LIME_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GREEN_CONCRETE_SLAB, Blocks.GREEN_CONCRETE, TextureMap.all(Blocks.GREEN_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GREEN_CONCRETE_STAIRS, TextureMap.all(Blocks.GREEN_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CYAN_CONCRETE_SLAB, Blocks.CYAN_CONCRETE, TextureMap.all(Blocks.CYAN_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CYAN_CONCRETE_STAIRS, TextureMap.all(Blocks.CYAN_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_SLAB, Blocks.LIGHT_BLUE_CONCRETE, TextureMap.all(Blocks.LIGHT_BLUE_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_STAIRS, TextureMap.all(Blocks.LIGHT_BLUE_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLUE_CONCRETE_SLAB, Blocks.BLUE_CONCRETE, TextureMap.all(Blocks.BLUE_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLUE_CONCRETE_STAIRS, TextureMap.all(Blocks.BLUE_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PURPLE_CONCRETE_SLAB, Blocks.PURPLE_CONCRETE, TextureMap.all(Blocks.PURPLE_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PURPLE_CONCRETE_STAIRS, TextureMap.all(Blocks.PURPLE_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MAGENTA_CONCRETE_SLAB, Blocks.MAGENTA_CONCRETE, TextureMap.all(Blocks.MAGENTA_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MAGENTA_CONCRETE_STAIRS, TextureMap.all(Blocks.MAGENTA_CONCRETE));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PINK_TERRACOTTA_SLAB, Blocks.PINK_TERRACOTTA, TextureMap.all(Blocks.PINK_TERRACOTTA));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_TERRACOTTA_STAIRS, TextureMap.all(Blocks.PINK_TERRACOTTA));
+
     }
 
 

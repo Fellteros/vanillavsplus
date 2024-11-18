@@ -14,7 +14,16 @@ public class TransparentBlockRegistry {
                 ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB,
                 ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS,
                 ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB,
-                ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS
+                ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS,
+
+                ModBlocks.VERTICAL_WAXED_COPPER_GRATE_SLAB,
+                ModBlocks.VERTICAL_WAXED_COPPER_GRATE_STAIRS,
+                ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB,
+                ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS,
+                ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB,
+                ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS,
+                ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB,
+                ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS
         );
 
     }

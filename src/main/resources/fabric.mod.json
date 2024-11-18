@@ -19,7 +19,7 @@
           "net.fellter.vanillavsplus.VanillaVSPlus"
 		],
 		"client": [
-			"net.fellter.vanillavsplus.VanillaVSBPlusClient"
+          "net.fellter.vanillavsplus.VanillaVSPlusClient"
 		],
 		"fabric-datagen": [
 			"net.fellter.vanillavsplus.VanillaVSPlusDataGenerator"

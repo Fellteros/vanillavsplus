@@ -1,9 +1,6 @@
 package net.fellter.vanillavsplus.item;
 
 import net.fellter.vanillavsplus.VanillaVSPlus;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -26,6 +23,5 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        VanillaVSPlus.LOGGER.info("Registering Mod Items for " + VanillaVSPlus.MOD_ID);
     }
 }

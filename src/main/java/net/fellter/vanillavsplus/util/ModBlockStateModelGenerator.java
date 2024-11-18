@@ -56,7 +56,6 @@ public class ModBlockStateModelGenerator {
                                                                      Identifier outerTopRight, Identifier outerBottomRight) {
         VariantSetting<Boolean> uvlock = VariantSettings.UVLOCK;
         VariantSetting<VariantSettings.Rotation> y = VariantSettings.Y;
-        VariantSetting<VariantSettings.Rotation> x = VariantSettings.X;
         VariantSetting<Identifier> model = VariantSettings.MODEL;
         return VariantsBlockStateSupplier.create(vertStairsBlock).coordinate(BlockStateVariantMap.create(VerticalStairsBlock.SIDE, VerticalStairsBlock.FACING, VerticalStairsBlock.SHAPE)
                 .register(BlockSide.LEFT, Direction.NORTH, VerticalStairShape.STRAIGHT_LEFT, BlockStateVariant.create().put(model, straightLeft).put(uvlock, true))
@@ -158,9 +157,6 @@ public class ModBlockStateModelGenerator {
                 .register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R270))
                 .register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_TOP_RIGHT_R90, BlockStateVariant.create().put(model, outerTopRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
                 .register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT_R90, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
-
-
-
 
 
                 .register(BlockSide.RIGHT, Direction.NORTH, VerticalStairShape.STRAIGHT_LEFT, BlockStateVariant.create().put(model, straightLeft).put(uvlock, true))

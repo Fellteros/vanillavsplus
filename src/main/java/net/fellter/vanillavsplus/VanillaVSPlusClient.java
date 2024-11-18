@@ -4,7 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fellter.vanillavsplus.registry.FoliageBlocksRegistry;
 import net.fellter.vanillavsplus.registry.TransparentBlockRegistry;
 
-public class VanillaVSBPlusClient implements ClientModInitializer {
+public class VanillaVSPlusClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         TransparentBlockRegistry.registerTransparentBlocks();
