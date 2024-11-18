@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/inner_bottom",
+  "textures": {
+    "bottom": "minecraft:block/exposed_copper_grate",
+    "side": "minecraft:block/exposed_copper_grate",
+    "top": "minecraft:block/exposed_copper_grate"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/vertical_slab_right",
+  "textures": {
+    "bottom": "minecraft:block/exposed_cut_copper",
+    "side": "minecraft:block/exposed_cut_copper",
+    "top": "minecraft:block/exposed_cut_copper"
+  }
+}

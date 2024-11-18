@@ -674,8 +674,8 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MAGENTA_CONCRETE_SLAB, Blocks.MAGENTA_CONCRETE, TextureMap.all(Blocks.MAGENTA_CONCRETE));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MAGENTA_CONCRETE_STAIRS, TextureMap.all(Blocks.MAGENTA_CONCRETE));
 
-        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PINK_TERRACOTTA_SLAB, Blocks.PINK_TERRACOTTA, TextureMap.all(Blocks.PINK_TERRACOTTA));
-        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_TERRACOTTA_STAIRS, TextureMap.all(Blocks.PINK_TERRACOTTA));
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PINK_CONCRETE_SLAB, Blocks.PINK_CONCRETE, TextureMap.all(Blocks.PINK_CONCRETE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_CONCRETE_STAIRS, TextureMap.all(Blocks.PINK_CONCRETE));
 
     }
 

@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/outer_top_left",
+  "textures": {
+    "bottom": "minecraft:block/red_terracotta",
+    "side": "minecraft:block/red_terracotta",
+    "top": "minecraft:block/red_terracotta"
+  }
+}
