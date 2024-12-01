@@ -58,6 +58,10 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
     }
 
 
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.getOutlineShape(state, world, pos, context);
+    }
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -223,7 +227,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
         return state.with(SHAPE, getVerticalStairShape(state, world, pos));
     }
 
-    private static VerticalStairShape getVerticalStairShape(@NotNull BlockState state, @NotNull BlockView world, @NotNull BlockPos pos) {
+    protected static VerticalStairShape getVerticalStairShape(@NotNull BlockState state, @NotNull BlockView world, @NotNull BlockPos pos) {
         Direction direction = state.get(FACING);
         BlockState blockState1 = world.getBlockState(pos.offset(direction.getOpposite()));
         BlockState blockState2 = world.getBlockState(pos.offset(direction));

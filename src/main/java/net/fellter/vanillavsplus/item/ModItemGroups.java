@@ -1,21 +1,18 @@
 package net.fellter.vanillavsplus.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fellter.vanillavsplus.VanillaVSPlus;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
 
+    @SuppressWarnings("unused")
     public static final ItemGroup VVSP_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(VanillaVSPlus.MOD_ID, "vvsp"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vanillavsplus"))
@@ -478,10 +475,127 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_PINK_CONCRETE_SLAB);
                         entries.add(ModBlocks.VERTICAL_PINK_CONCRETE_STAIRS);
 
+                        entries.add(ModBlocks.VERTICAL_WHITE_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WHITE_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GRAY_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRAY_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLACK_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLACK_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BROWN_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BROWN_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIME_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIME_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GREEN_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GREEN_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CYAN_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CYAN_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLUE_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLUE_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_CONCRETE_POWDER_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PINK_CONCRETE_POWDER_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PINK_CONCRETE_POWDER_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_WHITE_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WHITE_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GRAY_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRAY_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLACK_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLACK_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BROWN_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BROWN_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIME_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIME_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GREEN_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GREEN_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CYAN_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CYAN_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLUE_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLUE_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_GLAZED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PINK_GLAZED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PINK_GLAZED_TERRACOTTA_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WHITE_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WHITE_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GRAY_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRAY_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLACK_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLACK_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BROWN_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BROWN_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIME_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIME_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GREEN_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GREEN_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CYAN_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CYAN_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLUE_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLUE_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_GRASS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRASS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PODZOL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PODZOL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MYCELIUM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MYCELIUM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DIRT_PATH_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DIRT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DIRT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_COARSE_DIRT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COARSE_DIRT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ROOTED_DIRT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_FARMLAND_SLAB);
+                        entries.add(ModBlocks.VERTICAL_FARMLAND_STAIRS);
+
                             })).build());
 
 
     public static void registerItemGroups() {
-        VanillaVSPlus.LOGGER.info("Registering Item Groups for " + VanillaVSPlus.MOD_ID);
     }
 }

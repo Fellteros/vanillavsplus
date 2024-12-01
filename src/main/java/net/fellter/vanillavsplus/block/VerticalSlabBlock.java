@@ -147,7 +147,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
         if (!state.get(SINGLE)) {
             return VoxelShapes.fullCube();
@@ -179,7 +179,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
     }
 
     @Override
-    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
         if (state.get(SINGLE)) {
             return VoxelShapes.fullCube();
@@ -200,5 +200,8 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         builder.add(WATERLOGGED, SINGLE, FACING);
     }
 
-
+    @Override
+    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        return super.canPlaceAt(state, world, pos);
+    }
 }

@@ -1,15 +1,17 @@
 package net.fellter.vanillavsplus.block;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.fellter.vanillavsplus.VanillaVSPlus;
+import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcretePowderSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcretePowderStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneStairsBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Oxidizable;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -17,8 +19,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.WorldView;
 
 import java.util.function.Function;
 
@@ -487,7 +495,158 @@ public class ModBlocks {
     public static final Block VERTICAL_PINK_CONCRETE_SLAB = registerBlock("vertical_pink_concrete_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE));
     public static final Block VERTICAL_PINK_CONCRETE_STAIRS = registerBlock("vertical_pink_concrete_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE));
 
+    public static final Block VERTICAL_WHITE_CONCRETE_POWDER_SLAB = registerBlock("vertical_white_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_WHITE_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.WHITE_CONCRETE_POWDER));
+    public static final Block VERTICAL_WHITE_CONCRETE_POWDER_STAIRS = registerBlock("vertical_white_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_WHITE_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.WHITE_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIGHT_GRAY_CONCRETE_POWDER_SLAB = registerBlock("vertical_light_gray_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIGHT_GRAY_CONCRETE_POWDER_STAIRS = registerBlock("vertical_light_gray_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_LIGHT_GRAY_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_CONCRETE_POWDER));
+    public static final Block VERTICAL_GRAY_CONCRETE_POWDER_SLAB = registerBlock("vertical_gray_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_GRAY_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.GRAY_CONCRETE_POWDER));
+    public static final Block VERTICAL_GRAY_CONCRETE_POWDER_STAIRS = registerBlock("vertical_gray_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_GRAY_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.GRAY_CONCRETE_POWDER));
+    public static final Block VERTICAL_BLACK_CONCRETE_POWDER_SLAB = registerBlock("vertical_black_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_BLACK_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.BLACK_CONCRETE_POWDER));
+    public static final Block VERTICAL_BLACK_CONCRETE_POWDER_STAIRS = registerBlock("vertical_black_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_BLACK_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.BLACK_CONCRETE_POWDER));
+    public static final Block VERTICAL_BROWN_CONCRETE_POWDER_SLAB = registerBlock("vertical_brown_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_BROWN_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.BROWN_CONCRETE_POWDER));
+    public static final Block VERTICAL_BROWN_CONCRETE_POWDER_STAIRS = registerBlock("vertical_brown_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_BROWN_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.BROWN_CONCRETE_POWDER));
+    public static final Block VERTICAL_RED_CONCRETE_POWDER_SLAB = registerBlock("vertical_red_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_RED_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.RED_CONCRETE_POWDER));
+    public static final Block VERTICAL_RED_CONCRETE_POWDER_STAIRS = registerBlock("vertical_red_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_RED_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.RED_CONCRETE_POWDER));
+    public static final Block VERTICAL_ORANGE_CONCRETE_POWDER_SLAB = registerBlock("vertical_orange_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_ORANGE_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE_POWDER));
+    public static final Block VERTICAL_ORANGE_CONCRETE_POWDER_STAIRS = registerBlock("vertical_orange_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_ORANGE_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE_POWDER));
+    public static final Block VERTICAL_YELLOW_CONCRETE_POWDER_SLAB = registerBlock("vertical_yellow_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_YELLOW_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.YELLOW_CONCRETE_POWDER));
+    public static final Block VERTICAL_YELLOW_CONCRETE_POWDER_STAIRS = registerBlock("vertical_yellow_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_YELLOW_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.YELLOW_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIME_CONCRETE_POWDER_SLAB = registerBlock("vertical_lime_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_LIME_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.LIME_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIME_CONCRETE_POWDER_STAIRS = registerBlock("vertical_lime_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_LIME_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.LIME_CONCRETE_POWDER));
+    public static final Block VERTICAL_GREEN_CONCRETE_POWDER_SLAB = registerBlock("vertical_green_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_GREEN_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.GREEN_CONCRETE_POWDER));
+    public static final Block VERTICAL_GREEN_CONCRETE_POWDER_STAIRS = registerBlock("vertical_green_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_GREEN_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.GREEN_CONCRETE_POWDER));
+    public static final Block VERTICAL_CYAN_CONCRETE_POWDER_SLAB = registerBlock("vertical_cyan_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_CYAN_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE_POWDER));
+    public static final Block VERTICAL_CYAN_CONCRETE_POWDER_STAIRS = registerBlock("vertical_cyan_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_CYAN_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIGHT_BLUE_CONCRETE_POWDER_SLAB = registerBlock("vertical_light_blue_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_CONCRETE_POWDER));
+    public static final Block VERTICAL_LIGHT_BLUE_CONCRETE_POWDER_STAIRS = registerBlock("vertical_light_blue_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_LIGHT_BLUE_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_CONCRETE_POWDER));
+    public static final Block VERTICAL_BLUE_CONCRETE_POWDER_SLAB = registerBlock("vertical_blue_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_BLUE_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.BLUE_CONCRETE_POWDER));
+    public static final Block VERTICAL_BLUE_CONCRETE_POWDER_STAIRS = registerBlock("vertical_blue_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_BLUE_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.BLUE_CONCRETE_POWDER));
+    public static final Block VERTICAL_PURPLE_CONCRETE_POWDER_SLAB = registerBlock("vertical_purple_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_PURPLE_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.PURPLE_CONCRETE_POWDER));
+    public static final Block VERTICAL_PURPLE_CONCRETE_POWDER_STAIRS = registerBlock("vertical_purple_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_PURPLE_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.PURPLE_CONCRETE_POWDER));
+    public static final Block VERTICAL_MAGENTA_CONCRETE_POWDER_SLAB = registerBlock("vertical_magenta_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_MAGENTA_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE_POWDER));
+    public static final Block VERTICAL_MAGENTA_CONCRETE_POWDER_STAIRS = registerBlock("vertical_magenta_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_MAGENTA_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE_POWDER));
+    public static final Block VERTICAL_PINK_CONCRETE_POWDER_SLAB = registerBlock("vertical_pink_concrete_powder_slab", settings -> new VerticalConcretePowderSlabBlock(settings, ModBlocks.VERTICAL_PINK_CONCRETE_SLAB), AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE_POWDER));
+    public static final Block VERTICAL_PINK_CONCRETE_POWDER_STAIRS = registerBlock("vertical_pink_concrete_powder_stairs", settings -> new VerticalConcretePowderStairsBlock(settings, ModBlocks.VERTICAL_PINK_CONCRETE_STAIRS), AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE_POWDER));
 
+    public static final Block VERTICAL_WHITE_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_white_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_WHITE_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_white_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_light_gray_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_light_gray_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_GRAY_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_gray_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_GRAY_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_gray_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BLACK_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_black_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BLACK_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_black_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BROWN_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_brown_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BROWN_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_brown_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_RED_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_red_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_RED_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_red_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_ORANGE_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_orange_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_ORANGE_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_orange_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_YELLOW_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_yellow_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_YELLOW_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_yellow_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIME_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_lime_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIME_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_lime_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_GREEN_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_green_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_GREEN_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_green_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_CYAN_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_cyan_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_CYAN_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_cyan_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_light_blue_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_light_blue_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BLUE_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_blue_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_BLUE_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_blue_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_PURPLE_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_purple_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_PURPLE_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_purple_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_MAGENTA_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_magenta_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_MAGENTA_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_magenta_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_PINK_GLAZED_TERRACOTTA_SLAB = registerBlock("vertical_pink_glazed_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_GLAZED_TERRACOTTA));
+    public static final Block VERTICAL_PINK_GLAZED_TERRACOTTA_STAIRS = registerBlock("vertical_pink_glazed_terracotta_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_GLAZED_TERRACOTTA));
+
+    public static final Block VERTICAL_GLASS_SLAB = registerBlock("vertical_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+    public static final Block VERTICAL_GLASS_STAIRS = registerBlock("vertical_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+    public static final Block VERTICAL_WHITE_STAINED_GLASS_SLAB = registerBlock("vertical_white_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
+    public static final Block VERTICAL_WHITE_STAINED_GLASS_STAIRS = registerBlock("vertical_white_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
+    public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_light_gray_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
+    public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_light_gray_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
+    public static final Block VERTICAL_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_gray_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
+    public static final Block VERTICAL_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_gray_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
+    public static final Block VERTICAL_BLACK_STAINED_GLASS_SLAB = registerBlock("vertical_black_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
+    public static final Block VERTICAL_BLACK_STAINED_GLASS_STAIRS = registerBlock("vertical_black_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
+    public static final Block VERTICAL_BROWN_STAINED_GLASS_SLAB = registerBlock("vertical_brown_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
+    public static final Block VERTICAL_BROWN_STAINED_GLASS_STAIRS = registerBlock("vertical_brown_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
+    public static final Block VERTICAL_RED_STAINED_GLASS_SLAB = registerBlock("vertical_red_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
+    public static final Block VERTICAL_RED_STAINED_GLASS_STAIRS = registerBlock("vertical_red_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
+    public static final Block VERTICAL_ORANGE_STAINED_GLASS_SLAB = registerBlock("vertical_orange_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
+    public static final Block VERTICAL_ORANGE_STAINED_GLASS_STAIRS = registerBlock("vertical_orange_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
+    public static final Block VERTICAL_YELLOW_STAINED_GLASS_SLAB = registerBlock("vertical_yellow_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
+    public static final Block VERTICAL_YELLOW_STAINED_GLASS_STAIRS = registerBlock("vertical_yellow_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
+    public static final Block VERTICAL_LIME_STAINED_GLASS_SLAB = registerBlock("vertical_lime_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
+    public static final Block VERTICAL_LIME_STAINED_GLASS_STAIRS = registerBlock("vertical_lime_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
+    public static final Block VERTICAL_GREEN_STAINED_GLASS_SLAB = registerBlock("vertical_green_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
+    public static final Block VERTICAL_GREEN_STAINED_GLASS_STAIRS = registerBlock("vertical_green_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
+    public static final Block VERTICAL_CYAN_STAINED_GLASS_SLAB = registerBlock("vertical_cyan_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
+    public static final Block VERTICAL_CYAN_STAINED_GLASS_STAIRS = registerBlock("vertical_cyan_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
+    public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_light_blue_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
+    public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_light_blue_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
+    public static final Block VERTICAL_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_blue_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
+    public static final Block VERTICAL_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_blue_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
+    public static final Block VERTICAL_PURPLE_STAINED_GLASS_SLAB = registerBlock("vertical_purple_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
+    public static final Block VERTICAL_PURPLE_STAINED_GLASS_STAIRS = registerBlock("vertical_purple_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
+    public static final Block VERTICAL_MAGENTA_STAINED_GLASS_SLAB = registerBlock("vertical_magenta_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
+    public static final Block VERTICAL_MAGENTA_STAINED_GLASS_STAIRS = registerBlock("vertical_magenta_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
+    public static final Block VERTICAL_PINK_STAINED_GLASS_SLAB = registerBlock("vertical_pink_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
+    public static final Block VERTICAL_PINK_STAINED_GLASS_STAIRS = registerBlock("vertical_pink_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
+
+    
+    public static final Block VERTICAL_GRASS_SLAB = registerBlock("vertical_grass_slab", settings -> new VerticalSlabBlock(settings) {
+                private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
+                    BlockPos blockPos = pos.up();
+                    BlockState blockState = world.getBlockState(blockPos);
+                    if (blockState.getFluidState().getLevel() == 8) {
+                        return false;
+                    } else {
+                        return !VoxelShapes.isSideCovered(state.getCullingFace(Direction.UP), blockState.getCullingFace(Direction.DOWN), Direction.UP);
+                    }
+                }
+
+                protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+                    if (!canSurvive(state, world, pos)) {
+                        world.setBlockState(pos, ModBlocks.VERTICAL_DIRT_STAIRS.getStateWithProperties(state));
+                    }
+                }
+            },
+            AbstractBlock.Settings.create().strength(0.6f).sounds(BlockSoundGroup.GRASS).mapColor(MapColor.PALE_GREEN).ticksRandomly());
+    public static final Block VERTICAL_GRASS_STAIRS = registerBlock("vertical_grass_stairs", settings -> new VerticalStairsBlock(settings) {
+        private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
+            BlockPos blockPos = pos.up();
+            BlockState blockState = world.getBlockState(blockPos);
+            if (blockState.getFluidState().getLevel() == 8) {
+                return false;
+            } else {
+                return !VoxelShapes.isSideCovered(state.getCullingFace(Direction.UP), blockState.getCullingFace(Direction.DOWN), Direction.UP);
+            }
+        }
+
+        protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+            if (!canSurvive(state, world, pos)) {
+                world.setBlockState(pos, ModBlocks.VERTICAL_DIRT_STAIRS.getStateWithProperties(state));
+            }
+        }
+    },
+            AbstractBlock.Settings.create().strength(0.6f).sounds(BlockSoundGroup.GRASS).mapColor(MapColor.PALE_GREEN).ticksRandomly());
+    public static final Block VERTICAL_PODZOL_SLAB = registerBlock("vertical_podzol_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PODZOL));
+    public static final Block VERTICAL_PODZOL_STAIRS = registerBlock("vertical_podzol_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PODZOL));
+    public static final Block VERTICAL_MYCELIUM_SLAB = registerBlock("vertical_mycelium_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MYCELIUM));
+    public static final Block VERTICAL_MYCELIUM_STAIRS = registerBlock("vertical_mycelium_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MYCELIUM));
+    public static final Block VERTICAL_DIRT_SLAB = registerBlock("vertical_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT));
+    public static final Block VERTICAL_DIRT_STAIRS = registerBlock("vertical_dirt_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT));
+    public static final Block VERTICAL_DIRT_PATH_SLAB = registerBlock("vertical_dirt_path_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH));
+    public static final Block VERTICAL_DIRT_PATH_STAIRS = registerBlock("vertical_dirt_path_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH));
+    public static final Block VERTICAL_COARSE_DIRT_SLAB = registerBlock("vertical_coarse_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.COARSE_DIRT));
+    public static final Block VERTICAL_COARSE_DIRT_STAIRS = registerBlock("vertical_coarse_dirt_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.COARSE_DIRT));
+    public static final Block VERTICAL_ROOTED_DIRT_SLAB = registerBlock("vertical_rooted_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT));
+    public static final Block VERTICAL_ROOTED_DIRT_STAIRS = registerBlock("vertical_rooted_dirt_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT));
+    public static final Block VERTICAL_FARMLAND_SLAB = registerBlock("vertical_farmland_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
+    public static final Block VERTICAL_FARMLAND_STAIRS = registerBlock("vertical_farmland_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
     
 
     

@@ -4,6 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "MixinAxeItem",
+    "MixinHoeItem",
+    "MixinShovelItem",
     "MixinStairsBlock"
   ],
   "injectors": {

@@ -23,8 +23,48 @@ public class TransparentBlockRegistry {
                 ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB,
                 ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS,
                 ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB,
-                ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS
+                ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS,
+
+                ModBlocks.VERTICAL_GRASS_SLAB,
+                ModBlocks.VERTICAL_GRASS_STAIRS
         );
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+                ModBlocks.VERTICAL_GLASS_SLAB,
+                ModBlocks.VERTICAL_GLASS_STAIRS,
+                ModBlocks.VERTICAL_WHITE_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_WHITE_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_GRAY_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_GRAY_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_BLACK_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_BLACK_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_BROWN_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_BROWN_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_RED_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_RED_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_LIME_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_LIME_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_GREEN_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_GREEN_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_CYAN_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_CYAN_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_BLUE_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_BLUE_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_STAIRS,
+                ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB,
+                ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS
+                );
 
     }
 }

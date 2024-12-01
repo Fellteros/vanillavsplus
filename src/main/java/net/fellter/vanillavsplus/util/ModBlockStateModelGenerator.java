@@ -33,6 +33,27 @@ public class ModBlockStateModelGenerator {
     }
 
 
+    public static void registerVerticalSlab15(BlockStateModelGenerator bsmg, Block vertSlabBlock, Block fullBlock, TextureMap slabTextureMap) {
+        Identifier identifier = ModModels.VERTICAL_SLAB_LEFT_15.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
+        Identifier identifier2 = ModModels.VERTICAL_SLAB_RIGHT_15.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
+        bsmg.blockStateCollector.accept(createVerticalSlabBlockState(vertSlabBlock, identifier, identifier2, TextureMap.getId(fullBlock)));
+        bsmg.registerParentedItemModel(vertSlabBlock, identifier2);
+    }
+
+
+    public static void registerVerticalStairs15(BlockStateModelGenerator bsmg, Block vertStairsBlock, TextureMap textureMap) {
+        Identifier identifier = ModModels.STRAIGHT_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier2 = ModModels.INNER_TOP_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier3 = ModModels.INNER_BOTTOM_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier4 = ModModels.OUTER_TOP_LEFT_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier5 = ModModels.OUTER_BOTTOM_LEFT_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier6 = ModModels.OUTER_TOP_RIGHT_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        Identifier identifier7 = ModModels.OUTER_BOTTOM_RIGHT_15.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
+        bsmg.blockStateCollector.accept(createVerticalStairsBlockState(vertStairsBlock, identifier, identifier2, identifier3, identifier4, identifier5, identifier6, identifier7));
+        bsmg.registerParentedItemModel(vertStairsBlock, identifier);
+    }
+
+
 
 
     private static BlockStateSupplier createVerticalSlabBlockState(Block vertSlabBlock, Identifier vertSlabIdLeft, Identifier vertSlabIdRight, Identifier fullBlockId) {

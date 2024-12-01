@@ -59,7 +59,7 @@ public abstract class MixinStairsBlock extends Block {
     }
 
     @Inject(method = "getStateForNeighborUpdate", at = @At("HEAD"), cancellable = true)
-    private void getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random, CallbackInfoReturnable<BlockState> cir){
+    protected void getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random, CallbackInfoReturnable<BlockState> cir){
         BlockState upState = world.getBlockState(pos.up());
         BlockState downState = world.getBlockState(pos.down());
 
