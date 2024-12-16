@@ -1,6 +1,6 @@
-// 1.21.3	2024-12-01T10:46:48.1676673	Vanilla+ Verticals/Tags for minecraft:block
-8b3346a2e8cce6654787695045ad5a7ac2f53e52 data\minecraft\tags\block\mineable\shovel.json
-b5d4e5bc4e431ad0901670f7fdaa61ae071a6a55 data\minecraft\tags\block\mineable\axe.json
-66d2c9133c97c11a4b66c1977837b58d47662cd4 data\vanillavsplus\tags\block\vertical_slabs.json
-48901cfa2c88818418ca15ac4894a0074951d771 data\vanillavsplus\tags\block\vertical_stairs.json
-6406af24555e9d0ae9be9a55e657400b9b78cb47 data\minecraft\tags\block\mineable\pickaxe.json
+// 1.21.4	-999999999-01-01T00:00:00	Vanilla+ Verticals/Tags for minecraft:block
+b5d4e5bc4e431ad0901670f7fdaa61ae071a6a55 data/minecraft/tags/block/mineable/axe.json
+e836cc055d5a0bc1367adc32f61eff294abdbf20 data/minecraft/tags/block/mineable/pickaxe.json
+bc805523e14c107d575d419be44e5403bd67a592 data/minecraft/tags/block/mineable/shovel.json
+a9f00b024a7979278e20d25d02800eb359fe3942 data/vanillavsplus/tags/block/vertical_slabs.json
+89306c66f568f5a3de250c19d30bae0b1bbdacdd data/vanillavsplus/tags/block/vertical_stairs.json

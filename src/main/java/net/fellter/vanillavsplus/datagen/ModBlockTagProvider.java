@@ -655,6 +655,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_SLAB,
                         ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB
                 )
+
+                .add(
+                        ModBlocks.VERTICAL_ICE_SLAB,
+                        ModBlocks.VERTICAL_ICE_STAIRS
+                )
         ;
         
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -708,7 +713,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.VERTICAL_ROOTED_DIRT_SLAB,
                         ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS,
                         ModBlocks.VERTICAL_FARMLAND_SLAB,
-                        ModBlocks.VERTICAL_FARMLAND_STAIRS
+                        ModBlocks.VERTICAL_FARMLAND_STAIRS,
+                        ModBlocks.VERTICAL_MUD_SLAB,
+                        ModBlocks.VERTICAL_MUD_STAIRS,
+                        ModBlocks.VERTICAL_CLAY_STAIRS,
+                        ModBlocks.VERTICAL_CLAY_SLAB,
+                        ModBlocks.VERTICAL_GRAVEL_STAIRS,
+                        ModBlocks.VERTICAL_GRAVEL_SLAB,
+                        ModBlocks.VERTICAL_SAND_STAIRS,
+                        ModBlocks.VERTICAL_SAND_SLAB,
+                        ModBlocks.VERTICAL_RED_SAND_STAIRS,
+                        ModBlocks.VERTICAL_RED_SAND_SLAB
                 )
         ;
         
@@ -980,7 +995,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.VERTICAL_DIRT_STAIRS,
                         ModBlocks.VERTICAL_COARSE_DIRT_STAIRS,
                         ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS,
-                        ModBlocks.VERTICAL_FARMLAND_STAIRS
+                        ModBlocks.VERTICAL_FARMLAND_STAIRS,
+                        ModBlocks.VERTICAL_MUD_STAIRS,
+                        ModBlocks.VERTICAL_CLAY_STAIRS,
+                        ModBlocks.VERTICAL_GRAVEL_STAIRS,
+                        ModBlocks.VERTICAL_SAND_STAIRS,
+                        ModBlocks.VERTICAL_RED_SAND_STAIRS,
+                        ModBlocks.VERTICAL_ICE_STAIRS
                 )
         ;
         
@@ -1251,7 +1272,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.VERTICAL_DIRT_SLAB,
                         ModBlocks.VERTICAL_COARSE_DIRT_SLAB,
                         ModBlocks.VERTICAL_ROOTED_DIRT_SLAB,
-                        ModBlocks.VERTICAL_FARMLAND_SLAB
+                        ModBlocks.VERTICAL_FARMLAND_SLAB,
+                        ModBlocks.VERTICAL_MUD_SLAB,
+                        ModBlocks.VERTICAL_CLAY_SLAB,
+                        ModBlocks.VERTICAL_GRAVEL_SLAB,
+                        ModBlocks.VERTICAL_SAND_SLAB,
+                        ModBlocks.VERTICAL_RED_SAND_SLAB,
+                        ModBlocks.VERTICAL_ICE_SLAB
                 );
     }
 }

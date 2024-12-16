@@ -838,6 +838,24 @@
   
   "block.vanillavsplus.vertical_farmland_slab": "Vertical Farmland Slab",
   "block.vanillavsplus.vertical_farmland_stairs": "Vertical Farmland Stairs",
+  
+  "block.vanillavsplus.vertical_mud_slab": "Vertical Mud Slab",
+  "block.vanillavsplus.vertical_mud_stairs": "Vertical Mud Stairs",
+  
+  "block.vanillavsplus.vertical_clay_slab": "Vertical Clay Slab",
+  "block.vanillavsplus.vertical_clay_stairs": "Vertical Clay Stairs",
+  
+  "block.vanillavsplus.vertical_gravel_slab": "Vertical Gravel Slab",
+  "block.vanillavsplus.vertical_gravel_stairs": "Vertical Gravel Stairs",
+  
+  "block.vanillavsplus.vertical_sand_slab": "Vertical Sand Slab",
+  "block.vanillavsplus.vertical_sand_stairs": "Vertical Sand Stairs",
+  
+  "block.vanillavsplus.vertical_red_sand_slab": "Vertical Red Sand Slab",
+  "block.vanillavsplus.vertical_red_sand_stairs": "Vertical Red Sand Stairs",
+  
+  "block.vanillavsplus.vertical_ice_slab": "Vertical Ice Slab",
+  "block.vanillavsplus.vertical_ice_stairs": "Vertical Ice Stairs",
 
   "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }

@@ -265,6 +265,12 @@
     "vanillavsplus:vertical_dirt_slab",
     "vanillavsplus:vertical_coarse_dirt_slab",
     "vanillavsplus:vertical_rooted_dirt_slab",
-    "vanillavsplus:vertical_farmland_slab"
+    "vanillavsplus:vertical_farmland_slab",
+    "vanillavsplus:vertical_mud_slab",
+    "vanillavsplus:vertical_clay_slab",
+    "vanillavsplus:vertical_gravel_slab",
+    "vanillavsplus:vertical_sand_slab",
+    "vanillavsplus:vertical_red_sand_slab",
+    "vanillavsplus:vertical_ice_slab"
   ]
 }

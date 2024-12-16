@@ -47,6 +47,16 @@
     "vanillavsplus:vertical_rooted_dirt_slab",
     "vanillavsplus:vertical_rooted_dirt_stairs",
     "vanillavsplus:vertical_farmland_slab",
-    "vanillavsplus:vertical_farmland_stairs"
+    "vanillavsplus:vertical_farmland_stairs",
+    "vanillavsplus:vertical_mud_slab",
+    "vanillavsplus:vertical_mud_stairs",
+    "vanillavsplus:vertical_clay_stairs",
+    "vanillavsplus:vertical_clay_slab",
+    "vanillavsplus:vertical_gravel_stairs",
+    "vanillavsplus:vertical_gravel_slab",
+    "vanillavsplus:vertical_sand_stairs",
+    "vanillavsplus:vertical_sand_slab",
+    "vanillavsplus:vertical_red_sand_stairs",
+    "vanillavsplus:vertical_red_sand_slab"
   ]
 }

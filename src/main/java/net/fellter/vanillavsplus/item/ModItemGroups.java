@@ -592,6 +592,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS);
                         entries.add(ModBlocks.VERTICAL_FARMLAND_SLAB);
                         entries.add(ModBlocks.VERTICAL_FARMLAND_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MUD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MUD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CLAY_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CLAY_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GRAVEL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GRAVEL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SAND_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SAND_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_SAND_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_SAND_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ICE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ICE_STAIRS);
 
                             })).build());
 

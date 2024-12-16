@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.*;
 import java.util.Map;
 
 @Mixin(ShovelItem.class)
-public class MixinShovelItem {
+public abstract class MixinShovelItem {
 
     @Shadow @Final protected static Map<Block, BlockState> PATH_STATES;
 

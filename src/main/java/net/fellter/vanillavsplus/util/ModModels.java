@@ -1,8 +1,7 @@
 package net.fellter.vanillavsplus.util;
 
 import net.fellter.vanillavsplus.VanillaVSPlus;
-import net.minecraft.data.client.Model;
-import net.minecraft.data.client.TextureKey;
+import net.minecraft.client.data.*;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;

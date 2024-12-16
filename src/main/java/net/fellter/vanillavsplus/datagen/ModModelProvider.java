@@ -1,15 +1,19 @@
 package net.fellter.vanillavsplus.datagen;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.client.*;
+import net.minecraft.client.data.*;
+import net.minecraft.client.render.item.tint.GrassTintSource;
 
 import static net.fellter.vanillavsplus.util.ModBlockStateModelGenerator.*;
 
+@Environment(EnvType.CLIENT)
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -829,8 +833,9 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB, Blocks.PINK_STAINED_GLASS, TextureMap.all(Blocks.PINK_STAINED_GLASS));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS, TextureMap.all(Blocks.PINK_STAINED_GLASS));
 
-        
         //GRASS BLOCKS MADE MANUALLY
+//        bsmg.registerTintedItemModel(ModBlocks.VERTICAL_GRASS_SLAB, TextureMap.getId(ModBlocks.VERTICAL_GRASS_SLAB), new GrassTintSource());
+//        bsmg.registerTintedItemModel(ModBlocks.VERTICAL_GRASS_STAIRS, TextureMap.getId(ModBlocks.VERTICAL_GRASS_STAIRS), new GrassTintSource());
 
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PODZOL_SLAB, Blocks.PODZOL, custom(Blocks.PODZOL, Blocks.PODZOL, Blocks.DIRT, "_side", "_top", ""));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PODZOL_STAIRS, custom(Blocks.PODZOL, Blocks.PODZOL, Blocks.DIRT, "_side", "_top", ""));
@@ -852,6 +857,24 @@ public class ModModelProvider extends FabricModelProvider {
         
         registerVerticalSlab15(bsmg, ModBlocks.VERTICAL_FARMLAND_SLAB, Blocks.FARMLAND, custom(Blocks.DIRT, Blocks.FARMLAND, Blocks.DIRT, "", "", ""));
         registerVerticalStairs15(bsmg, ModBlocks.VERTICAL_FARMLAND_STAIRS, custom(Blocks.DIRT, Blocks.FARMLAND, Blocks.DIRT, "", "", ""));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MUD_SLAB, Blocks.MUD, TextureMap.all(Blocks.MUD));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MUD_STAIRS, TextureMap.all(Blocks.MUD));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CLAY_SLAB, Blocks.CLAY, TextureMap.all(Blocks.CLAY));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CLAY_STAIRS, TextureMap.all(Blocks.CLAY));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GRAVEL_SLAB, Blocks.GRAVEL, TextureMap.all(Blocks.GRAVEL));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GRAVEL_STAIRS, TextureMap.all(Blocks.GRAVEL));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SAND_SLAB, Blocks.SAND, TextureMap.all(Blocks.SAND));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SAND_STAIRS, TextureMap.all(Blocks.SAND));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_SAND_SLAB, Blocks.RED_SAND, TextureMap.all(Blocks.RED_SAND));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_SAND_STAIRS, TextureMap.all(Blocks.RED_SAND));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_ICE_SLAB, Blocks.ICE, TextureMap.all(Blocks.ICE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_ICE_STAIRS, TextureMap.all(Blocks.ICE));
 
     }
 

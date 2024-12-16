@@ -5,6 +5,8 @@ import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcreteP
 import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcretePowderStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.falling.VerticalFallingSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.falling.VerticalFallingStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassSlabBlock;
@@ -647,6 +649,18 @@ public class ModBlocks {
     public static final Block VERTICAL_ROOTED_DIRT_STAIRS = registerBlock("vertical_rooted_dirt_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT));
     public static final Block VERTICAL_FARMLAND_SLAB = registerBlock("vertical_farmland_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
     public static final Block VERTICAL_FARMLAND_STAIRS = registerBlock("vertical_farmland_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
+    public static final Block VERTICAL_MUD_SLAB = registerBlock("vertical_mud_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MUD));
+    public static final Block VERTICAL_MUD_STAIRS = registerBlock("vertical_mud_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MUD));
+    public static final Block VERTICAL_CLAY_SLAB = registerBlock("vertical_clay_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CLAY));
+    public static final Block VERTICAL_CLAY_STAIRS = registerBlock("vertical_clay_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CLAY));
+    public static final Block VERTICAL_GRAVEL_SLAB = registerBlock("vertical_gravel_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GRAVEL));
+    public static final Block VERTICAL_GRAVEL_STAIRS = registerBlock("vertical_gravel_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GRAVEL));
+    public static final Block VERTICAL_SAND_SLAB = registerBlock("vertical_sand_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SAND));
+    public static final Block VERTICAL_SAND_STAIRS = registerBlock("vertical_sand_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SAND));
+    public static final Block VERTICAL_RED_SAND_SLAB = registerBlock("vertical_red_sand_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
+    public static final Block VERTICAL_RED_SAND_STAIRS = registerBlock("vertical_red_sand_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
+    public static final Block VERTICAL_ICE_SLAB = registerBlock("vertical_ice_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+    public static final Block VERTICAL_ICE_STAIRS = registerBlock("vertical_ice_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
     
 
     

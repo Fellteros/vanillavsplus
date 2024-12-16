@@ -4,10 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.RecipeGenerator;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.data.recipe.CraftingRecipeJsonBuilder;
+import net.minecraft.data.recipe.RecipeExporter;
+import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
@@ -886,6 +886,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_FARMLAND_SLAB, Blocks.FARMLAND).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_FARMLAND_STAIRS, Blocks.FARMLAND).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_MUD_SLAB, Blocks.MUD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_MUD_STAIRS, Blocks.MUD).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_CLAY_SLAB, Blocks.CLAY).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_CLAY_STAIRS, Blocks.CLAY).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_GRAVEL_SLAB, Blocks.GRAVEL).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_GRAVEL_STAIRS, Blocks.GRAVEL).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_SAND_SLAB, Blocks.SAND).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_SAND_STAIRS, Blocks.SAND).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_RED_SAND_SLAB, Blocks.RED_SAND).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_RED_SAND_STAIRS, Blocks.RED_SAND).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_ICE_SLAB, Blocks.ICE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_ICE_STAIRS, Blocks.ICE).offerTo(exporter);
 
             }
         };
