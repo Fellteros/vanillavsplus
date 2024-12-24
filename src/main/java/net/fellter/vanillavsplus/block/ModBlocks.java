@@ -29,6 +29,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.WorldView;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -123,6 +124,17 @@ public class ModBlocks {
     public static final Block VERTICAL_STR_CHERRY_LOG_STAIRS = registerBlock("vertical_str_cherry_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF).sounds(BlockSoundGroup.CHERRY_WOOD));
     public static final Block VERTICAL_STR_CHERRY_WOOD_SLAB = registerBlock("vertical_str_cherry_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_CHERRY_WOOD));
     public static final Block VERTICAL_STR_CHERRY_WOOD_STAIRS = registerBlock("vertical_str_cherry_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_CHERRY_WOOD));
+
+    public static final Block VERTICAL_PALE_OAK_SLAB = registerBlock("vertical_pale_oak_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_PLANKS));
+    public static final Block VERTICAL_PALE_OAK_STAIRS = registerBlock("vertical_pale_oak_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_PLANKS));
+    public static final Block VERTICAL_PALE_OAK_LOG_SLAB = registerBlock("vertical_pale_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF));
+    public static final Block VERTICAL_PALE_OAK_LOG_STAIRS = registerBlock("vertical_pale_oak_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF));
+    public static final Block VERTICAL_PALE_OAK_WOOD_SLAB = registerBlock("vertical_pale_oak_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_WOOD));
+    public static final Block VERTICAL_PALE_OAK_WOOD_STAIRS = registerBlock("vertical_pale_oak_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_WOOD));
+    public static final Block VERTICAL_STR_PALE_OAK_LOG_SLAB = registerBlock("vertical_str_pale_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF));
+    public static final Block VERTICAL_STR_PALE_OAK_LOG_STAIRS = registerBlock("vertical_str_pale_oak_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF));
+    public static final Block VERTICAL_STR_PALE_OAK_WOOD_SLAB = registerBlock("vertical_str_pale_oak_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_PALE_OAK_WOOD));
+    public static final Block VERTICAL_STR_PALE_OAK_WOOD_STAIRS = registerBlock("vertical_str_pale_oak_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_PALE_OAK_WOOD));
     
     public static final Block BAMBOO_DEF = registerBlock("bamboo_def", Block::new, AbstractBlock.Settings.copy(LOG_DEF).sounds(BlockSoundGroup.BAMBOO_WOOD));
 
@@ -659,13 +671,36 @@ public class ModBlocks {
     public static final Block VERTICAL_SAND_STAIRS = registerBlock("vertical_sand_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SAND));
     public static final Block VERTICAL_RED_SAND_SLAB = registerBlock("vertical_red_sand_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
     public static final Block VERTICAL_RED_SAND_STAIRS = registerBlock("vertical_red_sand_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
-    public static final Block VERTICAL_ICE_SLAB = registerBlock("vertical_ice_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
-    public static final Block VERTICAL_ICE_STAIRS = registerBlock("vertical_ice_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+    
+    public static final Block VERTICAL_ICE_SLAB = registerBlock("vertical_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+    public static final Block VERTICAL_ICE_STAIRS = registerBlock("vertical_ice_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+    public static final Block VERTICAL_PACKED_ICE_SLAB = registerBlock("vertical_packed_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PACKED_ICE));
+    public static final Block VERTICAL_PACKED_ICE_STAIRS = registerBlock("vertical_packed_ice_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PACKED_ICE));
+    public static final Block VERTICAL_BLUE_ICE_SLAB = registerBlock("vertical_blue_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_ICE));
+    public static final Block VERTICAL_BLUE_ICE_STAIRS = registerBlock("vertical_blue_ice_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_ICE));
+    public static final Block VERTICAL_SNOW_SLAB = registerBlock("vertical_snow_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK));
+    public static final Block VERTICAL_SNOW_STAIRS = registerBlock("vertical_snow_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK));
+
+    public static final Block VERTICAL_MOSS_SLAB = registerBlock("vertical_moss_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MOSS_BLOCK));
+    public static final Block VERTICAL_MOSS_STAIRS = registerBlock("vertical_moss_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MOSS_BLOCK));
+    public static final Block VERTICAL_PALE_MOSS_SLAB = registerBlock("vertical_pale_moss_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_MOSS_BLOCK));
+    public static final Block VERTICAL_PALE_MOSS_STAIRS = registerBlock("vertical_pale_moss_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_MOSS_BLOCK));
+
+    public static final Block VERTICAL_CALCITE_SLAB = registerBlock("vertical_calcite_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CALCITE));
+    public static final Block VERTICAL_CALCITE_STAIRS = registerBlock("vertical_calcite_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CALCITE));
+    public static final Block VERTICAL_DRIPSTONE_SLAB = registerBlock("vertical_dripstone_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DRIPSTONE_BLOCK));
+    public static final Block VERTICAL_DRIPSTONE_STAIRS = registerBlock("vertical_dripstone_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DRIPSTONE_BLOCK));
+    public static final Block VERTICAL_MAGMA_SLAB = registerBlock("vertical_magma_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK));
+    public static final Block VERTICAL_MAGMA_STAIRS = registerBlock("vertical_magma_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK));
+    public static final Block VERTICAL_OBSIDIAN_SLAB = registerBlock("vertical_obsidian_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN));
+    public static final Block VERTICAL_OBSIDIAN_STAIRS = registerBlock("vertical_obsidian_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN));
+    public static final Block VERTICAL_CRYING_OBSIDIAN_SLAB = registerBlock("vertical_crying_obsidian_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CRYING_OBSIDIAN));
+    public static final Block VERTICAL_CRYING_OBSIDIAN_STAIRS = registerBlock("vertical_crying_obsidian_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CRYING_OBSIDIAN));
     
 
     
 
-    private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
+    private static Block registerBlock(String name, @NotNull Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
         Block block = function.apply(settings.registryKey(keyOfBlock(name)));
         Registry.register(Registries.ITEM, Identifier.of(VanillaVSPlus.MOD_ID, name), new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(keyOfItem(name))));
         return Registry.register(Registries.BLOCK, keyOfBlock(name), block);

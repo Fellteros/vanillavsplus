@@ -175,6 +175,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalStairsRecipe(ModBlocks.VERTICAL_STR_CHERRY_WOOD_STAIRS, Blocks.STRIPPED_CHERRY_WOOD).offerTo(exporter);
 
 
+                verticalSlabRecipe(ModBlocks.VERTICAL_PALE_OAK_SLAB, Blocks.PALE_OAK_PLANKS).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_PALE_OAK_STAIRS, Blocks.PALE_OAK_PLANKS).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_PALE_OAK_LOG_SLAB, Blocks.PALE_OAK_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_PALE_OAK_LOG_STAIRS, Blocks.PALE_OAK_LOG).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_PALE_OAK_WOOD_SLAB, Blocks.PALE_OAK_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_PALE_OAK_WOOD_STAIRS, Blocks.PALE_OAK_WOOD).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_SLAB, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_STAIRS, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_SLAB, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_STAIRS, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
+
+
                 verticalSlabRecipe(ModBlocks.VERTICAL_BAMBOO_SLAB, Blocks.BAMBOO_PLANKS).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_BAMBOO_STAIRS, Blocks.BAMBOO_PLANKS).offerTo(exporter);
 
@@ -901,9 +917,42 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_RED_SAND_SLAB, Blocks.RED_SAND).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_RED_SAND_STAIRS, Blocks.RED_SAND).offerTo(exporter);
+                
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_ICE_SLAB, Blocks.ICE).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_ICE_STAIRS, Blocks.ICE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_PACKED_ICE_SLAB, Blocks.PACKED_ICE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_PACKED_ICE_STAIRS, Blocks.PACKED_ICE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_BLUE_ICE_SLAB, Blocks.BLUE_ICE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_BLUE_ICE_STAIRS, Blocks.BLUE_ICE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_SNOW_SLAB, Blocks.SNOW_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_SNOW_STAIRS, Blocks.SNOW_BLOCK).offerTo(exporter);
+
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_MOSS_SLAB, Blocks.MOSS_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_MOSS_STAIRS, Blocks.MOSS_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_PALE_MOSS_SLAB, Blocks.PALE_MOSS_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_PALE_MOSS_STAIRS, Blocks.PALE_MOSS_BLOCK).offerTo(exporter);
+
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_CALCITE_SLAB, Blocks.CALCITE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_CALCITE_STAIRS, Blocks.CALCITE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DRIPSTONE_SLAB, Blocks.DRIPSTONE_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DRIPSTONE_STAIRS, Blocks.DRIPSTONE_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_MAGMA_SLAB, Blocks.MAGMA_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_MAGMA_STAIRS, Blocks.MAGMA_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_OBSIDIAN_SLAB, Blocks.OBSIDIAN).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_OBSIDIAN_STAIRS, Blocks.OBSIDIAN).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_CRYING_OBSIDIAN_SLAB, Blocks.CRYING_OBSIDIAN).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_CRYING_OBSIDIAN_STAIRS, Blocks.CRYING_OBSIDIAN).offerTo(exporter);
 
             }
         };

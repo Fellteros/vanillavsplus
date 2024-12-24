@@ -9,7 +9,7 @@ import net.fellter.vanillavsplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.item.tint.GrassTintSource;
+import net.minecraft.util.Identifier;
 
 import static net.fellter.vanillavsplus.util.ModBlockStateModelGenerator.*;
 
@@ -144,6 +144,22 @@ public class ModModelProvider extends FabricModelProvider {
 
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_STR_CHERRY_WOOD_SLAB, Blocks.STRIPPED_CHERRY_WOOD, TextureMap.all(Blocks.STRIPPED_CHERRY_LOG));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_STR_CHERRY_WOOD_STAIRS, TextureMap.all(Blocks.STRIPPED_CHERRY_LOG));
+
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PALE_OAK_SLAB, Blocks.PALE_OAK_PLANKS, TextureMap.all(Blocks.PALE_OAK_PLANKS));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PALE_OAK_STAIRS, TextureMap.all(Blocks.PALE_OAK_PLANKS));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PALE_OAK_LOG_SLAB, Blocks.PALE_OAK_LOG, blockAndTopForEnds(Blocks.PALE_OAK_LOG));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PALE_OAK_LOG_STAIRS, blockAndTopForEnds(Blocks.PALE_OAK_LOG));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PALE_OAK_WOOD_SLAB, Blocks.PALE_OAK_WOOD, TextureMap.all(Blocks.PALE_OAK_LOG));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PALE_OAK_WOOD_STAIRS, TextureMap.all(Blocks.PALE_OAK_LOG));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_STR_PALE_OAK_LOG_SLAB, Blocks.STRIPPED_PALE_OAK_LOG, blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_STR_PALE_OAK_LOG_STAIRS, blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_SLAB, Blocks.STRIPPED_PALE_OAK_WOOD, TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_STAIRS, TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG));
 
 
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BAMBOO_SLAB, Blocks.BAMBOO_PLANKS, TextureMap.all(Blocks.BAMBOO_PLANKS));
@@ -834,8 +850,6 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS, TextureMap.all(Blocks.PINK_STAINED_GLASS));
 
         //GRASS BLOCKS MADE MANUALLY
-//        bsmg.registerTintedItemModel(ModBlocks.VERTICAL_GRASS_SLAB, TextureMap.getId(ModBlocks.VERTICAL_GRASS_SLAB), new GrassTintSource());
-//        bsmg.registerTintedItemModel(ModBlocks.VERTICAL_GRASS_STAIRS, TextureMap.getId(ModBlocks.VERTICAL_GRASS_STAIRS), new GrassTintSource());
 
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PODZOL_SLAB, Blocks.PODZOL, custom(Blocks.PODZOL, Blocks.PODZOL, Blocks.DIRT, "_side", "_top", ""));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PODZOL_STAIRS, custom(Blocks.PODZOL, Blocks.PODZOL, Blocks.DIRT, "_side", "_top", ""));
@@ -873,8 +887,41 @@ public class ModModelProvider extends FabricModelProvider {
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_SAND_SLAB, Blocks.RED_SAND, TextureMap.all(Blocks.RED_SAND));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_RED_SAND_STAIRS, TextureMap.all(Blocks.RED_SAND));
         
+        
         registerVerticalSlab(bsmg, ModBlocks.VERTICAL_ICE_SLAB, Blocks.ICE, TextureMap.all(Blocks.ICE));
         registerVerticalStairs(bsmg, ModBlocks.VERTICAL_ICE_STAIRS, TextureMap.all(Blocks.ICE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PACKED_ICE_SLAB, Blocks.PACKED_ICE, TextureMap.all(Blocks.PACKED_ICE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PACKED_ICE_STAIRS, TextureMap.all(Blocks.PACKED_ICE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BLUE_ICE_SLAB, Blocks.BLUE_ICE, TextureMap.all(Blocks.BLUE_ICE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_BLUE_ICE_STAIRS, TextureMap.all(Blocks.BLUE_ICE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_SNOW_SLAB, Blocks.SNOW_BLOCK, TextureMap.all(Blocks.SNOW));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_SNOW_STAIRS, TextureMap.all(Blocks.SNOW));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MOSS_SLAB, Blocks.MOSS_BLOCK, TextureMap.all(Blocks.MOSS_BLOCK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MOSS_STAIRS, TextureMap.all(Blocks.MOSS_BLOCK));
+
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_PALE_MOSS_SLAB, Blocks.PALE_MOSS_BLOCK, TextureMap.all(Blocks.PALE_MOSS_BLOCK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_PALE_MOSS_STAIRS, TextureMap.all(Blocks.PALE_MOSS_BLOCK));
+
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CALCITE_SLAB, Blocks.CALCITE, TextureMap.all(Blocks.CALCITE));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CALCITE_STAIRS, TextureMap.all(Blocks.CALCITE));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_DRIPSTONE_SLAB, Blocks.DRIPSTONE_BLOCK, TextureMap.all(Blocks.DRIPSTONE_BLOCK));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_DRIPSTONE_STAIRS, TextureMap.all(Blocks.DRIPSTONE_BLOCK));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_MAGMA_SLAB, Blocks.MAGMA_BLOCK, TextureMap.all(Identifier.ofVanilla("block/magma")));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_MAGMA_STAIRS, TextureMap.all(Identifier.ofVanilla("block/magma")));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_OBSIDIAN_SLAB, Blocks.OBSIDIAN, TextureMap.all(Blocks.OBSIDIAN));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_OBSIDIAN_STAIRS, TextureMap.all(Blocks.OBSIDIAN));
+        
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_CRYING_OBSIDIAN_SLAB, Blocks.CRYING_OBSIDIAN, TextureMap.all(Blocks.CRYING_OBSIDIAN));
+        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_CRYING_OBSIDIAN_STAIRS, TextureMap.all(Blocks.CRYING_OBSIDIAN));
 
     }
 

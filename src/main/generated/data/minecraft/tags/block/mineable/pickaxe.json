@@ -345,6 +345,20 @@
     "vanillavsplus:vertical_magenta_stained_glass_slab",
     "vanillavsplus:vertical_pink_stained_glass_slab",
     "vanillavsplus:vertical_ice_slab",
-    "vanillavsplus:vertical_ice_stairs"
+    "vanillavsplus:vertical_ice_stairs",
+    "vanillavsplus:vertical_packed_ice_slab",
+    "vanillavsplus:vertical_packed_ice_stairs",
+    "vanillavsplus:vertical_blue_ice_slab",
+    "vanillavsplus:vertical_blue_ice_stairs",
+    "vanillavsplus:vertical_calcite_slab",
+    "vanillavsplus:vertical_calcite_stairs",
+    "vanillavsplus:vertical_dripstone_slab",
+    "vanillavsplus:vertical_dripstone_stairs",
+    "vanillavsplus:vertical_magma_slab",
+    "vanillavsplus:vertical_magma_stairs",
+    "vanillavsplus:vertical_obsidian_slab",
+    "vanillavsplus:vertical_obsidian_stairs",
+    "vanillavsplus:vertical_crying_obsidian_slab",
+    "vanillavsplus:vertical_crying_obsidian_stairs"
   ]
 }

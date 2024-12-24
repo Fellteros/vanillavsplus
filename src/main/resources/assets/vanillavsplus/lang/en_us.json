@@ -127,6 +127,22 @@
   "block.vanillavsplus.vertical_str_cherry_wood_stairs": "Vertical Stripped Cherry Wood Stairs",
 
 
+  "block.vanillavsplus.vertical_pale_oak_slab": "Vertical Pale Oak Slab",
+  "block.vanillavsplus.vertical_pale_oak_stairs": "Vertical Pale Oak Stairs",
+
+  "block.vanillavsplus.vertical_pale_oak_log_slab": "Vertical Pale Oak Log Slab",
+  "block.vanillavsplus.vertical_pale_oak_log_stairs": "Vertical Pale Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_pale_oak_wood_slab": "Vertical Pale Oak Wood Slab",
+  "block.vanillavsplus.vertical_pale_oak_wood_stairs": "Vertical Pale Oak Wood Stairs",
+
+  "block.vanillavsplus.vertical_str_pale_oak_log_slab": "Vertical Stripped Pale Oak Log Slab",
+  "block.vanillavsplus.vertical_str_pale_oak_log_stairs": "Vertical Stripped Pale Oak Log Stairs",
+
+  "block.vanillavsplus.vertical_str_pale_oak_wood_slab": "Vertical Stripped Pale Oak Wood Slab",
+  "block.vanillavsplus.vertical_str_pale_oak_wood_stairs": "Vertical Stripped Pale Oak Wood Stairs",
+
+
   "block.vanillavsplus.vertical_bamboo_slab": "Vertical Bamboo Slab",
   "block.vanillavsplus.vertical_bamboo_stairs": "Vertical Bamboo Stairs",
 
@@ -854,8 +870,41 @@
   "block.vanillavsplus.vertical_red_sand_slab": "Vertical Red Sand Slab",
   "block.vanillavsplus.vertical_red_sand_stairs": "Vertical Red Sand Stairs",
   
+  
   "block.vanillavsplus.vertical_ice_slab": "Vertical Ice Slab",
   "block.vanillavsplus.vertical_ice_stairs": "Vertical Ice Stairs",
+  
+  "block.vanillavsplus.vertical_packed_ice_slab": "Vertical Packed Ice Slab",
+  "block.vanillavsplus.vertical_packed_ice_stairs": "Vertical Packed Ice Stairs",
+  
+  "block.vanillavsplus.vertical_blue_ice_slab": "Vertical Blue Ice Slab",
+  "block.vanillavsplus.vertical_blue_ice_stairs": "Vertical Blue Ice Stairs",
+  
+  "block.vanillavsplus.vertical_snow_slab": "Vertical Snow Slab",
+  "block.vanillavsplus.vertical_snow_stairs": "Vertical Snow Stairs",
+
+  
+  "block.vanillavsplus.vertical_moss_slab": "Vertical Moss Slab",
+  "block.vanillavsplus.vertical_moss_stairs": "Vertical Moss Stairs",
+  
+  "block.vanillavsplus.vertical_pale_moss_slab": "Vertical Pale Moss Slab",
+  "block.vanillavsplus.vertical_pale_moss_stairs": "Vertical Pale Moss Stairs",
+
+
+  "block.vanillavsplus.vertical_calcite_slab": "Vertical Calcite Slab",
+  "block.vanillavsplus.vertical_calcite_stairs": "Vertical Calcite Stairs",
+
+  "block.vanillavsplus.vertical_dripstone_slab": "Vertical Dripstone Slab",
+  "block.vanillavsplus.vertical_dripstone_stairs": "Vertical Dripstone Stairs",
+
+  "block.vanillavsplus.vertical_magma_slab": "Vertical Magma Slab",
+  "block.vanillavsplus.vertical_magma_stairs": "Vertical Magma Stairs",
+
+  "block.vanillavsplus.vertical_obsidian_slab": "Vertical Obsidian Slab",
+  "block.vanillavsplus.vertical_obsidian_stairs": "Vertical Obsidian Stairs",
+
+  "block.vanillavsplus.vertical_crying_obsidian_slab": "Vertical Crying Obsidian Slab",
+  "block.vanillavsplus.vertical_crying_obsidian_stairs": "Vertical Crying Obsidian Stairs",
 
   "itemgroup.vanillavsplus": "Vanilla+ Verticals"
 }

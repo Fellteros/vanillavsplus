@@ -1,6 +1,7 @@
 // 1.21.4	-999999999-01-01T00:00:00	Vanilla+ Verticals/Tags for minecraft:block
-b5d4e5bc4e431ad0901670f7fdaa61ae071a6a55 data/minecraft/tags/block/mineable/axe.json
-e836cc055d5a0bc1367adc32f61eff294abdbf20 data/minecraft/tags/block/mineable/pickaxe.json
-bc805523e14c107d575d419be44e5403bd67a592 data/minecraft/tags/block/mineable/shovel.json
-a9f00b024a7979278e20d25d02800eb359fe3942 data/vanillavsplus/tags/block/vertical_slabs.json
-89306c66f568f5a3de250c19d30bae0b1bbdacdd data/vanillavsplus/tags/block/vertical_stairs.json
+7cede0339641891d91743c1e1c64f5bb7f6080f7 data/minecraft/tags/block/mineable/axe.json
+511971cbf32eabf2024f31f8a199b90c551fdc02 data/minecraft/tags/block/mineable/hoe.json
+a4b491d7aef8052d0410916f771a289108bb703b data/minecraft/tags/block/mineable/pickaxe.json
+aab1ab6d71a61b6e7226eaefa12b94666aeda4d0 data/minecraft/tags/block/mineable/shovel.json
+af6fab2e9dbb84de4f375803acbe022f066bf2cd data/vanillavsplus/tags/block/vertical_slabs.json
+165a66b0123783728c7530ea87e3c93024f6f550 data/vanillavsplus/tags/block/vertical_stairs.json

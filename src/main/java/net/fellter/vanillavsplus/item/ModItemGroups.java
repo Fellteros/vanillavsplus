@@ -106,6 +106,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_STR_CHERRY_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_STR_CHERRY_WOOD_STAIRS);
 
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_STAIRS);
+
                         entries.add(ModBlocks.VERTICAL_BAMBOO_SLAB);
                         entries.add(ModBlocks.VERTICAL_BAMBOO_STAIRS);
                         entries.add(ModBlocks.VERTICAL_BAMBOO_MOSAIC_SLAB);
@@ -602,8 +613,31 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_SAND_STAIRS);
                         entries.add(ModBlocks.VERTICAL_RED_SAND_SLAB);
                         entries.add(ModBlocks.VERTICAL_RED_SAND_STAIRS);
+                        
                         entries.add(ModBlocks.VERTICAL_ICE_SLAB);
                         entries.add(ModBlocks.VERTICAL_ICE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PACKED_ICE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PACKED_ICE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BLUE_ICE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BLUE_ICE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SNOW_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SNOW_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_MOSS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MOSS_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PALE_MOSS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PALE_MOSS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_CALCITE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CALCITE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DRIPSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DRIPSTONE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MAGMA_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MAGMA_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_OBSIDIAN_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OBSIDIAN_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CRYING_OBSIDIAN_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRYING_OBSIDIAN_STAIRS);
 
                             })).build());
 

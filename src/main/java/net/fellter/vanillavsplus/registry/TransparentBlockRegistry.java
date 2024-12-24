@@ -63,7 +63,14 @@ public class TransparentBlockRegistry {
                 ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_SLAB,
                 ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_STAIRS,
                 ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB,
-                ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS
+                ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS,
+                
+                ModBlocks.VERTICAL_ICE_SLAB,
+                ModBlocks.VERTICAL_ICE_STAIRS,
+                ModBlocks.VERTICAL_PACKED_ICE_SLAB,
+                ModBlocks.VERTICAL_PACKED_ICE_STAIRS,
+                ModBlocks.VERTICAL_BLUE_ICE_SLAB,
+                ModBlocks.VERTICAL_BLUE_ICE_STAIRS
                 );
 
     }
