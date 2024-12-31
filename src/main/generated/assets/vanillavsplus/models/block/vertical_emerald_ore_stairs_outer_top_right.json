@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/outer_top_right",
+  "textures": {
+    "bottom": "minecraft:block/emerald_ore",
+    "side": "minecraft:block/emerald_ore",
+    "top": "minecraft:block/emerald_ore"
+  }
+}

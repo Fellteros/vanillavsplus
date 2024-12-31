@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/vertical_slab_left",
+  "textures": {
+    "bottom": "minecraft:block/deepslate_lapis_ore",
+    "side": "minecraft:block/deepslate_lapis_ore",
+    "top": "minecraft:block/deepslate_lapis_ore"
+  }
+}

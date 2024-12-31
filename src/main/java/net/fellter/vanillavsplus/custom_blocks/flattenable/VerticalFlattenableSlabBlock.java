@@ -1,7 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.flattenable;
 
 import net.fellter.vanillavsplus.custom_blocks.y15.VerticalY15SlabBlock;
-import net.fellter.vanillavsplus.registry.FlattenableBlocksRegistry;
+import net.fellter.vanillavsplus.registry.ModRegistries;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -37,7 +37,7 @@ public class VerticalFlattenableSlabBlock extends VerticalY15SlabBlock {
 
     public void setToDirt(@Nullable Entity entity, BlockState from, World world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        BlockState state = pushEntitiesUpBeforeBlockChange(from, FlattenableBlocksRegistry.FLATTENED_TO_BLOCK_MAP.get(blockState.getBlock()).getBlock().getStateWithProperties(blockState), world, pos);
+        BlockState state = pushEntitiesUpBeforeBlockChange(from, ModRegistries.FLATTENED_TO_BLOCK_MAP.get(blockState.getBlock()).getBlock().getStateWithProperties(blockState), world, pos);
         world.setBlockState(pos, state);
         world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(entity, state));
     }

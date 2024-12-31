@@ -1,7 +1,9 @@
 // 1.21.4	-999999999-01-01T00:00:00	Vanilla+ Verticals/Tags for minecraft:block
-7cede0339641891d91743c1e1c64f5bb7f6080f7 data/minecraft/tags/block/mineable/axe.json
+b7e315a20a32a1534efe852c9956a627e736cd56 data/minecraft/tags/block/concrete_powder.json
+33057abbb975d90dc714c4770a96c5e9780dffb0 data/minecraft/tags/block/mineable/axe.json
 511971cbf32eabf2024f31f8a199b90c551fdc02 data/minecraft/tags/block/mineable/hoe.json
-a4b491d7aef8052d0410916f771a289108bb703b data/minecraft/tags/block/mineable/pickaxe.json
-aab1ab6d71a61b6e7226eaefa12b94666aeda4d0 data/minecraft/tags/block/mineable/shovel.json
-af6fab2e9dbb84de4f375803acbe022f066bf2cd data/vanillavsplus/tags/block/vertical_slabs.json
-165a66b0123783728c7530ea87e3c93024f6f550 data/vanillavsplus/tags/block/vertical_stairs.json
+9e4da7cf52b82877be8bd5fbc9932fcd0742d9e2 data/minecraft/tags/block/mineable/pickaxe.json
+126102d3c275b24e265d7a6310c93682d4d6a0b2 data/minecraft/tags/block/mineable/shovel.json
+99ff172af0d63daf97e5fbef7fbb5a67beaf5cf7 data/minecraft/tags/block/terracotta.json
+4d06e5dd731973045f3907f18ddabb9635a1c8a0 data/vanillavsplus/tags/block/vertical_slabs.json
+7783de75a0e5de0d89236991c5a872a4170b89fa data/vanillavsplus/tags/block/vertical_stairs.json

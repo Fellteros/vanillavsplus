@@ -19,13 +19,14 @@ public class VanillaVSPlus implements ModInitializer {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
 
-		FuelRegistry.registerFuel();
-		OxidizableBlockRegistry.registerOxidizables();
-		FlammableBlocksRegistry.registerFlammables();
-		VVSPStrippableRegistry.registerStrippableBlocks();
-		FlattenableBlocksRegistry.registerFlattenableBlocks();
-		TillableBlocksRegistry.registerTillableBlocks();
+		ModRegistries.registerFuel();
+		ModRegistries.registerOxidizables();
+		ModRegistries.registerFlammables();
+		ModRegistries.registerStrippableBlocks();
+		ModRegistries.registerFlattenableBlocks();
+		ModRegistries.registerTillableBlocks();
 
+		LOGGER.info("Initialized Vanilla+ Verticals");
 
 	}
 }

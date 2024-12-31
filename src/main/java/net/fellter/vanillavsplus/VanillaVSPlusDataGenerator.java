@@ -2,10 +2,8 @@ package net.fellter.vanillavsplus;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fellter.vanillavsplus.datagen.ModBlockTagProvider;
-import net.fellter.vanillavsplus.datagen.ModLootTableProvider;
-import net.fellter.vanillavsplus.datagen.ModModelProvider;
-import net.fellter.vanillavsplus.datagen.ModRecipeProvider;
+import net.fellter.vanillavsplus.datagen.*;
+import net.minecraft.registry.RegistryBuilder;
 
 public class VanillaVSPlusDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -16,6 +14,12 @@ public class VanillaVSPlusDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLanguageProvider::new);
 
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		DataGeneratorEntrypoint.super.buildRegistry(registryBuilder);
 	}
 }

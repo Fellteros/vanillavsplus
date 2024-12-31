@@ -24,10 +24,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_OAK_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_OAK_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_OAK_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_OAK_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_OAK_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_OAK_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_OAK_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_SPRUCE_SLAB);
                         entries.add(ModBlocks.VERTICAL_SPRUCE_STAIRS);
@@ -35,10 +35,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_SPRUCE_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_SPRUCE_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_SPRUCE_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_SPRUCE_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_SPRUCE_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_SPRUCE_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_SPRUCE_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_SPRUCE_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_SPRUCE_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_SPRUCE_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_SPRUCE_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_BIRCH_SLAB);
                         entries.add(ModBlocks.VERTICAL_BIRCH_STAIRS);
@@ -46,10 +46,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_BIRCH_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_BIRCH_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_BIRCH_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_BIRCH_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_BIRCH_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_BIRCH_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_BIRCH_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BIRCH_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BIRCH_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BIRCH_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BIRCH_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_JUNGLE_SLAB);
                         entries.add(ModBlocks.VERTICAL_JUNGLE_STAIRS);
@@ -57,10 +57,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_JUNGLE_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_JUNGLE_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_JUNGLE_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_JUNGLE_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_JUNGLE_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_JUNGLE_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_JUNGLE_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_JUNGLE_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_JUNGLE_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_JUNGLE_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_JUNGLE_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_ACACIA_SLAB);
                         entries.add(ModBlocks.VERTICAL_ACACIA_STAIRS);
@@ -68,10 +68,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_ACACIA_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_ACACIA_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_ACACIA_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_ACACIA_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_ACACIA_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_ACACIA_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_ACACIA_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_ACACIA_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_ACACIA_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_ACACIA_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_ACACIA_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_DARK_OAK_SLAB);
                         entries.add(ModBlocks.VERTICAL_DARK_OAK_STAIRS);
@@ -79,10 +79,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_DARK_OAK_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_DARK_OAK_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_DARK_OAK_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_DARK_OAK_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_DARK_OAK_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_DARK_OAK_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_DARK_OAK_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_MANGROVE_SLAB);
                         entries.add(ModBlocks.VERTICAL_MANGROVE_STAIRS);
@@ -90,10 +90,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_MANGROVE_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_MANGROVE_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_MANGROVE_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_MANGROVE_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_MANGROVE_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_MANGROVE_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_MANGROVE_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_MANGROVE_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_MANGROVE_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_MANGROVE_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_MANGROVE_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_CHERRY_SLAB);
                         entries.add(ModBlocks.VERTICAL_CHERRY_STAIRS);
@@ -101,10 +101,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_CHERRY_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_CHERRY_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_CHERRY_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_CHERRY_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_CHERRY_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_CHERRY_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_CHERRY_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CHERRY_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CHERRY_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CHERRY_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CHERRY_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_PALE_OAK_SLAB);
                         entries.add(ModBlocks.VERTICAL_PALE_OAK_STAIRS);
@@ -112,10 +112,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_PALE_OAK_LOG_STAIRS);
                         entries.add(ModBlocks.VERTICAL_PALE_OAK_WOOD_SLAB);
                         entries.add(ModBlocks.VERTICAL_PALE_OAK_WOOD_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_LOG_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_LOG_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_WOOD_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_WOOD_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_BAMBOO_SLAB);
                         entries.add(ModBlocks.VERTICAL_BAMBOO_STAIRS);
@@ -123,8 +123,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_BAMBOO_MOSAIC_STAIRS);
                         entries.add(ModBlocks.VERTICAL_BAMBOO_BLOCK_SLAB);
                         entries.add(ModBlocks.VERTICAL_BAMBOO_BLOCK_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_BAMBOO_BLOCK_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_BAMBOO_BLOCK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BAMBOO_BLOCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_BAMBOO_BLOCK_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_CRIMSON_SLAB);
                         entries.add(ModBlocks.VERTICAL_CRIMSON_STAIRS);
@@ -132,10 +132,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_CRIMSON_STEM_STAIRS);
                         entries.add(ModBlocks.VERTICAL_CRIMSON_HYPHAE_SLAB);
                         entries.add(ModBlocks.VERTICAL_CRIMSON_HYPHAE_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_CRIMSON_STEM_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_CRIMSON_STEM_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_CRIMSON_HYPHAE_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_CRIMSON_HYPHAE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CRIMSON_STEM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CRIMSON_STEM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CRIMSON_HYPHAE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_CRIMSON_HYPHAE_STAIRS);
 
                         entries.add(ModBlocks.VERTICAL_WARPED_SLAB);
                         entries.add(ModBlocks.VERTICAL_WARPED_STAIRS);
@@ -143,10 +143,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_WARPED_STEM_STAIRS);
                         entries.add(ModBlocks.VERTICAL_WARPED_HYPHAE_SLAB);
                         entries.add(ModBlocks.VERTICAL_WARPED_HYPHAE_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_WARPED_STEM_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_WARPED_STEM_STAIRS);
-                        entries.add(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_SLAB);
-                        entries.add(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_WARPED_STEM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_WARPED_STEM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_WARPED_HYPHAE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_STRIPPED_WARPED_HYPHAE_STAIRS);
                         
                         entries.add(ModBlocks.VERTICAL_STONE_SLAB);
                         entries.add(ModBlocks.VERTICAL_STONE_STAIRS);
@@ -638,6 +638,66 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_OBSIDIAN_STAIRS);
                         entries.add(ModBlocks.VERTICAL_CRYING_OBSIDIAN_SLAB);
                         entries.add(ModBlocks.VERTICAL_CRYING_OBSIDIAN_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_CRIMSON_NYLIUM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CRIMSON_NYLIUM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WARPED_NYLIUM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WARPED_NYLIUM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SOUL_SAND_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SOUL_SAND_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SOUL_SOIL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SOUL_SOIL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BONE_BLOCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BONE_BLOCK_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_COAL_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COAL_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_COAL_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_COAL_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_IRON_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_IRON_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_IRON_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_IRON_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_COPPER_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_COPPER_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_COPPER_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_COPPER_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_GOLD_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GOLD_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_GOLD_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_GOLD_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_REDSTONE_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_REDSTONE_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_REDSTONE_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_REDSTONE_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_EMERALD_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_EMERALD_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_EMERALD_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_EMERALD_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_LAPIS_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_LAPIS_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_LAPIS_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_LAPIS_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DIAMOND_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DIAMOND_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_DIAMOND_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEEPSLATE_DIAMOND_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_NETHER_GOLD_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHER_GOLD_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_NETHER_QUARTZ_ORE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHER_QUARTZ_ORE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ANCIENT_DEBRIS_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ANCIENT_DEBRIS_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_RAW_IRON_BLOCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RAW_IRON_BLOCK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RAW_COPPER_BLOCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RAW_COPPER_BLOCK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RAW_GOLD_BLOCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RAW_GOLD_BLOCK_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_GLOWSTONE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_GLOWSTONE_STAIRS);
 
                             })).build());
 

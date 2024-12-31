@@ -3,7 +3,6 @@ package net.fellter.vanillavsplus.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.fellter.vanillavsplus.VanillaVSPlus;
-import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.minecraft.block.Block;

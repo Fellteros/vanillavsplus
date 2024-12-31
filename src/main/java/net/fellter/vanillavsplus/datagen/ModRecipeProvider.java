@@ -2,7 +2,11 @@ package net.fellter.vanillavsplus.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fellter.vanillavsplus.VanillaVSPlus;
 import net.fellter.vanillavsplus.block.ModBlocks;
+import net.fellter.vanillavsplus.block.VerticalSlabBlock;
+import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+import net.fellter.vanillavsplus.registry.DatagenArgs;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.data.recipe.CraftingRecipeJsonBuilder;
@@ -10,6 +14,7 @@ import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -56,11 +61,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_OAK_WOOD_SLAB, Blocks.OAK_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_OAK_WOOD_STAIRS, Blocks.OAK_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_OAK_LOG_SLAB, Blocks.STRIPPED_OAK_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_OAK_LOG_STAIRS, Blocks.STRIPPED_OAK_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_OAK_LOG_SLAB, Blocks.STRIPPED_OAK_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_OAK_LOG_STAIRS, Blocks.STRIPPED_OAK_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_OAK_WOOD_SLAB, Blocks.STRIPPED_OAK_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_OAK_WOOD_STAIRS, Blocks.STRIPPED_OAK_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_OAK_WOOD_SLAB, Blocks.STRIPPED_OAK_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_OAK_WOOD_STAIRS, Blocks.STRIPPED_OAK_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_SPRUCE_SLAB, Blocks.SPRUCE_PLANKS).offerTo(exporter);
@@ -72,11 +77,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_SPRUCE_WOOD_SLAB, Blocks.SPRUCE_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_SPRUCE_WOOD_STAIRS, Blocks.SPRUCE_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_SPRUCE_LOG_SLAB, Blocks.STRIPPED_SPRUCE_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_SPRUCE_LOG_STAIRS, Blocks.STRIPPED_SPRUCE_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_SPRUCE_LOG_SLAB, Blocks.STRIPPED_SPRUCE_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_SPRUCE_LOG_STAIRS, Blocks.STRIPPED_SPRUCE_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_SPRUCE_WOOD_SLAB, Blocks.STRIPPED_SPRUCE_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_SPRUCE_WOOD_STAIRS, Blocks.STRIPPED_SPRUCE_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_SPRUCE_WOOD_SLAB, Blocks.STRIPPED_SPRUCE_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_SPRUCE_WOOD_STAIRS, Blocks.STRIPPED_SPRUCE_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_BIRCH_SLAB, Blocks.BIRCH_PLANKS).offerTo(exporter);
@@ -88,11 +93,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_BIRCH_WOOD_SLAB, Blocks.BIRCH_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_BIRCH_WOOD_STAIRS, Blocks.BIRCH_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_BIRCH_LOG_SLAB, Blocks.STRIPPED_BIRCH_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_BIRCH_LOG_STAIRS, Blocks.STRIPPED_BIRCH_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_BIRCH_LOG_SLAB, Blocks.STRIPPED_BIRCH_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_BIRCH_LOG_STAIRS, Blocks.STRIPPED_BIRCH_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_BIRCH_WOOD_SLAB, Blocks.STRIPPED_BIRCH_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_BIRCH_WOOD_STAIRS, Blocks.STRIPPED_BIRCH_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_BIRCH_WOOD_SLAB, Blocks.STRIPPED_BIRCH_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_BIRCH_WOOD_STAIRS, Blocks.STRIPPED_BIRCH_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_JUNGLE_SLAB, Blocks.JUNGLE_PLANKS).offerTo(exporter);
@@ -104,11 +109,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_JUNGLE_WOOD_SLAB, Blocks.JUNGLE_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_JUNGLE_WOOD_STAIRS, Blocks.JUNGLE_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_JUNGLE_LOG_SLAB, Blocks.STRIPPED_JUNGLE_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_JUNGLE_LOG_STAIRS, Blocks.STRIPPED_JUNGLE_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_JUNGLE_LOG_SLAB, Blocks.STRIPPED_JUNGLE_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_JUNGLE_LOG_STAIRS, Blocks.STRIPPED_JUNGLE_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_JUNGLE_WOOD_SLAB, Blocks.STRIPPED_JUNGLE_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_JUNGLE_WOOD_STAIRS, Blocks.STRIPPED_JUNGLE_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_JUNGLE_WOOD_SLAB, Blocks.STRIPPED_JUNGLE_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_JUNGLE_WOOD_STAIRS, Blocks.STRIPPED_JUNGLE_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_ACACIA_SLAB, Blocks.ACACIA_PLANKS).offerTo(exporter);
@@ -120,11 +125,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_ACACIA_WOOD_SLAB, Blocks.ACACIA_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_ACACIA_WOOD_STAIRS, Blocks.ACACIA_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_ACACIA_LOG_SLAB, Blocks.STRIPPED_ACACIA_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_ACACIA_LOG_STAIRS, Blocks.STRIPPED_ACACIA_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_ACACIA_LOG_SLAB, Blocks.STRIPPED_ACACIA_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_ACACIA_LOG_STAIRS, Blocks.STRIPPED_ACACIA_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_ACACIA_WOOD_SLAB, Blocks.STRIPPED_ACACIA_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_ACACIA_WOOD_STAIRS, Blocks.STRIPPED_ACACIA_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_ACACIA_WOOD_SLAB, Blocks.STRIPPED_ACACIA_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_ACACIA_WOOD_STAIRS, Blocks.STRIPPED_ACACIA_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_DARK_OAK_SLAB, Blocks.DARK_OAK_PLANKS).offerTo(exporter);
@@ -136,11 +141,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_DARK_OAK_WOOD_SLAB, Blocks.DARK_OAK_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_DARK_OAK_WOOD_STAIRS, Blocks.DARK_OAK_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_DARK_OAK_LOG_SLAB, Blocks.STRIPPED_DARK_OAK_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_DARK_OAK_LOG_STAIRS, Blocks.STRIPPED_DARK_OAK_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_LOG_SLAB, Blocks.STRIPPED_DARK_OAK_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_LOG_STAIRS, Blocks.STRIPPED_DARK_OAK_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_DARK_OAK_WOOD_SLAB, Blocks.STRIPPED_DARK_OAK_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_DARK_OAK_WOOD_STAIRS, Blocks.STRIPPED_DARK_OAK_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_WOOD_SLAB, Blocks.STRIPPED_DARK_OAK_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_DARK_OAK_WOOD_STAIRS, Blocks.STRIPPED_DARK_OAK_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_MANGROVE_SLAB, Blocks.MANGROVE_PLANKS).offerTo(exporter);
@@ -152,11 +157,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_MANGROVE_WOOD_SLAB, Blocks.MANGROVE_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_MANGROVE_WOOD_STAIRS, Blocks.MANGROVE_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_MANGROVE_LOG_SLAB, Blocks.STRIPPED_MANGROVE_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_MANGROVE_LOG_STAIRS, Blocks.STRIPPED_MANGROVE_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_MANGROVE_LOG_SLAB, Blocks.STRIPPED_MANGROVE_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_MANGROVE_LOG_STAIRS, Blocks.STRIPPED_MANGROVE_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_MANGROVE_WOOD_SLAB, Blocks.STRIPPED_MANGROVE_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_MANGROVE_WOOD_STAIRS, Blocks.STRIPPED_MANGROVE_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_MANGROVE_WOOD_SLAB, Blocks.STRIPPED_MANGROVE_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_MANGROVE_WOOD_STAIRS, Blocks.STRIPPED_MANGROVE_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_CHERRY_SLAB, Blocks.CHERRY_PLANKS).offerTo(exporter);
@@ -168,11 +173,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_CHERRY_WOOD_SLAB, Blocks.CHERRY_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_CHERRY_WOOD_STAIRS, Blocks.CHERRY_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_CHERRY_LOG_SLAB, Blocks.STRIPPED_CHERRY_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_CHERRY_LOG_STAIRS, Blocks.STRIPPED_CHERRY_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_CHERRY_LOG_SLAB, Blocks.STRIPPED_CHERRY_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_CHERRY_LOG_STAIRS, Blocks.STRIPPED_CHERRY_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_CHERRY_WOOD_SLAB, Blocks.STRIPPED_CHERRY_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_CHERRY_WOOD_STAIRS, Blocks.STRIPPED_CHERRY_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_CHERRY_WOOD_SLAB, Blocks.STRIPPED_CHERRY_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_CHERRY_WOOD_STAIRS, Blocks.STRIPPED_CHERRY_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_PALE_OAK_SLAB, Blocks.PALE_OAK_PLANKS).offerTo(exporter);
@@ -184,11 +189,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_PALE_OAK_WOOD_SLAB, Blocks.PALE_OAK_WOOD).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_PALE_OAK_WOOD_STAIRS, Blocks.PALE_OAK_WOOD).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_SLAB, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_LOG_STAIRS, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_LOG_SLAB, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_LOG_STAIRS, Blocks.STRIPPED_PALE_OAK_LOG).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_SLAB, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_PALE_OAK_WOOD_STAIRS, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_WOOD_SLAB, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_PALE_OAK_WOOD_STAIRS, Blocks.STRIPPED_PALE_OAK_WOOD).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_BAMBOO_SLAB, Blocks.BAMBOO_PLANKS).offerTo(exporter);
@@ -200,8 +205,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_BAMBOO_BLOCK_SLAB, Blocks.BAMBOO_BLOCK).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_BAMBOO_BLOCK_STAIRS, Blocks.BAMBOO_BLOCK).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_BAMBOO_BLOCK_SLAB, Blocks.STRIPPED_BAMBOO_BLOCK).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_BAMBOO_BLOCK_STAIRS, Blocks.STRIPPED_BAMBOO_BLOCK).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_BAMBOO_BLOCK_SLAB, Blocks.STRIPPED_BAMBOO_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_BAMBOO_BLOCK_STAIRS, Blocks.STRIPPED_BAMBOO_BLOCK).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_CRIMSON_SLAB, Blocks.CRIMSON_PLANKS).offerTo(exporter);
@@ -213,11 +218,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_CRIMSON_HYPHAE_SLAB, Blocks.CRIMSON_HYPHAE).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_CRIMSON_HYPHAE_STAIRS, Blocks.CRIMSON_HYPHAE).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_CRIMSON_STEM_SLAB, Blocks.STRIPPED_CRIMSON_STEM).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_CRIMSON_STEM_STAIRS, Blocks.STRIPPED_CRIMSON_STEM).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_CRIMSON_STEM_SLAB, Blocks.STRIPPED_CRIMSON_STEM).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_CRIMSON_STEM_STAIRS, Blocks.STRIPPED_CRIMSON_STEM).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_CRIMSON_HYPHAE_SLAB, Blocks.STRIPPED_CRIMSON_HYPHAE).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_CRIMSON_HYPHAE_STAIRS, Blocks.STRIPPED_CRIMSON_HYPHAE).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_CRIMSON_HYPHAE_SLAB, Blocks.STRIPPED_CRIMSON_HYPHAE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_CRIMSON_HYPHAE_STAIRS, Blocks.STRIPPED_CRIMSON_HYPHAE).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_WARPED_SLAB, Blocks.WARPED_PLANKS).offerTo(exporter);
@@ -229,11 +234,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 verticalSlabRecipe(ModBlocks.VERTICAL_WARPED_HYPHAE_SLAB, Blocks.WARPED_HYPHAE).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_WARPED_HYPHAE_STAIRS, Blocks.WARPED_HYPHAE).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_WARPED_STEM_SLAB, Blocks.STRIPPED_WARPED_STEM).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_WARPED_STEM_STAIRS, Blocks.STRIPPED_WARPED_STEM).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_WARPED_STEM_SLAB, Blocks.STRIPPED_WARPED_STEM).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_WARPED_STEM_STAIRS, Blocks.STRIPPED_WARPED_STEM).offerTo(exporter);
 
-                verticalSlabRecipe(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_SLAB, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
-                verticalStairsRecipe(ModBlocks.VERTICAL_STR_WARPED_HYPHAE_STAIRS, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
+                verticalSlabRecipe(ModBlocks.VERTICAL_STRIPPED_WARPED_HYPHAE_SLAB, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_STRIPPED_WARPED_HYPHAE_STAIRS, Blocks.STRIPPED_WARPED_HYPHAE).offerTo(exporter);
 
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_STONE_SLAB, Blocks.STONE).offerTo(exporter);
@@ -953,6 +958,103 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 verticalSlabRecipe(ModBlocks.VERTICAL_CRYING_OBSIDIAN_SLAB, Blocks.CRYING_OBSIDIAN).offerTo(exporter);
                 verticalStairsRecipe(ModBlocks.VERTICAL_CRYING_OBSIDIAN_STAIRS, Blocks.CRYING_OBSIDIAN).offerTo(exporter);
+                
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_CRIMSON_NYLIUM_SLAB, Blocks.CRIMSON_NYLIUM).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_CRIMSON_NYLIUM_STAIRS, Blocks.CRIMSON_NYLIUM).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_WARPED_NYLIUM_SLAB, Blocks.WARPED_NYLIUM).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_WARPED_NYLIUM_STAIRS, Blocks.WARPED_NYLIUM).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_SOUL_SAND_SLAB, Blocks.SOUL_SAND).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_SOUL_SAND_STAIRS, Blocks.SOUL_SAND).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_SOUL_SOIL_SLAB, Blocks.SOUL_SOIL).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_SOUL_SOIL_STAIRS, Blocks.SOUL_SOIL).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_BONE_BLOCK_SLAB, Blocks.BONE_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_BONE_BLOCK_STAIRS, Blocks.BONE_BLOCK).offerTo(exporter);
+                
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_COAL_ORE_SLAB, Blocks.COAL_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_COAL_ORE_STAIRS, Blocks.COAL_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_COAL_ORE_SLAB, Blocks.DEEPSLATE_COAL_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_COAL_ORE_STAIRS, Blocks.DEEPSLATE_COAL_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_IRON_ORE_SLAB, Blocks.IRON_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_IRON_ORE_STAIRS, Blocks.IRON_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_IRON_ORE_SLAB, Blocks.DEEPSLATE_IRON_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_IRON_ORE_STAIRS, Blocks.DEEPSLATE_IRON_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_COPPER_ORE_SLAB, Blocks.COPPER_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_COPPER_ORE_STAIRS, Blocks.COPPER_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_COPPER_ORE_SLAB, Blocks.DEEPSLATE_COPPER_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_COPPER_ORE_STAIRS, Blocks.DEEPSLATE_COPPER_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_GOLD_ORE_SLAB, Blocks.GOLD_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_GOLD_ORE_STAIRS, Blocks.GOLD_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_GOLD_ORE_SLAB, Blocks.DEEPSLATE_GOLD_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_GOLD_ORE_STAIRS, Blocks.DEEPSLATE_GOLD_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_REDSTONE_ORE_SLAB, Blocks.REDSTONE_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_REDSTONE_ORE_STAIRS, Blocks.REDSTONE_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_REDSTONE_ORE_SLAB, Blocks.DEEPSLATE_REDSTONE_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_REDSTONE_ORE_STAIRS, Blocks.DEEPSLATE_REDSTONE_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_EMERALD_ORE_SLAB, Blocks.EMERALD_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_EMERALD_ORE_STAIRS, Blocks.EMERALD_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_EMERALD_ORE_SLAB, Blocks.DEEPSLATE_EMERALD_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_EMERALD_ORE_STAIRS, Blocks.DEEPSLATE_EMERALD_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_LAPIS_ORE_SLAB, Blocks.LAPIS_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_LAPIS_ORE_STAIRS, Blocks.LAPIS_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_LAPIS_ORE_SLAB, Blocks.DEEPSLATE_LAPIS_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_LAPIS_ORE_STAIRS, Blocks.DEEPSLATE_LAPIS_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DIAMOND_ORE_SLAB, Blocks.DIAMOND_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DIAMOND_ORE_STAIRS, Blocks.DIAMOND_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_DEEPSLATE_DIAMOND_ORE_SLAB, Blocks.DEEPSLATE_DIAMOND_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_DEEPSLATE_DIAMOND_ORE_STAIRS, Blocks.DEEPSLATE_DIAMOND_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_NETHER_GOLD_ORE_SLAB, Blocks.NETHER_GOLD_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_NETHER_GOLD_ORE_STAIRS, Blocks.NETHER_GOLD_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_NETHER_QUARTZ_ORE_SLAB, Blocks.NETHER_QUARTZ_ORE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_NETHER_QUARTZ_ORE_STAIRS, Blocks.NETHER_QUARTZ_ORE).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_ANCIENT_DEBRIS_SLAB, Blocks.ANCIENT_DEBRIS).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_ANCIENT_DEBRIS_STAIRS, Blocks.ANCIENT_DEBRIS).offerTo(exporter);
+
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_RAW_IRON_BLOCK_SLAB, Blocks.RAW_IRON_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_RAW_IRON_BLOCK_STAIRS, Blocks.RAW_IRON_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_RAW_COPPER_BLOCK_SLAB, Blocks.RAW_COPPER_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_RAW_COPPER_BLOCK_STAIRS, Blocks.RAW_COPPER_BLOCK).offerTo(exporter);
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_RAW_GOLD_BLOCK_SLAB, Blocks.RAW_GOLD_BLOCK).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_RAW_GOLD_BLOCK_STAIRS, Blocks.RAW_GOLD_BLOCK).offerTo(exporter);
+
+
+                verticalSlabRecipe(ModBlocks.VERTICAL_GLOWSTONE_SLAB, Blocks.GLOWSTONE).offerTo(exporter);
+                verticalStairsRecipe(ModBlocks.VERTICAL_GLOWSTONE_STAIRS, Blocks.GLOWSTONE).offerTo(exporter);
+
+
+                Registries.BLOCK.forEach(block -> {
+                    DatagenArgs args = ModBlocks.DATAGEN_ARGS.get(block);
+                    if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID)) {
+                        if (block instanceof VerticalSlabBlock && args.parentBlock != null) verticalSlabRecipe(block, args.parentBlock);
+                        else if (block instanceof VerticalStairsBlock && args.parentBlock != null) verticalStairsRecipe(block, args.parentBlock);
+                    }
+                });
 
             }
         };
