@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class VanillaVSPlus implements ModInitializer {
 	public static final String MOD_ID = "vanillavsplus";
-    public static final Logger LOGGER = LoggerFactory.getLogger("Vanilla+ Verticals");
+	public static final Logger LOGGER = LoggerFactory.getLogger("Vanilla+ Verticals");
 
 	@Override
 	public void onInitialize() {
@@ -27,6 +27,6 @@ public class VanillaVSPlus implements ModInitializer {
 		ModRegistries.registerTillableBlocks();
 
 		LOGGER.info("Initialized Vanilla+ Verticals");
-
 	}
+
 }

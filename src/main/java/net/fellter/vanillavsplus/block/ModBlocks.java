@@ -5,22 +5,34 @@ import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcreteP
 import net.fellter.vanillavsplus.custom_blocks.concrete_powder.VerticalConcretePowderStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.copper.VerticalOxidizableStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.coral.VerticalCoralSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.coral.VerticalCoralStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.falling.VerticalFallingSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.falling.VerticalFallingStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.flattenable.VerticalFlattenableStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.honey.VerticalHoneySlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.honey.VerticalHoneyStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone_ore.VerticalRedstoneOreSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone_ore.VerticalRedstoneOreStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.slime.VerticalSlimeSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.slime.VerticalSlimeStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.sponge.VerticalSpongeSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.sponge.VerticalSpongeStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeStairsBlock;
 import net.fellter.vanillavsplus.registry.DatagenArgs;
 import net.fellter.vanillavsplus.registry.RegistryArgs;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.client.data.TextureMap;
+import net.minecraft.client.render.item.tint.ConstantTintSource;
 import net.minecraft.client.render.item.tint.GrassTintSource;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -35,10 +47,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -47,25 +60,25 @@ import static net.fellter.vanillavsplus.datagen.ModModelProvider.*;
 
 public class ModBlocks {
     
-    public static Map<Block, DatagenArgs> DATAGEN_ARGS = new HashMap<>();
-    public static Map<Block, RegistryArgs> REGISTRY_ARGS = new HashMap<>();
+    public static Map<Block, DatagenArgs> DATAGEN_ARGS = new LinkedHashMap<>();
+    public static Map<Block, RegistryArgs> REGISTRY_ARGS = new LinkedHashMap<>();
 
     public static final Block LOG_DEF = registerBlock("log_def", Block::new, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable());
     public static final Block BAMBOO_DEF = registerBlock("bamboo_def", Block::new, AbstractBlock.Settings.copy(LOG_DEF).sounds(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block NETHER_DEF = registerBlock("nether_def", Block::new, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.NETHER_STEM));
 
     public static final Block VERTICAL_OAK_SLAB = registerBlock("vertical_oak_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), 
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.OAK_PLANKS)).parentBlock(Blocks.OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.OAK_PLANKS)).parentBlock(Blocks.OAK_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_OAK_STAIRS = registerBlock("vertical_oak_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.OAK_PLANKS)).parentBlock(Blocks.OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.OAK_PLANKS)).parentBlock(Blocks.OAK_PLANKS), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_OAK_LOG_SLAB = registerBlock("vertical_stripped_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_OAK_LOG_STAIRS = registerBlock("vertical_stripped_oak_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_OAK_WOOD_SLAB = registerBlock("vertical_stripped_oak_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_OAK_WOOD_STAIRS = registerBlock("vertical_stripped_oak_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_OAK_LOG)).parentBlock(Blocks.STRIPPED_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_OAK_LOG_SLAB = registerBlock("vertical_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF), 
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.OAK_LOG)).parentBlock(Blocks.OAK_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_OAK_LOG_SLAB).flammable(5, 5));
@@ -80,17 +93,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_OAK_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_SPRUCE_SLAB = registerBlock("vertical_spruce_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SPRUCE_PLANKS), 
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.SPRUCE_PLANKS)).parentBlock(Blocks.SPRUCE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.SPRUCE_PLANKS)).parentBlock(Blocks.SPRUCE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_SPRUCE_STAIRS = registerBlock("vertical_spruce_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SPRUCE_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.SPRUCE_PLANKS)).parentBlock(Blocks.SPRUCE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.SPRUCE_PLANKS)).parentBlock(Blocks.SPRUCE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_SPRUCE_LOG_SLAB = registerBlock("vertical_stripped_spruce_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_SPRUCE_LOG_STAIRS = registerBlock("vertical_stripped_spruce_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_SPRUCE_WOOD_SLAB = registerBlock("vertical_stripped_spruce_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_SPRUCE_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_SPRUCE_WOOD_STAIRS = registerBlock("vertical_stripped_spruce_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_SPRUCE_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_SPRUCE_LOG)).parentBlock(Blocks.STRIPPED_SPRUCE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_SPRUCE_LOG_SLAB = registerBlock("vertical_spruce_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF), 
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.SPRUCE_LOG)).parentBlock(Blocks.SPRUCE_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_SPRUCE_LOG_SLAB).flammable(5, 5));
@@ -105,17 +118,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_SPRUCE_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_BIRCH_SLAB = registerBlock("vertical_birch_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BIRCH_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BIRCH_PLANKS)).parentBlock(Blocks.BIRCH_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BIRCH_PLANKS)).parentBlock(Blocks.BIRCH_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_BIRCH_STAIRS = registerBlock("vertical_birch_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BIRCH_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BIRCH_PLANKS)).parentBlock(Blocks.BIRCH_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BIRCH_PLANKS)).parentBlock(Blocks.BIRCH_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_BIRCH_LOG_SLAB = registerBlock("vertical_stripped_birch_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_BIRCH_LOG_STAIRS = registerBlock("vertical_stripped_birch_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_BIRCH_WOOD_SLAB = registerBlock("vertical_stripped_birch_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_BIRCH_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_BIRCH_WOOD_STAIRS = registerBlock("vertical_stripped_birch_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_BIRCH_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_BIRCH_LOG)).parentBlock(Blocks.STRIPPED_BIRCH_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_BIRCH_LOG_SLAB = registerBlock("vertical_birch_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.BIRCH_LOG)).parentBlock(Blocks.BIRCH_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_BIRCH_LOG_SLAB).flammable(5, 5));
@@ -130,17 +143,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_BIRCH_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_JUNGLE_SLAB = registerBlock("vertical_jungle_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.JUNGLE_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.JUNGLE_PLANKS)).parentBlock(Blocks.JUNGLE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.JUNGLE_PLANKS)).parentBlock(Blocks.JUNGLE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_JUNGLE_STAIRS = registerBlock("vertical_jungle_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.JUNGLE_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.JUNGLE_PLANKS)).parentBlock(Blocks.JUNGLE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.JUNGLE_PLANKS)).parentBlock(Blocks.JUNGLE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_JUNGLE_LOG_SLAB = registerBlock("vertical_stripped_jungle_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_JUNGLE_LOG_STAIRS = registerBlock("vertical_stripped_jungle_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_JUNGLE_WOOD_SLAB = registerBlock("vertical_stripped_jungle_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_JUNGLE_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_JUNGLE_WOOD_STAIRS = registerBlock("vertical_stripped_jungle_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_JUNGLE_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_JUNGLE_LOG)).parentBlock(Blocks.STRIPPED_JUNGLE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_JUNGLE_LOG_SLAB = registerBlock("vertical_jungle_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.JUNGLE_LOG)).parentBlock(Blocks.JUNGLE_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_JUNGLE_LOG_SLAB).flammable(5, 5));
@@ -155,17 +168,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_JUNGLE_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_ACACIA_SLAB = registerBlock("vertical_acacia_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ACACIA_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.ACACIA_PLANKS)).parentBlock(Blocks.ACACIA_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.ACACIA_PLANKS)).parentBlock(Blocks.ACACIA_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_ACACIA_STAIRS = registerBlock("vertical_acacia_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ACACIA_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.ACACIA_PLANKS)).parentBlock(Blocks.ACACIA_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.ACACIA_PLANKS)).parentBlock(Blocks.ACACIA_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_ACACIA_LOG_SLAB = registerBlock("vertical_stripped_acacia_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_ACACIA_LOG_STAIRS = registerBlock("vertical_stripped_acacia_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_ACACIA_WOOD_SLAB = registerBlock("vertical_stripped_acacia_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_ACACIA_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_ACACIA_WOOD_STAIRS = registerBlock("vertical_stripped_acacia_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_ACACIA_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_ACACIA_LOG)).parentBlock(Blocks.STRIPPED_ACACIA_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_ACACIA_LOG_SLAB = registerBlock("vertical_acacia_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.ACACIA_LOG)).parentBlock(Blocks.ACACIA_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_ACACIA_LOG_SLAB).flammable(5, 5));
@@ -180,17 +193,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_ACACIA_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_DARK_OAK_SLAB = registerBlock("vertical_dark_oak_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DARK_OAK_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.DARK_OAK_PLANKS)).parentBlock(Blocks.DARK_OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.DARK_OAK_PLANKS)).parentBlock(Blocks.DARK_OAK_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_DARK_OAK_STAIRS = registerBlock("vertical_dark_oak_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DARK_OAK_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.DARK_OAK_PLANKS)).parentBlock(Blocks.DARK_OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.DARK_OAK_PLANKS)).parentBlock(Blocks.DARK_OAK_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_DARK_OAK_LOG_SLAB = registerBlock("vertical_stripped_dark_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_DARK_OAK_LOG_STAIRS = registerBlock("vertical_stripped_dark_oak_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_DARK_OAK_WOOD_SLAB = registerBlock("vertical_stripped_dark_oak_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_DARK_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_DARK_OAK_WOOD_STAIRS = registerBlock("vertical_stripped_dark_oak_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_DARK_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_DARK_OAK_LOG)).parentBlock(Blocks.STRIPPED_DARK_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_DARK_OAK_LOG_SLAB = registerBlock("vertical_dark_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.DARK_OAK_LOG)).parentBlock(Blocks.DARK_OAK_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_DARK_OAK_LOG_SLAB).flammable(5, 5));
@@ -205,17 +218,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_DARK_OAK_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_MANGROVE_SLAB = registerBlock("vertical_mangrove_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MANGROVE_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.MANGROVE_PLANKS)).parentBlock(Blocks.MANGROVE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.MANGROVE_PLANKS)).parentBlock(Blocks.MANGROVE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_MANGROVE_STAIRS = registerBlock("vertical_mangrove_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MANGROVE_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.MANGROVE_PLANKS)).parentBlock(Blocks.MANGROVE_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.MANGROVE_PLANKS)).parentBlock(Blocks.MANGROVE_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_MANGROVE_LOG_SLAB = registerBlock("vertical_stripped_mangrove_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_MANGROVE_LOG_STAIRS = registerBlock("vertical_stripped_mangrove_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_MANGROVE_WOOD_SLAB = registerBlock("vertical_stripped_mangrove_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_MANGROVE_WOOD_STAIRS = registerBlock("vertical_stripped_mangrove_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_MANGROVE_LOG)).parentBlock(Blocks.STRIPPED_MANGROVE_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_MANGROVE_LOG_SLAB = registerBlock("vertical_mangrove_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.MANGROVE_LOG)).parentBlock(Blocks.MANGROVE_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_MANGROVE_LOG_SLAB).flammable(5, 5));
@@ -230,17 +243,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_MANGROVE_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_CHERRY_SLAB = registerBlock("vertical_cherry_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CHERRY_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHERRY_PLANKS)).parentBlock(Blocks.CHERRY_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHERRY_PLANKS)).parentBlock(Blocks.CHERRY_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_CHERRY_STAIRS = registerBlock("vertical_cherry_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CHERRY_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHERRY_PLANKS)).parentBlock(Blocks.CHERRY_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHERRY_PLANKS)).parentBlock(Blocks.CHERRY_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_CHERRY_LOG_SLAB = registerBlock("vertical_stripped_cherry_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_CHERRY_LOG_STAIRS = registerBlock("vertical_stripped_cherry_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_CHERRY_WOOD_SLAB = registerBlock("vertical_stripped_cherry_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_CHERRY_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_CHERRY_WOOD_STAIRS = registerBlock("vertical_stripped_cherry_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_CHERRY_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_CHERRY_LOG)).parentBlock(Blocks.STRIPPED_CHERRY_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_CHERRY_LOG_SLAB = registerBlock("vertical_cherry_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.CHERRY_LOG)).parentBlock(Blocks.CHERRY_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_CHERRY_LOG_SLAB).flammable(5, 5));
@@ -255,17 +268,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_CHERRY_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_PALE_OAK_SLAB = registerBlock("vertical_pale_oak_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_OAK_PLANKS)).parentBlock(Blocks.PALE_OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_OAK_PLANKS)).parentBlock(Blocks.PALE_OAK_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_PALE_OAK_STAIRS = registerBlock("vertical_pale_oak_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_OAK_PLANKS)).parentBlock(Blocks.PALE_OAK_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_OAK_PLANKS)).parentBlock(Blocks.PALE_OAK_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_PALE_OAK_LOG_SLAB = registerBlock("vertical_stripped_pale_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_PALE_OAK_LOG_STAIRS = registerBlock("vertical_stripped_pale_oak_log_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_LOG));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_LOG), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_PALE_OAK_WOOD_SLAB = registerBlock("vertical_stripped_pale_oak_wood_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_PALE_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_PALE_OAK_WOOD_STAIRS = registerBlock("vertical_stripped_pale_oak_wood_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_PALE_OAK_WOOD),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_WOOD));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.STRIPPED_PALE_OAK_LOG)).parentBlock(Blocks.STRIPPED_PALE_OAK_WOOD), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_PALE_OAK_LOG_SLAB = registerBlock("vertical_pale_oak_log_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(LOG_DEF),
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.PALE_OAK_LOG)).parentBlock(Blocks.PALE_OAK_LOG),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_PALE_OAK_LOG_SLAB).flammable(5, 5));
@@ -280,17 +293,17 @@ public class ModBlocks {
             new RegistryArgs().strippable(VERTICAL_STRIPPED_PALE_OAK_WOOD_STAIRS).flammable(5, 5));
 
     public static final Block VERTICAL_BAMBOO_SLAB = registerBlock("vertical_bamboo_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BAMBOO_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_PLANKS)).parentBlock(Blocks.BAMBOO_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_PLANKS)).parentBlock(Blocks.BAMBOO_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_BAMBOO_STAIRS = registerBlock("vertical_bamboo_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BAMBOO_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_PLANKS)).parentBlock(Blocks.BAMBOO_PLANKS));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_PLANKS)).parentBlock(Blocks.BAMBOO_PLANKS), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_BAMBOO_MOSAIC_SLAB = registerBlock("vertical_bamboo_mosaic_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BAMBOO_PLANKS), 
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_MOSAIC)).parentBlock(Blocks.BAMBOO_MOSAIC));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_MOSAIC)).parentBlock(Blocks.BAMBOO_MOSAIC), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_BAMBOO_MOSAIC_STAIRS = registerBlock("vertical_bamboo_mosaic_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BAMBOO_PLANKS),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_MOSAIC)).parentBlock(Blocks.BAMBOO_MOSAIC));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(TextureMap.all(Blocks.BAMBOO_MOSAIC)).parentBlock(Blocks.BAMBOO_MOSAIC), new RegistryArgs().flammable(5, 20));
     public static final Block VERTICAL_STRIPPED_BAMBOO_BLOCK_SLAB = registerBlock("vertical_stripped_bamboo_block_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(BAMBOO_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BAMBOO_BLOCK)).parentBlock(Blocks.STRIPPED_BAMBOO_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BAMBOO_BLOCK)).parentBlock(Blocks.STRIPPED_BAMBOO_BLOCK), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_STRIPPED_BAMBOO_BLOCK_STAIRS = registerBlock("vertical_stripped_bamboo_block_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(BAMBOO_DEF),
-            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BAMBOO_BLOCK)).parentBlock(Blocks.STRIPPED_BAMBOO_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.STRIPPED_BAMBOO_BLOCK)).parentBlock(Blocks.STRIPPED_BAMBOO_BLOCK), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_BAMBOO_BLOCK_SLAB = registerBlock("vertical_bamboo_block_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(BAMBOO_DEF), 
             new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.BAMBOO_BLOCK)).parentBlock(Blocks.BAMBOO_BLOCK),
             new RegistryArgs().strippable(VERTICAL_STRIPPED_PALE_OAK_WOOD_STAIRS).flammable(5, 5));
@@ -601,37 +614,37 @@ public class ModBlocks {
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(blockAndTopForEnds(Blocks.PURPUR_PILLAR)).parentBlock(Blocks.PURPUR_PILLAR));
 
     public static final Block VERTICAL_COAL_SLAB = registerBlock("vertical_coal_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.COAL_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COAL_BLOCK)).parentBlock(Blocks.COAL_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COAL_BLOCK)).parentBlock(Blocks.COAL_BLOCK), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_COAL_STAIRS = registerBlock("vertical_coal_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.COAL_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COAL_BLOCK)).parentBlock(Blocks.COAL_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COAL_BLOCK)).parentBlock(Blocks.COAL_BLOCK), new RegistryArgs().flammable(5, 5));
     public static final Block VERTICAL_IRON_SLAB = registerBlock("vertical_iron_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_BLOCK)).parentBlock(Blocks.IRON_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_BLOCK)).parentBlock(Blocks.IRON_BLOCK));
     public static final Block VERTICAL_IRON_STAIRS = registerBlock("vertical_iron_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_BLOCK)).parentBlock(Blocks.IRON_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_BLOCK)).parentBlock(Blocks.IRON_BLOCK));
     public static final Block VERTICAL_GOLD_SLAB = registerBlock("vertical_gold_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_BLOCK)).parentBlock(Blocks.GOLD_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_BLOCK)).parentBlock(Blocks.GOLD_BLOCK));
     public static final Block VERTICAL_GOLD_STAIRS = registerBlock("vertical_gold_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_BLOCK)).parentBlock(Blocks.GOLD_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_BLOCK)).parentBlock(Blocks.GOLD_BLOCK));
     public static final Block VERTICAL_REDSTONE_SLAB = registerBlock("vertical_redstone_slab", VerticalRedstoneSlabBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_BLOCK),
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_BLOCK)).parentBlock(Blocks.REDSTONE_BLOCK));
     public static final Block VERTICAL_REDSTONE_STAIRS = registerBlock("vertical_redstone_stairs", VerticalRedstoneStairsBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_BLOCK),
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_BLOCK)).parentBlock(Blocks.REDSTONE_BLOCK));
     public static final Block VERTICAL_EMERALD_SLAB = registerBlock("vertical_emerald_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_BLOCK)).parentBlock(Blocks.EMERALD_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_BLOCK)).parentBlock(Blocks.EMERALD_BLOCK));
     public static final Block VERTICAL_EMERALD_STAIRS = registerBlock("vertical_emerald_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_BLOCK)).parentBlock(Blocks.EMERALD_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_BLOCK)).parentBlock(Blocks.EMERALD_BLOCK));
     public static final Block VERTICAL_LAPIS_SLAB = registerBlock("vertical_lapis_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_BLOCK)).parentBlock(Blocks.LAPIS_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_BLOCK)).parentBlock(Blocks.LAPIS_BLOCK));
     public static final Block VERTICAL_LAPIS_STAIRS = registerBlock("vertical_lapis_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_BLOCK)).parentBlock(Blocks.LAPIS_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_BLOCK)).parentBlock(Blocks.LAPIS_BLOCK));
     public static final Block VERTICAL_DIAMOND_SLAB = registerBlock("vertical_diamond_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DIAMOND_BLOCK)).parentBlock(Blocks.DIAMOND_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DIAMOND_BLOCK)).parentBlock(Blocks.DIAMOND_BLOCK));
     public static final Block VERTICAL_DIAMOND_STAIRS = registerBlock("vertical_diamond_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DIAMOND_BLOCK)).parentBlock(Blocks.DIAMOND_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DIAMOND_BLOCK)).parentBlock(Blocks.DIAMOND_BLOCK));
     public static final Block VERTICAL_NETHERITE_SLAB = registerBlock("vertical_netherite_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHERITE_BLOCK)).parentBlock(Blocks.NETHERITE_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHERITE_BLOCK)).parentBlock(Blocks.NETHERITE_BLOCK));
     public static final Block VERTICAL_NETHERITE_STAIRS = registerBlock("vertical_netherite_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHERITE_BLOCK)).parentBlock(Blocks.NETHERITE_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHERITE_BLOCK)).parentBlock(Blocks.NETHERITE_BLOCK));
 
     public static final Block VERTICAL_QUARTZ_SLAB = registerBlock("vertical_quartz_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BLOCK),
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(blockSTB(Blocks.QUARTZ_BLOCK)).parentBlock(Blocks.QUARTZ_BLOCK));
@@ -660,221 +673,221 @@ public class ModBlocks {
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.AMETHYST_BLOCK)).parentBlock(Blocks.AMETHYST_BLOCK));
 
     public static final Block VERTICAL_WAXED_COPPER_SLAB = registerBlock("vertical_waxed_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_COPPER_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.WAXED_COPPER_BLOCK, Blocks.COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.WAXED_COPPER_BLOCK, Blocks.COPPER_BLOCK));
     public static final Block VERTICAL_WAXED_COPPER_STAIRS = registerBlock("vertical_waxed_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_COPPER_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.WAXED_COPPER_BLOCK, Blocks.COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.WAXED_COPPER_BLOCK, Blocks.COPPER_BLOCK));
     public static final Block VERTICAL_WAXED_EXPOSED_COPPER_SLAB = registerBlock("vertical_waxed_exposed_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_COPPER, Blocks.EXPOSED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_COPPER, Blocks.EXPOSED_COPPER));
     public static final Block VERTICAL_WAXED_EXPOSED_COPPER_STAIRS = registerBlock("vertical_waxed_exposed_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_COPPER, Blocks.EXPOSED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_COPPER, Blocks.EXPOSED_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_COPPER_SLAB = registerBlock("vertical_waxed_weathered_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_COPPER_STAIRS = registerBlock("vertical_waxed_weathered_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_COPPER_SLAB = registerBlock("vertical_waxed_oxidized_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_COPPER_STAIRS = registerBlock("vertical_waxed_oxidized_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER));
 
     public static final Block VERTICAL_WAXED_CHISELED_COPPER_SLAB = registerBlock("vertical_waxed_chiseled_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.WAXED_CHISELED_COPPER, Blocks.CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.WAXED_CHISELED_COPPER, Blocks.CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_CHISELED_COPPER_STAIRS = registerBlock("vertical_waxed_chiseled_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.WAXED_CHISELED_COPPER, Blocks.CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.WAXED_CHISELED_COPPER, Blocks.CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_SLAB = registerBlock("vertical_waxed_exposed_chiseled_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CHISELED_COPPER, Blocks.EXPOSED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CHISELED_COPPER, Blocks.EXPOSED_CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_STAIRS = registerBlock("vertical_waxed_exposed_chiseled_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CHISELED_COPPER, Blocks.EXPOSED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CHISELED_COPPER, Blocks.EXPOSED_CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_SLAB = registerBlock("vertical_waxed_weathered_chiseled_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CHISELED_COPPER, Blocks.WEATHERED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CHISELED_COPPER, Blocks.WEATHERED_CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_STAIRS = registerBlock("vertical_waxed_weathered_chiseled_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CHISELED_COPPER, Blocks.WEATHERED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CHISELED_COPPER, Blocks.WEATHERED_CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_SLAB = registerBlock("vertical_waxed_oxidized_chiseled_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CHISELED_COPPER, Blocks.OXIDIZED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CHISELED_COPPER, Blocks.OXIDIZED_CHISELED_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_STAIRS = registerBlock("vertical_waxed_oxidized_chiseled_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CHISELED_COPPER, Blocks.OXIDIZED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CHISELED_COPPER, Blocks.OXIDIZED_CHISELED_COPPER));
 
     public static final Block VERTICAL_WAXED_COPPER_GRATE_SLAB = registerBlock("vertical_waxed_copper_grate_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.WAXED_COPPER_GRATE, Blocks.COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.WAXED_COPPER_GRATE, Blocks.COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_COPPER_GRATE_STAIRS = registerBlock("vertical_waxed_copper_grate_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.WAXED_COPPER_GRATE, Blocks.COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.WAXED_COPPER_GRATE, Blocks.COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB = registerBlock("vertical_waxed_exposed_copper_grate_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.WAXED_EXPOSED_COPPER_GRATE, Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.WAXED_EXPOSED_COPPER_GRATE, Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS = registerBlock("vertical_waxed_exposed_copper_grate_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.WAXED_EXPOSED_COPPER_GRATE, Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.WAXED_EXPOSED_COPPER_GRATE, Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB = registerBlock("vertical_waxed_weathered_copper_grate_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WAXED_WEATHERED_COPPER_GRATE, Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WAXED_WEATHERED_COPPER_GRATE, Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS = registerBlock("vertical_waxed_weathered_copper_grate_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WAXED_WEATHERED_COPPER_GRATE, Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WAXED_WEATHERED_COPPER_GRATE, Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB = registerBlock("vertical_waxed_oxidized_copper_grate_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER_GRATE, Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER_GRATE, Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS = registerBlock("vertical_waxed_oxidized_copper_grate_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER_GRATE, Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.WAXED_OXIDIZED_COPPER_GRATE, Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
 
     public static final Block VERTICAL_WAXED_CUT_COPPER_SLAB = registerBlock("vertical_waxed_cut_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.WAXED_CUT_COPPER, Blocks.CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.WAXED_CUT_COPPER, Blocks.CUT_COPPER));
     public static final Block VERTICAL_WAXED_CUT_COPPER_STAIRS = registerBlock("vertical_waxed_cut_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.WAXED_CUT_COPPER, Blocks.CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.WAXED_CUT_COPPER, Blocks.CUT_COPPER));
     public static final Block VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB = registerBlock("vertical_waxed_exposed_cut_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CUT_COPPER, Blocks.EXPOSED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CUT_COPPER, Blocks.EXPOSED_CUT_COPPER));
     public static final Block VERTICAL_WAXED_EXPOSED_CUT_COPPER_STAIRS = registerBlock("vertical_waxed_exposed_cut_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CUT_COPPER, Blocks.EXPOSED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.WAXED_EXPOSED_CUT_COPPER, Blocks.EXPOSED_CUT_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB = registerBlock("vertical_waxed_weathered_cut_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CUT_COPPER, Blocks.WEATHERED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CUT_COPPER, Blocks.WEATHERED_CUT_COPPER));
     public static final Block VERTICAL_WAXED_WEATHERED_CUT_COPPER_STAIRS = registerBlock("vertical_waxed_weathered_cut_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CUT_COPPER, Blocks.WEATHERED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WAXED_WEATHERED_CUT_COPPER, Blocks.WEATHERED_CUT_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB = registerBlock("vertical_waxed_oxidized_cut_copper_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CUT_COPPER, Blocks.OXIDIZED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CUT_COPPER, Blocks.OXIDIZED_CUT_COPPER));
     public static final Block VERTICAL_WAXED_OXIDIZED_CUT_COPPER_STAIRS = registerBlock("vertical_waxed_oxidized_cut_copper_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CUT_COPPER, Blocks.OXIDIZED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.WAXED_OXIDIZED_CUT_COPPER, Blocks.OXIDIZED_CUT_COPPER));
 
     public static final Block VERTICAL_EXPOSED_COPPER_SLAB = registerBlock("vertical_exposed_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.EXPOSED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.EXPOSED_COPPER));
     public static final Block VERTICAL_EXPOSED_COPPER_STAIRS = registerBlock("vertical_exposed_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.EXPOSED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER)).parentBlock(Blocks.EXPOSED_COPPER));
     public static final Block VERTICAL_WEATHERED_COPPER_SLAB = registerBlock("vertical_weathered_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WEATHERED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WEATHERED_COPPER));
     public static final Block VERTICAL_WEATHERED_COPPER_STAIRS = registerBlock("vertical_weathered_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WEATHERED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER)).parentBlock(Blocks.WEATHERED_COPPER));
     public static final Block VERTICAL_OXIDIZED_COPPER_SLAB = registerBlock("vertical_oxidized_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.OXIDIZED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.OXIDIZED_COPPER));
     public static final Block VERTICAL_OXIDIZED_COPPER_STAIRS = registerBlock("vertical_oxidized_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.OXIDIZED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER)).parentBlock(Blocks.OXIDIZED_COPPER));
     public static final Block VERTICAL_COPPER_SLAB = registerBlock("vertical_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.COPPER_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.COPPER_BLOCK),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_COPPER_SLAB, VERTICAL_WEATHERED_COPPER_SLAB, VERTICAL_OXIDIZED_COPPER_SLAB,
                     VERTICAL_WAXED_COPPER_SLAB, VERTICAL_WAXED_EXPOSED_COPPER_SLAB, VERTICAL_WAXED_WEATHERED_COPPER_SLAB, VERTICAL_WAXED_OXIDIZED_COPPER_SLAB));
     public static final Block VERTICAL_COPPER_STAIRS = registerBlock("vertical_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.COPPER_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_BLOCK)).parentBlock(Blocks.COPPER_BLOCK),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_COPPER_STAIRS, VERTICAL_WEATHERED_COPPER_STAIRS, VERTICAL_OXIDIZED_COPPER_STAIRS,
                     VERTICAL_WAXED_COPPER_STAIRS, VERTICAL_WAXED_EXPOSED_COPPER_STAIRS, VERTICAL_WAXED_WEATHERED_COPPER_STAIRS, VERTICAL_WAXED_OXIDIZED_COPPER_STAIRS));
 
     public static final Block VERTICAL_EXPOSED_CHISELED_COPPER_SLAB = registerBlock("vertical_exposed_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.EXPOSED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.EXPOSED_CHISELED_COPPER));
     public static final Block VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS = registerBlock("vertical_exposed_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.EXPOSED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CHISELED_COPPER)).parentBlock(Blocks.EXPOSED_CHISELED_COPPER));
     public static final Block VERTICAL_WEATHERED_CHISELED_COPPER_SLAB = registerBlock("vertical_weathered_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WEATHERED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WEATHERED_CHISELED_COPPER));
     public static final Block VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS = registerBlock("vertical_weathered_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WEATHERED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CHISELED_COPPER)).parentBlock(Blocks.WEATHERED_CHISELED_COPPER));
     public static final Block VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB = registerBlock("vertical_oxidized_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.OXIDIZED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.OXIDIZED_CHISELED_COPPER));
     public static final Block VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS = registerBlock("vertical_oxidized_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.OXIDIZED_CHISELED_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CHISELED_COPPER)).parentBlock(Blocks.OXIDIZED_CHISELED_COPPER));
     public static final Block VERTICAL_CHISELED_COPPER_SLAB = registerBlock("vertical_chiseled_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.CHISELED_COPPER),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.CHISELED_COPPER),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_CHISELED_COPPER_SLAB, VERTICAL_WEATHERED_CHISELED_COPPER_SLAB, VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB,
                     VERTICAL_WAXED_CHISELED_COPPER_SLAB, VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_SLAB, VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_SLAB, VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_SLAB));
     public static final Block VERTICAL_CHISELED_COPPER_STAIRS = registerBlock("vertical_chiseled_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CHISELED_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.CHISELED_COPPER),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CHISELED_COPPER)).parentBlock(Blocks.CHISELED_COPPER),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS, VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS, VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS,
                     VERTICAL_WAXED_CHISELED_COPPER_STAIRS, VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_STAIRS, VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_STAIRS, VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_STAIRS));
 
     public static final Block VERTICAL_EXPOSED_COPPER_GRATE_SLAB = registerBlock("vertical_exposed_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_EXPOSED_COPPER_GRATE_STAIRS = registerBlock("vertical_exposed_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_COPPER_GRATE)).parentBlock(Blocks.EXPOSED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WEATHERED_COPPER_GRATE_SLAB = registerBlock("vertical_weathered_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_WEATHERED_COPPER_GRATE_STAIRS = registerBlock("vertical_weathered_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_COPPER_GRATE)).parentBlock(Blocks.WEATHERED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_OXIDIZED_COPPER_GRATE_SLAB = registerBlock("vertical_oxidized_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS = registerBlock("vertical_oxidized_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_COPPER_GRATE)).parentBlock(Blocks.OXIDIZED_COPPER_GRATE), new RegistryArgs().transparent());
     public static final Block VERTICAL_COPPER_GRATE_SLAB = registerBlock("vertical_copper_grate_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.COPPER_GRATE),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.COPPER_GRATE),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_COPPER_GRATE_SLAB, VERTICAL_WEATHERED_COPPER_GRATE_SLAB, VERTICAL_OXIDIZED_COPPER_GRATE_SLAB,
                     VERTICAL_WAXED_COPPER_GRATE_SLAB, VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB, VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB, VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB).transparent());
     public static final Block VERTICAL_COPPER_GRATE_STAIRS = registerBlock("vertical_copper_grate_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.COPPER_GRATE),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.COPPER_GRATE),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_GRATE)).parentBlock(Blocks.COPPER_GRATE),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_COPPER_GRATE_STAIRS, VERTICAL_WEATHERED_COPPER_GRATE_STAIRS, VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS,
                     VERTICAL_WAXED_COPPER_GRATE_STAIRS, VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS, VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS, VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS).transparent());
 
     public static final Block VERTICAL_EXPOSED_CUT_COPPER_SLAB = registerBlock("vertical_exposed_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.EXPOSED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.EXPOSED_CUT_COPPER));
     public static final Block VERTICAL_EXPOSED_CUT_COPPER_STAIRS = registerBlock("vertical_exposed_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.EXPOSED, settings), AbstractBlock.Settings.copy(Blocks.EXPOSED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.EXPOSED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EXPOSED_CUT_COPPER)).parentBlock(Blocks.EXPOSED_CUT_COPPER));
     public static final Block VERTICAL_WEATHERED_CUT_COPPER_SLAB = registerBlock("vertical_weathered_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WEATHERED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WEATHERED_CUT_COPPER));
     public static final Block VERTICAL_WEATHERED_CUT_COPPER_STAIRS = registerBlock("vertical_weathered_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.WEATHERED, settings), AbstractBlock.Settings.copy(Blocks.WEATHERED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WEATHERED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.WEATHERED_CUT_COPPER)).parentBlock(Blocks.WEATHERED_CUT_COPPER));
     public static final Block VERTICAL_OXIDIZED_CUT_COPPER_SLAB = registerBlock("vertical_oxidized_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.OXIDIZED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.OXIDIZED_CUT_COPPER));
     public static final Block VERTICAL_OXIDIZED_CUT_COPPER_STAIRS = registerBlock("vertical_oxidized_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.OXIDIZED, settings), AbstractBlock.Settings.copy(Blocks.OXIDIZED_CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.OXIDIZED_CUT_COPPER));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OXIDIZED_CUT_COPPER)).parentBlock(Blocks.OXIDIZED_CUT_COPPER));
     public static final Block VERTICAL_CUT_COPPER_SLAB = registerBlock("vertical_cut_copper_slab", (settings) -> new VerticalOxidizableSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.CUT_COPPER),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.CUT_COPPER),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_CUT_COPPER_SLAB, VERTICAL_WEATHERED_CUT_COPPER_SLAB, VERTICAL_OXIDIZED_CUT_COPPER_SLAB,
                     VERTICAL_WAXED_CUT_COPPER_SLAB, VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB, VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB, VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB));
     public static final Block VERTICAL_CUT_COPPER_STAIRS = registerBlock("vertical_cut_copper_stairs", (settings) -> new VerticalOxidizableStairsBlock(Oxidizable.OxidationLevel.UNAFFECTED, settings), AbstractBlock.Settings.copy(Blocks.CUT_COPPER),
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.CUT_COPPER),
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CUT_COPPER)).parentBlock(Blocks.CUT_COPPER),
             new RegistryArgs().oxidizable(VERTICAL_EXPOSED_CUT_COPPER_STAIRS, VERTICAL_WEATHERED_CUT_COPPER_STAIRS, VERTICAL_OXIDIZED_CUT_COPPER_STAIRS,
                     VERTICAL_WAXED_CUT_COPPER_STAIRS, VERTICAL_WAXED_EXPOSED_CUT_COPPER_STAIRS, VERTICAL_WAXED_WEATHERED_CUT_COPPER_STAIRS, VERTICAL_WAXED_OXIDIZED_CUT_COPPER_STAIRS));
 
     public static final Block VERTICAL_WHITE_WOOL_SLAB = registerBlock("vertical_white_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.WHITE_WOOL)).parentBlock(Blocks.WHITE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.WHITE_WOOL)).parentBlock(Blocks.WHITE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_WHITE_WOOL_STAIRS = registerBlock("vertical_white_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.WHITE_WOOL)).parentBlock(Blocks.WHITE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.WHITE_WOOL)).parentBlock(Blocks.WHITE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIGHT_GRAY_WOOL_SLAB = registerBlock("vertical_light_gray_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_GRAY_WOOL)).parentBlock(Blocks.LIGHT_GRAY_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_GRAY_WOOL)).parentBlock(Blocks.LIGHT_GRAY_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIGHT_GRAY_WOOL_STAIRS = registerBlock("vertical_light_gray_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_GRAY_WOOL)).parentBlock(Blocks.LIGHT_GRAY_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_GRAY_WOOL)).parentBlock(Blocks.LIGHT_GRAY_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_GRAY_WOOL_SLAB = registerBlock("vertical_gray_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GRAY_WOOL)).parentBlock(Blocks.GRAY_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GRAY_WOOL)).parentBlock(Blocks.GRAY_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_GRAY_WOOL_STAIRS = registerBlock("vertical_gray_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GRAY_WOOL)).parentBlock(Blocks.GRAY_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GRAY_WOOL)).parentBlock(Blocks.GRAY_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BLACK_WOOL_SLAB = registerBlock("vertical_black_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_WOOL), 
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLACK_WOOL)).parentBlock(Blocks.BLACK_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLACK_WOOL)).parentBlock(Blocks.BLACK_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BLACK_WOOL_STAIRS = registerBlock("vertical_black_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLACK_WOOL)).parentBlock(Blocks.BLACK_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLACK_WOOL)).parentBlock(Blocks.BLACK_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BROWN_WOOL_SLAB = registerBlock("vertical_brown_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_WOOL), 
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BROWN_WOOL)).parentBlock(Blocks.BROWN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BROWN_WOOL)).parentBlock(Blocks.BROWN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BROWN_WOOL_STAIRS = registerBlock("vertical_brown_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BROWN_WOOL)).parentBlock(Blocks.BROWN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BROWN_WOOL)).parentBlock(Blocks.BROWN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_RED_WOOL_SLAB = registerBlock("vertical_red_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.RED_WOOL)).parentBlock(Blocks.RED_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.RED_WOOL)).parentBlock(Blocks.RED_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_RED_WOOL_STAIRS = registerBlock("vertical_red_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.RED_WOOL)).parentBlock(Blocks.RED_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.RED_WOOL)).parentBlock(Blocks.RED_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_ORANGE_WOOL_SLAB = registerBlock("vertical_orange_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.ORANGE_WOOL)).parentBlock(Blocks.ORANGE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.ORANGE_WOOL)).parentBlock(Blocks.ORANGE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_ORANGE_WOOL_STAIRS = registerBlock("vertical_orange_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.ORANGE_WOOL)).parentBlock(Blocks.ORANGE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.ORANGE_WOOL)).parentBlock(Blocks.ORANGE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_YELLOW_WOOL_SLAB = registerBlock("vertical_yellow_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.YELLOW_WOOL)).parentBlock(Blocks.YELLOW_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.YELLOW_WOOL)).parentBlock(Blocks.YELLOW_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_YELLOW_WOOL_STAIRS = registerBlock("vertical_yellow_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.YELLOW_WOOL)).parentBlock(Blocks.YELLOW_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.YELLOW_WOOL)).parentBlock(Blocks.YELLOW_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIME_WOOL_SLAB = registerBlock("vertical_lime_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIME_WOOL)).parentBlock(Blocks.LIME_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIME_WOOL)).parentBlock(Blocks.LIME_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIME_WOOL_STAIRS = registerBlock("vertical_lime_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIME_WOOL)).parentBlock(Blocks.LIME_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIME_WOOL)).parentBlock(Blocks.LIME_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_GREEN_WOOL_SLAB = registerBlock("vertical_green_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GREEN_WOOL)).parentBlock(Blocks.GREEN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GREEN_WOOL)).parentBlock(Blocks.GREEN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_GREEN_WOOL_STAIRS = registerBlock("vertical_green_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GREEN_WOOL)).parentBlock(Blocks.GREEN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.GREEN_WOOL)).parentBlock(Blocks.GREEN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_CYAN_WOOL_SLAB = registerBlock("vertical_cyan_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.CYAN_WOOL)).parentBlock(Blocks.CYAN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.CYAN_WOOL)).parentBlock(Blocks.CYAN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_CYAN_WOOL_STAIRS = registerBlock("vertical_cyan_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.CYAN_WOOL)).parentBlock(Blocks.CYAN_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.CYAN_WOOL)).parentBlock(Blocks.CYAN_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIGHT_BLUE_WOOL_SLAB = registerBlock("vertical_light_blue_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_BLUE_WOOL)).parentBlock(Blocks.LIGHT_BLUE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_BLUE_WOOL)).parentBlock(Blocks.LIGHT_BLUE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_LIGHT_BLUE_WOOL_STAIRS = registerBlock("vertical_light_blue_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_BLUE_WOOL)).parentBlock(Blocks.LIGHT_BLUE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.LIGHT_BLUE_WOOL)).parentBlock(Blocks.LIGHT_BLUE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BLUE_WOOL_SLAB = registerBlock("vertical_blue_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLUE_WOOL)).parentBlock(Blocks.BLUE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLUE_WOOL)).parentBlock(Blocks.BLUE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_BLUE_WOOL_STAIRS = registerBlock("vertical_blue_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLUE_WOOL)).parentBlock(Blocks.BLUE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BLUE_WOOL)).parentBlock(Blocks.BLUE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_PURPLE_WOOL_SLAB = registerBlock("vertical_purple_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_WOOL), 
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PURPLE_WOOL)).parentBlock(Blocks.PURPLE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PURPLE_WOOL)).parentBlock(Blocks.PURPLE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_PURPLE_WOOL_STAIRS = registerBlock("vertical_purple_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PURPLE_WOOL)).parentBlock(Blocks.PURPLE_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PURPLE_WOOL)).parentBlock(Blocks.PURPLE_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_MAGENTA_WOOL_SLAB = registerBlock("vertical_magenta_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.MAGENTA_WOOL)).parentBlock(Blocks.MAGENTA_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.MAGENTA_WOOL)).parentBlock(Blocks.MAGENTA_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_MAGENTA_WOOL_STAIRS = registerBlock("vertical_magenta_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.MAGENTA_WOOL)).parentBlock(Blocks.MAGENTA_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.MAGENTA_WOOL)).parentBlock(Blocks.MAGENTA_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_PINK_WOOL_SLAB = registerBlock("vertical_pink_wool_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PINK_WOOL)).parentBlock(Blocks.PINK_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PINK_WOOL)).parentBlock(Blocks.PINK_WOOL), new RegistryArgs().flammable(30, 60));
     public static final Block VERTICAL_PINK_WOOL_STAIRS = registerBlock("vertical_pink_wool_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_WOOL),
-            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PINK_WOOL)).parentBlock(Blocks.PINK_WOOL));
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.PINK_WOOL)).parentBlock(Blocks.PINK_WOOL), new RegistryArgs().flammable(30, 60));
     
     public static final Block VERTICAL_TERRACOTTA_SLAB = registerBlock("vertical_terracotta_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.TERRACOTTA),
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE, BlockTags.TERRACOTTA).textureMap(TextureMap.all(Blocks.TERRACOTTA)).parentBlock(Blocks.TERRACOTTA));
@@ -1209,14 +1222,16 @@ public class ModBlocks {
     public static final Block VERTICAL_PINK_STAINED_GLASS_STAIRS = registerBlock("vertical_pink_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS),
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.PINK_STAINED_GLASS)).parentBlock(Blocks.PINK_STAINED_GLASS), new RegistryArgs().translucent());
 
-    public static final Block VERTICAL_DIRT_PATH_SLAB = registerBlock("vertical_dirt_path_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH),
-            new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT_PATH, Blocks.DIRT_PATH, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.DIRT_PATH).y15());
-    public static final Block VERTICAL_DIRT_PATH_STAIRS = registerBlock("vertical_dirt_path_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH),
-            new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT_PATH, Blocks.DIRT_PATH, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.DIRT_PATH).y15());
     public static final Block VERTICAL_FARMLAND_SLAB = registerBlock("vertical_farmland_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND),
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT, Blocks.FARMLAND, Blocks.DIRT, "", "", "")).parentBlock(Blocks.FARMLAND).y15());
     public static final Block VERTICAL_FARMLAND_STAIRS = registerBlock("vertical_farmland_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND),
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT, Blocks.FARMLAND, Blocks.DIRT, "", "", "")).parentBlock(Blocks.FARMLAND).y15());
+    public static final Block VERTICAL_DIRT_PATH_SLAB = registerBlock("vertical_dirt_path_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH),
+            new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT_PATH, Blocks.DIRT_PATH, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.DIRT_PATH).y15(),
+            new RegistryArgs().tillable(VERTICAL_FARMLAND_SLAB));
+    public static final Block VERTICAL_DIRT_PATH_STAIRS = registerBlock("vertical_dirt_path_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT_PATH),
+            new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.DIRT_PATH, Blocks.DIRT_PATH, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.DIRT_PATH).y15(),
+            new RegistryArgs().tillable(VERTICAL_FARMLAND_STAIRS));
     public static final Block VERTICAL_GRASS_SLAB = registerBlock("vertical_grass_slab", settings -> new VerticalSlabBlock(settings) {
                 private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
                     BlockPos blockPos = pos.up();
@@ -1258,31 +1273,31 @@ public class ModBlocks {
             new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_SLAB));
     public static final Block VERTICAL_PODZOL_STAIRS = registerBlock("vertical_podzol_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PODZOL), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.PODZOL, Blocks.PODZOL, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.PODZOL),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_STAIRS));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_STAIRS));
     public static final Block VERTICAL_MYCELIUM_SLAB = registerBlock("vertical_mycelium_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MYCELIUM),
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.MYCELIUM, Blocks.MYCELIUM, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.MYCELIUM),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_SLAB));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_SLAB));
     public static final Block VERTICAL_MYCELIUM_STAIRS = registerBlock("vertical_mycelium_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MYCELIUM), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(custom(Blocks.MYCELIUM, Blocks.MYCELIUM, Blocks.DIRT, "_side", "_top", "")).parentBlock(Blocks.MYCELIUM),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_STAIRS));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_STAIRS));
     public static final Block VERTICAL_DIRT_SLAB = registerBlock("vertical_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.DIRT)).parentBlock(Blocks.DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_SLAB));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_SLAB).tillable(VERTICAL_FARMLAND_SLAB));
     public static final Block VERTICAL_DIRT_STAIRS = registerBlock("vertical_dirt_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.DIRT)).parentBlock(Blocks.DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_STAIRS));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_STAIRS).tillable(VERTICAL_FARMLAND_STAIRS));
     public static final Block VERTICAL_COARSE_DIRT_SLAB = registerBlock("vertical_coarse_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.COARSE_DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.COARSE_DIRT)).parentBlock(Blocks.COARSE_DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_SLAB));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_SLAB));
     public static final Block VERTICAL_COARSE_DIRT_STAIRS = registerBlock("vertical_coarse_dirt_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.COARSE_DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.COARSE_DIRT)).parentBlock(Blocks.COARSE_DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_STAIRS));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_STAIRS));
     public static final Block VERTICAL_ROOTED_DIRT_SLAB = registerBlock("vertical_rooted_dirt_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.ROOTED_DIRT)).parentBlock(Blocks.ROOTED_DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_SLAB));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_SLAB));
     public static final Block VERTICAL_ROOTED_DIRT_STAIRS = registerBlock("vertical_rooted_dirt_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.ROOTED_DIRT)).parentBlock(Blocks.ROOTED_DIRT),
-            new RegistryArgs().tillable(VERTICAL_DIRT_PATH_STAIRS));
+            new RegistryArgs().flattenable(VERTICAL_DIRT_PATH_STAIRS));
 
     public static final Block VERTICAL_MUD_SLAB = registerBlock("vertical_mud_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MUD), 
             new DatagenArgs().blockTags(BlockTags.SHOVEL_MINEABLE).textureMap(TextureMap.all(Blocks.MUD)).parentBlock(Blocks.MUD));
@@ -1328,9 +1343,9 @@ public class ModBlocks {
     public static final Block VERTICAL_MOSS_STAIRS = registerBlock("vertical_moss_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MOSS_BLOCK), 
             new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.MOSS_BLOCK)).parentBlock(Blocks.MOSS_BLOCK));
     public static final Block VERTICAL_PALE_MOSS_SLAB = registerBlock("vertical_pale_moss_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_MOSS_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_MOSS_BLOCK)).parentBlock(Blocks.PALE_MOSS_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_MOSS_BLOCK)).parentBlock(Blocks.PALE_MOSS_BLOCK), new RegistryArgs().flammable(5, 100));
     public static final Block VERTICAL_PALE_MOSS_STAIRS = registerBlock("vertical_pale_moss_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_MOSS_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_MOSS_BLOCK)).parentBlock(Blocks.PALE_MOSS_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.PALE_MOSS_BLOCK)).parentBlock(Blocks.PALE_MOSS_BLOCK), new RegistryArgs().flammable(5, 100));
     public static final Block VERTICAL_CALCITE_SLAB = registerBlock("vertical_calcite_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CALCITE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CALCITE)).parentBlock(Blocks.CALCITE));
     public static final Block VERTICAL_CALCITE_STAIRS = registerBlock("vertical_calcite_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CALCITE), 
@@ -1345,13 +1360,13 @@ public class ModBlocks {
     public static final Block VERTICAL_MAGMA_STAIRS = registerBlock("vertical_magma_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Identifier.ofVanilla("block/magma"))).parentBlock(Blocks.MAGMA_BLOCK));
     public static final Block VERTICAL_OBSIDIAN_SLAB = registerBlock("vertical_obsidian_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OBSIDIAN)).parentBlock(Blocks.OBSIDIAN));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OBSIDIAN)).parentBlock(Blocks.OBSIDIAN));
     public static final Block VERTICAL_OBSIDIAN_STAIRS = registerBlock("vertical_obsidian_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OBSIDIAN)).parentBlock(Blocks.OBSIDIAN));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.OBSIDIAN)).parentBlock(Blocks.OBSIDIAN));
     public static final Block VERTICAL_CRYING_OBSIDIAN_SLAB = registerBlock("vertical_crying_obsidian_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CRYING_OBSIDIAN), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CRYING_OBSIDIAN)).parentBlock(Blocks.CRYING_OBSIDIAN));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CRYING_OBSIDIAN)).parentBlock(Blocks.CRYING_OBSIDIAN));
     public static final Block VERTICAL_CRYING_OBSIDIAN_STAIRS = registerBlock("vertical_crying_obsidian_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CRYING_OBSIDIAN), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CRYING_OBSIDIAN)).parentBlock(Blocks.CRYING_OBSIDIAN));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.CRYING_OBSIDIAN)).parentBlock(Blocks.CRYING_OBSIDIAN));
 
     public static final Block VERTICAL_CRIMSON_NYLIUM_SLAB = registerBlock("vertical_crimson_nylium_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CRIMSON_NYLIUM), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(custom(Blocks.CRIMSON_NYLIUM, Blocks.CRIMSON_NYLIUM, Blocks.NETHERRACK, "_side", "", "")).parentBlock(Blocks.CRIMSON_NYLIUM));
@@ -1383,53 +1398,53 @@ public class ModBlocks {
     public static final Block VERTICAL_DEEPSLATE_COAL_ORE_STAIRS = registerBlock("vertical_deepslate_coal_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_COAL_ORE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_COAL_ORE)).parentBlock(Blocks.DEEPSLATE_COAL_ORE));
     public static final Block VERTICAL_IRON_ORE_SLAB = registerBlock("vertical_iron_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_ORE)).parentBlock(Blocks.IRON_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_ORE)).parentBlock(Blocks.IRON_ORE));
     public static final Block VERTICAL_IRON_ORE_STAIRS = registerBlock("vertical_iron_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.IRON_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_ORE)).parentBlock(Blocks.IRON_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.IRON_ORE)).parentBlock(Blocks.IRON_ORE));
     public static final Block VERTICAL_DEEPSLATE_IRON_ORE_SLAB = registerBlock("vertical_deepslate_iron_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_IRON_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_IRON_ORE)).parentBlock(Blocks.DEEPSLATE_IRON_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_IRON_ORE)).parentBlock(Blocks.DEEPSLATE_IRON_ORE));
     public static final Block VERTICAL_DEEPSLATE_IRON_ORE_STAIRS = registerBlock("vertical_deepslate_iron_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_IRON_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_IRON_ORE)).parentBlock(Blocks.DEEPSLATE_IRON_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_IRON_ORE)).parentBlock(Blocks.DEEPSLATE_IRON_ORE));
     public static final Block VERTICAL_COPPER_ORE_SLAB = registerBlock("vertical_copper_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.COPPER_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_ORE)).parentBlock(Blocks.COPPER_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_ORE)).parentBlock(Blocks.COPPER_ORE));
     public static final Block VERTICAL_COPPER_ORE_STAIRS = registerBlock("vertical_copper_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.COPPER_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_ORE)).parentBlock(Blocks.COPPER_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.COPPER_ORE)).parentBlock(Blocks.COPPER_ORE));
     public static final Block VERTICAL_DEEPSLATE_COPPER_ORE_SLAB = registerBlock("vertical_deepslate_copper_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_COPPER_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_COPPER_ORE)).parentBlock(Blocks.DEEPSLATE_COPPER_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_COPPER_ORE)).parentBlock(Blocks.DEEPSLATE_COPPER_ORE));
     public static final Block VERTICAL_DEEPSLATE_COPPER_ORE_STAIRS = registerBlock("vertical_deepslate_copper_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_COPPER_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_COPPER_ORE)).parentBlock(Blocks.DEEPSLATE_COPPER_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_COPPER_ORE)).parentBlock(Blocks.DEEPSLATE_COPPER_ORE));
     public static final Block VERTICAL_GOLD_ORE_SLAB = registerBlock("vertical_gold_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_ORE)).parentBlock(Blocks.GOLD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_ORE)).parentBlock(Blocks.GOLD_ORE));
     public static final Block VERTICAL_GOLD_ORE_STAIRS = registerBlock("vertical_gold_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GOLD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_ORE)).parentBlock(Blocks.GOLD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GOLD_ORE)).parentBlock(Blocks.GOLD_ORE));
     public static final Block VERTICAL_DEEPSLATE_GOLD_ORE_SLAB = registerBlock("vertical_deepslate_gold_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_GOLD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_GOLD_ORE)).parentBlock(Blocks.DEEPSLATE_GOLD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_GOLD_ORE)).parentBlock(Blocks.DEEPSLATE_GOLD_ORE));
     public static final Block VERTICAL_DEEPSLATE_GOLD_ORE_STAIRS = registerBlock("vertical_deepslate_gold_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_GOLD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_GOLD_ORE)).parentBlock(Blocks.DEEPSLATE_GOLD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_GOLD_ORE)).parentBlock(Blocks.DEEPSLATE_GOLD_ORE));
     public static final Block VERTICAL_REDSTONE_ORE_SLAB = registerBlock("vertical_redstone_ore_slab", VerticalRedstoneOreSlabBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_ORE)).parentBlock(Blocks.REDSTONE_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_ORE)).parentBlock(Blocks.REDSTONE_ORE));
     public static final Block VERTICAL_REDSTONE_ORE_STAIRS = registerBlock("vertical_redstone_ore_stairs", VerticalRedstoneOreStairsBlock::new, AbstractBlock.Settings.copy(Blocks.REDSTONE_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_ORE)).parentBlock(Blocks.REDSTONE_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.REDSTONE_ORE)).parentBlock(Blocks.REDSTONE_ORE));
     public static final Block VERTICAL_DEEPSLATE_REDSTONE_ORE_SLAB = registerBlock("vertical_deepslate_redstone_ore_slab", VerticalRedstoneOreSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_REDSTONE_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_REDSTONE_ORE)).parentBlock(Blocks.DEEPSLATE_REDSTONE_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_REDSTONE_ORE)).parentBlock(Blocks.DEEPSLATE_REDSTONE_ORE));
     public static final Block VERTICAL_DEEPSLATE_REDSTONE_ORE_STAIRS = registerBlock("vertical_deepslate_redstone_ore_stairs", VerticalRedstoneOreStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_REDSTONE_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_REDSTONE_ORE)).parentBlock(Blocks.DEEPSLATE_REDSTONE_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_REDSTONE_ORE)).parentBlock(Blocks.DEEPSLATE_REDSTONE_ORE));
     public static final Block VERTICAL_EMERALD_ORE_SLAB = registerBlock("vertical_emerald_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_ORE)).parentBlock(Blocks.EMERALD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_ORE)).parentBlock(Blocks.EMERALD_ORE));
     public static final Block VERTICAL_EMERALD_ORE_STAIRS = registerBlock("vertical_emerald_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.EMERALD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_ORE)).parentBlock(Blocks.EMERALD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.EMERALD_ORE)).parentBlock(Blocks.EMERALD_ORE));
     public static final Block VERTICAL_DEEPSLATE_EMERALD_ORE_SLAB = registerBlock("vertical_deepslate_emerald_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_EMERALD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_EMERALD_ORE)).parentBlock(Blocks.DEEPSLATE_EMERALD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_EMERALD_ORE)).parentBlock(Blocks.DEEPSLATE_EMERALD_ORE));
     public static final Block VERTICAL_DEEPSLATE_EMERALD_ORE_STAIRS = registerBlock("vertical_deepslate_emerald_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_EMERALD_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_EMERALD_ORE)).parentBlock(Blocks.DEEPSLATE_EMERALD_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_EMERALD_ORE)).parentBlock(Blocks.DEEPSLATE_EMERALD_ORE));
     public static final Block VERTICAL_LAPIS_ORE_SLAB = registerBlock("vertical_lapis_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_ORE)).parentBlock(Blocks.LAPIS_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_ORE)).parentBlock(Blocks.LAPIS_ORE));
     public static final Block VERTICAL_LAPIS_ORE_STAIRS = registerBlock("vertical_lapis_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LAPIS_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_ORE)).parentBlock(Blocks.LAPIS_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.LAPIS_ORE)).parentBlock(Blocks.LAPIS_ORE));
     public static final Block VERTICAL_DEEPSLATE_LAPIS_ORE_SLAB = registerBlock("vertical_deepslate_lapis_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_LAPIS_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_LAPIS_ORE)).parentBlock(Blocks.DEEPSLATE_LAPIS_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_LAPIS_ORE)).parentBlock(Blocks.DEEPSLATE_LAPIS_ORE));
     public static final Block VERTICAL_DEEPSLATE_LAPIS_ORE_STAIRS = registerBlock("vertical_deepslate_lapis_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE_LAPIS_ORE), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_LAPIS_ORE)).parentBlock(Blocks.DEEPSLATE_LAPIS_ORE));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DEEPSLATE_LAPIS_ORE)).parentBlock(Blocks.DEEPSLATE_LAPIS_ORE));
     public static final Block VERTICAL_DIAMOND_ORE_SLAB = registerBlock("vertical_diamond_ore_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.DIAMOND_ORE)).parentBlock(Blocks.DIAMOND_ORE));
     public static final Block VERTICAL_DIAMOND_ORE_STAIRS = registerBlock("vertical_diamond_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE), 
@@ -1447,27 +1462,220 @@ public class ModBlocks {
     public static final Block VERTICAL_NETHER_QUARTZ_ORE_STAIRS = registerBlock("vertical_nether_quartz_ore_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.NETHER_QUARTZ_ORE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHER_QUARTZ_ORE)).parentBlock(Blocks.NETHER_QUARTZ_ORE));
     public static final Block VERTICAL_ANCIENT_DEBRIS_SLAB = registerBlock("vertical_ancient_debris_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.ANCIENT_DEBRIS)).parentBlock(Blocks.ANCIENT_DEBRIS));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.ANCIENT_DEBRIS)).parentBlock(Blocks.ANCIENT_DEBRIS));
     public static final Block VERTICAL_ANCIENT_DEBRIS_STAIRS = registerBlock("vertical_ancient_debris_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.ANCIENT_DEBRIS)).parentBlock(Blocks.ANCIENT_DEBRIS));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_DIAMOND_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.ANCIENT_DEBRIS)).parentBlock(Blocks.ANCIENT_DEBRIS));
     
     public static final Block VERTICAL_RAW_IRON_BLOCK_SLAB = registerBlock("vertical_raw_iron_block_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_IRON_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_IRON_BLOCK)).parentBlock(Blocks.RAW_IRON_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_IRON_BLOCK)).parentBlock(Blocks.RAW_IRON_BLOCK));
     public static final Block VERTICAL_RAW_IRON_BLOCK_STAIRS = registerBlock("vertical_raw_iron_block_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_IRON_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_IRON_BLOCK)).parentBlock(Blocks.RAW_IRON_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_IRON_BLOCK)).parentBlock(Blocks.RAW_IRON_BLOCK));
     public static final Block VERTICAL_RAW_COPPER_BLOCK_SLAB = registerBlock("vertical_raw_copper_block_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_COPPER_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
     public static final Block VERTICAL_RAW_COPPER_BLOCK_STAIRS = registerBlock("vertical_raw_copper_block_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_COPPER_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_STONE_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
     public static final Block VERTICAL_RAW_GOLD_BLOCK_SLAB = registerBlock("vertical_raw_gold_block_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_GOLD_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_GOLD_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
     public static final Block VERTICAL_RAW_GOLD_BLOCK_STAIRS = registerBlock("vertical_raw_gold_block_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RAW_GOLD_BLOCK), 
-            new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_COPPER_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
+            new DatagenArgs().blockTags(BlockTags.NEEDS_IRON_TOOL, BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.RAW_GOLD_BLOCK)).parentBlock(Blocks.RAW_COPPER_BLOCK));
     
     public static final Block VERTICAL_GLOWSTONE_SLAB = registerBlock("vertical_glowstone_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GLOWSTONE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GLOWSTONE)).parentBlock(Blocks.GLOWSTONE));
     public static final Block VERTICAL_GLOWSTONE_STAIRS = registerBlock("vertical_glowstone_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GLOWSTONE), 
             new DatagenArgs().blockTags(BlockTags.PICKAXE_MINEABLE).textureMap(TextureMap.all(Blocks.GLOWSTONE)).parentBlock(Blocks.GLOWSTONE));
+    
+    public static final Block VERTICAL_OAK_LEAVES_SLAB = registerBlock("vertical_oak_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.OAK_LEAVES)).parentBlock(Blocks.OAK_LEAVES).tintSource(new ConstantTintSource(-12012264)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_OAK_LEAVES_STAIRS = registerBlock("vertical_oak_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_LEAVES),
+            new DatagenArgs().copy(VERTICAL_OAK_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_OAK_LEAVES_SLAB));
+    public static final Block VERTICAL_SPRUCE_LEAVES_SLAB = registerBlock("vertical_spruce_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.SPRUCE_LEAVES)).parentBlock(Blocks.SPRUCE_LEAVES).tintSource(new ConstantTintSource(-10380959)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_SPRUCE_LEAVES_STAIRS = registerBlock("vertical_spruce_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES),
+            new DatagenArgs().copy(VERTICAL_SPRUCE_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_SPRUCE_LEAVES_SLAB));
+    public static final Block VERTICAL_BIRCH_LEAVES_SLAB = registerBlock("vertical_birch_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BIRCH_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.BIRCH_LEAVES)).parentBlock(Blocks.BIRCH_LEAVES).tintSource(new ConstantTintSource(-8345771)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_BIRCH_LEAVES_STAIRS = registerBlock("vertical_birch_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BIRCH_LEAVES),
+            new DatagenArgs().copy(VERTICAL_BIRCH_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_BIRCH_LEAVES_SLAB));
+    public static final Block VERTICAL_JUNGLE_LEAVES_SLAB = registerBlock("vertical_jungle_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.JUNGLE_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.JUNGLE_LEAVES)).parentBlock(Blocks.JUNGLE_LEAVES).tintSource(new ConstantTintSource(-12012264)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_JUNGLE_LEAVES_STAIRS = registerBlock("vertical_jungle_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.JUNGLE_LEAVES),
+            new DatagenArgs().copy(VERTICAL_JUNGLE_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_JUNGLE_LEAVES_SLAB));
+    public static final Block VERTICAL_ACACIA_LEAVES_SLAB = registerBlock("vertical_acacia_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ACACIA_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.ACACIA_LEAVES)).parentBlock(Blocks.ACACIA_LEAVES).tintSource(new ConstantTintSource(-12012264)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_ACACIA_LEAVES_STAIRS = registerBlock("vertical_acacia_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ACACIA_LEAVES),
+            new DatagenArgs().copy(VERTICAL_ACACIA_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_ACACIA_LEAVES_SLAB));
+    public static final Block VERTICAL_DARK_OAK_LEAVES_SLAB = registerBlock("vertical_dark_oak_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DARK_OAK_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.DARK_OAK_LEAVES)).parentBlock(Blocks.DARK_OAK_LEAVES).tintSource(new ConstantTintSource(-12012264)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_DARK_OAK_LEAVES_STAIRS = registerBlock("vertical_dark_oak_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DARK_OAK_LEAVES),
+            new DatagenArgs().copy(VERTICAL_DARK_OAK_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_DARK_OAK_LEAVES_SLAB));
+    public static final Block VERTICAL_MANGROVE_LEAVES_SLAB = registerBlock("vertical_mangrove_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MANGROVE_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.MANGROVE_LEAVES)).parentBlock(Blocks.MANGROVE_LEAVES).tintSource(new ConstantTintSource(-7158200)),
+            new RegistryArgs().transparent().foliageTinted());
+    public static final Block VERTICAL_MANGROVE_LEAVES_STAIRS = registerBlock("vertical_mangrove_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MANGROVE_LEAVES),
+            new DatagenArgs().copy(VERTICAL_MANGROVE_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_MANGROVE_LEAVES_SLAB));
+    public static final Block VERTICAL_CHERRY_LEAVES_SLAB = registerBlock("vertical_cherry_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CHERRY_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.CHERRY_LEAVES)).parentBlock(Blocks.CHERRY_LEAVES),
+            new RegistryArgs().transparent());
+    public static final Block VERTICAL_CHERRY_LEAVES_STAIRS = registerBlock("vertical_cherry_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CHERRY_LEAVES),
+            new DatagenArgs().copy(VERTICAL_CHERRY_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_CHERRY_LEAVES_SLAB));
+    public static final Block VERTICAL_PALE_OAK_LEAVES_SLAB = registerBlock("vertical_pale_oak_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.PALE_OAK_LEAVES)).parentBlock(Blocks.PALE_OAK_LEAVES),
+            new RegistryArgs().transparent());
+    public static final Block VERTICAL_PALE_OAK_LEAVES_STAIRS = registerBlock("vertical_pale_oak_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PALE_OAK_LEAVES),
+            new DatagenArgs().copy(VERTICAL_PALE_OAK_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_PALE_OAK_LEAVES_SLAB));
+    public static final Block VERTICAL_AZALEA_LEAVES_SLAB = registerBlock("vertical_azalea_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.AZALEA_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.AZALEA_LEAVES)).parentBlock(Blocks.AZALEA_LEAVES),
+            new RegistryArgs().transparent());
+    public static final Block VERTICAL_AZALEA_LEAVES_STAIRS = registerBlock("vertical_azalea_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.AZALEA_LEAVES),
+            new DatagenArgs().copy(VERTICAL_AZALEA_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_AZALEA_LEAVES_SLAB));
+    public static final Block VERTICAL_FLOWERING_AZALEA_LEAVES_SLAB = registerBlock("vertical_flowering_azalea_leaves_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.FLOWERING_AZALEA_LEAVES),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.LEAVES).textureMap(TextureMap.all(Blocks.FLOWERING_AZALEA_LEAVES)).parentBlock(Blocks.FLOWERING_AZALEA_LEAVES),
+            new RegistryArgs().transparent());
+    public static final Block VERTICAL_FLOWERING_AZALEA_LEAVES_STAIRS = registerBlock("vertical_flowering_azalea_leaves_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.FLOWERING_AZALEA_LEAVES),
+            new DatagenArgs().copy(VERTICAL_FLOWERING_AZALEA_LEAVES_SLAB), new RegistryArgs().copy(VERTICAL_FLOWERING_AZALEA_LEAVES_SLAB));
+    
+    public static final Block VERTICAL_BROWN_MUSHROOM_SLAB = registerBlock("vertical_brown_mushroom_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).parentBlock(Blocks.BROWN_MUSHROOM_BLOCK));
+    public static final Block VERTICAL_BROWN_MUSHROOM_STAIRS = registerBlock("vertical_brown_mushroom_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK),
+            new DatagenArgs().copy(VERTICAL_BROWN_MUSHROOM_SLAB).textureMap(TextureMap.all(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final Block VERTICAL_RED_MUSHROOM_SLAB = registerBlock("vertical_red_mushroom_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).parentBlock(Blocks.RED_MUSHROOM_BLOCK));
+    public static final Block VERTICAL_RED_MUSHROOM_STAIRS = registerBlock("vertical_red_mushroom_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM_BLOCK),
+            new DatagenArgs().copy(VERTICAL_RED_MUSHROOM_SLAB).textureMap(TextureMap.all(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block VERTICAL_NETHER_WART_SLAB = registerBlock("vertical_nether_wart_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.NETHER_WART_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.NETHER_WART_BLOCK)).parentBlock(Blocks.NETHER_WART_BLOCK));
+    public static final Block VERTICAL_NETHER_WART_STAIRS = registerBlock("vertical_nether_wart_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.NETHER_WART_BLOCK),
+            new DatagenArgs().copy(VERTICAL_NETHER_WART_SLAB));
+    public static final Block VERTICAL_WARPED_WART_SLAB = registerBlock("vertical_warped_wart_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WARPED_WART_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.WARPED_WART_BLOCK)).parentBlock(Blocks.WARPED_WART_BLOCK));
+    public static final Block VERTICAL_WARPED_WART_STAIRS = registerBlock("vertical_warped_wart_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WARPED_WART_BLOCK),
+            new DatagenArgs().copy(VERTICAL_WARPED_WART_SLAB));
+    public static final Block VERTICAL_SHROOMLIGHT_SLAB = registerBlock("vertical_shroomlight_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SHROOMLIGHT),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.SHROOMLIGHT)).parentBlock(Blocks.SHROOMLIGHT));
+    public static final Block VERTICAL_SHROOMLIGHT_STAIRS = registerBlock("vertical_shroomlight_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SHROOMLIGHT),
+            new DatagenArgs().copy(VERTICAL_SHROOMLIGHT_SLAB));
+    public static final Block VERTICAL_DRIED_KELP_SLAB = registerBlock("vertical_dried_kelp_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DRIED_KELP_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(blockSTB(Identifier.ofVanilla("block/dried_kelp"))).parentBlock(Blocks.DRIED_KELP_BLOCK));
+    public static final Block VERTICAL_DRIED_KELP_STAIRS = registerBlock("vertical_dried_kelp_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DRIED_KELP_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DRIED_KELP_SLAB));
+
+    public static final Block VERTICAL_DEAD_TUBE_CORAL_SLAB = registerBlock("vertical_dead_tube_coral_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_TUBE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.DEAD_TUBE_CORAL_BLOCK)).parentBlock(Blocks.DEAD_TUBE_CORAL_BLOCK));
+    public static final Block VERTICAL_DEAD_TUBE_CORAL_STAIRS = registerBlock("vertical_dead_tube_coral_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_TUBE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DEAD_TUBE_CORAL_SLAB));
+    public static final Block VERTICAL_DEAD_BRAIN_CORAL_SLAB = registerBlock("vertical_dead_brain_coral_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.DEAD_BRAIN_CORAL_BLOCK)).parentBlock(Blocks.DEAD_BRAIN_CORAL_BLOCK));
+    public static final Block VERTICAL_DEAD_BRAIN_CORAL_STAIRS = registerBlock("vertical_dead_brain_coral_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DEAD_BRAIN_CORAL_SLAB));
+    public static final Block VERTICAL_DEAD_BUBBLE_CORAL_SLAB = registerBlock("vertical_dead_bubble_coral_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_BUBBLE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.DEAD_BUBBLE_CORAL_BLOCK)).parentBlock(Blocks.DEAD_BUBBLE_CORAL_BLOCK));
+    public static final Block VERTICAL_DEAD_BUBBLE_CORAL_STAIRS = registerBlock("vertical_dead_bubble_coral_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_BUBBLE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DEAD_BUBBLE_CORAL_SLAB));
+    public static final Block VERTICAL_DEAD_FIRE_CORAL_SLAB = registerBlock("vertical_dead_fire_coral_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_FIRE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.DEAD_FIRE_CORAL_BLOCK)).parentBlock(Blocks.DEAD_FIRE_CORAL_BLOCK));
+    public static final Block VERTICAL_DEAD_FIRE_CORAL_STAIRS = registerBlock("vertical_dead_fire_coral_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_FIRE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DEAD_FIRE_CORAL_SLAB));
+    public static final Block VERTICAL_DEAD_HORN_CORAL_SLAB = registerBlock("vertical_dead_horn_coral_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_HORN_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.DEAD_HORN_CORAL_BLOCK)).parentBlock(Blocks.DEAD_HORN_CORAL_BLOCK));
+    public static final Block VERTICAL_DEAD_HORN_CORAL_STAIRS = registerBlock("vertical_dead_horn_coral_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.DEAD_HORN_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_DEAD_HORN_CORAL_SLAB));
+    
+    public static final Block VERTICAL_TUBE_CORAL_SLAB = registerBlock("vertical_tube_coral_slab", settings -> new VerticalCoralSlabBlock(VERTICAL_DEAD_TUBE_CORAL_SLAB, settings), AbstractBlock.Settings.copy(Blocks.TUBE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.CORAL_BLOCKS).textureMap(TextureMap.all(Blocks.TUBE_CORAL_BLOCK)).parentBlock(Blocks.TUBE_CORAL_BLOCK));
+    public static final Block VERTICAL_TUBE_CORAL_STAIRS = registerBlock("vertical_tube_coral_stairs", settings -> new VerticalCoralStairsBlock(VERTICAL_DEAD_TUBE_CORAL_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.TUBE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_TUBE_CORAL_SLAB));
+    public static final Block VERTICAL_BRAIN_CORAL_SLAB = registerBlock("vertical_brain_coral_slab", settings -> new VerticalCoralSlabBlock(VERTICAL_DEAD_BRAIN_CORAL_SLAB, settings), AbstractBlock.Settings.copy(Blocks.BRAIN_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.CORAL_BLOCKS).textureMap(TextureMap.all(Blocks.BRAIN_CORAL_BLOCK)).parentBlock(Blocks.BRAIN_CORAL_BLOCK));
+    public static final Block VERTICAL_BRAIN_CORAL_STAIRS = registerBlock("vertical_brain_coral_stairs", settings -> new VerticalCoralStairsBlock(VERTICAL_DEAD_BRAIN_CORAL_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.BRAIN_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_BRAIN_CORAL_SLAB));
+    public static final Block VERTICAL_BUBBLE_CORAL_SLAB = registerBlock("vertical_bubble_coral_slab", settings -> new VerticalCoralSlabBlock(VERTICAL_DEAD_BUBBLE_CORAL_SLAB, settings), AbstractBlock.Settings.copy(Blocks.BUBBLE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.CORAL_BLOCKS).textureMap(TextureMap.all(Blocks.BUBBLE_CORAL_BLOCK)).parentBlock(Blocks.BUBBLE_CORAL_BLOCK));
+    public static final Block VERTICAL_BUBBLE_CORAL_STAIRS = registerBlock("vertical_bubble_coral_stairs", settings -> new VerticalCoralStairsBlock(VERTICAL_DEAD_BUBBLE_CORAL_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.BUBBLE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_BUBBLE_CORAL_SLAB));
+    public static final Block VERTICAL_FIRE_CORAL_SLAB = registerBlock("vertical_fire_coral_slab", settings -> new VerticalCoralSlabBlock(VERTICAL_DEAD_FIRE_CORAL_SLAB, settings), AbstractBlock.Settings.copy(Blocks.FIRE_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.CORAL_BLOCKS).textureMap(TextureMap.all(Blocks.FIRE_CORAL_BLOCK)).parentBlock(Blocks.FIRE_CORAL_BLOCK));
+    public static final Block VERTICAL_FIRE_CORAL_STAIRS = registerBlock("vertical_fire_coral_stairs", settings -> new VerticalCoralStairsBlock(VERTICAL_DEAD_FIRE_CORAL_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.FIRE_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_FIRE_CORAL_SLAB));
+    public static final Block VERTICAL_HORN_CORAL_SLAB = registerBlock("vertical_horn_coral_slab", settings -> new VerticalCoralSlabBlock(VERTICAL_DEAD_HORN_CORAL_SLAB, settings), AbstractBlock.Settings.copy(Blocks.HORN_CORAL_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE, BlockTags.CORAL_BLOCKS).textureMap(TextureMap.all(Blocks.HORN_CORAL_BLOCK)).parentBlock(Blocks.HORN_CORAL_BLOCK));
+    public static final Block VERTICAL_HORN_CORAL_STAIRS = registerBlock("vertical_horn_coral_stairs", settings -> new VerticalCoralStairsBlock(VERTICAL_DEAD_HORN_CORAL_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.HORN_CORAL_BLOCK),
+            new DatagenArgs().copy(VERTICAL_HORN_CORAL_SLAB));
+
+    public static final Block VERTICAL_WET_SPONGE_SLAB = registerBlock("vertical_wet_sponge_slab", VerticalWetSpongeSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WET_SPONGE),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.WET_SPONGE)).parentBlock(Blocks.WET_SPONGE));
+    public static final Block VERTICAL_WET_SPONGE_STAIRS = registerBlock("vertical_wet_sponge_stairs", VerticalWetSpongeStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WET_SPONGE),
+            new DatagenArgs().copy(VERTICAL_WET_SPONGE_SLAB));
+    public static final Block VERTICAL_SPONGE_SLAB = registerBlock("vertical_sponge_slab", settings -> new VerticalSpongeSlabBlock(VERTICAL_WET_SPONGE_SLAB, settings), AbstractBlock.Settings.copy(Blocks.SPONGE),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.SPONGE)).parentBlock(Blocks.SPONGE));
+    public static final Block VERTICAL_SPONGE_STAIRS = registerBlock("vertical_sponge_stairs", settings -> new VerticalSpongeStairsBlock(VERTICAL_WET_SPONGE_STAIRS, settings), AbstractBlock.Settings.copy(Blocks.SPONGE),
+            new DatagenArgs().copy(VERTICAL_SPONGE_SLAB));
+    public static final Block VERTICAL_MELON_SLAB = registerBlock("vertical_melon_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MELON),
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.MELON)).parentBlock(Blocks.MELON));
+    public static final Block VERTICAL_MELON_STAIRS = registerBlock("vertical_melon_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MELON),
+            new DatagenArgs().copy(VERTICAL_MELON_SLAB));
+    public static final Block VERTICAL_PUMPKIN_SLAB = registerBlock("vertical_pumpkin_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PUMPKIN),
+            new DatagenArgs().blockTags(BlockTags.AXE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.PUMPKIN)).parentBlock(Blocks.PUMPKIN));
+    public static final Block VERTICAL_PUMPKIN_STAIRS = registerBlock("vertical_pumpkin_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PUMPKIN),
+            new DatagenArgs().copy(VERTICAL_PUMPKIN_SLAB));
+    public static final Block VERTICAL_HAY_SLAB = registerBlock("vertical_hay_slab", settings -> new VerticalSlabBlock(settings) {
+                public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+                    entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
+                }}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(sideAndTopForEnds(Blocks.HAY_BLOCK)).parentBlock(Blocks.HAY_BLOCK));
+    public static final Block VERTICAL_HAY_STAIRS = registerBlock("vertical_hay_stairs", settings -> new VerticalStairsBlock(settings) {
+                public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+                    entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
+                }}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK),
+            new DatagenArgs().copy(VERTICAL_HAY_SLAB));
+    public static final Block VERTICAL_HONEYCOMB_SLAB = registerBlock("vertical_honeycomb_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.HONEYCOMB_BLOCK),
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.HONEYCOMB_BLOCK)).parentBlock(Blocks.HONEYCOMB_BLOCK));
+    public static final Block VERTICAL_HONEYCOMB_STAIRS = registerBlock("vertical_honeycomb_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.HONEYCOMB_BLOCK),
+            new DatagenArgs().copy(VERTICAL_HONEYCOMB_SLAB));
+    
+    public static final Block VERTICAL_SLIME_SLAB = registerBlock("vertical_slime_slab", VerticalSlimeSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SLIME_BLOCK),
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.SLIME_BLOCK)).parentBlock(Blocks.SLIME_BLOCK));
+    public static final Block VERTICAL_SLIME_STAIRS = registerBlock("vertical_slime_stairs", VerticalSlimeStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SLIME_BLOCK),
+            new DatagenArgs().copy(VERTICAL_SLIME_SLAB));
+    public static final Block VERTICAL_HONEY_SLAB = registerBlock("vertical_honey_slab", VerticalHoneySlabBlock::new, AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK),
+            new DatagenArgs().blockTags().textureMap(blockSTB(Blocks.HONEY_BLOCK)).parentBlock(Blocks.HONEY_BLOCK));
+    public static final Block VERTICAL_HONEY_STAIRS = registerBlock("vertical_honey_stairs", VerticalHoneyStairsBlock::new, AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK),
+            new DatagenArgs().copy(VERTICAL_HONEY_SLAB));
+    public static final Block VERTICAL_RESIN_SLAB = registerBlock("vertical_resin_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RESIN_BLOCK),
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.RESIN_BLOCK)).parentBlock(Blocks.RESIN_BLOCK));
+    public static final Block VERTICAL_RESIN_STAIRS = registerBlock("vertical_resin_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RESIN_BLOCK),
+            new DatagenArgs().copy(VERTICAL_RESIN_SLAB));
+    
+    public static final Block VERTICAL_OCHRE_FROGLIGHT_SLAB = registerBlock("vertical_ochre_froglight_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.OCHRE_FROGLIGHT),
+            new DatagenArgs().blockTags().textureMap(sideAndTopForEnds(Blocks.OCHRE_FROGLIGHT)).parentBlock(Blocks.OCHRE_FROGLIGHT));
+    public static final Block VERTICAL_OCHRE_FROGLIGHT_STAIRS = registerBlock("vertical_ochre_froglight_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.OCHRE_FROGLIGHT),
+            new DatagenArgs().copy(VERTICAL_OCHRE_FROGLIGHT_SLAB));
+    public static final Block VERTICAL_VERDANT_FROGLIGHT_SLAB = registerBlock("vertical_verdant_froglight_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.VERDANT_FROGLIGHT),
+            new DatagenArgs().blockTags().textureMap(sideAndTopForEnds(Blocks.VERDANT_FROGLIGHT)).parentBlock(Blocks.VERDANT_FROGLIGHT));
+    public static final Block VERTICAL_VERDANT_FROGLIGHT_STAIRS = registerBlock("vertical_verdant_froglight_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.VERDANT_FROGLIGHT),
+            new DatagenArgs().copy(VERTICAL_VERDANT_FROGLIGHT_SLAB));
+    public static final Block VERTICAL_PEARLESCENT_FROGLIGHT_SLAB = registerBlock("vertical_pearlescent_froglight_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PEARLESCENT_FROGLIGHT),
+            new DatagenArgs().blockTags().textureMap(sideAndTopForEnds(Blocks.PEARLESCENT_FROGLIGHT)).parentBlock(Blocks.PEARLESCENT_FROGLIGHT));
+    public static final Block VERTICAL_PEARLESCENT_FROGLIGHT_STAIRS = registerBlock("vertical_pearlescent_froglight_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PEARLESCENT_FROGLIGHT),
+            new DatagenArgs().copy(VERTICAL_PEARLESCENT_FROGLIGHT_SLAB));
+    
+    public static final Block VERTICAL_SCULK_SLAB = registerBlock("vertical_sculk_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.SCULK),
+            new DatagenArgs().blockTags(BlockTags.HOE_MINEABLE).textureMap(TextureMap.all(Blocks.SCULK)).parentBlock(Blocks.SCULK));
+    public static final Block VERTICAL_SCULK_STAIRS = registerBlock("vertical_sculk_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.SCULK),
+            new DatagenArgs().copy(VERTICAL_SCULK_SLAB));
+    public static final Block VERTICAL_BEDROCK_SLAB = registerBlock("vertical_bedrock_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BEDROCK),
+            new DatagenArgs().blockTags().textureMap(TextureMap.all(Blocks.BEDROCK)).parentBlock(Blocks.BEDROCK));
+    public static final Block VERTICAL_BEDROCK_STAIRS = registerBlock("vertical_bedrock_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BEDROCK),
+            new DatagenArgs().copy(VERTICAL_BEDROCK_SLAB));
+    public static final Block VERTICAL_TARGET_SLAB = registerBlock("vertical_target_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.TARGET),
+            new DatagenArgs().blockTags().textureMap(sideAndTopForEnds(Blocks.TARGET)).parentBlock(Blocks.TARGET));
+    public static final Block VERTICAL_TARGET_STAIRS = registerBlock("vertical_target_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.TARGET),
+            new DatagenArgs().copy(VERTICAL_TARGET_SLAB));
     
 
 
@@ -1501,12 +1709,12 @@ public class ModBlocks {
         return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(VanillaVSPlus.MOD_ID, name));
     }
 
-    private static final List<Block> EXCLUDED_FROM_DATAGEN = List.of(LOG_DEF, NETHER_DEF, BAMBOO_DEF);
+    private static final List<Block> EXCLUDED_FROM_VALIDATION = List.of(LOG_DEF, NETHER_DEF, BAMBOO_DEF);
 
     private static void validate() {
         Registries.BLOCK.forEach(block -> {
             Identifier identifier = Registries.BLOCK.getId(block);
-            if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && !EXCLUDED_FROM_DATAGEN.contains(block)) {
+            if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && !EXCLUDED_FROM_VALIDATION.contains(block)) {
                 if (!DATAGEN_ARGS.containsKey(block)) {
                     throw new IllegalStateException("Couldn't validate DatagenArgs for " + identifier.getPath());
                 }

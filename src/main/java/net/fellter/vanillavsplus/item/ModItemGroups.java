@@ -699,6 +699,98 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_GLOWSTONE_SLAB);
                         entries.add(ModBlocks.VERTICAL_GLOWSTONE_STAIRS);
 
+                        entries.add(ModBlocks.VERTICAL_OAK_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OAK_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SPRUCE_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SPRUCE_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BIRCH_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BIRCH_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_JUNGLE_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_JUNGLE_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_ACACIA_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_ACACIA_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DARK_OAK_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DARK_OAK_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MANGROVE_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MANGROVE_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_CHERRY_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_CHERRY_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PALE_OAK_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_AZALEA_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_AZALEA_LEAVES_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_FLOWERING_AZALEA_LEAVES_SLAB);
+                        entries.add(ModBlocks.VERTICAL_FLOWERING_AZALEA_LEAVES_STAIRS);
+                        
+                        entries.add(ModBlocks.VERTICAL_BROWN_MUSHROOM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BROWN_MUSHROOM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RED_MUSHROOM_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RED_MUSHROOM_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_NETHER_WART_SLAB);
+                        entries.add(ModBlocks.VERTICAL_NETHER_WART_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WARPED_WART_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WARPED_WART_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_SHROOMLIGHT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SHROOMLIGHT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DRIED_KELP_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DRIED_KELP_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_TUBE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_TUBE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BRAIN_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BRAIN_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BUBBLE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BUBBLE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_FIRE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_FIRE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_HORN_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_HORN_CORAL_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_DEAD_TUBE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEAD_TUBE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEAD_BRAIN_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEAD_BRAIN_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEAD_BUBBLE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEAD_BUBBLE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEAD_FIRE_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEAD_FIRE_CORAL_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_DEAD_HORN_CORAL_SLAB);
+                        entries.add(ModBlocks.VERTICAL_DEAD_HORN_CORAL_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_SPONGE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SPONGE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_WET_SPONGE_SLAB);
+                        entries.add(ModBlocks.VERTICAL_WET_SPONGE_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_MELON_SLAB);
+                        entries.add(ModBlocks.VERTICAL_MELON_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PUMPKIN_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PUMPKIN_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_HAY_SLAB);
+                        entries.add(ModBlocks.VERTICAL_HAY_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_HONEYCOMB_SLAB);
+                        entries.add(ModBlocks.VERTICAL_HONEYCOMB_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_SLIME_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SLIME_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_HONEY_SLAB);
+                        entries.add(ModBlocks.VERTICAL_HONEY_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_RESIN_SLAB);
+                        entries.add(ModBlocks.VERTICAL_RESIN_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_OCHRE_FROGLIGHT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_OCHRE_FROGLIGHT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_VERDANT_FROGLIGHT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_VERDANT_FROGLIGHT_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_PEARLESCENT_FROGLIGHT_SLAB);
+                        entries.add(ModBlocks.VERTICAL_PEARLESCENT_FROGLIGHT_STAIRS);
+
+                        entries.add(ModBlocks.VERTICAL_SCULK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_SCULK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_BEDROCK_SLAB);
+                        entries.add(ModBlocks.VERTICAL_BEDROCK_STAIRS);
+                        entries.add(ModBlocks.VERTICAL_TARGET_SLAB);
+                        entries.add(ModBlocks.VERTICAL_TARGET_STAIRS);
+
                             })).build());
 
 

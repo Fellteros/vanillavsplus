@@ -1,0 +1,8 @@
+{
+  "parent": "vanillavsplus:blockmodels/inner_top",
+  "textures": {
+    "bottom": "minecraft:block/target_top",
+    "side": "minecraft:block/target_side",
+    "top": "minecraft:block/target_top"
+  }
+}

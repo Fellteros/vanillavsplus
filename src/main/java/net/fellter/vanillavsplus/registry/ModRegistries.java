@@ -21,6 +21,7 @@ import net.minecraft.item.HoeItem;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.biome.FoliageColors;
 import net.minecraft.world.biome.GrassColors;
 
 import java.util.Map;
@@ -95,14 +96,25 @@ public class ModRegistries {
                 if (ModBlocks.REGISTRY_ARGS.containsKey(block)) {
                     Identifier identifier = Registries.BLOCK.getId(block);
                     RegistryArgs args = ModBlocks.REGISTRY_ARGS.get(block);
-                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.grassTinted) {
-                        ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> {
-                                if (world == null || pos == null) {
-                                    return GrassColors.getDefaultColor();
-                                }
-                                return BiomeColors.getGrassColor(world, pos);
-                            }), block
-                        );
+                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID)) {
+                        if (args.grassTinted) {
+                            ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> {
+                                    if (world == null || pos == null) {
+                                        return GrassColors.getDefaultColor();
+                                    }
+                                    return BiomeColors.getGrassColor(world, pos);
+                                }), block
+                            );
+                        }
+                        if (args.foliageTinted != null) {
+                            ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> {
+                                    if (world == null || pos == null) {
+                                        return FoliageColors.DEFAULT;
+                                    }
+                                    return BiomeColors.getFoliageColor(world, pos);
+                                }), block
+                            );
+                        }
                     }
                 }
             });
@@ -114,7 +126,7 @@ public class ModRegistries {
                 if (ModBlocks.REGISTRY_ARGS.containsKey(block)) {
                     Identifier identifier = Registries.BLOCK.getId(block);
                     RegistryArgs args = ModBlocks.REGISTRY_ARGS.get(block);
-                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.fuel) {
+                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.fuel != null) {
                         FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(block, context.baseSmeltTime()));
                     }
                 }
@@ -260,7 +272,7 @@ public class ModRegistries {
                 if (ModBlocks.REGISTRY_ARGS.containsKey(block)) {
                     Identifier identifier = Registries.BLOCK.getId(block);
                     RegistryArgs args = ModBlocks.REGISTRY_ARGS.get(block);
-                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.transparent) {
+                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.transparent != null) {
                         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), block);
                     }
                 }
@@ -318,7 +330,7 @@ public class ModRegistries {
                 if (ModBlocks.REGISTRY_ARGS.containsKey(block)) {
                     Identifier identifier = Registries.BLOCK.getId(block);
                     RegistryArgs args = ModBlocks.REGISTRY_ARGS.get(block);
-                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.translucent) {
+                    if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.translucent != null) {
                         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), block);
                     }
                 }

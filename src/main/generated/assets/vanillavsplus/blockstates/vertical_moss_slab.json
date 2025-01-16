@@ -2,8 +2,7 @@
   "variants": {
     "facing=east,single=false": {
       "model": "minecraft:block/moss_block",
-      "uvlock": true,
-      "y": 90
+      "uvlock": true
     },
     "facing=east,single=true": {
       "model": "vanillavsplus:block/vertical_moss_slab_left",
@@ -20,8 +19,7 @@
     },
     "facing=south,single=false": {
       "model": "minecraft:block/moss_block",
-      "uvlock": true,
-      "y": 180
+      "uvlock": true
     },
     "facing=south,single=true": {
       "model": "vanillavsplus:block/vertical_moss_slab_right",
@@ -29,8 +27,7 @@
     },
     "facing=west,single=false": {
       "model": "minecraft:block/moss_block",
-      "uvlock": true,
-      "y": 270
+      "uvlock": true
     },
     "facing=west,single=true": {
       "model": "vanillavsplus:block/vertical_moss_slab_right",

@@ -11,8 +11,10 @@ import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.fellter.vanillavsplus.item.ModItems;
 import net.fellter.vanillavsplus.registry.DatagenArgs;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
 import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 
 import static net.fellter.vanillavsplus.util.ModBlockStateModelGenerator.*;
 
@@ -1018,6 +1020,9 @@ public class ModModelProvider extends FabricModelProvider {
 //        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_GLOWSTONE_SLAB, Blocks.GLOWSTONE, TextureMap.all(Blocks.GLOWSTONE));
 //        registerVerticalStairs(bsmg, ModBlocks.VERTICAL_GLOWSTONE_STAIRS, TextureMap.all(Blocks.GLOWSTONE));
 
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BROWN_MUSHROOM_SLAB, Identifier.of(VanillaVSPlus.MOD_ID, "block/brown_mushroom_block"), TextureMap.all(Blocks.BROWN_MUSHROOM_BLOCK));
+        registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_MUSHROOM_SLAB, Identifier.of(VanillaVSPlus.MOD_ID, "block/red_mushroom_block"), TextureMap.all(Blocks.RED_MUSHROOM_BLOCK));
+
         Registries.BLOCK.forEach(block -> {
             if (ModBlocks.DATAGEN_ARGS.containsKey(block)) {
                 DatagenArgs args = ModBlocks.DATAGEN_ARGS.get(block);
@@ -1081,6 +1086,13 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
                 .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"));
+    }
+
+    public static TextureMap blockSTB(Identifier block) {
+        return new TextureMap()
+                .put(TextureKey.TOP, Identifier.of(block + "_top"))
+                .put(TextureKey.SIDE, Identifier.of(block + "_side"))
+                .put(TextureKey.BOTTOM, Identifier.of(block + "_bottom"));
     }
 
     public static TextureMap custom(Block sideBlock, Block topBlock, Block bottomBlock, String sideSuffix, String topSuffix, String bottomSuffix) {

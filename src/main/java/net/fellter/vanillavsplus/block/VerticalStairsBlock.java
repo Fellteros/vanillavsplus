@@ -198,7 +198,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
         return Arrays.stream(VerticalStairShape.BOTTOM_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused"})
     public static boolean isOuterShape(BlockState state) {
         return Arrays.stream(VerticalStairShape.OUTER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
     }

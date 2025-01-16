@@ -1,0 +1,24 @@
+{
+  "values": [
+    "vanillavsplus:vertical_gold_slab",
+    "vanillavsplus:vertical_gold_stairs",
+    "vanillavsplus:vertical_emerald_slab",
+    "vanillavsplus:vertical_emerald_stairs",
+    "vanillavsplus:vertical_diamond_slab",
+    "vanillavsplus:vertical_diamond_stairs",
+    "vanillavsplus:vertical_gold_ore_slab",
+    "vanillavsplus:vertical_gold_ore_stairs",
+    "vanillavsplus:vertical_deepslate_gold_ore_slab",
+    "vanillavsplus:vertical_deepslate_gold_ore_stairs",
+    "vanillavsplus:vertical_redstone_ore_slab",
+    "vanillavsplus:vertical_redstone_ore_stairs",
+    "vanillavsplus:vertical_deepslate_redstone_ore_slab",
+    "vanillavsplus:vertical_deepslate_redstone_ore_stairs",
+    "vanillavsplus:vertical_emerald_ore_slab",
+    "vanillavsplus:vertical_emerald_ore_stairs",
+    "vanillavsplus:vertical_deepslate_emerald_ore_slab",
+    "vanillavsplus:vertical_deepslate_emerald_ore_stairs",
+    "vanillavsplus:vertical_raw_gold_block_slab",
+    "vanillavsplus:vertical_raw_gold_block_stairs"
+  ]
+}

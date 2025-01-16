@@ -21,6 +21,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 public class VerticalRedstoneOreStairsBlock extends VerticalStairsBlock {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
@@ -105,7 +106,7 @@ public class VerticalRedstoneOreStairsBlock extends VerticalStairsBlock {
 
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void appendProperties(StateManager.@NotNull Builder<Block, BlockState> builder) {
         builder.add(LIT, FACING, SIDE, SHAPE, WATERLOGGED);
     }
 }

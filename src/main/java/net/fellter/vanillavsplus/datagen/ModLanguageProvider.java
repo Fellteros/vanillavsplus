@@ -28,7 +28,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
                     StringBuilder stringBuilder = new StringBuilder();
                     String var10001;
                     for (String string : var10000) {
-                        var10001 = stringBuilder.append(StringUtil.capitalize(string)).append(" ").toString();
+                        stringBuilder.append(StringUtil.capitalize(string)).append(" ");
                     }
                     var10001 = stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length()).toString();
                     translationBuilder.add(block, var10001);

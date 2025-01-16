@@ -1,5 +1,6 @@
 package net.fellter.vanillavsplus.registry;
 
+import net.fellter.vanillavsplus.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.data.TextureMap;
 import net.minecraft.client.render.item.tint.TintSource;
@@ -19,8 +20,20 @@ public final class DatagenArgs {
     public DatagenArgs() {
     }
 
-    public DatagenArgs create() {
-        return new DatagenArgs();
+    public DatagenArgs copy(Block from) {
+        if (!ModBlocks.DATAGEN_ARGS.containsKey(from)) {
+            throw new NullPointerException("Couldn't find " + from.getName() + " in DatagenArgs source map.");
+        } else {
+            DatagenArgs args = ModBlocks.DATAGEN_ARGS.get(from);
+            DatagenArgs newArgs = new DatagenArgs();
+            newArgs.blockTags = args.blockTags;
+            newArgs.textureMap = args.textureMap;
+            newArgs.parentBlock = args.parentBlock;
+            newArgs.fullTextureBlock = args.fullTextureBlock;
+            newArgs.tintSource = args.tintSource;
+            newArgs.y15 = args.y15;
+            return newArgs;
+        }
     }
 
     @SafeVarargs

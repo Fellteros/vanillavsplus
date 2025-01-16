@@ -1,9 +1,13 @@
 package net.fellter.vanillavsplus.registry;
 
+import net.fellter.vanillavsplus.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemConvertible;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public final class RegistryArgs {
@@ -24,13 +28,48 @@ public final class RegistryArgs {
     public Block tilled;
     public ItemConvertible tillDrop;
     public Boolean grassTinted = false;
+    public Boolean foliageTinted;
     public Block flattened;
 
     public RegistryArgs() {
     }
 
+    public RegistryArgs copy(Block from) {
+        if (!ModBlocks.REGISTRY_ARGS.containsKey(from)) {
+            throw new NullPointerException("Couldn't find " + from.getName() + " in RegistryArgs source map.");
+        } else {
+            RegistryArgs args = ModBlocks.REGISTRY_ARGS.get(from);
+            RegistryArgs newArgs = new RegistryArgs();
+            newArgs.transparent = args.transparent;
+            newArgs.translucent = args.translucent;
+            newArgs.stripped = args.stripped;
+            newArgs.burn = args.burn;
+            newArgs.spread = args.spread;
+            newArgs.exposed = args.exposed;
+            newArgs.weathered = args.weathered;
+            newArgs.oxidized = args.oxidized;
+            newArgs.waxed = args.waxed;
+            newArgs.exposedWaxed = args.exposedWaxed;
+            newArgs.weatheredWaxed = args.weatheredWaxed;
+            newArgs.oxidizedWaxed = args.oxidizedWaxed;
+            newArgs.oxidizables = args.oxidizables;
+            newArgs.fuel = args.fuel;
+            newArgs.tilled = args.tilled;
+            newArgs.tillDrop = args.tillDrop;
+            newArgs.grassTinted = args.grassTinted;
+            newArgs.flattened = args.flattened;
+            newArgs.foliageTinted = args.foliageTinted;
+            return newArgs;
+        }
+    }
+
     public RegistryArgs flattenable(Block flattened) {
         this.flattened = flattened;
+        return this;
+    }
+
+    public RegistryArgs foliageTinted() {
+        this.foliageTinted = true;
         return this;
     }
 
@@ -86,6 +125,32 @@ public final class RegistryArgs {
     public RegistryArgs fuel() {
         this.fuel = true;
         return this;
+    }
+
+
+
+
+    public static class RegistryProperty<T> {
+        private T value;
+
+        public RegistryProperty(T value) {
+            this.value = value;
+        }
+
+        public RegistryProperty<?> of(T value) {
+            return new RegistryProperty<>(value);
+        }
+
+        public T get() {
+            if (value != null) return value;
+            return null;
+        }
+
+        public void setValue(T value) {
+            this.value = value;
+        }
+
+
     }
 }
 

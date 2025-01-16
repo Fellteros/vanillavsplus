@@ -32,6 +32,13 @@ public class ModBlockStateModelGenerator {
         bsmg.registerParentedItemModel(vertSlabBlock, identifier2);
     }
 
+    public static void registerVerticalSlab(BlockStateModelGenerator bsmg, Block vertSlabBlock, Identifier fullBlock, TextureMap slabTextureMap) {
+        Identifier identifier = ModModels.VERTICAL_SLAB_LEFT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
+        Identifier identifier2 = ModModels.VERTICAL_SLAB_RIGHT.upload(vertSlabBlock, slabTextureMap, bsmg.modelCollector);
+        bsmg.blockStateCollector.accept(createVerticalSlabBlockState(vertSlabBlock, identifier, identifier2, fullBlock));
+        bsmg.registerParentedItemModel(vertSlabBlock, identifier2);
+    }
+
     public static void registerVerticalStairs(BlockStateModelGenerator bsmg, Block vertStairsBlock, TextureMap textureMap) {
         Identifier identifier = ModModels.STRAIGHT.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
         Identifier identifier2 = ModModels.INNER_TOP.upload(vertStairsBlock, textureMap, bsmg.modelCollector);
@@ -115,9 +122,9 @@ private static BlockStateSupplier createVerticalSlabBlockState(Block vertSlabBlo
             .register(Direction.EAST, true, BlockStateVariant.create().put(VariantSettings.MODEL, vertSlabIdLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
             .register(Direction.WEST, true, BlockStateVariant.create().put(VariantSettings.MODEL, vertSlabIdRight).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
             .register(Direction.NORTH, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true))
-            .register(Direction.SOUTH, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
-            .register(Direction.EAST, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
-            .register(Direction.WEST, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true).put(y, VariantSettings.Rotation.R270)));
+            .register(Direction.SOUTH, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true))
+            .register(Direction.EAST, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true))
+            .register(Direction.WEST, false, BlockStateVariant.create().put(VariantSettings.MODEL, fullBlockId).put(uvlock, true)));
 }
 
 

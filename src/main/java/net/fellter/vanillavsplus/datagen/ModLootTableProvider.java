@@ -25,7 +25,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         Registries.BLOCK.forEach(block -> {
-            if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID)) {
+            if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && block.getLootTableKey().isPresent()) {
                 if (block instanceof VerticalSlabBlock) {
                     addDrop(block, vertSlabDrops(block));
                 } else if (block instanceof VerticalStairsBlock) {
