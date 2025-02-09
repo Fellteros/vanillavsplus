@@ -1,13 +1,14 @@
 package net.fellter.vanillavsplus;
 
-import net.fabricmc.api.ClientModInitializer;
 import net.fellter.vanillavsplus.registry.ModRegistries;
 
+import net.fabricmc.api.ClientModInitializer;
+
 public class VanillaVSPlusClient implements ClientModInitializer {
-    @Override
-    public void onInitializeClient() {
-        ModRegistries.registerTransparentBlocks();
-        ModRegistries.registerTranslucentBlocks();
-        ModRegistries.registerFoliage();
-    }
+	@Override
+	public void onInitializeClient() {
+		ModRegistries.registerFoliage();
+		ModRegistries.registerTransparentBlocks();
+		ModRegistries.registerTranslucentBlocks();
+	}
 }

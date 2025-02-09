@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.redstone_ore;
 
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneTorchBlock;

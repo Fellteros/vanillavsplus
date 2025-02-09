@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_gold_block": {
+    "has_raw_copper_block": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:raw_gold_block"
+            "items": "minecraft:raw_copper_block"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw_gold_block"
+      "has_raw_copper_block"
     ]
   ],
   "rewards": {

@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.slime;
 
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

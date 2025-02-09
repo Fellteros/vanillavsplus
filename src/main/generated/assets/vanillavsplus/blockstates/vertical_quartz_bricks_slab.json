@@ -1,7 +1,7 @@
 {
   "variants": {
     "facing=east,single=false": {
-      "model": "minecraft:block/quartz_block",
+      "model": "minecraft:block/quartz_bricks",
       "uvlock": true
     },
     "facing=east,single=true": {
@@ -10,7 +10,7 @@
       "y": 90
     },
     "facing=north,single=false": {
-      "model": "minecraft:block/quartz_block",
+      "model": "minecraft:block/quartz_bricks",
       "uvlock": true
     },
     "facing=north,single=true": {
@@ -18,7 +18,7 @@
       "uvlock": true
     },
     "facing=south,single=false": {
-      "model": "minecraft:block/quartz_block",
+      "model": "minecraft:block/quartz_bricks",
       "uvlock": true
     },
     "facing=south,single=true": {
@@ -26,7 +26,7 @@
       "uvlock": true
     },
     "facing=west,single=false": {
-      "model": "minecraft:block/quartz_block",
+      "model": "minecraft:block/quartz_bricks",
       "uvlock": true
     },
     "facing=west,single=true": {

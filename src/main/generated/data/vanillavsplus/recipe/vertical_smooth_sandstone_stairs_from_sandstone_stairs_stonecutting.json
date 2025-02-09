@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:sandstone_stairs",
+  "result": {
+    "count": 1,
+    "id": "vanillavsplus:vertical_smooth_sandstone_stairs"
+  }
+}

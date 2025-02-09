@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:waxed_copper_block",
+  "result": {
+    "count": 2,
+    "id": "vanillavsplus:vertical_waxed_copper_slab"
+  }
+}

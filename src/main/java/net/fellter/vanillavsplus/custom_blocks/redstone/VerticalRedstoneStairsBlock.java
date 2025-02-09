@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.redstone;
 
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;

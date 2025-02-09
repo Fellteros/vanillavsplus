@@ -1,6 +1,9 @@
 package net.fellter.vanillavsplus.custom_blocks.sponge;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
+
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.FluidState;
@@ -11,7 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
-import org.jetbrains.annotations.Nullable;
 
 public class VerticalSpongeSlabBlock extends VerticalSlabBlock {
     private final Block wet;

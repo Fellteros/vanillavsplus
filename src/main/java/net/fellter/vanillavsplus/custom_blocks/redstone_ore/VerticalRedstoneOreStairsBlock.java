@@ -1,6 +1,9 @@
 package net.fellter.vanillavsplus.custom_blocks.redstone_ore;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneTorchBlock;
@@ -21,7 +24,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
 
 public class VerticalRedstoneOreStairsBlock extends VerticalStairsBlock {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;

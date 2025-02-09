@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.falling;
 
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LandingBlock;
 import net.minecraft.entity.FallingBlockEntity;

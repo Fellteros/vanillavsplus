@@ -1,7 +1,10 @@
 package net.fellter.vanillavsplus.custom_blocks.flattenable;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.fellter.vanillavsplus.custom_blocks.y15.VerticalY15StairsBlock;
 import net.fellter.vanillavsplus.registry.ModRegistries;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -14,7 +17,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.tick.ScheduledTickView;
-import org.jetbrains.annotations.Nullable;
 
 public class VerticalFlattenableStairsBlock extends VerticalY15StairsBlock {
     public VerticalFlattenableStairsBlock(Settings settings) {

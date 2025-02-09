@@ -3,6 +3,7 @@ package net.fellter.vanillavsplus.custom_blocks.y15;
 import net.fellter.vanillavsplus.block.BlockSide;
 import net.fellter.vanillavsplus.block.VerticalStairShape;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;

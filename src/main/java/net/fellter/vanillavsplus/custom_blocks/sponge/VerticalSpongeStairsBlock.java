@@ -1,9 +1,11 @@
 package net.fellter.vanillavsplus.custom_blocks.sponge;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.sound.SoundCategory;
@@ -12,7 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
-import org.jetbrains.annotations.Nullable;
 
 public class VerticalSpongeStairsBlock extends VerticalStairsBlock {
     private final Block wet;

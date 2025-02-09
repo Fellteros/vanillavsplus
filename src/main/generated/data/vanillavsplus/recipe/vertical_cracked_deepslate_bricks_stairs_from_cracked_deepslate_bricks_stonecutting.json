@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:cracked_deepslate_bricks",
+  "result": {
+    "count": 1,
+    "id": "vanillavsplus:vertical_cracked_deepslate_bricks_stairs"
+  }
+}

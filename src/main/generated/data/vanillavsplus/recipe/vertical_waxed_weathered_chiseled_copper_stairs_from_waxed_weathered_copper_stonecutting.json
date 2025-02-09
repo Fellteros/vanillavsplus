@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:waxed_weathered_copper",
+  "result": {
+    "count": 1,
+    "id": "vanillavsplus:vertical_waxed_weathered_chiseled_copper_stairs"
+  }
+}

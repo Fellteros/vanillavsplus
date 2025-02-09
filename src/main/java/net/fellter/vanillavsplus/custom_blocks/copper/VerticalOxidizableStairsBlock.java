@@ -1,6 +1,7 @@
 package net.fellter.vanillavsplus.custom_blocks.copper;
 
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Oxidizable;
 import net.minecraft.server.world.ServerWorld;

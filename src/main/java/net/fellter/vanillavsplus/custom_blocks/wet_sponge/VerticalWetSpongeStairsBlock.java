@@ -2,6 +2,7 @@ package net.fellter.vanillavsplus.custom_blocks.wet_sponge;
 
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;

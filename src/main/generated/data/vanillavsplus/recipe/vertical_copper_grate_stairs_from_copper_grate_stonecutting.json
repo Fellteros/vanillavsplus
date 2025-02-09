@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:copper_grate",
+  "result": {
+    "count": 1,
+    "id": "vanillavsplus:vertical_copper_grate_stairs"
+  }
+}
