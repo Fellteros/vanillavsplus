@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItemGroups;
 import net.fellter.vanillavsplus.item.ModItems;
-import net.fellter.vanillavsplus.registry.ModRegistries;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -19,13 +18,6 @@ public class VanillaVSPlus implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
-
-		ModRegistries.registerFuel();
-		ModRegistries.registerOxidizables();
-		ModRegistries.registerFlammables();
-		ModRegistries.registerStrippableBlocks();
-		ModRegistries.registerFlattenableBlocks();
-		ModRegistries.registerTillableBlocks();
 
 		LOGGER.info("Initialized Vanilla+ Verticals");
 	}

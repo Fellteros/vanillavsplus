@@ -6,9 +6,13 @@ import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.fellter.vanillavsplus.item.ModItems;
 import net.fellter.vanillavsplus.registry.Args;
+import net.fellter.vanillavsplus.registry.DatagenArgs;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.client.data.*;
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
+import net.minecraft.client.data.TextureMap;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
@@ -31,8 +35,8 @@ public class ModModelProvider extends FabricModelProvider {
 		registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_MUSHROOM_SLAB, Identifier.of(VanillaVSPlus.MOD_ID, "block/red_mushroom_block"), TextureMap.all(Blocks.RED_MUSHROOM_BLOCK));
 
 		Registries.BLOCK.forEach(block -> {
-			if (ModBlocks.ARGS.containsKey(block)) {
-				Args args = ModBlocks.ARGS.get(block);
+			if (Args.DATAGEN_ARGS.containsKey(block)) {
+				DatagenArgs args = Args.DATAGEN_ARGS.get(block);
 				if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && args.textureMap != null) {
 
 					if (block instanceof VerticalStairsBlock && args.y15 && args.tintSource != null) registerVerticalStairs15(bsmg, block, args.textureMap, args.tintSource);

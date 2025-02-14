@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import net.fellter.vanillavsplus.VanillaVSPlus;
-import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
+import net.fellter.vanillavsplus.registry.Args;
 import net.fellter.vanillavsplus.util.ModTags;
 
 import net.minecraft.block.Block;
@@ -29,8 +29,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				if (block instanceof VerticalSlabBlock) getOrCreateTagBuilder(ModTags.VERTICAL_SLABS).add(block);
 				if (block instanceof VerticalStairsBlock) getOrCreateTagBuilder(ModTags.VERTICAL_STAIRS).add(block);
 
-				if (ModBlocks.ARGS.containsKey(block) && ModBlocks.ARGS.get(block).blockTags != null) {
-					List<TagKey<Block>> key = ModBlocks.ARGS.get(block).blockTags;
+				if (Args.DATAGEN_ARGS.containsKey(block) && Args.DATAGEN_ARGS.get(block).blockTags != null) {
+					List<TagKey<Block>> key = Args.DATAGEN_ARGS.get(block).blockTags;
 
 					for (TagKey<Block> blockTagKey : key) {
 						getOrCreateTagBuilder(blockTagKey).add(block);

@@ -1,6 +1,5 @@
 package net.fellter.vanillavsplus.custom_blocks.glass;
 
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;

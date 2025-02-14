@@ -3,10 +3,10 @@ package net.fellter.vanillavsplus.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import net.fellter.vanillavsplus.VanillaVSPlus;
-import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 import net.fellter.vanillavsplus.block.VerticalStairsBlock;
 import net.fellter.vanillavsplus.registry.Args;
+import net.fellter.vanillavsplus.registry.DatagenArgs;
 
 import net.minecraft.data.recipe.CraftingRecipeJsonBuilder;
 import net.minecraft.data.recipe.RecipeExporter;
@@ -60,8 +60,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			@Override
 			public void generate() {
 				Registries.BLOCK.forEach(block -> {
-					if (ModBlocks.ARGS.containsKey(block)) {
-						Args args = ModBlocks.ARGS.get(block);
+					if (Args.DATAGEN_ARGS.containsKey(block)) {
+						DatagenArgs args = Args.DATAGEN_ARGS.get(block);
 
 						if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && args.parentBlock != null) {
 							if (block instanceof VerticalSlabBlock && args.stonecuttingInput != null) {

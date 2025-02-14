@@ -2,8 +2,6 @@ package net.fellter.vanillavsplus.mixin;
 
 import java.util.function.Consumer;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.HoeItem;
@@ -14,6 +12,8 @@ import net.minecraft.world.event.GameEvent;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
 @Mixin(HoeItem.class)
 public abstract class MixinHoeItem {
