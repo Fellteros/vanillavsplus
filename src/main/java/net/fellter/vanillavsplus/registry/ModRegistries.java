@@ -48,18 +48,6 @@ public class ModRegistries {
 	public static final Map<Block, BlockState> FLATTENED_TO_BLOCK_MAP = Maps.newHashMap(new ImmutableMap.Builder<Block, BlockState>().build());
 
 	public static void registerFlattenableBlocks() {
-//            blockToFlattened(ModBlocks.VERTICAL_GRASS_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_GRASS_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
-//            blockToFlattened(ModBlocks.VERTICAL_PODZOL_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_PODZOL_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
-//            blockToFlattened(ModBlocks.VERTICAL_MYCELIUM_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_MYCELIUM_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
-//            blockToFlattened(ModBlocks.VERTICAL_DIRT_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_DIRT_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
-//            blockToFlattened(ModBlocks.VERTICAL_COARSE_DIRT_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_COARSE_DIRT_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
-//            blockToFlattened(ModBlocks.VERTICAL_ROOTED_DIRT_SLAB, ModBlocks.VERTICAL_DIRT_PATH_SLAB);
-//            blockToFlattened(ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS, ModBlocks.VERTICAL_DIRT_PATH_STAIRS);
 
 		flattenedToBlock(ModBlocks.VERTICAL_DIRT_PATH_SLAB, ModBlocks.VERTICAL_DIRT_SLAB);
 		flattenedToBlock(ModBlocks.VERTICAL_DIRT_PATH_STAIRS, ModBlocks.VERTICAL_DIRT_STAIRS);
@@ -110,7 +98,7 @@ public class ModRegistries {
 								}), block
 						);
 					}
-					if (args.foliageTinted != null) {
+					if (args.foliageTinted) {
 						ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> {
 									if (world == null || pos == null) {
 										return FoliageColors.DEFAULT;
@@ -130,7 +118,7 @@ public class ModRegistries {
 			if (Args.REGISTRY_ARGS.containsKey(block)) {
 				Identifier identifier = Registries.BLOCK.getId(block);
 				RegistryArgs args = Args.REGISTRY_ARGS.get(block);
-				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.fuel != null) {
+				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.fuel) {
 					FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(block, context.baseSmeltTime()));
 				}
 			}
@@ -139,70 +127,6 @@ public class ModRegistries {
 
 
 	public static void registerOxidizables() {
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_COPPER_SLAB, ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB, ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB, ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_COPPER_STAIRS, ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS, ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS, ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_CUT_COPPER_SLAB, ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB, ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS);
-//
-//
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_CHISELED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_EXPOSED_CHISELED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_WEATHERED_CHISELED_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_CHISELED_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_OXIDIZED_CHISELED_COPPER_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_WAXED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_WAXED_COPPER_GRATE_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS, ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS);
-//
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_CUT_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_CUT_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_EXPOSED_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_EXPOSED_CUT_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_WEATHERED_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_WEATHERED_CUT_COPPER_STAIRS);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_SLAB, ModBlocks.VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB);
-//            OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.VERTICAL_OXIDIZED_CUT_COPPER_STAIRS, ModBlocks.VERTICAL_WAXED_OXIDIZED_CUT_COPPER_STAIRS);
 
 		Registries.BLOCK.forEach(block -> {
 			if (Args.REGISTRY_ARGS.containsKey(block)) {
@@ -224,10 +148,6 @@ public class ModRegistries {
 
 
 	public static void registerTillableBlocks() {
-//            TillableBlockRegistry.register(ModBlocks.VERTICAL_DIRT_SLAB, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.VERTICAL_FARMLAND_SLAB.getDefaultState()));
-//            TillableBlockRegistry.register(ModBlocks.VERTICAL_DIRT_STAIRS, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.VERTICAL_FARMLAND_STAIRS.getDefaultState()));
-//            TillableBlockRegistry.register(ModBlocks.VERTICAL_GRASS_SLAB, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.VERTICAL_FARMLAND_SLAB.getDefaultState()));
-//            TillableBlockRegistry.register(ModBlocks.VERTICAL_GRASS_STAIRS, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.VERTICAL_FARMLAND_STAIRS.getDefaultState()));
 		TillableBlockRegistry.register(ModBlocks.VERTICAL_ROOTED_DIRT_SLAB, context -> true, HoeItem.createTillAndDropAction(ModBlocks.VERTICAL_DIRT_SLAB.getDefaultState(), Items.HANGING_ROOTS));
 		TillableBlockRegistry.register(ModBlocks.VERTICAL_ROOTED_DIRT_STAIRS, context -> true, HoeItem.createTillAndDropAction(ModBlocks.VERTICAL_DIRT_STAIRS.getDefaultState(), Items.HANGING_ROOTS));
 		TillableBlockRegistry.register(ModBlocks.VERTICAL_COARSE_DIRT_SLAB, context -> true, HoeItem.createTillAction(ModBlocks.VERTICAL_DIRT_SLAB.getDefaultState()));
@@ -247,95 +167,25 @@ public class ModRegistries {
 		});
 	}
 
-	public static void registerTransparentBlocks() {
-
-//            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-//                    ModBlocks.VERTICAL_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_EXPOSED_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_WEATHERED_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_OXIDIZED_COPPER_GRATE_STAIRS,
-//
-//                    ModBlocks.VERTICAL_WAXED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_WAXED_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_WAXED_EXPOSED_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_WAXED_WEATHERED_COPPER_GRATE_STAIRS,
-//                    ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_SLAB,
-//                    ModBlocks.VERTICAL_WAXED_OXIDIZED_COPPER_GRATE_STAIRS,
-//
-//                    ModBlocks.VERTICAL_GRASS_SLAB,
-//                    ModBlocks.VERTICAL_GRASS_STAIRS
-//            );
-
+	public static void registerTranslucentBlocks() {
 		Registries.BLOCK.forEach(block -> {
 			if (Args.REGISTRY_ARGS.containsKey(block)) {
 				Identifier identifier = Registries.BLOCK.getId(block);
 				RegistryArgs args = Args.REGISTRY_ARGS.get(block);
-				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.transparent != null) {
-					BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), block);
+				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.translucent) {
+					BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent());
 				}
 			}
 		});
 	}
 
-	public static void registerTranslucentBlocks() {
-
-
-//            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-//                    ModBlocks.VERTICAL_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_WHITE_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_WHITE_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_GRAY_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_GRAY_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_BLACK_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_BLACK_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_BROWN_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_BROWN_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_RED_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_RED_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_ORANGE_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_YELLOW_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_LIME_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_LIME_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_GREEN_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_GREEN_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_CYAN_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_CYAN_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_BLUE_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_BLUE_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_PURPLE_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_MAGENTA_STAINED_GLASS_STAIRS,
-//                    ModBlocks.VERTICAL_PINK_STAINED_GLASS_SLAB,
-//                    ModBlocks.VERTICAL_PINK_STAINED_GLASS_STAIRS,
-//
-//                    ModBlocks.VERTICAL_ICE_SLAB,
-//                    ModBlocks.VERTICAL_ICE_STAIRS,
-//                    ModBlocks.VERTICAL_PACKED_ICE_SLAB,
-//                    ModBlocks.VERTICAL_PACKED_ICE_STAIRS,
-//                    ModBlocks.VERTICAL_BLUE_ICE_SLAB,
-//                    ModBlocks.VERTICAL_BLUE_ICE_STAIRS
-//                    );
-
+	public static void registerTransparentBlocks() {
 		Registries.BLOCK.forEach(block -> {
 			if (Args.REGISTRY_ARGS.containsKey(block)) {
 				Identifier identifier = Registries.BLOCK.getId(block);
 				RegistryArgs args = Args.REGISTRY_ARGS.get(block);
-				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.translucent != null) {
-					BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), block);
+				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.transparent) {
+					BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
 				}
 			}
 		});

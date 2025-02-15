@@ -1,5 +1,6 @@
 package net.fellter.vanillavsplus.custom_blocks.glass;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
@@ -14,8 +15,14 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.EmptyBlockView;
 
 public class VerticalGlassSlabBlock extends VerticalSlabBlock {
+	protected static final Map<BlockState, VoxelShape> CACHED = new ConcurrentHashMap<>();
+
 	public VerticalGlassSlabBlock(Settings settings) {
 		super(settings);
+	}
+
+	protected VoxelShape getCached(BlockState state) {
+		return CACHED.computeIfAbsent(state, s -> s.getOutlineShape(EmptyBlockView.INSTANCE, BlockPos.ORIGIN));
 	}
 
 	protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -31,9 +38,8 @@ public class VerticalGlassSlabBlock extends VerticalSlabBlock {
 	}
 
 	protected boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {
-		ConcurrentHashMap<BlockState, VoxelShape> cached = new ConcurrentHashMap<>();
-		VoxelShape stateCullingShape = cached.computeIfAbsent(state, s -> s.getOutlineShape(EmptyBlockView.INSTANCE, BlockPos.ORIGIN));
-		VoxelShape stateFromCullingShape = cached.computeIfAbsent(state, s -> s.getOutlineShape(EmptyBlockView.INSTANCE, BlockPos.ORIGIN));
+		VoxelShape stateCullingShape = getCached(state);
+		VoxelShape stateFromCullingShape = getCached(stateFrom);
 		return VoxelShapes.isSideCovered(stateCullingShape, stateFromCullingShape, direction);
 	}
 }

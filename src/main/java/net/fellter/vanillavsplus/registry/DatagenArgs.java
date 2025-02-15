@@ -18,6 +18,7 @@ public class DatagenArgs {
 	public TintSource tintSource;
 	public Boolean y15 = false;
 	public ArrayList<ItemConvertible> stonecuttingInput = new ArrayList<>();
+	public Boolean needsSilkTouch = false;
 
 	public DatagenArgs() {
 	}
@@ -26,15 +27,16 @@ public class DatagenArgs {
 		if (!Args.DATAGEN_ARGS.containsKey(from)) {
 			throw new NullPointerException("Couldn't find " + from.getName() + " in DatagenArgs source map.");
 		} else {
-			DatagenArgs args = Args.DATAGEN_ARGS.get(from);
+			DatagenArgs oldArgs = Args.DATAGEN_ARGS.get(from);
 			DatagenArgs newArgs = new DatagenArgs();
-			newArgs.blockTags = args.blockTags;
-			newArgs.textureMap = args.textureMap;
-			newArgs.parentBlock = args.parentBlock;
-			newArgs.fullTextureBlock = args.fullTextureBlock;
-			newArgs.tintSource = args.tintSource;
-			newArgs.y15 = args.y15;
-			newArgs.stonecuttingInput = args.stonecuttingInput;
+			newArgs.blockTags = oldArgs.blockTags;
+			newArgs.textureMap = oldArgs.textureMap;
+			newArgs.parentBlock = oldArgs.parentBlock;
+			newArgs.fullTextureBlock = oldArgs.fullTextureBlock;
+			newArgs.tintSource = oldArgs.tintSource;
+			newArgs.y15 = oldArgs.y15;
+			newArgs.stonecuttingInput = oldArgs.stonecuttingInput;
+			newArgs.needsSilkTouch = oldArgs.needsSilkTouch;
 			return newArgs;
 		}
 	}
@@ -47,6 +49,11 @@ public class DatagenArgs {
 
 	public DatagenArgs stonecutting() {
 		this.stonecuttingInput.add(this.parentBlock);
+		return this;
+	}
+
+	public DatagenArgs needsSilkTouch() {
+		this.needsSilkTouch = true;
 		return this;
 	}
 

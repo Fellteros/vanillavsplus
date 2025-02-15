@@ -24,7 +24,7 @@ public class RegistryArgs {
 	public Block tilled;
 	public ItemConvertible tillDrop;
 	public Boolean grassTinted = false;
-	public Boolean foliageTinted;
+	public Boolean foliageTinted = false;
 	public Block flattened;
 
 	public RegistryArgs() {

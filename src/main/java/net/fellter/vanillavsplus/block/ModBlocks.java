@@ -27,6 +27,8 @@ import net.fellter.vanillavsplus.custom_blocks.slime.VerticalSlimeSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.slime.VerticalSlimeStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.sponge.VerticalSpongeSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.sponge.VerticalSpongeStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.stained_glass.VerticalStainedGlassSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.stained_glass.VerticalStainedGlassStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeStairsBlock;
 import net.fellter.vanillavsplus.registry.DatagenArgs;
@@ -43,6 +45,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -595,38 +598,38 @@ public class ModBlocks {
 
 	public static final Block VERTICAL_GLASS_SLAB = registerBlock("vertical_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
 	public static final Block VERTICAL_GLASS_STAIRS = registerBlock("vertical_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
-	public static final Block VERTICAL_WHITE_STAINED_GLASS_SLAB = registerBlock("vertical_white_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
-	public static final Block VERTICAL_WHITE_STAINED_GLASS_STAIRS = registerBlock("vertical_white_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
-	public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_light_gray_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
-	public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_light_gray_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
-	public static final Block VERTICAL_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_gray_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
-	public static final Block VERTICAL_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_gray_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
-	public static final Block VERTICAL_BLACK_STAINED_GLASS_SLAB = registerBlock("vertical_black_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
-	public static final Block VERTICAL_BLACK_STAINED_GLASS_STAIRS = registerBlock("vertical_black_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
-	public static final Block VERTICAL_BROWN_STAINED_GLASS_SLAB = registerBlock("vertical_brown_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
-	public static final Block VERTICAL_BROWN_STAINED_GLASS_STAIRS = registerBlock("vertical_brown_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
-	public static final Block VERTICAL_RED_STAINED_GLASS_SLAB = registerBlock("vertical_red_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
-	public static final Block VERTICAL_RED_STAINED_GLASS_STAIRS = registerBlock("vertical_red_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
-	public static final Block VERTICAL_ORANGE_STAINED_GLASS_SLAB = registerBlock("vertical_orange_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
-	public static final Block VERTICAL_ORANGE_STAINED_GLASS_STAIRS = registerBlock("vertical_orange_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
-	public static final Block VERTICAL_YELLOW_STAINED_GLASS_SLAB = registerBlock("vertical_yellow_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
-	public static final Block VERTICAL_YELLOW_STAINED_GLASS_STAIRS = registerBlock("vertical_yellow_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
-	public static final Block VERTICAL_LIME_STAINED_GLASS_SLAB = registerBlock("vertical_lime_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
-	public static final Block VERTICAL_LIME_STAINED_GLASS_STAIRS = registerBlock("vertical_lime_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
-	public static final Block VERTICAL_GREEN_STAINED_GLASS_SLAB = registerBlock("vertical_green_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
-	public static final Block VERTICAL_GREEN_STAINED_GLASS_STAIRS = registerBlock("vertical_green_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
-	public static final Block VERTICAL_CYAN_STAINED_GLASS_SLAB = registerBlock("vertical_cyan_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
-	public static final Block VERTICAL_CYAN_STAINED_GLASS_STAIRS = registerBlock("vertical_cyan_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
-	public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_light_blue_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
-	public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_light_blue_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
-	public static final Block VERTICAL_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_blue_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
-	public static final Block VERTICAL_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_blue_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
-	public static final Block VERTICAL_PURPLE_STAINED_GLASS_SLAB = registerBlock("vertical_purple_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
-	public static final Block VERTICAL_PURPLE_STAINED_GLASS_STAIRS = registerBlock("vertical_purple_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
-	public static final Block VERTICAL_MAGENTA_STAINED_GLASS_SLAB = registerBlock("vertical_magenta_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
-	public static final Block VERTICAL_MAGENTA_STAINED_GLASS_STAIRS = registerBlock("vertical_magenta_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
-	public static final Block VERTICAL_PINK_STAINED_GLASS_SLAB = registerBlock("vertical_pink_stained_glass_slab", VerticalGlassSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
-	public static final Block VERTICAL_PINK_STAINED_GLASS_STAIRS = registerBlock("vertical_pink_stained_glass_stairs", VerticalGlassStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
+	public static final Block VERTICAL_WHITE_STAINED_GLASS_SLAB = registerBlock("vertical_white_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.WHITE, settings), AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
+	public static final Block VERTICAL_WHITE_STAINED_GLASS_STAIRS = registerBlock("vertical_white_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.WHITE, settings), AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS));
+	public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_light_gray_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.LIGHT_GRAY, settings), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
+	public static final Block VERTICAL_LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_light_gray_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.LIGHT_GRAY, settings), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS));
+	public static final Block VERTICAL_GRAY_STAINED_GLASS_SLAB = registerBlock("vertical_gray_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.GRAY, settings), AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
+	public static final Block VERTICAL_GRAY_STAINED_GLASS_STAIRS = registerBlock("vertical_gray_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.GRAY, settings), AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS));
+	public static final Block VERTICAL_BLACK_STAINED_GLASS_SLAB = registerBlock("vertical_black_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.BLACK, settings), AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
+	public static final Block VERTICAL_BLACK_STAINED_GLASS_STAIRS = registerBlock("vertical_black_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.BLACK, settings), AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS));
+	public static final Block VERTICAL_BROWN_STAINED_GLASS_SLAB = registerBlock("vertical_brown_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.BROWN, settings), AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
+	public static final Block VERTICAL_BROWN_STAINED_GLASS_STAIRS = registerBlock("vertical_brown_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.BROWN, settings), AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS));
+	public static final Block VERTICAL_RED_STAINED_GLASS_SLAB = registerBlock("vertical_red_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.RED, settings), AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
+	public static final Block VERTICAL_RED_STAINED_GLASS_STAIRS = registerBlock("vertical_red_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.RED, settings), AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS));
+	public static final Block VERTICAL_ORANGE_STAINED_GLASS_SLAB = registerBlock("vertical_orange_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.ORANGE, settings), AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
+	public static final Block VERTICAL_ORANGE_STAINED_GLASS_STAIRS = registerBlock("vertical_orange_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.ORANGE, settings), AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS));
+	public static final Block VERTICAL_YELLOW_STAINED_GLASS_SLAB = registerBlock("vertical_yellow_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.YELLOW, settings), AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
+	public static final Block VERTICAL_YELLOW_STAINED_GLASS_STAIRS = registerBlock("vertical_yellow_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.YELLOW, settings), AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS));
+	public static final Block VERTICAL_LIME_STAINED_GLASS_SLAB = registerBlock("vertical_lime_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.LIME, settings), AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
+	public static final Block VERTICAL_LIME_STAINED_GLASS_STAIRS = registerBlock("vertical_lime_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.LIME, settings), AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS));
+	public static final Block VERTICAL_GREEN_STAINED_GLASS_SLAB = registerBlock("vertical_green_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.GREEN, settings), AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
+	public static final Block VERTICAL_GREEN_STAINED_GLASS_STAIRS = registerBlock("vertical_green_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.GREEN, settings), AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS));
+	public static final Block VERTICAL_CYAN_STAINED_GLASS_SLAB = registerBlock("vertical_cyan_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.CYAN, settings), AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
+	public static final Block VERTICAL_CYAN_STAINED_GLASS_STAIRS = registerBlock("vertical_cyan_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.CYAN, settings), AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS));
+	public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_light_blue_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.LIGHT_BLUE, settings), AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
+	public static final Block VERTICAL_LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_light_blue_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.LIGHT_BLUE, settings), AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS));
+	public static final Block VERTICAL_BLUE_STAINED_GLASS_SLAB = registerBlock("vertical_blue_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.BLUE, settings), AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
+	public static final Block VERTICAL_BLUE_STAINED_GLASS_STAIRS = registerBlock("vertical_blue_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.BLUE, settings), AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS));
+	public static final Block VERTICAL_PURPLE_STAINED_GLASS_SLAB = registerBlock("vertical_purple_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.PURPLE, settings), AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
+	public static final Block VERTICAL_PURPLE_STAINED_GLASS_STAIRS = registerBlock("vertical_purple_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.PURPLE, settings), AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS));
+	public static final Block VERTICAL_MAGENTA_STAINED_GLASS_SLAB = registerBlock("vertical_magenta_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.MAGENTA, settings), AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
+	public static final Block VERTICAL_MAGENTA_STAINED_GLASS_STAIRS = registerBlock("vertical_magenta_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.MAGENTA, settings), AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS));
+	public static final Block VERTICAL_PINK_STAINED_GLASS_SLAB = registerBlock("vertical_pink_stained_glass_slab", settings -> new VerticalStainedGlassSlabBlock(DyeColor.PINK, settings), AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
+	public static final Block VERTICAL_PINK_STAINED_GLASS_STAIRS = registerBlock("vertical_pink_stained_glass_stairs", settings -> new VerticalStainedGlassStairsBlock(DyeColor.PINK, settings), AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS));
 
 	public static final Block VERTICAL_FARMLAND_SLAB = registerBlock("vertical_farmland_slab", VerticalFlattenableSlabBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
 	public static final Block VERTICAL_FARMLAND_STAIRS = registerBlock("vertical_farmland_stairs", VerticalFlattenableStairsBlock::new, AbstractBlock.Settings.copy(Blocks.FARMLAND));
@@ -876,18 +879,6 @@ public class ModBlocks {
 
 
 	private static Block registerBlock(String name, @NotNull Function<AbstractBlock.Settings, Block> function, AbstractBlock.@NotNull Settings settings) {
-		Block block = function.apply(settings.registryKey(keyOfBlock(name)));
-		Registry.register(Registries.ITEM, Identifier.of(VanillaVSPlus.MOD_ID, name), new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(keyOfItem(name))));
-		return Registry.register(Registries.BLOCK, keyOfBlock(name), block);
-	}
-
-	private static Block registerBlock(String name, @NotNull Function<AbstractBlock.Settings, Block> function, AbstractBlock.@NotNull Settings settings, DatagenArgs datagenArgs) {
-		Block block = function.apply(settings.registryKey(keyOfBlock(name)));
-		Registry.register(Registries.ITEM, Identifier.of(VanillaVSPlus.MOD_ID, name), new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(keyOfItem(name))));
-		return Registry.register(Registries.BLOCK, keyOfBlock(name), block);
-	}
-
-	private static Block registerBlock(String name, @NotNull Function<AbstractBlock.Settings, Block> function, AbstractBlock.@NotNull Settings settings, DatagenArgs datagenArgs, RegistryArgs registryArgs) {
 		Block block = function.apply(settings.registryKey(keyOfBlock(name)));
 		Registry.register(Registries.ITEM, Identifier.of(VanillaVSPlus.MOD_ID, name), new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(keyOfItem(name))));
 		return Registry.register(Registries.BLOCK, keyOfBlock(name), block);

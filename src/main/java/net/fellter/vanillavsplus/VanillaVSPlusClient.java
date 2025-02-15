@@ -4,14 +4,16 @@ import net.fellter.vanillavsplus.registry.Args;
 import net.fellter.vanillavsplus.registry.ModRegistries;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 
 public class VanillaVSPlusClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		Args.registerRegistryArgs();
-		ModRegistries.registerFoliage();
-		ModRegistries.registerTransparentBlocks();
 		ModRegistries.registerTranslucentBlocks();
+		ModRegistries.registerTransparentBlocks();
+		ModRegistries.registerFoliage();
+
 		ModRegistries.registerFuel();
 		ModRegistries.registerOxidizables();
 		ModRegistries.registerFlammables();
