@@ -31,8 +31,6 @@ import net.fellter.vanillavsplus.custom_blocks.stained_glass.VerticalStainedGlas
 import net.fellter.vanillavsplus.custom_blocks.stained_glass.VerticalStainedGlassStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.wet_sponge.VerticalWetSpongeStairsBlock;
-import net.fellter.vanillavsplus.registry.DatagenArgs;
-import net.fellter.vanillavsplus.registry.RegistryArgs;
 
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -55,7 +53,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 public class ModBlocks {
-
 	public static final Block LOG_DEF = registerBlock("log_def", Block::new, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable());
 	public static final Block BAMBOO_DEF = registerBlock("bamboo_def", Block::new, AbstractBlock.Settings.copy(LOG_DEF).sounds(BlockSoundGroup.BAMBOO_WOOD));
 	public static final Block NETHER_DEF = registerBlock("nether_def", Block::new, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.NETHER_STEM));
@@ -639,6 +636,7 @@ public class ModBlocks {
 				private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
 					BlockPos blockPos = pos.up();
 					BlockState blockState = world.getBlockState(blockPos);
+
 					if (blockState.getFluidState().getLevel() == 8) {
 						return false;
 					} else {
@@ -656,6 +654,7 @@ public class ModBlocks {
 				private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
 					BlockPos blockPos = pos.up();
 					BlockState blockState = world.getBlockState(blockPos);
+
 					if (blockState.getFluidState().getLevel() == 8) {
 						return false;
 					} else {
@@ -844,13 +843,15 @@ public class ModBlocks {
 	public static final Block VERTICAL_PUMPKIN_SLAB = registerBlock("vertical_pumpkin_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PUMPKIN));
 	public static final Block VERTICAL_PUMPKIN_STAIRS = registerBlock("vertical_pumpkin_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PUMPKIN));
 	public static final Block VERTICAL_HAY_SLAB = registerBlock("vertical_hay_slab", settings -> new VerticalSlabBlock(settings) {
-				public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-					entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
-				}}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK));
+		public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+			entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
+		}
+	}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK));
 	public static final Block VERTICAL_HAY_STAIRS = registerBlock("vertical_hay_stairs", settings -> new VerticalStairsBlock(settings) {
-				public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-					entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
-				}}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK));
+		public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+			entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
+		}
+	}, AbstractBlock.Settings.copy(Blocks.HAY_BLOCK));
 	public static final Block VERTICAL_HONEYCOMB_SLAB = registerBlock("vertical_honeycomb_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.HONEYCOMB_BLOCK));
 	public static final Block VERTICAL_HONEYCOMB_STAIRS = registerBlock("vertical_honeycomb_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.HONEYCOMB_BLOCK));
 
@@ -874,9 +875,6 @@ public class ModBlocks {
 	public static final Block VERTICAL_BEDROCK_STAIRS = registerBlock("vertical_bedrock_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.BEDROCK));
 	public static final Block VERTICAL_TARGET_SLAB = registerBlock("vertical_target_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.TARGET));
 	public static final Block VERTICAL_TARGET_STAIRS = registerBlock("vertical_target_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.TARGET));
-
-
-
 
 	private static Block registerBlock(String name, @NotNull Function<AbstractBlock.Settings, Block> function, AbstractBlock.@NotNull Settings settings) {
 		Block block = function.apply(settings.registryKey(keyOfBlock(name)));

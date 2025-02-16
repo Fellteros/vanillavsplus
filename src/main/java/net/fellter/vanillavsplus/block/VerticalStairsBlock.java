@@ -58,7 +58,6 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 		this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(SIDE, BlockSide.LEFT).with(SHAPE, VerticalStairShape.STRAIGHT_LEFT));
 	}
 
-
 	@Override
 	protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 		return this.getOutlineShape(state, world, pos, context);
@@ -69,6 +68,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 		Direction direction = state.get(FACING);
 		VerticalStairShape stairShape = state.get(SHAPE);
 		VoxelShape voxelShape;
+
 		if (state.get(SIDE) == BlockSide.LEFT || state.get(SIDE) == BlockSide.RIGHT) {
 			switch (direction) {
 				case NORTH -> {
@@ -157,6 +157,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 				}
 				case null, default -> voxelShape = VoxelShapes.fullCube();
 			}
+
 			return voxelShape;
 		} else {
 			return VoxelShapes.fullCube();
@@ -182,7 +183,6 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			return blockState.with(SIDE, BlockSide.RIGHT).with(SHAPE, getVerticalStairShape(blockState.with(SIDE, BlockSide.RIGHT), ctx.getWorld(), blockPos));
 		}
 	}
-
 
 	@SuppressWarnings("unused")
 	public static boolean isStraightShape(BlockState state) {
@@ -219,12 +219,12 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 		return Arrays.stream(VerticalStairShape.RIGHT_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
 	}
 
-
 	@Override
 	protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
 		if (state.get(WATERLOGGED)) {
 			tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 		}
+
 		return state.with(SHAPE, getVerticalStairShape(state, world, pos));
 	}
 
@@ -235,12 +235,12 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 		BlockState blockState3 = world.getBlockState(pos.offset(direction.rotateYClockwise()));
 		BlockState blockState4 = world.getBlockState(pos.offset(direction.rotateYCounterclockwise()));
 
-
 		//vpredu right
 		if (isStairs(blockState1) && state.get(SIDE) == BlockSide.RIGHT && blockState1.get(FACING) == direction.rotateYClockwise()) {
 			if (blockState1.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.INNER_TOP_RIGHT;
 			}
+
 			return VerticalStairShape.INNER_BOTTOM_RIGHT;
 		}
 
@@ -249,6 +249,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState3.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.OUTER_TOP_RIGHT;
 			}
+
 			return VerticalStairShape.OUTER_BOTTOM_RIGHT;
 		}
 
@@ -257,6 +258,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState2.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.OUTER_TOP_LEFT_R90;
 			}
+
 			return VerticalStairShape.OUTER_BOTTOM_LEFT_R90;
 		}
 
@@ -265,6 +267,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState4.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.INNER_TOP_RIGHT;
 			}
+
 			return VerticalStairShape.INNER_BOTTOM_RIGHT;
 		}
 
@@ -273,6 +276,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState1.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.INNER_TOP_LEFT;
 			}
+
 			return VerticalStairShape.INNER_BOTTOM_LEFT;
 		}
 
@@ -281,6 +285,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState3.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.INNER_TOP_LEFT;
 			}
+
 			return VerticalStairShape.INNER_BOTTOM_LEFT;
 		}
 
@@ -289,6 +294,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState2.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.OUTER_TOP_RIGHT_R90;
 			}
+
 			return VerticalStairShape.OUTER_BOTTOM_RIGHT_R90;
 		}
 
@@ -297,12 +303,12 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 			if (blockState4.get(StairsBlock.HALF) == BlockHalf.TOP) {
 				return VerticalStairShape.OUTER_TOP_LEFT;
 			}
+
 			return VerticalStairShape.OUTER_BOTTOM_LEFT;
 		}
 
 		return state.get(SIDE) == BlockSide.LEFT ? VerticalStairShape.STRAIGHT_LEFT : VerticalStairShape.STRAIGHT_RIGHT;
 	}
-
 
 	public static boolean isStairs(@NotNull BlockState state) {
 		return state.getBlock() instanceof StairsBlock;
@@ -317,9 +323,11 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 	public ItemStack tryDrainFluid(@Nullable PlayerEntity player, WorldAccess world, BlockPos pos, @NotNull BlockState state) {
 		if (state.get(WATERLOGGED)) {
 			world.setBlockState(pos, state.with(WATERLOGGED, false), 3);
+
 			if (!state.canPlaceAt(world, pos)) {
 				world.breakBlock(pos, true);
 			}
+
 			return new ItemStack(Items.WATER_BUCKET);
 		} else {
 			return ItemStack.EMPTY;

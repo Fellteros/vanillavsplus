@@ -29,7 +29,6 @@ public class VerticalCoralStairsBlock extends VerticalStairsBlock {
 		if (!this.isInWater(world, pos)) {
 			world.setBlockState(pos, this.dead.getStateWithProperties(state), 2);
 		}
-
 	}
 
 	protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
@@ -45,6 +44,7 @@ public class VerticalCoralStairsBlock extends VerticalStairsBlock {
 
 		for (Direction direction : var3) {
 			FluidState fluidState = world.getFluidState(pos.offset(direction));
+
 			if (fluidState.isIn(FluidTags.WATER)) {
 				return true;
 			}

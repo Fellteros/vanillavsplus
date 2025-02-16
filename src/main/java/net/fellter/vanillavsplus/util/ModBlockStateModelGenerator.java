@@ -146,7 +146,6 @@ public class ModBlockStateModelGenerator {
 				.register(BlockSide.LEFT, Direction.WEST, VerticalStairShape.OUTER_TOP_LEFT_R90, BlockStateVariant.create().put(model, outerTopLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R0))
 				.register(BlockSide.LEFT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_LEFT_R90, BlockStateVariant.create().put(model, outerBottomLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R0))
 
-
 				.register(BlockSide.LEFT, Direction.NORTH, VerticalStairShape.STRAIGHT_RIGHT, BlockStateVariant.create().put(model, straightLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
 				.register(BlockSide.LEFT, Direction.NORTH, VerticalStairShape.INNER_TOP_RIGHT, BlockStateVariant.create().put(model, innerTopLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
 				.register(BlockSide.LEFT, Direction.NORTH, VerticalStairShape.INNER_BOTTOM_RIGHT, BlockStateVariant.create().put(model, innerBottomLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
@@ -178,7 +177,6 @@ public class ModBlockStateModelGenerator {
 				.register(BlockSide.LEFT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R270))
 				.register(BlockSide.LEFT, Direction.WEST, VerticalStairShape.OUTER_TOP_RIGHT_R90, BlockStateVariant.create().put(model, outerTopRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
 				.register(BlockSide.LEFT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT_R90, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
-
 
 				//right
 				.register(BlockSide.RIGHT, Direction.NORTH, VerticalStairShape.STRAIGHT_RIGHT, BlockStateVariant.create().put(model, straightLeft).put(uvlock, true).put(y, VariantSettings.Rotation.R90))
@@ -212,7 +210,6 @@ public class ModBlockStateModelGenerator {
 				.register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R270))
 				.register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_TOP_RIGHT_R90, BlockStateVariant.create().put(model, outerTopRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
 				.register(BlockSide.RIGHT, Direction.WEST, VerticalStairShape.OUTER_BOTTOM_RIGHT_R90, BlockStateVariant.create().put(model, outerBottomRight).put(uvlock, true).put(y, VariantSettings.Rotation.R180))
-
 
 				.register(BlockSide.RIGHT, Direction.NORTH, VerticalStairShape.STRAIGHT_LEFT, BlockStateVariant.create().put(model, straightLeft).put(uvlock, true))
 				.register(BlockSide.RIGHT, Direction.NORTH, VerticalStairShape.INNER_TOP_LEFT, BlockStateVariant.create().put(model, innerTopLeft).put(uvlock, true))

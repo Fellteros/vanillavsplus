@@ -58,7 +58,7 @@ public class DatagenArgs {
 	}
 
 	@SafeVarargs
-	public final DatagenArgs blockTags(TagKey<Block> ... blockTags) {
+	public final DatagenArgs blockTags(TagKey<Block>... blockTags) {
 		this.blockTags = List.of(blockTags);
 		return this;
 	}
@@ -89,5 +89,4 @@ public class DatagenArgs {
 		this.y15 = true;
 		return this;
 	}
-
 }

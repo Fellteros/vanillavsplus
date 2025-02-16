@@ -37,21 +37,33 @@ public class ModModelProvider extends FabricModelProvider {
 		Registries.BLOCK.forEach(block -> {
 			if (Args.DATAGEN_ARGS.containsKey(block)) {
 				DatagenArgs args = Args.DATAGEN_ARGS.get(block);
+
 				if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && args.textureMap != null) {
-
-					if (block instanceof VerticalStairsBlock && args.y15 && args.tintSource != null) registerVerticalStairs15(bsmg, block, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalStairsBlock && args.y15) registerVerticalStairs15(bsmg, block, args.textureMap);
-					else if (block instanceof VerticalStairsBlock && args.tintSource != null) registerVerticalStairs(bsmg, block, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalStairsBlock) registerVerticalStairs(bsmg, block, args.textureMap);
-
-					else if (block instanceof VerticalSlabBlock && args.y15 && args.tintSource != null && args.fullTextureBlock != null) registerVerticalSlab15(bsmg, block, args.fullTextureBlock, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalSlabBlock && args.y15 && args.tintSource != null && args.parentBlock != null) registerVerticalSlab15(bsmg, block, args.parentBlock, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalSlabBlock && args.y15 && args.fullTextureBlock != null) registerVerticalSlab15(bsmg, block, args.fullTextureBlock, args.textureMap);
-					else if (block instanceof VerticalSlabBlock && args.y15 && args.parentBlock != null) registerVerticalSlab15(bsmg, block, args.parentBlock, args.textureMap);
-					else if (block instanceof VerticalSlabBlock && args.tintSource != null && args.fullTextureBlock != null) registerVerticalSlab(bsmg, block, args.fullTextureBlock, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalSlabBlock && args.tintSource != null && args.parentBlock != null) registerVerticalSlab(bsmg, block, args.parentBlock, args.textureMap, args.tintSource);
-					else if (block instanceof VerticalSlabBlock && args.fullTextureBlock != null) registerVerticalSlab(bsmg, block, args.fullTextureBlock, args.textureMap);
-					else if (block instanceof VerticalSlabBlock && args.parentBlock != null) registerVerticalSlab(bsmg, block, args.parentBlock, args.textureMap);
+					if (block instanceof VerticalStairsBlock && args.y15 && args.tintSource != null) {
+						registerVerticalStairs15(bsmg, block, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalStairsBlock && args.y15) {
+						registerVerticalStairs15(bsmg, block, args.textureMap);
+					} else if (block instanceof VerticalStairsBlock && args.tintSource != null) {
+						registerVerticalStairs(bsmg, block, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalStairsBlock) {
+						registerVerticalStairs(bsmg, block, args.textureMap);
+					} else if (block instanceof VerticalSlabBlock && args.y15 && args.tintSource != null && args.fullTextureBlock != null) {
+						registerVerticalSlab15(bsmg, block, args.fullTextureBlock, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalSlabBlock && args.y15 && args.tintSource != null && args.parentBlock != null) {
+						registerVerticalSlab15(bsmg, block, args.parentBlock, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalSlabBlock && args.y15 && args.fullTextureBlock != null) {
+						registerVerticalSlab15(bsmg, block, args.fullTextureBlock, args.textureMap);
+					} else if (block instanceof VerticalSlabBlock && args.y15 && args.parentBlock != null) {
+						registerVerticalSlab15(bsmg, block, args.parentBlock, args.textureMap);
+					} else if (block instanceof VerticalSlabBlock && args.tintSource != null && args.fullTextureBlock != null) {
+						registerVerticalSlab(bsmg, block, args.fullTextureBlock, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalSlabBlock && args.tintSource != null && args.parentBlock != null) {
+						registerVerticalSlab(bsmg, block, args.parentBlock, args.textureMap, args.tintSource);
+					} else if (block instanceof VerticalSlabBlock && args.fullTextureBlock != null) {
+						registerVerticalSlab(bsmg, block, args.fullTextureBlock, args.textureMap);
+					} else if (block instanceof VerticalSlabBlock && args.parentBlock != null) {
+						registerVerticalSlab(bsmg, block, args.parentBlock, args.textureMap);
+					}
 				}
 			}
 		});

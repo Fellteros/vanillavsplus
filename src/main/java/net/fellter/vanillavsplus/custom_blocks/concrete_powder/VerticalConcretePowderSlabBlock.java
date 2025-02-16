@@ -38,6 +38,7 @@ public class VerticalConcretePowderSlabBlock extends VerticalFallingSlabBlock {
 		BlockPos blockPos = ctx.getBlockPos();
 		World blockView = ctx.getWorld();
 		BlockState placementState = super.getPlacementState(ctx);
+
 		if (shouldHarden(blockView, blockPos, blockView.getBlockState(blockPos))) {
 			if (placementState != null) {
 				return this.hardenedState
@@ -46,6 +47,7 @@ public class VerticalConcretePowderSlabBlock extends VerticalFallingSlabBlock {
 						.with(SINGLE, placementState.get(SINGLE));
 			}
 		}
+
 		return super.getPlacementState(ctx);
 	}
 
@@ -56,6 +58,7 @@ public class VerticalConcretePowderSlabBlock extends VerticalFallingSlabBlock {
 	private static boolean hardensOnAnySide(BlockView world, BlockPos pos) {
 		boolean bl = false;
 		BlockPos.Mutable mutable = pos.mutableCopy();
+
 		for (Direction direction : Direction.values()) {
 			BlockState blockState = world.getBlockState(mutable);
 			if (direction == Direction.DOWN && !hardensIn(blockState)) continue;
@@ -65,6 +68,7 @@ public class VerticalConcretePowderSlabBlock extends VerticalFallingSlabBlock {
 			bl = true;
 			break;
 		}
+
 		return bl;
 	}
 
@@ -80,6 +84,7 @@ public class VerticalConcretePowderSlabBlock extends VerticalFallingSlabBlock {
 					.with(FACING, world.getBlockState(pos).get(FACING))
 					.with(SINGLE, world.getBlockState(pos).get(SINGLE));
 		}
+
 		tickView.scheduleBlockTick(pos, this, this.getFallDelay());
 		return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
 	}

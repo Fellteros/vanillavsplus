@@ -19,7 +19,6 @@ import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.tick.ScheduledTickView;
 
 public class VerticalFlattenableSlabBlock extends VerticalY15SlabBlock {
-
 	public VerticalFlattenableSlabBlock(Settings settings) {
 		super(settings);
 	}
@@ -29,6 +28,7 @@ public class VerticalFlattenableSlabBlock extends VerticalY15SlabBlock {
 		if (direction == Direction.UP) {
 			tickView.scheduleBlockTick(pos, this, 1);
 		}
+
 		return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
 	}
 

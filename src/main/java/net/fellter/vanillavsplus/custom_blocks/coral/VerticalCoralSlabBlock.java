@@ -44,6 +44,7 @@ public class VerticalCoralSlabBlock extends VerticalSlabBlock {
 
 		for (Direction direction : var3) {
 			FluidState fluidState = world.getFluidState(pos.offset(direction));
+
 			if (fluidState.isIn(FluidTags.WATER)) {
 				return true;
 			}

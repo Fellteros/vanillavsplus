@@ -25,6 +25,7 @@ public class VerticalStainedGlassSlabBlock extends VerticalGlassSlabBlock implem
 		if (stateFrom.getBlock() instanceof Stainable stainable) {
 			return stainable.getColor() == color && super.isSideInvisible(state, stateFrom, direction);
 		}
+
 		return false;
 	}
 }

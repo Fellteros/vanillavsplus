@@ -160,6 +160,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
 	@Override
 	public VoxelShape getSidesShape(BlockState state, BlockView world, BlockPos pos) {
 		Direction direction = state.get(FACING);
+
 		if (!state.get(SINGLE)) {
 			return VoxelShapes.fullCube();
 		} else {

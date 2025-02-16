@@ -25,13 +25,16 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 		Registries.BLOCK.forEach(block -> {
 			if (Args.DATAGEN_ARGS.containsKey(block)) {
 				Identifier identifier = Registries.BLOCK.getId(block);
+
 				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID)) {
 					String[] var10000 = identifier.getPath().split("_");
 					StringBuilder stringBuilder = new StringBuilder();
 					String var10001;
+
 					for (String string : var10000) {
 						stringBuilder.append(StringUtil.capitalize(string)).append(" ");
 					}
+
 					var10001 = stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length()).toString();
 					translationBuilder.add(block, var10001);
 				}

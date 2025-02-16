@@ -32,6 +32,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 		Registries.BLOCK.forEach(block -> {
 			if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && block.getLootTableKey().isPresent() && Args.DATAGEN_ARGS.containsKey(block)) {
 				DatagenArgs datagenArgs = Args.DATAGEN_ARGS.get(block);
+
 				if (block instanceof VerticalSlabBlock && datagenArgs.needsSilkTouch) {
 					addDrop(block, silkTouchDrops(block));
 				} else if (block instanceof VerticalStairsBlock && datagenArgs.needsSilkTouch) {

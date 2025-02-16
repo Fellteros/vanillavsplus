@@ -52,6 +52,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 		BlockState state = ctx.getWorld().getBlockState(blockPos);
 		World world = ctx.getWorld();
 		BlockState placementState = super.getPlacementState(ctx);
+
 		if (shouldHarden(world, blockPos, world.getBlockState(blockPos))) {
 			if (placementState != null) {
 				return this.hardenedState
@@ -61,6 +62,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 						.with(SIDE, placementState.get(SIDE));
 			}
 		}
+
 		return super.getPlacementState(ctx);
 	}
 
@@ -71,6 +73,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 	private static boolean hardensOnAnySide(BlockView world, BlockPos pos) {
 		boolean bl = false;
 		BlockPos.Mutable mutable = pos.mutableCopy();
+
 		for (Direction direction : Direction.values()) {
 			BlockState blockState = world.getBlockState(mutable);
 			if (direction == Direction.DOWN && !hardensIn(blockState)) continue;
@@ -80,6 +83,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 			bl = true;
 			break;
 		}
+
 		return bl;
 	}
 
@@ -96,6 +100,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 					.with(SHAPE, getVerticalStairShape(state, world, pos))
 					.with(SIDE, world.getBlockState(pos).get(SIDE));
 		}
+
 		tickView.scheduleBlockTick(pos, this, this.getFallDelay());
 		return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
 	}
@@ -105,6 +110,7 @@ public class VerticalConcretePowderStairsBlock extends VerticalFallingStairsBloc
 		if (!canFallThrough(world.getBlockState(pos.down())) || pos.getY() < world.getBottomY()) {
 			return;
 		}
+
 		FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
 		this.configureFallingBlockEntity(fallingBlockEntity);
 	}

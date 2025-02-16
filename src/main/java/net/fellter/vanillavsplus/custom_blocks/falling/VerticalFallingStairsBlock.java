@@ -18,49 +18,48 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 
 public class VerticalFallingStairsBlock extends VerticalStairsBlock implements LandingBlock {
+	public VerticalFallingStairsBlock(Settings settings) {
+		super(settings);
+	}
 
-    public VerticalFallingStairsBlock(Settings settings) {
-        super(settings);
-    }
+	public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
+		world.setBlockState(pos, fallingBlockState.with(SHAPE, getVerticalStairShape(fallingBlockState, world, pos)));
+	}
 
+	protected void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+		world.scheduleBlockTick(pos, this, this.getFallDelay());
+	}
 
-    public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
-        world.setBlockState(pos, fallingBlockState.with(SHAPE, getVerticalStairShape(fallingBlockState, world, pos)));
-    }
+	protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+		tickView.scheduleBlockTick(pos, this, this.getFallDelay());
+		return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+	}
 
-    protected void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
-        world.scheduleBlockTick(pos, this, this.getFallDelay());
-    }
+	protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+		if (canFallThrough(world.getBlockState(pos.down())) && pos.getY() >= world.getBottomY()) {
+			FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
+			this.configureFallingBlockEntity(fallingBlockEntity);
+		}
+	}
 
-    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
-        tickView.scheduleBlockTick(pos, this, this.getFallDelay());
-        return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
-    }
+	protected void configureFallingBlockEntity(FallingBlockEntity entity) {
+	}
 
-    protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (canFallThrough(world.getBlockState(pos.down())) && pos.getY() >= world.getBottomY()) {
-            FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
-            this.configureFallingBlockEntity(fallingBlockEntity);
-        }
-    }
+	protected int getFallDelay() {
+		return 2;
+	}
 
-    protected void configureFallingBlockEntity(FallingBlockEntity entity) {
-    }
+	public static boolean canFallThrough(BlockState state) {
+		return state.isAir() || state.isIn(BlockTags.FIRE) || state.isLiquid() || state.isReplaceable();
+	}
 
-    protected int getFallDelay() {
-        return 2;
-    }
+	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+		if (random.nextInt(16) == 0) {
+			BlockPos blockPos = pos.down();
 
-    public static boolean canFallThrough(BlockState state) {
-        return state.isAir() || state.isIn(BlockTags.FIRE) || state.isLiquid() || state.isReplaceable();
-    }
-
-    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(16) == 0) {
-            BlockPos blockPos = pos.down();
-            if (canFallThrough(world.getBlockState(blockPos))) {
-                ParticleUtil.spawnParticle(world, pos, random, new BlockStateParticleEffect(ParticleTypes.FALLING_DUST, state));
-            }
-        }
-    }
+			if (canFallThrough(world.getBlockState(blockPos))) {
+				ParticleUtil.spawnParticle(world, pos, random, new BlockStateParticleEffect(ParticleTypes.FALLING_DUST, state));
+			}
+		}
+	}
 }

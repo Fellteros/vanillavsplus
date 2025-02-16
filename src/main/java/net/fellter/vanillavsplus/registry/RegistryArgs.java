@@ -123,9 +123,6 @@ public class RegistryArgs {
 		return this;
 	}
 
-
-
-
 	public static class RegistryProperty<T> {
 		private T value;
 
@@ -145,7 +142,5 @@ public class RegistryArgs {
 		public void setValue(T value) {
 			this.value = value;
 		}
-
-
 	}
 }

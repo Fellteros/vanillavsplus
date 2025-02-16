@@ -70,7 +70,7 @@
             <property name="groups" value="java,javax,*,net.fellter,net.minecraft,com.mojang,net.fabricmc,org.spongepowered,com.example"/>
             <property name="ordered" value="true"/>
             <property name="separated" value="true"/>
-            <property name="option" value="top"/>
+            <property name="option" value="bottom"/>
             <property name="sortStaticImportsAlphabetically" value="true"/>
         </module>
 
