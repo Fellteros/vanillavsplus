@@ -226,8 +226,7 @@
     },
     "block_side=left,facing=west,vertical_stair_shape=outer_bottom_left_r90": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_bottom_left",
-      "uvlock": true,
-      "y": 0
+      "uvlock": true
     },
     "block_side=left,facing=west,vertical_stair_shape=outer_bottom_right": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_bottom_right",
@@ -246,8 +245,7 @@
     },
     "block_side=left,facing=west,vertical_stair_shape=outer_top_left_r90": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_top_left",
-      "uvlock": true,
-      "y": 0
+      "uvlock": true
     },
     "block_side=left,facing=west,vertical_stair_shape=outer_top_right": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_top_right",
@@ -494,8 +492,7 @@
     },
     "block_side=right,facing=west,vertical_stair_shape=outer_bottom_left_r90": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_bottom_left",
-      "uvlock": true,
-      "y": 0
+      "uvlock": true
     },
     "block_side=right,facing=west,vertical_stair_shape=outer_bottom_right": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_bottom_right",
@@ -514,8 +511,7 @@
     },
     "block_side=right,facing=west,vertical_stair_shape=outer_top_left_r90": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_top_left",
-      "uvlock": true,
-      "y": 0
+      "uvlock": true
     },
     "block_side=right,facing=west,vertical_stair_shape=outer_top_right": {
       "model": "vanillavsplus:block/vertical_diamond_stairs_outer_top_right",

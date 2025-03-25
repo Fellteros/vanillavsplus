@@ -3,7 +3,7 @@ package net.fellter.vanillavsplus.custom_blocks.falling;
 import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LandingBlock;
+import net.minecraft.block.Falling;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 
-public class VerticalFallingSlabBlock extends VerticalSlabBlock implements LandingBlock {
+public class VerticalFallingSlabBlock extends VerticalSlabBlock implements Falling {
 	public VerticalFallingSlabBlock(Settings settings) {
 		super(settings);
 	}

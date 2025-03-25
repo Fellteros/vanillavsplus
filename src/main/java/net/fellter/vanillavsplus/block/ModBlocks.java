@@ -19,6 +19,8 @@ import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.glass.VerticalGlassStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.honey.VerticalHoneySlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.honey.VerticalHoneyStairsBlock;
+import net.fellter.vanillavsplus.custom_blocks.ice.VerticalIceSlabBlock;
+import net.fellter.vanillavsplus.custom_blocks.ice.VerticalIceStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneSlabBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone.VerticalRedstoneStairsBlock;
 import net.fellter.vanillavsplus.custom_blocks.redstone_ore.VerticalRedstoneOreSlabBlock;
@@ -691,8 +693,8 @@ public class ModBlocks {
 	public static final Block VERTICAL_RED_SAND_SLAB = registerBlock("vertical_red_sand_slab", VerticalFallingSlabBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
 	public static final Block VERTICAL_RED_SAND_STAIRS = registerBlock("vertical_red_sand_stairs", VerticalFallingStairsBlock::new, AbstractBlock.Settings.copy(Blocks.RED_SAND));
 
-	public static final Block VERTICAL_ICE_SLAB = registerBlock("vertical_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
-	public static final Block VERTICAL_ICE_STAIRS = registerBlock("vertical_ice_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+	public static final Block VERTICAL_ICE_SLAB = registerBlock("vertical_ice_slab", VerticalIceSlabBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
+	public static final Block VERTICAL_ICE_STAIRS = registerBlock("vertical_ice_stairs", VerticalIceStairsBlock::new, AbstractBlock.Settings.copy(Blocks.ICE));
 	public static final Block VERTICAL_PACKED_ICE_SLAB = registerBlock("vertical_packed_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.PACKED_ICE));
 	public static final Block VERTICAL_PACKED_ICE_STAIRS = registerBlock("vertical_packed_ice_stairs", VerticalStairsBlock::new, AbstractBlock.Settings.copy(Blocks.PACKED_ICE));
 	public static final Block VERTICAL_BLUE_ICE_SLAB = registerBlock("vertical_blue_ice_slab", VerticalSlabBlock::new, AbstractBlock.Settings.copy(Blocks.BLUE_ICE));

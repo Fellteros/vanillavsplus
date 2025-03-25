@@ -63,7 +63,7 @@ public class VerticalWetSpongeSlabBlock extends VerticalSlabBlock {
 					}
 				}
 
-				world.addParticle(ParticleTypes.DRIPPING_WATER, d, e, f, 0.0, 0.0, 0.0);
+				world.addParticleClient(ParticleTypes.DRIPPING_WATER, d, e, f, 0.0, 0.0, 0.0);
 			}
 		}
 	}

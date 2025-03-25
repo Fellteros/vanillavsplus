@@ -5,6 +5,7 @@ import net.fellter.vanillavsplus.block.VerticalSlabBlock;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.vehicle.AbstractBoatEntity;
@@ -36,14 +37,14 @@ public class VerticalHoneySlabBlock extends VerticalSlabBlock {
 		}
 	}
 
-	protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+	protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler entityCollisionHandler) {
 		if (this.isSliding(pos, entity)) {
 			this.triggerAdvancement(entity, pos);
 			this.updateSlidingVelocity(entity);
 			this.addCollisionEffects(world, entity);
 		}
 
-		super.onEntityCollision(state, world, pos, entity);
+		super.onEntityCollision(state, world, pos, entity, entityCollisionHandler);
 	}
 
 	private static double method_65067(double d) {

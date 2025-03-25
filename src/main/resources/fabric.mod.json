@@ -25,13 +25,12 @@
 			"net.fellter.vanillavsplus.VanillaVSPlusDataGenerator"
 		]
 	},
-	"accessWidener": "vanillavsplus.accesswidener",
 	"mixins": [
 		"vanillavsplus.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.4",
+		"minecraft": "~1.21.5",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

@@ -5,8 +5,8 @@ import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.block.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -47,12 +47,12 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
 	}
 
 	@Override
-	public boolean canFillWithFluid(@Nullable PlayerEntity player, BlockView world, BlockPos pos, BlockState state, Fluid fluid) {
+	public boolean canFillWithFluid(@Nullable LivingEntity filler, BlockView world, BlockPos pos, BlockState state, Fluid fluid) {
 		return state.get(SINGLE);
 	}
 
 	@Override
-	public ItemStack tryDrainFluid(@Nullable PlayerEntity player, WorldAccess world, BlockPos pos, BlockState state) {
+	public ItemStack tryDrainFluid(@Nullable LivingEntity drainer, WorldAccess world, BlockPos pos, BlockState state) {
 		if (state.get(WATERLOGGED)) {
 			world.setBlockState(pos, state.with(WATERLOGGED, false), 3);
 

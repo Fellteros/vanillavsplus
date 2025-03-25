@@ -63,7 +63,7 @@ public class VerticalWetSpongeStairsBlock extends VerticalStairsBlock {
 					}
 				}
 
-				world.addParticle(ParticleTypes.DRIPPING_WATER, d, e, f, 0.0, 0.0, 0.0);
+				world.addParticleClient(ParticleTypes.DRIPPING_WATER, d, e, f, 0.0, 0.0, 0.0);
 			}
 		}
 	}
