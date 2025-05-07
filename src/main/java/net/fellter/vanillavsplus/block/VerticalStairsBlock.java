@@ -1,6 +1,9 @@
 package net.fellter.vanillavsplus.block;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 import org.jetbrains.annotations.NotNull;
@@ -20,8 +23,10 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.DirectionTransformation;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -199,7 +204,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 		return Arrays.stream(VerticalStairShape.BOTTOM_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
 	}
 
-	@SuppressWarnings({"unused"})
+	@SuppressWarnings({"all"})
 	public static boolean isOuterShape(BlockState state) {
 		return Arrays.stream(VerticalStairShape.OUTER_SHAPES).anyMatch(Predicate.isEqual(state.get(SHAPE)));
 	}
