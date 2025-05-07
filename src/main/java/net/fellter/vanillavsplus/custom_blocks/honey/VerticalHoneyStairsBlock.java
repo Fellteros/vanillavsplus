@@ -25,16 +25,16 @@ public class VerticalHoneyStairsBlock extends VerticalStairsBlock {
 		return entity instanceof LivingEntity || entity instanceof AbstractMinecartEntity || entity instanceof TntEntity || entity instanceof AbstractBoatEntity;
 	}
 
-	public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+	public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
 		entity.playSound(SoundEvents.BLOCK_HONEY_BLOCK_SLIDE, 1.0F, 1.0F);
-
 		if (!world.isClient) {
-			world.sendEntityStatus(entity, (byte) 54);
+			world.sendEntityStatus(entity, (byte)54);
 		}
 
 		if (entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall())) {
 			entity.playSound(this.soundGroup.getFallSound(), this.soundGroup.getVolume() * 0.5F, this.soundGroup.getPitch() * 0.75F);
 		}
+
 	}
 
 	protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler entityCollisionHandler) {

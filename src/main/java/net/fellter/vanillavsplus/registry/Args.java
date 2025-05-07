@@ -16,8 +16,8 @@ import net.minecraft.util.Identifier;
 import static net.fellter.vanillavsplus.util.ModTextureMap.*;
 
 public final class Args {
-	public static Map<Block, DatagenArgs> DATAGEN_ARGS = new LinkedHashMap<>();
-	public static Map<Block, RegistryArgs> REGISTRY_ARGS = new LinkedHashMap<>();
+	public static final Map<Block, DatagenArgs> DATAGEN_ARGS = new LinkedHashMap<>();
+	public static final Map<Block, RegistryArgs> REGISTRY_ARGS = new LinkedHashMap<>();
 
 	private static void putInDatagenArgs(Block block, DatagenArgs datagenArgs) {
 		DatagenArgs oldArgs = DATAGEN_ARGS.get(block);
