@@ -34,11 +34,11 @@ public class ModModelProvider extends FabricModelProvider {
 		registerVerticalSlab(bsmg, ModBlocks.VERTICAL_BROWN_MUSHROOM_SLAB, Identifier.of(VanillaVSPlus.MOD_ID, "block/brown_mushroom_block"), TextureMap.all(Blocks.BROWN_MUSHROOM_BLOCK));
 		registerVerticalSlab(bsmg, ModBlocks.VERTICAL_RED_MUSHROOM_SLAB, Identifier.of(VanillaVSPlus.MOD_ID, "block/red_mushroom_block"), TextureMap.all(Blocks.RED_MUSHROOM_BLOCK));
 
-		Registries.BLOCK.forEach(block -> {
+		Registries.BLOCK.stream().filter(VanillaVSPlus::isNamespaced).forEach(block -> {
 			if (Args.DATAGEN_ARGS.containsKey(block)) {
 				DatagenArgs args = Args.DATAGEN_ARGS.get(block);
 
-				if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && args.textureMap != null) {
+				if (args.textureMap != null) {
 					if (block instanceof VerticalStairsBlock && args.y15 && args.tintSource != null) {
 						registerVerticalStairs15(bsmg, block, args.textureMap, args.tintSource);
 					} else if (block instanceof VerticalStairsBlock && args.y15) {

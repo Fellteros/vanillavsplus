@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_end_stone_bricks_slab_from_end_stone_bricks_stonecutting"
+        "recipe": "vanillavsplus:vertical_end_stone_bricks_slab_from_end_stone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_end_stone_bricks_slab_from_end_stone_bricks_stonecutting"
+      "vanillavsplus:vertical_end_stone_bricks_slab_from_end_stone_bricks_stonecutting"
     ]
   }
 }

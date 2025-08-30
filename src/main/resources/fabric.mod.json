@@ -9,8 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/vanilla+-verticals",
-		"sources": "https://github.com/Fellteros/vanillavsplus",
-		"issues": "https://github.com/Fellteros/vanillavsplus/issues"
+		"issues": "https://github.com/Fellteros/vanillavsplus/issues",
+		"sources": "https://github.com/Fellteros/vanillavsplus"
 	},
 	"license": "CC-BY-NC-4.0",
 	"icon": "assets/vanillavsplus/icon.png",
@@ -30,8 +30,8 @@
 		"vanillavsplus.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.5",
+		"fabricloader": ">=0.16.14",
+		"minecraft": ["1.21.8"],
 		"java": ">=21",
 		"fabric-api": "*"
 	},

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_dark_prismarine_stairs_from_dark_prismarine_stonecutting"
+        "recipe": "vanillavsplus:vertical_dark_prismarine_stairs_from_dark_prismarine_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_dark_prismarine_stairs_from_dark_prismarine_stonecutting"
+      "vanillavsplus:vertical_dark_prismarine_stairs_from_dark_prismarine_stonecutting"
     ]
   }
 }

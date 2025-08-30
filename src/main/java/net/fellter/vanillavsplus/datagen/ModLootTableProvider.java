@@ -29,10 +29,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
 	@Override
 	public void generate() {
-		Registries.BLOCK.forEach(block -> {
-			if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && block.getLootTableKey().isPresent() && Args.DATAGEN_ARGS.containsKey(block)) {
+		Registries.BLOCK.stream().filter(VanillaVSPlus::isNamespaced).forEach(block -> {
+			if (block.getLootTableKey().isPresent() && Args.DATAGEN_ARGS.containsKey(block)) {
 				DatagenArgs datagenArgs = Args.DATAGEN_ARGS.get(block);
 
+				//noinspection IfCanBeSwitch
 				if (block instanceof VerticalSlabBlock && datagenArgs.needsSilkTouch) {
 					addDrop(block, silkTouchDrops(block));
 				} else if (block instanceof VerticalStairsBlock && datagenArgs.needsSilkTouch) {

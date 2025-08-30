@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_waxed_weathered_copper_grate_slab_from_waxed_weathered_copper_grate_stonecutting"
+        "recipe": "vanillavsplus:vertical_waxed_weathered_copper_grate_slab_from_waxed_weathered_copper_grate_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_waxed_weathered_copper_grate_slab_from_waxed_weathered_copper_grate_stonecutting"
+      "vanillavsplus:vertical_waxed_weathered_copper_grate_slab_from_waxed_weathered_copper_grate_stonecutting"
     ]
   }
 }

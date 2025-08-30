@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 	public static final Item VVSP_TITLE = registerItem("vvsp_title", Item::new);
 
+	@SuppressWarnings("SameParameterValue")
 	private static Item registerItem(String name, Function<Item.Settings, Item> function) {
 		return Registry.register(Registries.ITEM, Identifier.of(VanillaVSPlus.MOD_ID, name), function.apply(new Item.Settings().registryKey(keyOfItem(name))));
 	}

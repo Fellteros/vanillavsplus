@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_deepslate_tiles_stairs_from_deepslate_tiles_stonecutting"
+        "recipe": "vanillavsplus:vertical_deepslate_tiles_stairs_from_deepslate_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_deepslate_tiles_stairs_from_deepslate_tiles_stonecutting"
+      "vanillavsplus:vertical_deepslate_tiles_stairs_from_deepslate_tiles_stonecutting"
     ]
   }
 }

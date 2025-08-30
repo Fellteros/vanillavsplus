@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting"
+        "recipe": "vanillavsplus:vertical_cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting"
+      "vanillavsplus:vertical_cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting"
     ]
   }
 }

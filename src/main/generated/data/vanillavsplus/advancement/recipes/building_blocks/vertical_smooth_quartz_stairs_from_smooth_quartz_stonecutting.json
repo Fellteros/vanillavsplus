@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_smooth_quartz_stairs_from_smooth_quartz_stonecutting"
+        "recipe": "vanillavsplus:vertical_smooth_quartz_stairs_from_smooth_quartz_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_smooth_quartz_stairs_from_smooth_quartz_stonecutting"
+      "vanillavsplus:vertical_smooth_quartz_stairs_from_smooth_quartz_stonecutting"
     ]
   }
 }

@@ -13,6 +13,7 @@ import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -24,17 +25,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-		Registries.BLOCK.forEach(block -> {
-			if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID)) {
-				if (block instanceof VerticalSlabBlock) getOrCreateTagBuilder(ModTags.VERTICAL_SLABS).add(block);
-				if (block instanceof VerticalStairsBlock) getOrCreateTagBuilder(ModTags.VERTICAL_STAIRS).add(block);
+		Registries.BLOCK.stream().filter(VanillaVSPlus::isNamespaced).forEach(block -> {
+			Identifier identifier = Registries.BLOCK.getId(block);
+			if (block instanceof VerticalSlabBlock) getTagBuilder(ModTags.VERTICAL_SLABS).add(identifier);
+			if (block instanceof VerticalStairsBlock) getTagBuilder(ModTags.VERTICAL_STAIRS).add(identifier);
 
-				if (Args.DATAGEN_ARGS.containsKey(block) && Args.DATAGEN_ARGS.get(block).blockTags != null) {
-					List<TagKey<Block>> key = Args.DATAGEN_ARGS.get(block).blockTags;
+			if (Args.DATAGEN_ARGS.containsKey(block) && Args.DATAGEN_ARGS.get(block).blockTags != null) {
+				List<TagKey<Block>> key = Args.DATAGEN_ARGS.get(block).blockTags;
 
-					for (TagKey<Block> blockTagKey : key) {
-						getOrCreateTagBuilder(blockTagKey).add(block);
-					}
+				for (TagKey<Block> blockTagKey : key) {
+					getTagBuilder(blockTagKey).add(identifier);
 				}
 			}
 		});

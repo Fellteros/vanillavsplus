@@ -12,7 +12,7 @@ import net.fellter.vanillavsplus.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.color.world.BiomeColors;
-import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
@@ -20,12 +20,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.FoliageColors;
 import net.minecraft.world.biome.GrassColors;
 
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
-import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
-import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
+import net.fabricmc.fabric.api.registry.*;
 import net.fabricmc.fabric.impl.content.registry.util.ImmutableCollectionUtils;
 import net.fabricmc.fabric.mixin.content.registry.AxeItemAccessor;
 import net.fabricmc.fabric.mixin.content.registry.ShovelItemAccessor;
@@ -177,7 +174,7 @@ public class ModRegistries {
 				RegistryArgs args = Args.REGISTRY_ARGS.get(block);
 
 				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.translucent) {
-					BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent());
+					BlockRenderLayerMap.putBlock(block, BlockRenderLayer.TRANSLUCENT);
 				}
 			}
 		});
@@ -190,7 +187,7 @@ public class ModRegistries {
 				RegistryArgs args = Args.REGISTRY_ARGS.get(block);
 
 				if (identifier.getNamespace().equals(VanillaVSPlus.MOD_ID) && args.transparent) {
-					BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
+					BlockRenderLayerMap.putBlock(block, BlockRenderLayer.CUTOUT);
 				}
 			}
 		});

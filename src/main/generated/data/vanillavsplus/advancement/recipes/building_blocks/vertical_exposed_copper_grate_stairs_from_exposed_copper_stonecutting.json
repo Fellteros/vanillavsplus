@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vertical_exposed_copper_grate_stairs_from_exposed_copper_stonecutting"
+        "recipe": "vanillavsplus:vertical_exposed_copper_grate_stairs_from_exposed_copper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vertical_exposed_copper_grate_stairs_from_exposed_copper_stonecutting"
+      "vanillavsplus:vertical_exposed_copper_grate_stairs_from_exposed_copper_stonecutting"
     ]
   }
 }

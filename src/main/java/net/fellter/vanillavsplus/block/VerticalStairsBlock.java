@@ -1,9 +1,6 @@
 package net.fellter.vanillavsplus.block;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 import org.jetbrains.annotations.NotNull;
@@ -23,10 +20,8 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.DirectionTransformation;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -35,7 +30,11 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 
+import com.mojang.serialization.MapCodec;
+
 public class VerticalStairsBlock extends Block implements Waterloggable {
+	@SuppressWarnings("unused")
+	public static final MapCodec<VerticalStairsBlock> CODEC = createCodec(VerticalStairsBlock::new);
 	public static final EnumProperty<VerticalStairShape> SHAPE = EnumProperty.of("vertical_stair_shape", VerticalStairShape.class);
 	public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
@@ -44,11 +43,6 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 	protected static final VoxelShape SOUTH_BASE = Block.createCuboidShape(0, 0, 8, 16, 16, 16);
 	protected static final VoxelShape WEST_BASE = Block.createCuboidShape(0, 0, 0, 8, 16, 16);
 	protected static final VoxelShape EAST_BASE = Block.createCuboidShape(8, 0, 0, 16, 16, 16);
-	//       E
-	//   | 2 | 3 |
-	// N |   |   | S
-	//   | 1 | 4 |
-	//       W
 	protected static final VoxelShape BOTTOM_1 = Block.createCuboidShape(0.0, 0.0, 0.0, 8.0, 8.0, 8.0);
 	protected static final VoxelShape BOTTOM_4 = Block.createCuboidShape(0.0, 0.0, 8.0, 8.0, 8.0, 16.0);
 	protected static final VoxelShape TOP_1 = Block.createCuboidShape(0.0, 8.0, 0.0, 8.0, 16.0, 8.0);
@@ -66,6 +60,11 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
 	@Override
 	protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 		return this.getOutlineShape(state, world, pos, context);
+	}
+
+	@Override
+	protected MapCodec<? extends Block> getCodec() {
+		return CODEC;
 	}
 
 	@Override

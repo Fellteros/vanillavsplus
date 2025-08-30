@@ -59,11 +59,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 			@Override
 			public void generate() {
-				Registries.BLOCK.forEach(block -> {
+				Registries.BLOCK.stream().filter(VanillaVSPlus::isNamespaced).forEach(block -> {
 					if (Args.DATAGEN_ARGS.containsKey(block)) {
 						DatagenArgs args = Args.DATAGEN_ARGS.get(block);
 
-						if (Registries.BLOCK.getId(block).getNamespace().equals(VanillaVSPlus.MOD_ID) && args.parentBlock != null) {
+						if (args.parentBlock != null) {
 							if (block instanceof VerticalSlabBlock && args.stonecuttingInput != null) {
 								for (ItemConvertible item : args.stonecuttingInput) {
 									offerStonecuttingRecipe(block, item, 2);

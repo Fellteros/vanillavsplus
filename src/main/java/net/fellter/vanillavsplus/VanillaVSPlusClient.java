@@ -12,7 +12,6 @@ public class VanillaVSPlusClient implements ClientModInitializer {
 		ModRegistries.registerTranslucentBlocks();
 		ModRegistries.registerTransparentBlocks();
 		ModRegistries.registerFoliage();
-
 		ModRegistries.registerFuel();
 		ModRegistries.registerOxidizables();
 		ModRegistries.registerFlammables();

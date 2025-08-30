@@ -7,6 +7,9 @@ import net.fellter.vanillavsplus.block.ModBlocks;
 import net.fellter.vanillavsplus.item.ModItemGroups;
 import net.fellter.vanillavsplus.item.ModItems;
 
+import net.minecraft.block.Block;
+import net.minecraft.registry.Registries;
+
 import net.fabricmc.api.ModInitializer;
 
 public class VanillaVSPlus implements ModInitializer {
@@ -20,5 +23,11 @@ public class VanillaVSPlus implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 
 		LOGGER.info("Initialized Vanilla+ Verticals");
+
+
+	}
+
+	public static boolean isNamespaced(Block block) {
+		return Registries.BLOCK.getId(block).getNamespace().equals(MOD_ID);
 	}
 }
